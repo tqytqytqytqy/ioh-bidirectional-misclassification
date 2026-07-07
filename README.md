@@ -14,5 +14,5 @@ Primary estimand: fixed 5-min MAP <65 mm Hg hidden deficit ratio (HDR65), with o
 4. Run `make clean_outputs all test CONFIG=<private-local-yaml>`.
 
 Release tag: `v1.0.0-bja-submission`
-Stable outputs manifest SHA-256: `774ef0d29e59b40bab71f78d00a46dbaf1f8b95c1ee99cceb29e310484ea582d`
+Public outputs manifest SHA-256: `cdeb525fd8d639f91f906d089a18070f466539fe0889df7cabd952c0dcdbb9bf`
 Public aggregate workbook SHA-256: `d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d`

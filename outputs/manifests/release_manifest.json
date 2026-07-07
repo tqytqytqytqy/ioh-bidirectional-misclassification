@@ -1,6 +1,6 @@
 {
   "version": "v1.0.0-bja-submission",
-  "created_utc": "2026-07-07T15:07:08+00:00",
+  "created_utc": "2026-07-07T15:14:13+00:00",
   "release_dir": "final_public_release",
   "file_count_indexed": 181,
   "self_excluded_files": [
@@ -17,7 +17,7 @@
     {
       "relative_path": ".zenodo.json",
       "size_bytes": 951,
-      "sha256": "a1f0515898918d6033436d5d8a1523515a29164b1fffc7c1b4902a6de617bd66"
+      "sha256": "9d898b65eeaa87569ec2815a69d4c00289dc44022bf47696fc643e98113254bb"
     },
     {
       "relative_path": "CITATION.cff",
@@ -37,12 +37,12 @@
     {
       "relative_path": "README.md",
       "size_bytes": 1386,
-      "sha256": "4dca037215cba39d1f036655a9acbb162942fdba30df76d96c79bea43802bb7f"
+      "sha256": "c0e55356d03be3126bd1f5e5d0826d31bc33e9e321a1a7b8955294147e059c7b"
     },
     {
       "relative_path": "checksums.sha256",
       "size_bytes": 19249,
-      "sha256": "237cec7da3cb5f26319401cea4b2de6aacb663a1ffd98ecb9072ade8e85e955d"
+      "sha256": "0f6d2e56d1e30f8cbf183ee9f80f84a5510bcdf987adc1cd1c5d05e37f808025"
     },
     {
       "relative_path": "config/config.example.yaml",
@@ -62,7 +62,7 @@
     {
       "relative_path": "config/release_public.yaml",
       "size_bytes": 744,
-      "sha256": "65f037e97709e0ac339ba44493f95544dd0ec17c13d8def9124b44f3da3925cc"
+      "sha256": "1f713aaa2b9176d5203c4e260ad47033b67f8ebd504265ba23b685124f97fb81"
     },
     {
       "relative_path": "docs/data_access.md",
@@ -221,8 +221,8 @@
     },
     {
       "relative_path": "outputs/manifests/outputs_manifest.json",
-      "size_bytes": 40976,
-      "sha256": "774ef0d29e59b40bab71f78d00a46dbaf1f8b95c1ee99cceb29e310484ea582d"
+      "size_bytes": 20232,
+      "sha256": "cdeb525fd8d639f91f906d089a18070f466539fe0889df7cabd952c0dcdbb9bf"
     },
     {
       "relative_path": "outputs/qc/excluded_file_inventory.csv",
@@ -231,8 +231,8 @@
     },
     {
       "relative_path": "outputs/qc/file_inventory.csv",
-      "size_bytes": 32367,
-      "sha256": "7491d7b340f72fc82303ba67093339c22d91791ad2e02033572a9f8ec43fc035"
+      "size_bytes": 10593,
+      "sha256": "518e095ca8eb58b3fec11a49680975d5c2da44979fbea088827ea441645f36cc"
     },
     {
       "relative_path": "outputs/qc/final_claim_firewall_report.txt",
@@ -286,8 +286,8 @@
     },
     {
       "relative_path": "outputs/qc/hash_consistency_report.txt",
-      "size_bytes": 1993,
-      "sha256": "2a6b0c5f9a5029fad6d64aff9019e5b019ae207baf46584a5f9cbfa5740f8fb2"
+      "size_bytes": 403,
+      "sha256": "4eee23b27d69d57bb18cd86a6a954e6881ccd4f288cab93664ae1eb0cac05a05"
     },
     {
       "relative_path": "outputs/qc/strategy_language_scan.txt",
@@ -701,8 +701,8 @@
     },
     {
       "relative_path": "release_qc_report.md",
-      "size_bytes": 1790,
-      "sha256": "1dded9dee44f7437940ce75c3e20107d808b8077b1bf7680561ab7e615a8d548"
+      "size_bytes": 1881,
+      "sha256": "b32b87c3363c36cefa81aafa7dc4ed371214c0ab476932aacc2f51c5161d50bd"
     },
     {
       "relative_path": "requirements.txt",

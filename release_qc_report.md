@@ -1,6 +1,6 @@
 # Release QC Report
 
-Created UTC: 2026-07-07T15:07:08+00:00
+Created UTC: 2026-07-07T15:14:13+00:00
 Release tag: `v1.0.0-bja-submission`
 Overall status: **PASS**
 
@@ -21,6 +21,8 @@ Checksum rule: `checksums.sha256` covers all upload files except `checksums.sha2
   - Median valid 10-s arterial MAP in the -30 to +30 s window with minimum valid fraction 0.80; not nearest single value.
 - PASS: Prior public-release audit PASS files retained
   - Existing PASS audit files retained.
+- PASS: Public outputs manifest matches present output files
+  - 108 output files indexed.
 
 ## Claim Boundaries
 - VitalDB remains the primary reference dataset.
