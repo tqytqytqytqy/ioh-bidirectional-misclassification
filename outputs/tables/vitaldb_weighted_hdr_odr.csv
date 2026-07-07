@@ -1,0 +1,2 @@
+threshold,interval_min,role,n_vitaldb_cases,weighted_true_auc,weighted_hidden_auc,weighted_overdisplay_auc,weighted_HDR,weighted_ODR,weighted_NetBias,median_weight,max_weight
+65.0,5.0,VitalDB-to-target-population transportability sensitivity; not a validation claim,2435,221433.7486181754,136263.7587677529,146284.70128741348,0.6153703291304364,0.660625140477825,0.045254811347388485,0.8986300336480009,3.5757172002693443

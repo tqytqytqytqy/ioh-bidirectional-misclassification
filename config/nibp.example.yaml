@@ -1,0 +1,8 @@
+nibp_pairing:
+  primary_window_seconds: [-30, 30]
+  arterial_summary: median_valid_10s_map
+  minimum_valid_fraction: 0.80
+  display_validity_horizon_minutes: 10
+display_event_collapse:
+  same_value_hold_seconds: 90
+  minimum_new_event_gap_seconds: 120

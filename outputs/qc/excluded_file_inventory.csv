@@ -1,0 +1,17 @@
+relative_path,reason
+outputs/tables/figure3_source.csv,excluded: case-level identifier column
+outputs/tables/frequency_decomp_case_mean_preview.csv,excluded: case-level identifier column
+outputs/tables/frequency_decomposition.csv,excluded: case-level identifier column
+outputs/tables/mover_gate_input_inventory.csv,excluded: source path or archive column
+outputs/tables/nibp_art_pairs.csv,excluded: case-level identifier column
+outputs/tables/nibp_display_events.csv,excluded: case-level identifier column
+outputs/tables/nibp_mechanism_decomposition_case.csv,excluded: case-level identifier column
+outputs/tables/selective_continuous_oof_predictions.csv,excluded: case-level identifier column
+outputs/tables/strategy_decomposition_case.csv,excluded: case-level identifier column
+outputs/tables/time_window_sensitivity_qc.csv,excluded: case-level identifier column
+outputs/tables/vitaldb_manifest_preview.csv,excluded: case-level identifier column
+outputs/tables/waveform_qc.csv,excluded: case-level identifier column
+data/,excluded: source datasets are not redistributed
+outputs/intermediate/,excluded: intermediate case-level/time-series files
+outputs/qc/input_inventory.csv,excluded: local source paths
+config/private local YAML files,excluded: private local paths and credentials

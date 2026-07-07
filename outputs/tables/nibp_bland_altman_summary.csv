@@ -1,0 +1,2 @@
+paired_events,case_clusters,mean_bias_nibp_minus_art,sd_bias,loa_low,loa_high,median_abs_error
+10875,347,0.09593103448275862,17.348744262419352,-33.90760771985917,34.09946978882469,9.0

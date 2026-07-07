@@ -1,0 +1,1 @@
+PASS: strategy text uses relative reductions with from/to values.

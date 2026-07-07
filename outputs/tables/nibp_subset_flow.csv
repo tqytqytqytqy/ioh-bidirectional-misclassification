@@ -1,0 +1,6 @@
+step,n_cases,definition,parent_step
+candidate_art_nibp_cases,2788,Primary-candidate VitalDB cases with arterial and NIBP MAP track availability,
+sampled_cases,500,Configured NIBP display-event processing sample,candidate_art_nibp_cases
+mechanism_eligible_cases,365,Sampled cases contributing actual NIBP timing/cuff trajectories on the arterial-reference grid,sampled_cases
+paired_agreement_cases,347,Mechanism subset cases contributing at least one paired display event to agreement audit,mechanism_eligible_cases
+mechanism_without_paired_agreement,18,Mechanism subset cases without a paired agreement event under the primary pairing rule,mechanism_eligible_cases

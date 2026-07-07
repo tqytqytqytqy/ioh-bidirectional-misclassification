@@ -1,0 +1,21 @@
+{
+  "title": "Bidirectional misclassification of intraoperative hypotension exposure under intermittent blood pressure monitoring: reproducibility package",
+  "upload_type": "software",
+  "description": "Analysis code, configuration templates, reproducibility manifests, figure-source data, and non-identifiable aggregate outputs for a clinical investigation submission. Raw VitalDB, MoVeR, and INSPIRE source datasets are not redistributed.",
+  "creators": [
+    {
+      "name": "IOH2 Study Team"
+    }
+  ],
+  "version": "v1.0.0-bja-submission",
+  "license": "MIT",
+  "keywords": [
+    "anaesthesia",
+    "intraoperative hypotension",
+    "blood pressure monitoring",
+    "measurement error",
+    "VitalDB",
+    "reproducibility"
+  ],
+  "notes": "Stable outputs manifest SHA-256: 774ef0d29e59b40bab71f78d00a46dbaf1f8b95c1ee99cceb29e310484ea582d. Public aggregate workbook SHA-256: d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d."
+}

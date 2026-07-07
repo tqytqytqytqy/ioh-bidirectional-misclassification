@@ -1,0 +1,3 @@
+time_window,candidate_cases,included_cases,median_valid_coverage,median_total_10s_bins
+anaesthetic_interval,3315,2435,0.8907657657657657,1199.0
+surgery_interval,3315,2425,0.9962962962962963,840.0

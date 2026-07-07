@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Bidirectional misclassification of intraoperative hypotension exposure under intermittent blood pressure monitoring: reproducibility package"
+message: "Please cite the archived release DOI after deposition."
+type: software
+authors:
+  - name: "IOH2 Study Team"
+version: "v1.0.0-bja-submission"
+date-released: "2026-07-07"
+license: MIT
+keywords:
+  - anaesthesia
+  - intraoperative hypotension
+  - blood pressure monitoring
+  - measurement error
+  - VitalDB
+  - reproducibility

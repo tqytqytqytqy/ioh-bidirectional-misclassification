@@ -1,0 +1,10 @@
+metric,definition,role
+HDR,sum_i HiddenAUC_i / sum_i TrueAUC_i,primary endpoint for MAP<65 fixed 5-min display
+ODR,sum_i OverdisplayAUC_i / sum_i TrueAUC_i; ODR can exceed 1 because the denominator is reference TrueAUC; it is not a probability or false-positive rate.; ODR can exceed 1 because the denominator is reference TrueAUC; it is not a probability or false-positive rate.,"key co-primary/secondary endpoint for MAP<65 fixed 5-min display; scaled exposure-deficit ratio, not a probability; scaled exposure-deficit ratio, not a probability"
+NetBias,"ODR - HDR, equivalent to (DisplayAUC - TrueAUC) / TrueAUC",net bias after bidirectional components
+normotensive_display_discordance_min,minutes with reference hypotension but displayed MAP at or above threshold,unrecognised hypotensive display time
+hypotensive_display_discordance_min,minutes with reference non-hypotension but displayed MAP below threshold,overdisplayed hypotensive time
+paired_display_diagnostic_sensitivity,TP/(TP+FN) among successfully paired actual NIBP display events; denominator is paired display events only.,"display-level agreement audit metric, distinct from trajectory-grid event sensitivity"
+paired_display_diagnostic_specificity,TN/(TN+FP) among successfully paired actual NIBP display events; denominator is paired display events only.,"display-level agreement audit metric, distinct from trajectory-grid event specificity"
+trajectory_grid_event_sensitivity_after_display_validity_horizon,TP/(TP+FN) on the 10-second arterial-reference trajectory grid after applying the display-validity horizon.,trajectory-grid misclassification metric; not interchangeable with paired-display diagnostic sensitivity
+trajectory_grid_event_specificity_after_display_validity_horizon,TN/(TN+FP) on the 10-second arterial-reference trajectory grid after applying the display-validity horizon.,trajectory-grid misclassification metric; not interchangeable with paired-display diagnostic specificity

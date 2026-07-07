@@ -1,0 +1,8 @@
+check,passed
+vitaldb_root_exists,True
+inspire_zip_exists,True
+data_roles_yaml_exists,True
+vitaldb_role_declared,True
+mover_role_declared,True
+inspire_role_declared,True
+output_dir_is_outputs,True

@@ -1,0 +1,57 @@
+project:
+  name: ioh_invisibility
+  version: "2.3"
+  seed: 20260706
+  output_dir: outputs
+
+data:
+  vitaldb_root: /path/to/VitalDB/data/raw
+  mover_archive_root_primary: /path/to/mover-download-cli
+  mover_archive_root_secondary: /path/to/mover-download-cli-backup
+  mover_epic_crosswalk: /path/to/EPIC_MRN_PAT_ID.csv
+  mover_map_minutes_parquet: /path/to/map_minutes.parquet
+  inspire_zip: /path/to/inspire.zip
+
+tracks:
+  art_map_candidates: ["Solar8000/ART_MBP", "EV1000/ART_MBP", "ART_MBP"]
+  nibp_map_candidates: ["Solar8000/NIBP_MBP", "NIBP_MBP", "NIBP_MEAN"]
+
+time_window:
+  primary: anaesthetic_interval
+  sensitivity: [surgery_interval]
+
+cohort:
+  adult_min_age: 18
+  min_duration_min: 60
+  art_map_valid_range: [20, 180]
+  min_art_coverage: 0.80
+  exclude_surgery_groups: [cardiac, heart, obstetric, cesarean, transplant, bypass, cpb]
+
+analysis:
+  resample_sec: 10
+  thresholds: [55, 60, 65]
+  primary_threshold: 65
+  primary_endpoint: HDR65_fixed5
+  key_secondary: ODR65_fixed5
+  reference_interval_min: 5
+  intervals_min: [1, 2.5, 3, 5, 10]
+  bootstrap_reps: 1000
+  offset_mode: all_deterministic
+
+nibp:
+  sample_cases: 500
+  same_value_hold_sec: 90
+  min_gap_new_event_sec: 120
+  plausible_range: [20, 180]
+  pairing_windows:
+    primary: [-30, 30]
+    sensitivity: [[-60, 0], [0, 60], [-60, 60]]
+  min_pair_valid_fraction: 0.80
+  carry_forward_limit_min: 10
+
+mover:
+  min_gold_links_for_direct_waveform_claim: 1000
+
+inspire:
+  allowed_metrics: [resource_burden, transportability_overlap, weighted_sensitivity]
+  forbidden_metrics: [true_auc, hidden_auc, HDR, episode_sensitivity]

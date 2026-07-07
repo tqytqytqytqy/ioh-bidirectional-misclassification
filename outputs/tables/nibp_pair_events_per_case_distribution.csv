@@ -1,0 +1,9 @@
+statistic,paired_events_per_case
+count,347.0
+mean,31.340057636887607
+std,19.427043988907766
+min,1.0
+25%,17.0
+50%,29.0
+75%,41.0
+max,120.0

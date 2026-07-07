@@ -1,0 +1,8 @@
+primary_endpoint: HDR65_fixed5
+key_secondary_endpoint: ODR65_fixed5
+pointwise_components:
+  reference_deficit: max(0, threshold - arterial_map)
+  displayed_deficit: max(0, threshold - displayed_map)
+  concordant: min(reference_deficit, displayed_deficit)
+  hidden: max(0, reference_deficit - displayed_deficit)
+  overdisplay: max(0, displayed_deficit - reference_deficit)

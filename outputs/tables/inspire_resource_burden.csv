@@ -1,0 +1,10 @@
+strategy,measurement_burden,extra_measurements_per_hour,relative_hdr_reduction_vs_5min,target_population_n,scenario_role,estimated_extra_measurements_per_hour_population
+fixed_2_5min,24.0,12.0,0.2153594577456249,89576,INSPIRE target-population resource scenario,1074912.0
+fixed_3min,20.0,8.0,0.1577139456452813,89576,INSPIRE target-population resource scenario,716608.0
+fixed_5min_reference,12.0,0.0,0.0,89576,INSPIRE target-population resource scenario,0.0
+induction_intensified_first20min,16.95111477605436,4.951114776054361,0.1416718619533529,89576,INSPIRE target-population resource scenario,443501.0571798454
+selective_continuous_top20_oof,12.0,0.0,0.3381300921155047,89576,INSPIRE target-population resource scenario,0.0
+threshold_triggered_adaptive,20.81970167278465,8.81970167278465,0.2465771207587629,89576,INSPIRE target-population resource scenario,790033.5970413578
+trend_triggered_adaptive,27.88529822636406,15.88529822636406,0.3177512128122982,89576,INSPIRE target-population resource scenario,1422941.473924787
+universal_1min_proxy,60.0,48.0,0.4920740492625364,89576,INSPIRE target-population resource scenario,4299648.0
+universal_continuous_reference,,,1.0,89576,INSPIRE target-population resource scenario,0.0

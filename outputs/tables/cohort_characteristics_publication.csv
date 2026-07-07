@@ -1,0 +1,12 @@
+Variable,Primary waveform cohort (n=2435),NIBP mechanism subset (n=365),Paired agreement cases (n=347),"SMD, NIBP subset vs primary"
+"Age, yr",61.2,61.5,61.5,0.025
+"Male sex, proportion",58.9%,61.4%,62.2%,0.051
+"ASA physical status, mean",1.9,2.0,2.0,0.014
+"Emergency surgery, proportion",10.7%,9.6%,9.8%,-0.037
+"General surgery department, proportion",59.8%,60.5%,61.7%,0.015
+"Anaesthesia duration, min",251.5,253.3,255.0,0.016
+"Surgery duration, min",179.9,182.2,183.9,0.023
+"Baseline arterial MAP, first 5 min",68.5,67.0,67.4,-0.051
+"Reference TrueAUC65, mm Hg*min",107.7,113.9,116.6,0.040
+Reference MAP<65 episode count,3.8,3.8,3.8,-0.004
+"Paired NIBP display events per case, median",0.0,28.0,29.0,1.489

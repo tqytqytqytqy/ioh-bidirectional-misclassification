@@ -1,0 +1,24 @@
+check,passed,detail
+final_workbook_exists,True,[analysis_workspace]/outputs/final_workbook.xlsx
+final_workbook_sheet_count_ge_80,True,88
+main_table2_clean_has_no_episode_column,True,"Component,Display/strategy,n,HDR65 (95% CI),ODR65 (95% CI),NetBias (95% CI)"
+main_text_hdr65_fixed5_matches_workbook,True,0.597425
+main_text_odr65_fixed5_matches_workbook,True,0.642499
+main_text_netbias_fixed5_matches_workbook,True,0.045074
+nibp_flow_500_365_347_18_present,True,"{'candidate_art_nibp_cases': 2788, 'sampled_cases': 500, 'mechanism_eligible_cases': 365, 'paired_agreement_cases': 347, 'mechanism_without_paired_agreement': 18}"
+horizon_missing_fraction_present,True,0.592698
+supplement_has_publication_cohort_table,True,S14b
+terminology_scan.txt_pass,True,PASS
+nibp_metric_name_audit.txt_pass,True,"PASS: paired-display diagnostic sensitivity/specificity and trajectory-grid event sensitivity/specificity are defined as separate metrics.
+file,has_ambiguous_event_sensitivity_column
+nibp_event_detection_metrics.csv,False
+nibp_display_valid"
+episode_denominator_audit.md_pass,True,"# Episode Definition Report
+
+- Reference waveform grid: 10-second arterial MAP grid.
+- Main fixed-interval episode table uses duration-filtered episodes of at least 60 seconds.
+- Episode detection is defined as at least one displayed MAP be"
+supplement_clean_scan.txt_pass,True,PASS
+final_claim_firewall_report.txt_pass,True,PASS
+figure3_agreement_qc.txt_pass,True,"PASS: Figure 3 includes overall mean bias (0.096) and descriptive limits of agreement (-33.908, 34.099); stratum panel reports paired events and case clusters."
+main_table2_width_check.txt_pass,True,PASS: main Table 2 v4 has six columns and no episode/additional-estimate column.

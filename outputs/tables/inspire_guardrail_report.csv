@@ -1,0 +1,2 @@
+check,passed,note
+INSPIRE role guardrail,True,INSPIRE outputs are limited to resource/target-population/transportability roles.
