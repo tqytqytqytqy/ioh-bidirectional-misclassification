@@ -6,7 +6,7 @@ __pycache__/
 .env
 *.env
 config/*.local.yaml
-config/local*.yaml
+config/*local*.yaml
 
 data/
 raw_data/

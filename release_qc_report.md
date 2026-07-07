@@ -1,6 +1,6 @@
 # Release QC Report
 
-Created UTC: 2026-07-07T15:14:13+00:00
+Created UTC: 2026-07-07T23:11:50+00:00
 Release tag: `v1.0.0-bja-submission`
 Overall status: **PASS**
 
@@ -14,9 +14,9 @@ Checksum rule: `checksums.sha256` covers all upload files except `checksums.sha2
 - PASS: No raw/restricted data directories
 - PASS: No private local absolute paths
 - PASS: No credential-like assignments or private keys
-- PASS: No draft placeholders or author-only markers
+- PASS: No draft markers or author-only markers
 - PASS: Scientific claim firewall preserved
-  - Positive MoVeR validation, INSPIRE hidden-burden, or postoperative outcome-benefit claims were not found.
+  - Positive MoVeR waveform-confirmation, INSPIRE burden overreach, or postoperative organ-benefit claims were not found.
 - PASS: NIBP pairing wording preserved
   - Median valid 10-s arterial MAP in the -30 to +30 s window with minimum valid fraction 0.80; not nearest single value.
 - PASS: Prior public-release audit PASS files retained

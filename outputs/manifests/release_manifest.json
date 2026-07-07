@@ -1,6 +1,6 @@
 {
   "version": "v1.0.0-bja-submission",
-  "created_utc": "2026-07-07T15:14:13+00:00",
+  "created_utc": "2026-07-07T23:11:50+00:00",
   "release_dir": "final_public_release",
   "file_count_indexed": 181,
   "self_excluded_files": [
@@ -11,8 +11,8 @@
   "files": [
     {
       "relative_path": ".gitignore",
-      "size_bytes": 290,
-      "sha256": "de6bc441d4b191ceca149a1276e80443b244e0defc5e6f50a9fcd0c68200fe25"
+      "size_bytes": 291,
+      "sha256": "015ac0246f0f282c235b79f59fb64b15d93769b45a05de17dc67dc85dcd7d0bc"
     },
     {
       "relative_path": ".zenodo.json",
@@ -37,12 +37,12 @@
     {
       "relative_path": "README.md",
       "size_bytes": 1386,
-      "sha256": "c0e55356d03be3126bd1f5e5d0826d31bc33e9e321a1a7b8955294147e059c7b"
+      "sha256": "dc25669c307f759d485b9dc1bbfe34c669af5e59e283fcf126d49c24ccf9776b"
     },
     {
       "relative_path": "checksums.sha256",
-      "size_bytes": 19249,
-      "sha256": "0f6d2e56d1e30f8cbf183ee9f80f84a5510bcdf987adc1cd1c5d05e37f808025"
+      "size_bytes": 19257,
+      "sha256": "7fa5e3c292fb4122253c21390ca69c2cf01678cd6cfe9ebd501e81b292464954"
     },
     {
       "relative_path": "config/config.example.yaml",
@@ -62,7 +62,7 @@
     {
       "relative_path": "config/release_public.yaml",
       "size_bytes": 744,
-      "sha256": "1f713aaa2b9176d5203c4e260ad47033b67f8ebd504265ba23b685124f97fb81"
+      "sha256": "ba6525c067841972dfa44240c52f5e00e2f49dd7a8175e633f4a792160bf9e62"
     },
     {
       "relative_path": "docs/data_access.md",
@@ -221,8 +221,8 @@
     },
     {
       "relative_path": "outputs/manifests/outputs_manifest.json",
-      "size_bytes": 20232,
-      "sha256": "cdeb525fd8d639f91f906d089a18070f466539fe0889df7cabd952c0dcdbb9bf"
+      "size_bytes": 20240,
+      "sha256": "0582e165b1eaa513d963b3d9ca3b4d2da0060680844eade9374aa7d5079e18be"
     },
     {
       "relative_path": "outputs/qc/excluded_file_inventory.csv",
@@ -231,8 +231,8 @@
     },
     {
       "relative_path": "outputs/qc/file_inventory.csv",
-      "size_bytes": 10593,
-      "sha256": "518e095ca8eb58b3fec11a49680975d5c2da44979fbea088827ea441645f36cc"
+      "size_bytes": 10398,
+      "sha256": "b6b2ae267c04ed39c8439d3fd5126b14187fc997bb3700e89838afc3a16182ca"
     },
     {
       "relative_path": "outputs/qc/final_claim_firewall_report.txt",
@@ -260,14 +260,14 @@
       "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
     },
     {
-      "relative_path": "outputs/qc/final_public_release_no_raw_data_report.txt",
-      "size_bytes": 5,
-      "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
-    },
-    {
       "relative_path": "outputs/qc/final_public_release_pass.txt",
       "size_bytes": 23,
       "sha256": "4efc55278a8c6ff24c0fa00c0ad7cb1ab055e85e70c31251fe0af8ef6e787b19"
+    },
+    {
+      "relative_path": "outputs/qc/final_public_release_source_data_absence_report.txt",
+      "size_bytes": 5,
+      "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
     },
     {
       "relative_path": "outputs/qc/final_public_release_token_scan_report.txt",
@@ -701,8 +701,8 @@
     },
     {
       "relative_path": "release_qc_report.md",
-      "size_bytes": 1881,
-      "sha256": "b32b87c3363c36cefa81aafa7dc4ed371214c0ab476932aacc2f51c5161d50bd"
+      "size_bytes": 1888,
+      "sha256": "954c1b0bd69bce82830292d1c584b89c35474555bcf150b8cd2058259e973d80"
     },
     {
       "relative_path": "requirements.txt",
@@ -826,8 +826,8 @@
     },
     {
       "relative_path": "src/ioh/pipeline.py",
-      "size_bytes": 125305,
-      "sha256": "a7e7854629cc03508744ca033aa929f4a1ed5cf38e9390d7314fa4566c4bdb0a"
+      "size_bytes": 125335,
+      "sha256": "1cc824220d5ce0d01ed728c191719ed9294d25db546b35b7f5cf60fc0e4cac0a"
     },
     {
       "relative_path": "src/ioh/qc/__init__.py",

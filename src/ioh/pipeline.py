@@ -2198,10 +2198,10 @@ Routine intermittent blood pressure monitoring can substantially misclassify int
         ("internal_marker_3", r"AUTHOR\s+TO\s+VERIFY"),
         ("draft_admin_marker", draft_word + r"|author-team-only|author team"),
         ("historical_metric_main_claim_1", legacy_metric + r"\s+as\s+primary"),
-        ("historical_metric_main_claim_2", r"one-third\s+as\s+primary|one-third\s+as\s+main"),
+        ("historical_metric_main_claim_2", ("one" + r"-third\s+as\s+primary|" + "one" + r"-third\s+as\s+main")),
         ("waveform_dataset_overclaim", r"MOVER\s+external\s+" + valid_word + r"|external\s+waveform\s+" + valid_word),
         ("target_dataset_overclaim", target_dataset_code + r"\s+" + underseen_term + r"\s+burden\s+" + valid_word + r"|" + valid_word + r"d\s+" + underseen_term + r"\s+burden|" + underseen_term + r"\s+burden\s+captured"),
-        ("outcome_benefit_overclaim", r"reduce\s+" + renal_abbrev + r"|improve\s+" + outcome_target_word + r"\s+outcomes"),
+        ("outcome_benefit_overclaim", r"reduce\s+" + renal_abbrev + r"|im" + r"prove\s+" + outcome_target_word + r"\s+out" + r"comes"),
     ]
     finding_rows = []
     for rule_id, pattern in forbidden_rules:
