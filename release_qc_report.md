@@ -1,6 +1,6 @@
 # Release QC Report
 
-Created UTC: 2026-07-07T23:29:22+00:00
+Created UTC: 2026-07-08T04:35:04+00:00
 Release tag: `v1.0.0-bja-submission`
 Overall status: **PASS**
 
@@ -31,4 +31,4 @@ Checksum rule: `checksums.sha256` covers all upload files except `checksums.sha2
 - No postoperative organ-outcome benefit is claimed.
 
 ## Public Release Decision
-Private GitHub upload may proceed after this report is PASS. Public release and Zenodo archiving require final author confirmation and repository visibility review.
+Public GitHub release and Zenodo archiving have been completed for `v1.0.0-bja-submission` after author confirmation.

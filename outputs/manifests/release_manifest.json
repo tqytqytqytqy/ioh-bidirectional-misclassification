@@ -1,6 +1,6 @@
 {
   "version": "v1.0.0-bja-submission",
-  "created_utc": "2026-07-07T23:29:22+00:00",
+  "created_utc": "2026-07-08T04:36:08+00:00",
   "release_dir": "final_public_release",
   "file_count_indexed": 181,
   "self_excluded_files": [
@@ -17,12 +17,12 @@
     {
       "relative_path": ".zenodo.json",
       "size_bytes": 951,
-      "sha256": "9d898b65eeaa87569ec2815a69d4c00289dc44022bf47696fc643e98113254bb"
+      "sha256": "1d855b31826e572793d969372f2545687e3bc53870839e33ce27db0237eb7b84"
     },
     {
       "relative_path": "CITATION.cff",
-      "size_bytes": 502,
-      "sha256": "bb0346081e4aca44b43d436df9365286c256b810601879f0cecc022ed5630a51"
+      "size_bytes": 516,
+      "sha256": "5e3a24a9b53a9f83e5c04cd4544b8999b3ac3e4fca8e208c48cc73c3122f5475"
     },
     {
       "relative_path": "LICENSE",
@@ -36,13 +36,13 @@
     },
     {
       "relative_path": "README.md",
-      "size_bytes": 1386,
-      "sha256": "dc25669c307f759d485b9dc1bbfe34c669af5e59e283fcf126d49c24ccf9776b"
+      "size_bytes": 1574,
+      "sha256": "1d0257ffff33652acc7e17d99119f0cd8862d342e2ad964203ff029eefbf6a68"
     },
     {
       "relative_path": "checksums.sha256",
       "size_bytes": 19257,
-      "sha256": "d633bfb3ebbf6af092f904c6ba5da2bd4dbb60d8e1c9b3944af974727ae4493d"
+      "sha256": "a4706efb0b9cb9179df0dee12474d22d767ea10bfb15f7739456838ff3417bad"
     },
     {
       "relative_path": "config/config.example.yaml",
@@ -61,8 +61,8 @@
     },
     {
       "relative_path": "config/release_public.yaml",
-      "size_bytes": 744,
-      "sha256": "ba6525c067841972dfa44240c52f5e00e2f49dd7a8175e633f4a792160bf9e62"
+      "size_bytes": 804,
+      "sha256": "136cb5aa3e4cc3abc864bf8cc1eaf29132001b21def9e236307fb0a4ccd8855a"
     },
     {
       "relative_path": "docs/data_access.md",
@@ -701,8 +701,8 @@
     },
     {
       "relative_path": "release_qc_report.md",
-      "size_bytes": 1888,
-      "sha256": "d5b2a71f7519a3264271790a5c1d06d8c9910cb3f84c564c2a488c0ab516ec8d"
+      "size_bytes": 1841,
+      "sha256": "00aab0e449c20ad3f524aad2de7de0ce78cd32b6863424b6663415d40fcaf831"
     },
     {
       "relative_path": "requirements.txt",

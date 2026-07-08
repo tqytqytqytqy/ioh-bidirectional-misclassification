@@ -1,7 +1,7 @@
 project:
   repository_name: ioh-bidirectional-misclassification
   version_tag: v1.0.0-bja-submission
-  release_date: '2026-07-07'
+  release_date: '2026-07-08'
   license_code: MIT
   license_outputs: CC-BY-4.0
 public_release:
@@ -17,5 +17,5 @@ hashes:
   outputs_manifest_sha256: 0582e165b1eaa513d963b3d9ca3b4d2da0060680844eade9374aa7d5079e18be
   public_aggregate_workbook_sha256: d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d
 repository_status:
-  public_repository_url: pending_author_upload
-  zenodo_doi: pending_author_deposition
+  public_repository_url: https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification
+  zenodo_doi: https://doi.org/10.5281/zenodo.21253617

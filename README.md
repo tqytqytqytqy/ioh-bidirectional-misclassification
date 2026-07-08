@@ -14,5 +14,7 @@ Primary estimand: fixed 5-min MAP <65 mm Hg hidden deficit ratio (HDR65), with o
 4. Run `make clean_outputs all test CONFIG=<private-local-yaml>`.
 
 Release tag: `v1.0.0-bja-submission`
+GitHub release: `https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.0.0-bja-submission`
+Zenodo archived release: `https://doi.org/10.5281/zenodo.21253617`
 Public outputs manifest SHA-256: `0582e165b1eaa513d963b3d9ca3b4d2da0060680844eade9374aa7d5079e18be`
 Public aggregate workbook SHA-256: `d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d`
