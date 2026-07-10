@@ -1,21 +1,19 @@
 project:
-  repository_name: ioh-bidirectional-misclassification
-  version_tag: v1.0.0-bja-submission
-  release_date: '2026-07-08'
-  license_code: MIT
-  license_outputs: CC-BY-4.0
-public_release:
-  include_code: true
-  include_tests: true
-  include_final_figures: true
-  include_aggregate_tables: true
-  include_aggregate_workbook: true
-  exclude_raw_source_data: true
-  exclude_case_level_time_series: true
-  exclude_private_paths: true
+  repository: https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification
+  version_tag: v1.1.0-bja-submission
+  release_date: '2026-07-10'
+  code_license: MIT
+  aggregate_output_license: CC-BY-4.0
+public_scope:
+  analysis_code: true
+  tests: true
+  final_figures: true
+  aggregate_tables: true
+  aggregate_workbook: true
+  source_datasets: false
+  case_level_outputs: false
+  event_level_outputs: false
+  private_paths_or_credentials: false
 hashes:
-  outputs_manifest_sha256: 0582e165b1eaa513d963b3d9ca3b4d2da0060680844eade9374aa7d5079e18be
-  public_aggregate_workbook_sha256: d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d
-repository_status:
-  public_repository_url: https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification
-  zenodo_doi: https://doi.org/10.5281/zenodo.21253617
+  outputs_manifest_sha256: 458b9aeecb751cc26ad0b819702c2d71291f16144ab3fe1d57a4d307a5fb92a9
+  final_workbook_sha256: b7e12b126e0ba644d1ccbf22758c1fcfdcceee03d4de4ae1ba6e0627cf55e237

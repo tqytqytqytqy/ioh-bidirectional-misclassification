@@ -1,0 +1,6 @@
+step,n_events,excluded_from_parent,definition
+raw_nibp_records,793671,,all raw NIBP rows in the predefined 500-case subset
+physiologically_plausible_candidate_records,793336,335.0,finite NIBP MAP 20-180 mm Hg before de-duplication
+reconstructed_cuff_events,15950,777386.0,events after the 90-s hold and 120-s repeated-value minimum-gap rule
+events_in_365_case_mechanism_subset,13687,2263.0,reconstructed events in cases meeting primary arterial-series coverage
+successfully_paired_events,10875,2812.0,median of valid 10-s arterial MAP values within -30 to +30 s with >=80% coverage

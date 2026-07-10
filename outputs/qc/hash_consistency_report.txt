@@ -1,5 +1,3 @@
 PASS
-public_aggregate_workbook_sha256=d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d
-authoritative_upload_manifest=outputs/manifests/release_manifest.json
-authoritative_checksum_file=checksums.sha256
-note=outputs_manifest.json was regenerated for files present in the public outputs directory; release_manifest.json and checksums.sha256 are authoritative for the exact upload package.
+outputs/manifests/outputs_manifest.json SHA-256: 458b9aeecb751cc26ad0b819702c2d71291f16144ab3fe1d57a4d307a5fb92a9
+outputs/final_workbook.xlsx SHA-256: b7e12b126e0ba644d1ccbf22758c1fcfdcceee03d4de4ae1ba6e0627cf55e237

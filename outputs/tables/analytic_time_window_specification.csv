@@ -1,0 +1,2 @@
+eligibility_duration,primary_time_window,rate_denominator,sensitivity_time_window
+(aneend - anestart) / 60,"recorded portion of anaesthetic interval: max(0, anestart) to aneend",number of 10-s analytic-grid bins divided by 3600 s,opstart to opend

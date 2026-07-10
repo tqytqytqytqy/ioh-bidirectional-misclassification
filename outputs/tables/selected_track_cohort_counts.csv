@@ -1,0 +1,4 @@
+track_role,selected_track_name,selected_cases_all_source,selected_cases_pre_coverage_candidate,selected_cases_primary_arterial_cohort
+arterial_map,EV1000/ART_MBP,11,10,0
+arterial_map,Solar8000/ART_MBP,3724,3305,2435
+nibp_map,Solar8000/NIBP_MBP,5763,2788,1995

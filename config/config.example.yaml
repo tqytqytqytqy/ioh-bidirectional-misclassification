@@ -1,6 +1,6 @@
 project:
   name: ioh_invisibility
-  version: "2.3"
+  version: "6.0"
   seed: 20260706
   output_dir: outputs
 
@@ -37,9 +37,14 @@ analysis:
   intervals_min: [1, 2.5, 3, 5, 10]
   bootstrap_reps: 1000
   offset_mode: all_deterministic
+  offset_policy: all_deterministic_offsets_averaged
+  reference_missing_policy: exclude_timepoint_from_reference_and_display_components
+  display_unavailable_policy: no_displayed_deficit_with_concurrent_reference_deficit_counted_as_hidden
 
 nibp:
   sample_cases: 500
+  sample_selection: predefined_first_n_after_ascending_case_id_order
+  timestamp_semantics: recorded_event_time
   same_value_hold_sec: 90
   min_gap_new_event_sec: 120
   plausible_range: [20, 180]

@@ -14,20 +14,38 @@ def decompose_deficit(reference_map, display_map, threshold: float, dt_min: floa
     if reference.shape != display.shape:
         raise ValueError("reference_map and display_map must have the same shape")
     valid_reference = np.isfinite(reference)
-    visible_display = np.isfinite(display)
+    visible_display = valid_reference & np.isfinite(display)
+    unavailable_display = valid_reference & ~np.isfinite(display)
     r = np.where(valid_reference, np.maximum(float(threshold) - reference, 0.0), 0.0)
     d = np.where(visible_display, np.maximum(float(threshold) - display, 0.0), 0.0)
-    hidden = np.maximum(r - d, 0.0)
-    overdisplay = np.maximum(d - r, 0.0)
-    concordant = np.minimum(r, d)
+    hidden = np.where(valid_reference, np.maximum(r - d, 0.0), 0.0)
+    overdisplay = np.where(valid_reference, np.maximum(d - r, 0.0), 0.0)
+    concordant = np.where(valid_reference, np.minimum(r, d), 0.0)
+    hidden_unavailable = np.where(unavailable_display, r, 0.0)
+    hidden_display_valid = np.where(visible_display, hidden, 0.0)
+    reference_display_valid = np.where(visible_display, r, 0.0)
+    display_display_valid = np.where(visible_display, d, 0.0)
     true_auc = float(np.nansum(r) * float(dt_min))
     display_auc = float(np.nansum(d) * float(dt_min))
     hidden_auc = float(np.nansum(hidden) * float(dt_min))
     overdisplay_auc = float(np.nansum(overdisplay) * float(dt_min))
     concordant_auc = float(np.nansum(concordant) * float(dt_min))
-    normotensive_display_min = float(np.sum((r > 0) & (d == 0)) * float(dt_min))
-    hypotensive_display_discordance_min = float(np.sum((r == 0) & (d > 0)) * float(dt_min))
-    true_hypotension_min = float(np.sum(r > 0) * float(dt_min))
+    hidden_auc_display_unavailable = float(np.nansum(hidden_unavailable) * float(dt_min))
+    hidden_auc_display_valid = float(np.nansum(hidden_display_valid) * float(dt_min))
+    true_auc_display_valid = float(np.nansum(reference_display_valid) * float(dt_min))
+    display_auc_display_valid = float(np.nansum(display_display_valid) * float(dt_min))
+    normotensive_display_min = float(
+        np.sum(valid_reference & visible_display & (r > 0) & (d == 0)) * float(dt_min)
+    )
+    unavailable_reference_hypotension_min = float(
+        np.sum(unavailable_display & (r > 0)) * float(dt_min)
+    )
+    hypotensive_display_discordance_min = float(
+        np.sum(valid_reference & visible_display & (r == 0) & (d > 0)) * float(dt_min)
+    )
+    true_hypotension_min = float(np.sum(valid_reference & (r > 0)) * float(dt_min))
+    display_valid_min = float(np.sum(visible_display) * float(dt_min))
+    display_unavailable_min = float(np.sum(unavailable_display) * float(dt_min))
     return {
         "threshold": float(threshold),
         "true_auc": true_auc,
@@ -35,13 +53,30 @@ def decompose_deficit(reference_map, display_map, threshold: float, dt_min: floa
         "hidden_auc": hidden_auc,
         "overdisplay_auc": overdisplay_auc,
         "concordant_auc": concordant_auc,
+        "hidden_auc_display_unavailable": hidden_auc_display_unavailable,
+        "hidden_auc_display_valid": hidden_auc_display_valid,
+        "true_auc_display_valid": true_auc_display_valid,
+        "display_auc_display_valid": display_auc_display_valid,
         "normotensive_display_min": normotensive_display_min,
         "normotensive_display_discordance_min": normotensive_display_min,
+        "reference_hypotension_with_display_unavailable_min": unavailable_reference_hypotension_min,
         "hypotensive_display_discordance_min": hypotensive_display_discordance_min,
         "true_hypotension_min": true_hypotension_min,
+        "display_valid_min": display_valid_min,
+        "display_unavailable_min": display_unavailable_min,
         "hidden_deficit_ratio": hidden_auc / true_auc if true_auc > 0 else np.nan,
         "overdisplay_deficit_ratio": overdisplay_auc / true_auc if true_auc > 0 else np.nan,
         "net_bias_ratio": (display_auc - true_auc) / true_auc if true_auc > 0 else np.nan,
+        "hidden_deficit_ratio_display_valid": (
+            hidden_auc_display_valid / true_auc_display_valid
+            if true_auc_display_valid > 0
+            else np.nan
+        ),
+        "overdisplay_deficit_ratio_display_valid": (
+            overdisplay_auc / true_auc_display_valid
+            if true_auc_display_valid > 0
+            else np.nan
+        ),
     }
 
 

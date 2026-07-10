@@ -1,5 +1,0 @@
-metric,definition,role
-paired_display_diagnostic_sensitivity,TP/(TP+FN) among successfully paired actual NIBP display events; denominator is paired display events only.,"display-level agreement audit metric, distinct from trajectory-grid event sensitivity"
-paired_display_diagnostic_specificity,TN/(TN+FP) among successfully paired actual NIBP display events; denominator is paired display events only.,"display-level agreement audit metric, distinct from trajectory-grid event specificity"
-trajectory_grid_event_sensitivity_after_display_validity_horizon,TP/(TP+FN) on the 10-second arterial-reference trajectory grid after applying the display-validity horizon.,trajectory-grid misclassification metric; not interchangeable with paired-display diagnostic sensitivity
-trajectory_grid_event_specificity_after_display_validity_horizon,TN/(TN+FP) on the 10-second arterial-reference trajectory grid after applying the display-validity horizon.,trajectory-grid misclassification metric; not interchangeable with paired-display diagnostic specificity

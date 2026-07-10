@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import gzip
+import hashlib
 import json
 import math
 import re
@@ -158,10 +159,25 @@ def read_vitaldb_track(cfg: dict, tid: str) -> tuple[np.ndarray, np.ndarray]:
     return pd.to_numeric(df.iloc[:, 0], errors="coerce").to_numpy(float), pd.to_numeric(df.iloc[:, 1], errors="coerce").to_numpy(float)
 
 
-def _exclude_special(row: pd.Series, cfg: dict) -> bool:
-    banned = [str(x).lower() for x in cfg["cohort"]["exclude_surgery_groups"]]
+def _surgical_exclusion_category(row: pd.Series, cfg: dict) -> str:
+    banned = {str(x).lower() for x in cfg["cohort"]["exclude_surgery_groups"]}
     text = " ".join(str(row.get(col, "")) for col in ["department", "optype", "opname", "dx", "ane_type"]).lower()
-    return any(term in text for term in banned)
+    hierarchy = [
+        ("cardiac", ["cardiac", "heart", "bypass", "cpb"]),
+        ("obstetric", ["obstetric", "cesarean"]),
+        ("transplant", ["transplant"]),
+    ]
+    for category, terms in hierarchy:
+        if any(term in banned and term in text for term in terms):
+            return category
+    other_terms = sorted(term for term in banned if all(term not in terms for _, terms in hierarchy))
+    if any(term in text for term in other_terms):
+        return "other_prespecified"
+    return ""
+
+
+def _exclude_special(row: pd.Series, cfg: dict) -> bool:
+    return bool(_surgical_exclusion_category(row, cfg))
 
 
 def _select_track(trks: pd.DataFrame, candidates: list[str]) -> pd.DataFrame:
@@ -179,7 +195,10 @@ def build_vitaldb_manifest(cfg: dict) -> pd.DataFrame:
     c["duration_min"] = (pd.to_numeric(c["aneend"], errors="coerce") - pd.to_numeric(c["anestart"], errors="coerce")) / 60.0
     c["adult"] = pd.to_numeric(c["age"], errors="coerce") >= float(cfg["cohort"]["adult_min_age"])
     c["general_anaesthesia"] = c["ane_type"].astype(str).str.contains("general", case=False, na=False)
-    c["eligible_surgery"] = ~c.apply(lambda row: _exclude_special(row, cfg), axis=1)
+    c["surgical_exclusion_category"] = c.apply(
+        lambda row: _surgical_exclusion_category(row, cfg), axis=1
+    )
+    c["eligible_surgery"] = c["surgical_exclusion_category"].eq("")
     c["duration_eligible"] = c["duration_min"] >= float(cfg["cohort"]["min_duration_min"])
     manifest = (
         c.merge(art[["caseid", "art_tid", "art_track_name"]], on="caseid", how="left")
@@ -209,6 +228,78 @@ def build_vitaldb_manifest(cfg: dict) -> pd.DataFrame:
     manifest.to_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet"), index=False)
     write_table(cfg, "vitaldb_manifest_preview.csv", manifest.head(1000))
     write_table(cfg, "cohort_flow.csv", flow)
+    before_surgical = manifest[manifest["adult"] & manifest["general_anaesthesia"]].copy()
+    exclusion_rows = []
+    for category in ["cardiac", "obstetric", "transplant", "other_prespecified"]:
+        exclusion_rows.append(
+            {
+                "hierarchy_order": len(exclusion_rows) + 1,
+                "exclusion_category": category,
+                "excluded_cases": int(before_surgical["surgical_exclusion_category"].eq(category).sum()),
+            }
+        )
+    exclusion = pd.DataFrame(exclusion_rows)
+    exclusion["eligible_before_surgical_exclusions"] = len(before_surgical)
+    exclusion["remaining_after_all_surgical_exclusions"] = int(
+        before_surgical["eligible_surgery"].sum()
+    )
+    exclusion["total_surgically_excluded"] = int((~before_surgical["eligible_surgery"]).sum())
+    write_table(cfg, "surgical_exclusion_flow.csv", exclusion)
+    duration_audit = manifest[
+        manifest["adult"] & manifest["general_anaesthesia"] & manifest["eligible_surgery"]
+    ].sort_values("case_id").head(10).copy()
+    duration_audit["anaesthesia_duration_min_recalculated"] = (
+        pd.to_numeric(duration_audit["aneend"], errors="coerce")
+        - pd.to_numeric(duration_audit["anestart"], errors="coerce")
+    ) / 60.0
+    duration_audit["surgery_duration_min_recalculated"] = (
+        pd.to_numeric(duration_audit["opend"], errors="coerce")
+        - pd.to_numeric(duration_audit["opstart"], errors="coerce")
+    ) / 60.0
+    write_table(
+        cfg,
+        "case_duration_timestamp_audit.csv",
+        duration_audit[
+            [
+                "case_id",
+                "anestart",
+                "aneend",
+                "anaesthesia_duration_min_recalculated",
+                "opstart",
+                "opend",
+                "surgery_duration_min_recalculated",
+                "duration_min",
+                "primary_time_window",
+            ]
+        ],
+    )
+    track_rows = []
+    for role, selected, candidates in [
+        ("arterial_map", art, cfg["tracks"]["art_map_candidates"]),
+        ("nibp_map", nibp, cfg["tracks"]["nibp_map_candidates"]),
+    ]:
+        available = trks[
+            trks["tname"].astype(str).isin(candidates)
+            | trks["tname"].astype(str).str.contains(
+                "|".join(map(re.escape, candidates)), case=False, na=False
+            )
+        ]
+        selected_name = "art_track_name" if role == "arterial_map" else "nibp_track_name"
+        for priority, candidate in enumerate(candidates):
+            track_rows.append(
+                {
+                    "track_role": role,
+                    "candidate_priority": priority + 1,
+                    "configured_candidate": candidate,
+                    "available_track_rows_exact_name": int(available["tname"].eq(candidate).sum()),
+                    "available_cases_exact_name": int(
+                        available.loc[available["tname"].eq(candidate), "caseid"].nunique()
+                    ),
+                    "selected_cases": int(selected[selected_name].eq(candidate).sum()),
+                    "selection_rule": "lowest configured priority per case; one track retained",
+                }
+            )
+    write_table(cfg, "track_selection_audit.csv", pd.DataFrame(track_rows))
     write_qc(
         cfg,
         "cohort_flow_qc.md",
@@ -424,6 +515,7 @@ def build_strategy_display_series(
     *,
     selected_for_continuous: bool = False,
     carry_forward_limit_sec: float | None = None,
+    rules: dict | None = None,
 ) -> tuple[np.ndarray, dict]:
     times = np.asarray(times, dtype=float)
     values = np.asarray(values, dtype=float)
@@ -434,11 +526,33 @@ def build_strategy_display_series(
     last = float(times[-1])
     total_hours = max((last - first + 10.0) / 3600.0, 1e-9)
 
+    rules = rules or {
+        "baseline_interval_min": 5,
+        "fixed_intervals_min": [3, 2.5],
+        "induction_intensified": {
+            "induction_window_min": 20,
+            "induction_interval_min": 1,
+            "maintenance_interval_min": 5,
+        },
+        "threshold_triggered_adaptive": {
+            "baseline_interval_min": 5,
+            "intensified_interval_min": 1,
+            "trigger_visible_map_lt": 70,
+            "intensify_for_min": 5,
+        },
+        "trend_triggered_adaptive": {
+            "baseline_interval_min": 5,
+            "intensified_interval_min": 1,
+            "trigger_drop_mmHg": 8,
+            "trigger_visible_map_lt": 75,
+            "intensify_for_min": 3,
+        },
+    }
     fixed_intervals = {
-        "fixed_5min_reference": 300.0,
-        "fixed_5min_frequency_only": 300.0,
-        "fixed_3min": 180.0,
-        "fixed_2_5min": 150.0,
+        "fixed_5min_reference": float(rules["baseline_interval_min"]) * 60.0,
+        "fixed_5min_frequency_only": float(rules["baseline_interval_min"]) * 60.0,
+        "fixed_3min": float(rules["fixed_intervals_min"][0]) * 60.0,
+        "fixed_2_5min": float(rules["fixed_intervals_min"][1]) * 60.0,
         "universal_1min_proxy": 60.0,
     }
     if strategy in fixed_intervals:
@@ -461,7 +575,13 @@ def build_strategy_display_series(
         }
 
     if strategy == "selective_continuous_top20_oof":
-        return build_strategy_display_series(times, values, "fixed_5min_reference", carry_forward_limit_sec=carry_forward_limit_sec)
+        return build_strategy_display_series(
+            times,
+            values,
+            "fixed_5min_reference",
+            carry_forward_limit_sec=carry_forward_limit_sec,
+            rules=rules,
+        )
 
     sample_times: list[float] = []
     trigger_count = 0
@@ -475,17 +595,42 @@ def build_strategy_display_series(
             idx = len(times) - 1
         current = float(values[idx]) if np.isfinite(values[idx]) else np.nan
         if strategy == "induction_intensified_first20min":
-            interval = 60.0 if t - first < 20 * 60 else 300.0
+            spec = rules["induction_intensified"]
+            interval = (
+                float(spec["induction_interval_min"]) * 60.0
+                if t - first < float(spec["induction_window_min"]) * 60.0
+                else float(spec["maintenance_interval_min"]) * 60.0
+            )
         elif strategy == "threshold_triggered_adaptive":
-            if np.isfinite(current) and current < 70.0:
-                intensified_until = max(intensified_until, t + 5 * 60)
+            spec = rules["threshold_triggered_adaptive"]
+            if np.isfinite(current) and current < float(spec["trigger_visible_map_lt"]):
+                intensified_until = max(
+                    intensified_until, t + float(spec["intensify_for_min"]) * 60.0
+                )
                 trigger_count += 1
-            interval = 60.0 if t < intensified_until else 300.0
+            interval = (
+                float(spec["intensified_interval_min"]) * 60.0
+                if t < intensified_until
+                else float(spec["baseline_interval_min"]) * 60.0
+            )
         elif strategy == "trend_triggered_adaptive":
-            if np.isfinite(current) and ((np.isfinite(prev_value) and prev_value - current >= 8.0) or current < 75.0):
-                intensified_until = max(intensified_until, t + 3 * 60)
+            spec = rules["trend_triggered_adaptive"]
+            if np.isfinite(current) and (
+                (
+                    np.isfinite(prev_value)
+                    and prev_value - current >= float(spec["trigger_drop_mmHg"])
+                )
+                or current < float(spec["trigger_visible_map_lt"])
+            ):
+                intensified_until = max(
+                    intensified_until, t + float(spec["intensify_for_min"]) * 60.0
+                )
                 trigger_count += 1
-            interval = 60.0 if t < intensified_until else 300.0
+            interval = (
+                float(spec["intensified_interval_min"]) * 60.0
+                if t < intensified_until
+                else float(spec["baseline_interval_min"]) * 60.0
+            )
         else:
             raise ValueError(f"unsupported strategy: {strategy}")
         prev_value = current
@@ -566,10 +711,17 @@ def emulate_frequency_decomposition(cfg: dict) -> pd.DataFrame:
         "hidden_auc",
         "overdisplay_auc",
         "concordant_auc",
+        "hidden_auc_display_unavailable",
+        "hidden_auc_display_valid",
+        "true_auc_display_valid",
+        "display_auc_display_valid",
         "normotensive_display_min",
         "normotensive_display_discordance_min",
+        "reference_hypotension_with_display_unavailable_min",
         "hypotensive_display_discordance_min",
         "true_hypotension_min",
+        "display_valid_min",
+        "display_unavailable_min",
         "episode_count",
         "episode_detected",
         "missed_episodes",
@@ -594,11 +746,18 @@ def emulate_frequency_decomposition(cfg: dict) -> pd.DataFrame:
             "concordant_auc",
             "hidden_auc",
             "overdisplay_auc",
+            "hidden_auc_display_unavailable",
+            "hidden_auc_display_valid",
+            "true_auc_display_valid",
+            "display_auc_display_valid",
             "HDR_case",
             "ODR_case",
             "NetBias",
             "normotensive_display_discordance_min",
+            "reference_hypotension_with_display_unavailable_min",
             "hypotensive_display_discordance_min",
+            "display_valid_min",
+            "display_unavailable_min",
             "episode_count",
             "episode_detected",
             "missed_episodes",
@@ -748,9 +907,16 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
                 "display_auc",
                 "hidden_auc",
                 "overdisplay_auc",
+                "hidden_auc_display_unavailable",
+                "hidden_auc_display_valid",
+                "true_auc_display_valid",
+                "display_auc_display_valid",
                 "normotensive_display_discordance_min",
+                "reference_hypotension_with_display_unavailable_min",
                 "hypotensive_display_discordance_min",
                 "anesthesia_hours",
+                "display_valid_min",
+                "display_unavailable_min",
                 "episode_count",
                 "episode_detected",
             ]
@@ -761,9 +927,17 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
         hidden = grouped["hidden_auc"].to_numpy(float)
         over = grouped["overdisplay_auc"].to_numpy(float)
         display = grouped["display_auc"].to_numpy(float)
+        hidden_unavailable = grouped["hidden_auc_display_unavailable"].to_numpy(float)
+        hidden_valid = grouped["hidden_auc_display_valid"].to_numpy(float)
+        true_valid = grouped["true_auc_display_valid"].to_numpy(float)
         hours = grouped["anesthesia_hours"].to_numpy(float)
         norm_display = grouped["normotensive_display_discordance_min"].to_numpy(float)
+        unavailable_hypotension = grouped[
+            "reference_hypotension_with_display_unavailable_min"
+        ].to_numpy(float)
         hypo_display = grouped["hypotensive_display_discordance_min"].to_numpy(float)
+        display_valid_min = grouped["display_valid_min"].to_numpy(float)
+        display_unavailable_min = grouped["display_unavailable_min"].to_numpy(float)
         ep = grouped["episode_count"].to_numpy(float)
         ep_det = grouped["episode_detected"].to_numpy(float)
         total_true = true.sum()
@@ -778,11 +952,21 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
             "HDR": hidden.sum() / total_true if total_true > 0 else np.nan,
             "ODR": over.sum() / total_true if total_true > 0 else np.nan,
             "NetBias": (over.sum() - hidden.sum()) / total_true if total_true > 0 else np.nan,
+            "hidden_auc_display_unavailable_total": hidden_unavailable.sum(),
+            "hidden_auc_display_valid_total": hidden_valid.sum(),
+            "true_auc_display_valid_total": true_valid.sum(),
+            "HDR_display_valid": hidden_valid.sum() / true_valid.sum() if true_valid.sum() > 0 else np.nan,
+            "ODR_display_valid": over.sum() / true_valid.sum() if true_valid.sum() > 0 else np.nan,
+            "HDR_unavailable_component": hidden_unavailable.sum() / total_true if total_true > 0 else np.nan,
+            "HDR_valid_mismatch_component": hidden_valid.sum() / total_true if total_true > 0 else np.nan,
             "normotensive_display_discordance_min": norm_display.sum(),
             "hypotensive_display_discordance_min": hypo_display.sum(),
+            "reference_hypotension_with_display_unavailable_min": unavailable_hypotension.sum(),
             "normotensive_display_min_per_anesthesia_hour": norm_display.sum() / hours.sum() if hours.sum() > 0 else np.nan,
             "normotensive_display_discordance_min_per_anesthesia_hour": norm_display.sum() / hours.sum() if hours.sum() > 0 else np.nan,
             "hypotensive_display_discordance_min_per_anesthesia_hour": hypo_display.sum() / hours.sum() if hours.sum() > 0 else np.nan,
+            "reference_hypotension_with_display_unavailable_min_per_anesthesia_hour": unavailable_hypotension.sum() / hours.sum() if hours.sum() > 0 else np.nan,
+            "display_unavailable_fraction": display_unavailable_min.sum() / (display_valid_min.sum() + display_unavailable_min.sum()) if (display_valid_min.sum() + display_unavailable_min.sum()) > 0 else np.nan,
             "episode_sensitivity": ep_det.sum() / ep.sum() if ep.sum() > 0 else np.nan,
         }
         if n:
@@ -795,8 +979,13 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
             row["HDR_ci_low"], row["HDR_ci_high"] = ratio_ci(hidden, true)
             row["ODR_ci_low"], row["ODR_ci_high"] = ratio_ci(over, true)
             row["NetBias_ci_low"], row["NetBias_ci_high"] = ratio_ci(display - true, true)
+            row["HDR_display_valid_ci_low"], row["HDR_display_valid_ci_high"] = ratio_ci(hidden_valid, true_valid)
+            row["ODR_display_valid_ci_low"], row["ODR_display_valid_ci_high"] = ratio_ci(over, true_valid)
+            row["HDR_unavailable_component_ci_low"], row["HDR_unavailable_component_ci_high"] = ratio_ci(hidden_unavailable, true)
+            row["HDR_valid_mismatch_component_ci_low"], row["HDR_valid_mismatch_component_ci_high"] = ratio_ci(hidden_valid, true)
             row["normotensive_display_discordance_ci_low"], row["normotensive_display_discordance_ci_high"] = ratio_ci(norm_display, hours)
             row["hypotensive_display_discordance_ci_low"], row["hypotensive_display_discordance_ci_high"] = ratio_ci(hypo_display, hours)
+            row["reference_hypotension_with_display_unavailable_ci_low"], row["reference_hypotension_with_display_unavailable_ci_high"] = ratio_ci(unavailable_hypotension, hours)
         rows.append(row)
     return pd.DataFrame(rows).sort_values(["threshold", "interval_min"])
 
@@ -898,7 +1087,11 @@ def _write_episode_duration_outputs(cfg: dict, panel: pd.DataFrame) -> None:
 
 def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
     manifest = pd.read_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet")) if intermediate_path(cfg, "vitaldb_manifest.parquet").exists() else build_vitaldb_manifest(cfg)
-    linked = manifest[manifest["pre_qc_primary_candidate"] & manifest["has_nibp_map"]].head(int(cfg["nibp"]["sample_cases"])).copy()
+    candidates = manifest[
+        manifest["pre_qc_primary_candidate"] & manifest["has_nibp_map"]
+    ].sort_values("case_id").copy()
+    linked = candidates.head(int(cfg["nibp"]["sample_cases"])).copy()
+    linked["nibp_subset_order"] = np.arange(1, len(linked) + 1)
     raw_frames = []
     event_frames = []
     sensitivity_rows = []
@@ -928,6 +1121,77 @@ def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
     write_table(cfg, "nibp_display_retention_audit.csv", audit)
     write_table(cfg, "nibp_event_audit.csv", audit)
     write_table(cfg, "nibp_collapse_flow.csv", audit)
+    selected_ids = linked["case_id"].astype(str).tolist()
+    selection_hash = hashlib.sha256("\n".join(selected_ids).encode("utf-8")).hexdigest()
+    write_table(
+        cfg,
+        "nibp_sample_selection_method.csv",
+        pd.DataFrame(
+            [
+                {
+                    "candidate_cases": len(candidates),
+                    "selected_cases": len(linked),
+                    "selection_method": "predefined processed subset: first 500 eligible cases after ascending case_id ordering",
+                    "random_sampling": False,
+                    "sampling_seed": "not applicable",
+                    "selected_case_list_sha256": selection_hash,
+                    "rationale": "prespecified computationally tractable processed subset; no hypothesis-based sample-size calculation",
+                }
+            ]
+        ),
+    )
+    comparison = candidates.copy()
+    comparison["selected"] = comparison["case_id"].isin(set(linked["case_id"]))
+    comparison["sex_male"] = comparison["sex"].astype(str).str.upper().str.startswith("M").astype(float)
+    comparison["asa_num"] = pd.to_numeric(comparison["asa"], errors="coerce")
+    comparison["emergency"] = pd.to_numeric(comparison["emop"], errors="coerce")
+    comparison_rows = []
+    for variable in ["age", "sex_male", "asa_num", "emergency", "duration_min"]:
+        selected_values = pd.to_numeric(
+            comparison.loc[comparison["selected"], variable], errors="coerce"
+        ).dropna()
+        unselected_values = pd.to_numeric(
+            comparison.loc[~comparison["selected"], variable], errors="coerce"
+        ).dropna()
+        pooled_sd = math.sqrt(
+            (selected_values.var(ddof=1) + unselected_values.var(ddof=1)) / 2.0
+        )
+        comparison_rows.append(
+            {
+                "variable": variable,
+                "selected_n": len(selected_values),
+                "selected_mean": selected_values.mean(),
+                "unselected_n": len(unselected_values),
+                "unselected_mean": unselected_values.mean(),
+                "standardised_mean_difference": (
+                    (selected_values.mean() - unselected_values.mean()) / pooled_sd
+                    if np.isfinite(pooled_sd) and pooled_sd > 0
+                    else np.nan
+                ),
+            }
+        )
+    write_table(cfg, "nibp_selected_vs_unselected_comparison.csv", pd.DataFrame(comparison_rows))
+    if intermediate_path(cfg, "artmap_10s.parquet").exists():
+        panel_cases = set(
+            pd.read_parquet(
+                intermediate_path(cfg, "artmap_10s.parquet"), columns=["case_id"]
+            )["case_id"].drop_duplicates()
+        )
+        candidate_cases = set(candidates["case_id"])
+        selected_cases = set(linked["case_id"])
+        event_cases = set(events_all["case_id"].drop_duplicates())
+        mechanism_cases = panel_cases & event_cases
+        overlap_rows = [
+            {"membership": "primary_arterial_series_cohort", "n_cases": len(panel_cases)},
+            {"membership": "nibp_candidate_pool", "n_cases": len(candidate_cases)},
+            {"membership": "candidate_and_primary_intersection", "n_cases": len(candidate_cases & panel_cases)},
+            {"membership": "candidate_only_not_primary", "n_cases": len(candidate_cases - panel_cases)},
+            {"membership": "primary_only_not_candidate", "n_cases": len(panel_cases - candidate_cases)},
+            {"membership": "predefined_500_subset", "n_cases": len(selected_cases)},
+            {"membership": "predefined_500_and_primary_intersection", "n_cases": len(selected_cases & panel_cases)},
+            {"membership": "mechanism_subset_with_events_and_primary_coverage", "n_cases": len(mechanism_cases)},
+        ]
+        write_table(cfg, "cohort_membership_overlap.csv", pd.DataFrame(overlap_rows))
     for hold in [60, 90, 120, 180]:
         for gap in [60, 120, 180, 300]:
             ev = collapse_nibp_display_events(raw_all, same_value_hold_sec=hold, min_gap_new_event_sec=gap, plausible_range=tuple(cfg["nibp"]["plausible_range"]))
@@ -1185,6 +1449,11 @@ def _mechanism_summary(case: pd.DataFrame) -> pd.DataFrame:
         hidden = sub["hidden_auc"].sum()
         over = sub["overdisplay_auc"].sum()
         display = sub["display_auc"].sum()
+        hidden_unavailable = sub["hidden_auc_display_unavailable"].sum()
+        hidden_valid = sub["hidden_auc_display_valid"].sum()
+        true_valid = sub["true_auc_display_valid"].sum()
+        valid_minutes = sub["display_valid_min"].sum()
+        unavailable_minutes = sub["display_unavailable_min"].sum()
         rows.append(
             {
                 "threshold": threshold,
@@ -1194,9 +1463,17 @@ def _mechanism_summary(case: pd.DataFrame) -> pd.DataFrame:
                 "display_auc_total": display,
                 "hidden_auc_total": hidden,
                 "overdisplay_auc_total": over,
+                "hidden_auc_display_unavailable_total": hidden_unavailable,
+                "hidden_auc_display_valid_total": hidden_valid,
+                "true_auc_display_valid_total": true_valid,
                 "HDR": hidden / true_auc if true_auc > 0 else np.nan,
                 "ODR": over / true_auc if true_auc > 0 else np.nan,
                 "NetBias": (display - true_auc) / true_auc if true_auc > 0 else np.nan,
+                "HDR_unavailable_component": hidden_unavailable / true_auc if true_auc > 0 else np.nan,
+                "HDR_valid_mismatch_component": hidden_valid / true_auc if true_auc > 0 else np.nan,
+                "HDR_display_valid": hidden_valid / true_valid if true_valid > 0 else np.nan,
+                "ODR_display_valid": over / true_valid if true_valid > 0 else np.nan,
+                "display_unavailable_fraction": unavailable_minutes / (valid_minutes + unavailable_minutes) if valid_minutes + unavailable_minutes > 0 else np.nan,
             }
         )
     summary = pd.DataFrame(rows)
@@ -1216,9 +1493,17 @@ def _mechanism_summary(case: pd.DataFrame) -> pd.DataFrame:
                     "display_auc_total": a["display_auc_total"] - t["display_auc_total"],
                     "hidden_auc_total": a["hidden_auc_total"] - t["hidden_auc_total"],
                     "overdisplay_auc_total": a["overdisplay_auc_total"] - t["overdisplay_auc_total"],
+                    "hidden_auc_display_unavailable_total": a["hidden_auc_display_unavailable_total"] - t["hidden_auc_display_unavailable_total"],
+                    "hidden_auc_display_valid_total": a["hidden_auc_display_valid_total"] - t["hidden_auc_display_valid_total"],
+                    "true_auc_display_valid_total": a["true_auc_display_valid_total"] - t["true_auc_display_valid_total"],
                     "HDR": a["HDR"] - t["HDR"],
                     "ODR": a["ODR"] - t["ODR"],
                     "NetBias": a["NetBias"] - t["NetBias"],
+                    "HDR_unavailable_component": a["HDR_unavailable_component"] - t["HDR_unavailable_component"],
+                    "HDR_valid_mismatch_component": a["HDR_valid_mismatch_component"] - t["HDR_valid_mismatch_component"],
+                    "HDR_display_valid": a["HDR_display_valid"] - t["HDR_display_valid"],
+                    "ODR_display_valid": a["ODR_display_valid"] - t["ODR_display_valid"],
+                    "display_unavailable_fraction": a["display_unavailable_fraction"] - t["display_unavailable_fraction"],
                 }
             )
     return pd.concat([summary, pd.DataFrame(inc_rows)], ignore_index=True)
@@ -1227,15 +1512,27 @@ def _mechanism_summary(case: pd.DataFrame) -> pd.DataFrame:
 def _mechanism_bootstrap(cfg: dict, case: pd.DataFrame) -> pd.DataFrame:
     rng = np.random.default_rng(int(cfg["project"]["seed"]))
     rows = []
-    reps = 500
+    reps = int(cfg["analysis"]["bootstrap_reps"])
     for (threshold, mechanism), sub in case.groupby(["threshold", "mechanism"]):
-        wide = sub.groupby("case_id")[["true_auc", "hidden_auc", "overdisplay_auc", "display_auc"]].sum()
+        wide = sub.groupby("case_id")[[
+            "true_auc",
+            "hidden_auc",
+            "overdisplay_auc",
+            "display_auc",
+            "hidden_auc_display_unavailable",
+            "hidden_auc_display_valid",
+            "true_auc_display_valid",
+        ]].sum()
         ids = np.arange(len(wide))
         if len(ids) == 0:
             continue
         hdr_rep = []
         odr_rep = []
         net_rep = []
+        hdr_valid_rep = []
+        odr_valid_rep = []
+        unavailable_component_rep = []
+        valid_mismatch_component_rep = []
         values = wide.to_numpy(float)
         for _ in range(reps):
             sample = rng.choice(ids, size=len(ids), replace=True)
@@ -1244,9 +1541,16 @@ def _mechanism_bootstrap(cfg: dict, case: pd.DataFrame) -> pd.DataFrame:
             hidden = boot[:, 1].sum()
             over = boot[:, 2].sum()
             display = boot[:, 3].sum()
+            hidden_unavailable = boot[:, 4].sum()
+            hidden_valid = boot[:, 5].sum()
+            true_valid = boot[:, 6].sum()
             hdr_rep.append(hidden / true if true > 0 else np.nan)
             odr_rep.append(over / true if true > 0 else np.nan)
             net_rep.append((display - true) / true if true > 0 else np.nan)
+            hdr_valid_rep.append(hidden_valid / true_valid if true_valid > 0 else np.nan)
+            odr_valid_rep.append(over / true_valid if true_valid > 0 else np.nan)
+            unavailable_component_rep.append(hidden_unavailable / true if true > 0 else np.nan)
+            valid_mismatch_component_rep.append(hidden_valid / true if true > 0 else np.nan)
         rows.append(
             {
                 "threshold": threshold,
@@ -1258,6 +1562,14 @@ def _mechanism_bootstrap(cfg: dict, case: pd.DataFrame) -> pd.DataFrame:
                 "ODR_ci_high": float(np.nanquantile(odr_rep, 0.975)),
                 "NetBias_ci_low": float(np.nanquantile(net_rep, 0.025)),
                 "NetBias_ci_high": float(np.nanquantile(net_rep, 0.975)),
+                "HDR_display_valid_ci_low": float(np.nanquantile(hdr_valid_rep, 0.025)),
+                "HDR_display_valid_ci_high": float(np.nanquantile(hdr_valid_rep, 0.975)),
+                "ODR_display_valid_ci_low": float(np.nanquantile(odr_valid_rep, 0.025)),
+                "ODR_display_valid_ci_high": float(np.nanquantile(odr_valid_rep, 0.975)),
+                "HDR_unavailable_component_ci_low": float(np.nanquantile(unavailable_component_rep, 0.025)),
+                "HDR_unavailable_component_ci_high": float(np.nanquantile(unavailable_component_rep, 0.975)),
+                "HDR_valid_mismatch_component_ci_low": float(np.nanquantile(valid_mismatch_component_rep, 0.025)),
+                "HDR_valid_mismatch_component_ci_high": float(np.nanquantile(valid_mismatch_component_rep, 0.975)),
             }
         )
     return pd.DataFrame(rows)
@@ -1307,12 +1619,18 @@ def _write_nibp_episode_detection(cfg: dict, events: pd.DataFrame, panel: pd.Dat
                 )
             paired_times = event_times[np.isfinite(event_times)]
             for mechanism, display in displays.items():
-                art_low = values < float(threshold)
-                disp_low = np.isfinite(display) & (display < float(threshold))
+                valid_reference = np.isfinite(values)
+                display_valid = valid_reference & np.isfinite(display)
+                art_low = valid_reference & (values < float(threshold))
+                art_not_low = valid_reference & (values >= float(threshold))
+                disp_low = display_valid & (display < float(threshold))
                 tp = int((art_low & disp_low).sum())
                 fn = int((art_low & ~disp_low).sum())
-                fp = int((~art_low & disp_low).sum())
-                tn = int((~art_low & ~disp_low).sum())
+                fp = int((art_not_low & disp_low).sum())
+                tn = int((art_not_low & display_valid & ~disp_low).sum())
+                unavailable_low = int((art_low & ~display_valid).sum())
+                unavailable_not_low = int((art_not_low & ~display_valid).sum())
+                fn_display_valid = int((art_low & display_valid & ~disp_low).sum())
                 event_rows.append(
                     {
                         "case_id": case_id,
@@ -1324,6 +1642,11 @@ def _write_nibp_episode_detection(cfg: dict, events: pd.DataFrame, panel: pd.Dat
                         "fn_false_reassurance": fn,
                         "fp_overdisplay": fp,
                         "tn": tn,
+                        "fn_display_valid": fn_display_valid,
+                        "reference_low_display_unavailable": unavailable_low,
+                        "reference_not_low_display_unavailable": unavailable_not_low,
+                        "display_valid_timepoints": int(display_valid.sum()),
+                        "display_unavailable_timepoints": int((valid_reference & ~display_valid).sum()),
                     }
                 )
     episode_case = pd.DataFrame(rows)
@@ -1346,10 +1669,26 @@ def _write_nibp_episode_detection(cfg: dict, events: pd.DataFrame, panel: pd.Dat
         fn_false_reassurance=("fn_false_reassurance", "sum"),
         fp_overdisplay=("fp_overdisplay", "sum"),
         tn=("tn", "sum"),
+        fn_display_valid=("fn_display_valid", "sum"),
+        reference_low_display_unavailable=("reference_low_display_unavailable", "sum"),
+        reference_not_low_display_unavailable=("reference_not_low_display_unavailable", "sum"),
+        display_valid_timepoints=("display_valid_timepoints", "sum"),
+        display_unavailable_timepoints=("display_unavailable_timepoints", "sum"),
         actual_display_events=("actual_display_events", "sum"),
     ).reset_index()
     event["event_sensitivity"] = np.where(event["tp"] + event["fn_false_reassurance"] > 0, event["tp"] / (event["tp"] + event["fn_false_reassurance"]), np.nan)
     event["specificity"] = np.where(event["tn"] + event["fp_overdisplay"] > 0, event["tn"] / (event["tn"] + event["fp_overdisplay"]), np.nan)
+    event["sensitivity_display_valid"] = np.where(
+        event["tp"] + event["fn_display_valid"] > 0,
+        event["tp"] / (event["tp"] + event["fn_display_valid"]),
+        np.nan,
+    )
+    event["display_unavailable_fraction"] = np.where(
+        event["display_valid_timepoints"] + event["display_unavailable_timepoints"] > 0,
+        event["display_unavailable_timepoints"]
+        / (event["display_valid_timepoints"] + event["display_unavailable_timepoints"]),
+        np.nan,
+    )
     event["ppv"] = np.where(event["tp"] + event["fp_overdisplay"] > 0, event["tp"] / (event["tp"] + event["fp_overdisplay"]), np.nan)
     event["npv"] = np.where(event["tn"] + event["fn_false_reassurance"] > 0, event["tn"] / (event["tn"] + event["fn_false_reassurance"]), np.nan)
     write_table(cfg, "nibp_event_detection.csv", event)
@@ -1429,6 +1768,9 @@ def strategy_frontier(cfg: dict) -> pd.DataFrame:
     case_mean = pd.read_parquet(case_mean_path)
     panel = pd.read_parquet(intermediate_path(cfg, "artmap_10s.parquet"))
     primary = float(cfg["analysis"]["primary_threshold"])
+    rules = yaml.safe_load(
+        (PROJECT_ROOT / "config" / "strategy_rules.yaml").read_text(encoding="utf-8")
+    )
     oof = _selective_continuous_frontier(cfg, case_mean)
     write_table(cfg, "selective_continuous_frontier.csv", oof)
     predictions = pd.read_csv(table_path(cfg, "selective_continuous_oof_predictions.csv"))
@@ -1440,8 +1782,14 @@ def strategy_frontier(cfg: dict) -> pd.DataFrame:
         ("fixed_2_5min", "Fixed every 2.5 min"),
         ("universal_1min_proxy", "Fixed every 1 min proxy"),
         ("induction_intensified_first20min", "1-min sampling for first 20 min, then 5-min"),
-        ("threshold_triggered_adaptive", "Rule-based 1-min escalation after displayed MAP <70"),
-        ("trend_triggered_adaptive", "Rule-based 1-min escalation after downward trend or MAP <75"),
+        (
+            "threshold_triggered_adaptive",
+            f"Rule-based 1-min escalation after displayed MAP <{rules['threshold_triggered_adaptive']['trigger_visible_map_lt']:g}",
+        ),
+        (
+            "trend_triggered_adaptive",
+            f"Rule-based 1-min escalation after a >={rules['trend_triggered_adaptive']['trigger_drop_mmHg']:g}-mm Hg fall or MAP <{rules['trend_triggered_adaptive']['trigger_visible_map_lt']:g}",
+        ),
         ("selective_continuous_top20_oof", "OOF high-hidden-risk top 20 percent continuous reference, others 5-min"),
         ("universal_continuous_reference", "All cases continuously observed; theoretical upper reference"),
     ]
@@ -1452,14 +1800,16 @@ def strategy_frontier(cfg: dict) -> pd.DataFrame:
         sub = sub.sort_values("time_sec")
         times = sub["time_sec"].to_numpy(float)
         values = sub["art_map"].to_numpy(float)
-        fixed_display, _ = build_strategy_display_series(times, values, "fixed_5min_reference")
+        fixed_display, _ = build_strategy_display_series(
+            times, values, "fixed_5min_reference", rules=rules
+        )
         for strategy, definition in strategies:
             display, meta = build_strategy_display_series(
                 times,
                 values,
                 strategy,
                 selected_for_continuous=case_id in selected_cases,
-                carry_forward_limit_sec=float(cfg["nibp"]["carry_forward_limit_min"]) * 60.0,
+                rules=rules,
             )
             same_as_fixed = bool(np.array_equal(np.nan_to_num(display, nan=-9999), np.nan_to_num(fixed_display, nan=-9999)))
             audit_rows.append(
@@ -1533,6 +1883,9 @@ def strategy_frontier(cfg: dict) -> pd.DataFrame:
     benefit = primary_summary["relative_hdr_reduction_vs_5min"].fillna(-np.inf).to_numpy(float)
     primary_summary["pareto_optimal"] = pareto_optimal_mask(finite, benefit)
     primary_summary["scenario_role"] = "hypothesis-generating monitoring policy scenario"
+    primary_summary["phase_convention"] = "start_anchored_offset_0"
+    primary_summary["analysis_sample"] = f"same {int(primary_summary['n_cases'].max())}-case primary arterial-series cohort"
+    primary_summary["comparison_baseline"] = "fixed_5min_reference under the same start-anchored convention"
     write_table(cfg, "strategy_decomposition.csv", summary)
     write_table(cfg, "strategy_efficiency_frontier.csv", primary_summary)
     write_table(cfg, "figure4_source.csv", primary_summary)
@@ -1551,6 +1904,14 @@ def strategy_frontier(cfg: dict) -> pd.DataFrame:
         "PASS",
     )
     write_table(cfg, "strategy_display_series_audit.csv", audit_summary)
+    rule_rows = []
+    for section, value in rules.items():
+        if isinstance(value, dict):
+            for key, item in value.items():
+                rule_rows.append({"section": section, "parameter": key, "value": json.dumps(item) if isinstance(item, list) else item})
+        else:
+            rule_rows.append({"section": "strategy", "parameter": section, "value": json.dumps(value) if isinstance(value, list) else value})
+    write_table(cfg, "strategy_rule_specification.csv", pd.DataFrame(rule_rows))
     if (audit_summary["qc_status"] == "FAIL").any():
         raise ValueError("Strategy display audit failed: hidden changed while overdisplay was reused from fixed 5-min")
     return primary_summary
@@ -1864,6 +2225,11 @@ def make_tables(cfg: dict) -> dict[str, pd.DataFrame]:
             "normotensive_display_discordance_ci_low",
             "normotensive_display_discordance_ci_high",
             "hypotensive_display_discordance_min_per_anesthesia_hour",
+            "hypotensive_display_discordance_ci_low",
+            "hypotensive_display_discordance_ci_high",
+            "reference_hypotension_with_display_unavailable_min_per_anesthesia_hour",
+            "reference_hypotension_with_display_unavailable_ci_low",
+            "reference_hypotension_with_display_unavailable_ci_high",
             "episode_sensitivity",
         ]
     ].copy()
@@ -1872,7 +2238,7 @@ def make_tables(cfg: dict) -> dict[str, pd.DataFrame]:
     table3 = pd.read_csv(table_path(cfg, "nibp_mechanism_decomposition.csv"))
     write_table(cfg, "table3_nibp_mechanisms.csv", table3)
     strategy = pd.read_csv(table_path(cfg, "strategy_efficiency_frontier.csv"))
-    table4 = strategy[["strategy", "definition", "HDR65", "ODR65", "NetBias", "relative_hdr_reduction_vs_5min", "extra_cuff_inflations_per_hour", "cost_domain", "measurement_burden", "pareto_optimal", "scenario_role", "modality_burden_note"]].copy()
+    table4 = strategy[["strategy", "definition", "HDR65", "ODR65", "NetBias", "relative_hdr_reduction_vs_5min", "extra_cuff_inflations_per_hour", "cost_domain", "measurement_burden", "pareto_optimal", "scenario_role", "modality_burden_note", "phase_convention", "analysis_sample", "comparison_baseline"]].copy()
     write_table(cfg, "table4_strategy_efficiency_frontier.csv", table4)
     write_table(cfg, "table4_strategy_frontier.csv", table4)
     return {"table1": table1, "table2": table2, "table3": table3, "table4": table4}
@@ -1938,16 +2304,33 @@ def make_figures(cfg: dict) -> None:
         pairs = pairs[pairs["paired"]]
         if not pairs.empty:
             write_table(cfg, "figure3_source.csv", pairs)
-            plt.figure(figsize=(7.4, 3.8))
-            ax1 = plt.subplot(1, 2, 1)
+            fig, (ax1, ax2) = plt.subplots(
+                1,
+                2,
+                figsize=(8.6, 4.2),
+                gridspec_kw={"width_ratios": [1.05, 1.15]},
+                constrained_layout=True,
+            )
             mean_map = (pairs["nibp_map"] + pairs["art_map_ref"]) / 2.0
             hb = ax1.hexbin(mean_map, pairs["nibp_art_bias"], gridsize=38, mincnt=1, cmap="viridis")
-            plt.colorbar(hb, ax=ax1, label="Events")
-            ax1.axhline(pairs["nibp_art_bias"].mean(), color="black", linewidth=1)
-            ax1.set_xlabel("Mean MAP")
-            ax1.set_ylabel("NIBP - arterial MAP")
-            ax1.set_title("A. Density Bland-Altman")
-            ax2 = plt.subplot(1, 2, 2)
+            colorbar = fig.colorbar(hb, ax=ax1, label="Events", pad=0.02)
+            colorbar.ax.tick_params(labelsize=7)
+            repeated_path = table_path(cfg, "nibp_repeated_measures_bland_altman.csv")
+            if repeated_path.exists():
+                repeated = pd.read_csv(repeated_path)
+                main_agreement = repeated[
+                    repeated["method"].eq("random_intercept_variance_components_mom")
+                ].iloc[0]
+                ax1.axhline(main_agreement["mean_difference"], color="black", linewidth=1.1, label="Mean difference")
+                ax1.axhline(main_agreement["loa_low"], color="#9B2226", linestyle="--", linewidth=1, label="Repeated-measures LoA")
+                ax1.axhline(main_agreement["loa_high"], color="#9B2226", linestyle="--", linewidth=1)
+                ax1.legend(fontsize=6, loc="upper right")
+            else:
+                ax1.axhline(pairs["nibp_art_bias"].mean(), color="black", linewidth=1)
+            ax1.set_xlabel("Mean paired MAP, mm Hg", fontsize=8)
+            ax1.set_ylabel("NIBP - arterial MAP, mm Hg", fontsize=8)
+            ax1.set_title("A. Repeated-measures agreement", fontsize=10)
+            ax1.tick_params(labelsize=7)
             strata_path = table_path(cfg, "nibp_bland_altman_by_stratum.csv")
             if strata_path.exists():
                 strata = pd.read_csv(strata_path).dropna(subset=["art_map_stratum"])
@@ -1957,39 +2340,54 @@ def make_figures(cfg: dict) -> None:
                 ax2.errorbar(strata["mean_bias"], y, xerr=[low.abs(), high.abs()], fmt="o", color="#005F73")
                 ax2.axvline(0, color="black", linewidth=1)
                 ax2.set_yticks(y)
-                ax2.set_yticklabels(strata["art_map_stratum"].astype(str), fontsize=7)
-                ax2.set_xlabel("Bias with 95% CI")
-                ax2.set_title("B. Bias by arterial MAP")
-            plt.tight_layout()
+                labels = [f"{row.art_map_stratum} ({int(row.paired_events)} events; {int(row.cases)} cases)" for row in strata.itertuples(index=False)]
+                ax2.set_yticklabels(labels, fontsize=7)
+                ax2.set_xlabel("Conditional paired difference, mm Hg (95% CI)", fontsize=8)
+                ax2.set_title("B. Conditional difference by arterial MAP", fontsize=10)
+                ax2.tick_params(axis="x", labelsize=7)
             for name in ["figure3_actual_nibp_agreement", "figure3_nibp_agreement"]:
-                plt.savefig(fig_dir / f"{name}.png", dpi=300)
-                plt.savefig(fig_dir / f"{name}.svg")
-                plt.savefig(fig_dir / f"{name}.tiff", dpi=300)
-            plt.close()
+                fig.savefig(fig_dir / f"{name}.png", dpi=600, bbox_inches="tight", pad_inches=0.08)
+                fig.savefig(fig_dir / f"{name}.svg", bbox_inches="tight", pad_inches=0.08)
+                fig.savefig(fig_dir / f"{name}.tiff", dpi=600, bbox_inches="tight", pad_inches=0.08)
+            plt.close(fig)
     strategy = pd.read_csv(table_path(cfg, "strategy_efficiency_frontier.csv"))
-    plt.figure(figsize=(7.2, 3.6))
-    ax1 = plt.subplot(1, 2, 1)
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8.6, 4.2), gridspec_kw={"width_ratios": [1.15, 1.0]}, constrained_layout=True)
     xcol = "extra_cuff_inflations_per_hour" if "extra_cuff_inflations_per_hour" in strategy.columns else "extra_measurements_per_hour"
     plot = strategy[strategy.get("cost_domain", "cuff_cadence").eq("cuff_cadence") & np.isfinite(strategy[xcol].fillna(np.nan))]
     colors = np.where(plot.get("pareto_optimal", False).astype(bool), "#005F73", "#999999")
     sizes = 70 + 220 * plot["ODR65"].fillna(0).clip(lower=0, upper=1)
     ax1.scatter(plot[xcol], plot["relative_hdr_reduction_vs_5min"], s=sizes, c=colors, alpha=0.85)
+    strategy_labels = {
+        "fixed_2_5min": "Fixed 2.5 min",
+        "fixed_3min": "Fixed 3 min",
+        "fixed_5min_reference": "Fixed 5 min",
+        "induction_intensified_first20min": "Induction intensified",
+        "threshold_triggered_adaptive": "Threshold triggered",
+        "trend_triggered_adaptive": "Trend triggered",
+        "universal_1min_proxy": "Universal 1 min",
+        "selective_continuous_top20_oof": "Selective continuous, top 20%",
+        "universal_continuous_reference": "Universal continuous",
+    }
     for _, row in plot.iterrows():
-        ax1.annotate(str(row["strategy"]).replace("_", " "), (row[xcol], row["relative_hdr_reduction_vs_5min"]), fontsize=6)
-    ax1.set_xlabel("Extra cuff inflations/hour")
-    ax1.set_ylabel("Relative HDR65 reduction")
-    ax1.set_title("A. Cuff-cadence strategies")
-    ax2 = plt.subplot(1, 2, 2)
+        label = strategy_labels.get(str(row["strategy"]), str(row["strategy"]).replace("_", " "))
+        ax1.annotate(label, (row[xcol], row["relative_hdr_reduction_vs_5min"]), xytext=(4, 4), textcoords="offset points", fontsize=7)
+    ax1.set_xlabel("Additional cuff inflations per hour", fontsize=8)
+    ax1.set_ylabel("Relative HDR65 reduction", fontsize=8)
+    ax1.set_title("A. Cuff cadence", fontsize=10)
+    ax1.tick_params(labelsize=7)
+    ax1.set_xlim(left=-2)
     mod = strategy[strategy.get("cost_domain", "").eq("modality_change")]
-    ax2.barh(mod["strategy"].astype(str).str.replace("_", " "), mod["relative_hdr_reduction_vs_5min"].fillna(0), color="#9B5DE5")
-    ax2.set_xlabel("Relative HDR65 reduction")
-    ax2.set_title("B. Modality-change scenarios")
-    plt.tight_layout()
+    mod_labels = [strategy_labels.get(value, value.replace("_", " ")) for value in mod["strategy"].astype(str)]
+    ax2.barh(mod_labels, mod["relative_hdr_reduction_vs_5min"].fillna(0), color="#D95F02")
+    ax2.set_xlabel("Relative HDR65 reduction", fontsize=8)
+    ax2.set_title("B. Monitoring-modality change", fontsize=10)
+    ax2.tick_params(labelsize=7)
+    fig.suptitle("Start-anchored comparator; n=2435", fontsize=9)
     for name in ["figure4_strategy_efficiency_frontier", "figure4_strategy_frontier"]:
-        plt.savefig(fig_dir / f"{name}.png", dpi=300)
-        plt.savefig(fig_dir / f"{name}.svg")
-        plt.savefig(fig_dir / f"{name}.tiff", dpi=300)
-    plt.close()
+        fig.savefig(fig_dir / f"{name}.png", dpi=600, bbox_inches="tight", pad_inches=0.08)
+        fig.savefig(fig_dir / f"{name}.svg", bbox_inches="tight", pad_inches=0.08)
+        fig.savefig(fig_dir / f"{name}.tiff", dpi=600, bbox_inches="tight", pad_inches=0.08)
+    plt.close(fig)
 
 
 def make_manuscript_numbers(cfg: dict) -> dict:
@@ -2198,10 +2596,10 @@ Routine intermittent blood pressure monitoring can substantially misclassify int
         ("internal_marker_3", r"AUTHOR\s+TO\s+VERIFY"),
         ("draft_admin_marker", draft_word + r"|author-team-only|author team"),
         ("historical_metric_main_claim_1", legacy_metric + r"\s+as\s+primary"),
-        ("historical_metric_main_claim_2", ("one" + r"-third\s+as\s+primary|" + "one" + r"-third\s+as\s+main")),
+        ("historical_metric_main_claim_2", "one" + r"-third\s+as\s+primary|one" + r"-third\s+as\s+main"),
         ("waveform_dataset_overclaim", r"MOVER\s+external\s+" + valid_word + r"|external\s+waveform\s+" + valid_word),
         ("target_dataset_overclaim", target_dataset_code + r"\s+" + underseen_term + r"\s+burden\s+" + valid_word + r"|" + valid_word + r"d\s+" + underseen_term + r"\s+burden|" + underseen_term + r"\s+burden\s+captured"),
-        ("outcome_benefit_overclaim", r"reduce\s+" + renal_abbrev + r"|im" + r"prove\s+" + outcome_target_word + r"\s+out" + r"comes"),
+        ("outcome_benefit_overclaim", r"reduce\s+" + renal_abbrev + r"|im" + r"prove\s+" + outcome_target_word + r"\s+outcomes"),
     ]
     finding_rows = []
     for rule_id, pattern in forbidden_rules:

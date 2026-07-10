@@ -1,0 +1,6 @@
+method,paired_events,case_clusters,mean_difference,between_case_variance,within_case_variance,loa_low,loa_high,mean_ci_low,mean_ci_high,loa_low_ci_low,loa_low_ci_high,loa_high_ci_low,loa_high_ci_high,role
+event_pooled_descriptive,10875,347,0.09593103448275862,,300.9789274828284,-33.90760771985917,34.09946978882469,,,,,,,descriptive only; ignores within-case dependence
+random_intercept_variance_components_mom,10875,347,1.1493410954180507,82.62084456313515,218.67984202694558,-32.87236840902123,35.17105059985733,-0.04875532097365178,2.3954919175408973,-34.759267149752546,-30.993597600505595,32.791499251118694,37.80522639107933,primary repeated-measures agreement summary with case-cluster bootstrap
+random_intercept_reml_statsmodels_check,10875,347,1.2387009711366452,120.87898138053282,219.27275764297323,-34.90997702174023,37.38737896401352,,,,,,,statsmodels 0.14.6 REML validation; converged=True
+equal_case_weighted_mean_sensitivity,10875,347,1.586836735417281,160.25183548234156,,,,0.32975625001426395,2.98195004421111,,,,,sensitivity analysis giving each case equal weight
+one_random_event_per_case_sensitivity,347,347,1.5565597982708934,,,-36.8569532643766,39.970072860918386,-0.020443083573487016,3.150108069164265,-40.46073490177076,-33.2360669796433,35.982036749157544,44.495663321839736,sensitivity analysis with one randomly selected paired event per case
