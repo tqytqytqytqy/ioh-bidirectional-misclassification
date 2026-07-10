@@ -1,0 +1,2 @@
+candidate_cases,selected_cases,selection_method,random_sampling,sampling_seed,selected_case_list_sha256,rationale
+2788,500,predefined processed subset: first 500 eligible cases after ascending case_id ordering,False,not applicable,f02297d2ba9225b6c12127dc64da61643ea5e4515bd4a17596888ae5fc9853b5,prespecified computationally tractable processed subset; no hypothesis-based sample-size calculation

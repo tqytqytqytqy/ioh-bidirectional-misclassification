@@ -1,0 +1,2 @@
+package,version,final_analysis_use,output
+statsmodels,0.14.6,intercept-only random-intercept REML variance-component check for repeated-measures NIBP-arterial agreement,nibp_repeated_measures_bland_altman.csv

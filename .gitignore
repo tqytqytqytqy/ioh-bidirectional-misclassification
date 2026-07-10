@@ -2,14 +2,14 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.venv/
 
 .env
 *.env
-config/*.local.yaml
+config/*private*.yaml
 config/*local*.yaml
 
 data/
-raw_data/
 restricted_data/
 outputs/intermediate/
 outputs/logs/

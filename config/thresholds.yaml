@@ -1,0 +1,4 @@
+thresholds: [55, 60, 65]
+primary_threshold: 65
+intervals_min: [1, 2.5, 3, 5, 10]
+

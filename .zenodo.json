@@ -1,13 +1,40 @@
 {
-  "title": "Bidirectional misclassification of intraoperative hypotension exposure under intermittent blood pressure monitoring: reproducibility package",
+  "title": "Bidirectional misclassification of intraoperative hypotension exposure during intermittent blood pressure monitoring: reproducibility package",
   "upload_type": "software",
-  "description": "Analysis code, configuration templates, reproducibility manifests, figure-source data, and non-identifiable aggregate outputs for a clinical investigation submission. Raw VitalDB, MoVeR, and INSPIRE source datasets are not redistributed.",
+  "description": "Analysis code, configuration templates, reproducibility manifests, figure source data, final workbook, and non-identifiable aggregate outputs. Raw VitalDB, MoVeR, and INSPIRE datasets are not redistributed.",
   "creators": [
     {
-      "name": "IOH2 Study Team"
+      "name": "Teng, Qingyu",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Zhang, Hui",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Yang, Yuping",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Qian, Chen",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Gu, Ziyan",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Li, Qi",
+      "orcid": "0009-0003-3140-5887",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Xu, Tao",
+      "orcid": "0000-0001-5868-4079",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     }
   ],
-  "version": "v1.0.0-bja-submission",
+  "version": "v1.1.0-submission",
   "license": "MIT",
   "keywords": [
     "anaesthesia",
@@ -17,5 +44,12 @@
     "VitalDB",
     "reproducibility"
   ],
-  "notes": "Public outputs manifest SHA-256: 0582e165b1eaa513d963b3d9ca3b4d2da0060680844eade9374aa7d5079e18be. Public aggregate workbook SHA-256: d3556bbe3313fc3d0c5dc6fe60828058580b1aa82b8f77a2dabc805c64c3811d."
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Outputs manifest SHA-256: 4fe0d2a6140966a98d36fb7f7400f9a94af56d9b697cae176ca8fb4f11e2243a. Final workbook SHA-256: bd766fcf442614d9c1a2ba152b0e99106462cd2929a6f167f316b6ab2e69be5d."
 }

@@ -1,0 +1,28 @@
+VitalDB:
+  allowed_roles:
+    - primary_continuous_arterial_reference
+    - actual_nibp_display_level_agreement_mechanism_audit
+    - monitoring_strategy_emulation
+  forbidden_claims:
+    - error-free truth
+MoVeR:
+  allowed_roles:
+    - stop_gate_audit
+    - ehr_cadence_audit
+    - minute_level_fallback_sensitivity
+  forbidden_if_gate_fails:
+    - direct waveform claim
+    - direct waveform replication
+    - replication
+INSPIRE:
+  allowed_roles:
+    - target_population_resource_scenario
+    - transportability_overlap
+  forbidden_metrics:
+    - true_auc
+    - hidden_auc
+    - HDR
+    - episode_sensitivity
+  forbidden_claims:
+    - arterial-reference exposure validation
+    - hidden burden captured

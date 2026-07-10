@@ -1,0 +1,9 @@
+level,step,n,excluded_from_parent,definition
+case,nibp_candidate_pool,2788,,eligible anaesthesia-duration cases with arterial and NIBP track availability before arterial-coverage QC
+case,predefined_processed_subset,500,2288.0,first 500 candidates after ascending case_id ordering; not a random sample
+case_exclusion,no_raw_nibp_records_in_analytic_window,93,93.0,no readable NIBP rows within the recorded anaesthetic interval
+case_exclusion,no_reconstructed_valid_nibp_event,0,0.0,raw rows present but no event remained after range and de-duplication rules
+case_exclusion,arterial_coverage_below_80pct,42,42.0,NIBP events present but case absent from the primary arterial-series cohort
+case,mechanism_subset,365,135.0,reconstructed NIBP events plus primary arterial-series coverage
+case,paired_agreement_cases,347,18.0,at least one event paired to the -30 to +30 s arterial-window median
+case,timing_only_without_paired_agreement,18,0.0,contributed display timing trajectories but no event met pairing coverage

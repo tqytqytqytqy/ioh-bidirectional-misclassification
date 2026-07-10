@@ -1,13 +1,12 @@
-# Final Public Release Upload Audit
+# Public release audit
 
-Overall status: PASS
+Status: **PASS**
 
-- PASS: No raw/restricted source data or case-level time series.
-- PASS: No private local paths.
-- PASS: No credential-like assignments.
-- PASS: No draft markers, old-version residue, or overclaim text.
-- PASS: No Word comments or tracked changes.
-- PASS: Manifest and workbook hashes repeated in public metadata.
-
-Recommended tag: `v1.0.0-bja-submission`
-Raw source datasets remain excluded; source data should be obtained from original providers.
+- One aggregate workbook is included.
+- All included CSV files are non-identifiable aggregate outputs.
+- Source datasets and local configurations are absent.
+- The NIBP pairing rule is recorded as a -30 to +30 s arterial-window median around recorded event time.
+- MoVeR remains gate-failed for direct waveform analysis.
+- INSPIRE remains limited to target-population, transportability, and resource scenarios.
+- Monitoring-policy findings remain hypothesis-generating.
+- Workbook and outputs-manifest hashes are consistent across release metadata.

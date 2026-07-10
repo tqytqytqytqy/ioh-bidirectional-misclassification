@@ -1,0 +1,10 @@
+membership,n_cases
+nibp_candidate_pool,2788
+primary_arterial_series_cohort,2435
+candidate_and_primary_intersection,1995
+candidate_only_not_primary,793
+primary_only_not_candidate,440
+predefined_500_subset,500
+predefined_500_and_primary_intersection,365
+mechanism_subset,365
+paired_agreement_cases,347
