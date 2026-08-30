@@ -21,10 +21,14 @@ def test_nibp_subset_characteristics_use_correct_cohort_labels_and_counts() -> N
     }
     assert counts == {
         "primary_waveform_cohort": 2435,
-        "nibp_mechanism_subset": 365,
-        "paired_agreement_cases": 347,
-        "mechanism_without_paired_agreement": 18,
+        "nibp_mechanism_subset": 1993,
+        "paired_agreement_cases": 1908,
+        "mechanism_without_paired_agreement": 85,
     }
+    assert counts["nibp_mechanism_subset"] == (
+        counts["paired_agreement_cases"]
+        + counts["mechanism_without_paired_agreement"]
+    )
 
 
 def test_timing_only_cases_have_no_paired_events() -> None:
@@ -38,5 +42,5 @@ def test_timing_only_cases_have_no_paired_events() -> None:
         if item["group"] == "mechanism_without_paired_agreement"
         and item["variable"] == "paired_events"
     )
-    assert int(row["n_cases"]) == 18
+    assert int(row["n_cases"]) == 85
     assert float(row["value"]) == 0.0

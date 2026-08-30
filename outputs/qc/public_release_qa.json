@@ -1,0 +1,29 @@
+{
+  "automated_tests": "51 passed",
+  "copied_files_verified": 101,
+  "creator_metadata": "PASS",
+  "numerical_results": {
+    "aki_events": 106,
+    "complete_miss_percent": 34.2,
+    "figures_programmatically_generated": true,
+    "first_display_with_at_least_1min_remaining_percent": 55.0,
+    "first_display_with_at_least_2min_remaining_percent": 35.7,
+    "icu_events_ge2d": 171,
+    "pre_display_auc_percent": 34.9,
+    "primary_cases": 2435,
+    "reference_episodes": 9187
+  },
+  "outputs": {
+    "aggregate_csv_files": 36,
+    "figure_files": 8,
+    "figure_source_files": 6,
+    "manifest_entries": 52,
+    "outputs_manifest_sha256": "fcea2d43fef6e0b38043fcd8b30c32d03ce4772e7825388903c659e850e0badd",
+    "workbook_sha256": "e4f8c2f5e3aa2af1a320b87d2ff552c3f9d60e26c33778eb73bb61e53e693d60",
+    "workbook_sheets": 36
+  },
+  "public_content_boundary": "PASS",
+  "release": "v1.2.0-submission",
+  "source_copy_integrity": "PASS",
+  "status": "PASS"
+}

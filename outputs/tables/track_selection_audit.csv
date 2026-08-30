@@ -1,7 +1,0 @@
-track_role,candidate_priority,configured_candidate,available_track_rows_exact_name,available_cases_exact_name,selected_cases,selection_rule
-arterial_map,1,Solar8000/ART_MBP,3724,3724,3724,lowest configured priority per case; one track retained
-arterial_map,2,EV1000/ART_MBP,592,592,11,lowest configured priority per case; one track retained
-arterial_map,3,ART_MBP,0,0,0,lowest configured priority per case; one track retained
-nibp_map,1,Solar8000/NIBP_MBP,5763,5763,5763,lowest configured priority per case; one track retained
-nibp_map,2,NIBP_MBP,0,0,0,lowest configured priority per case; one track retained
-nibp_map,3,NIBP_MEAN,0,0,0,lowest configured priority per case; one track retained

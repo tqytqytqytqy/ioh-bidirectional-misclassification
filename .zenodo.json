@@ -1,26 +1,10 @@
 {
-  "title": "Bidirectional misclassification of intraoperative hypotension exposure during intermittent blood pressure monitoring: reproducibility package",
+  "title": "Temporal observability of intraoperative hypotension with emulated intermittent blood pressure display: reproducibility package",
   "upload_type": "software",
-  "description": "Analysis code, configuration templates, reproducibility manifests, figure source data, final workbook, and non-identifiable aggregate outputs. Raw VitalDB, MoVeR, and INSPIRE datasets are not redistributed.",
+  "description": "Analysis code, configuration template, reproducibility manifests, figure source data, programmatically generated figures, a final workbook, and non-identifiable aggregate outputs for a temporal-observability study with exploratory postoperative AKI and ICU resource-use analyses. Source datasets and patient-level data are not redistributed. The observational analyses do not estimate a causal effect of monitoring frequency.",
   "creators": [
     {
       "name": "Teng, Qingyu",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
-    },
-    {
-      "name": "Zhang, Hui",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
-    },
-    {
-      "name": "Yang, Yuping",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
-    },
-    {
-      "name": "Qian, Chen",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
-    },
-    {
-      "name": "Gu, Ziyan",
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
@@ -29,18 +13,41 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
-      "name": "Xu, Tao",
-      "orcid": "0000-0001-5868-4079",
+      "name": "Gu, Ziyan",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Yang, Yuping",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Han, Junde",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Chen, Qian",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "name": "Zhao, Yingya",
+      "orcid": "0009-0005-3335-8193",
+      "affiliation": "School of Public Health, Fudan University, Shanghai, China"
+    },
+    {
+      "name": "Zhang, Hui",
+      "orcid": "0009-0006-5460-3845",
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     }
   ],
-  "version": "v1.1.0-submission",
+  "version": "v1.2.0-submission",
   "license": "MIT",
   "keywords": [
     "anaesthesia",
     "intraoperative hypotension",
     "blood pressure monitoring",
+    "temporal observability",
     "measurement error",
+    "acute kidney injury",
     "VitalDB",
     "reproducibility"
   ],
@@ -49,7 +56,12 @@
       "identifier": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.21253616",
+      "relation": "isVersionOf",
+      "scheme": "doi"
     }
   ],
-  "notes": "Outputs manifest SHA-256: 4fe0d2a6140966a98d36fb7f7400f9a94af56d9b697cae176ca8fb4f11e2243a. Final workbook SHA-256: bd766fcf442614d9c1a2ba152b0e99106462cd2929a6f167f316b6ab2e69be5d."
+  "notes": "Outputs manifest SHA-256: fcea2d43fef6e0b38043fcd8b30c32d03ce4772e7825388903c659e850e0badd. Final workbook SHA-256: e4f8c2f5e3aa2af1a320b87d2ff552c3f9d60e26c33778eb73bb61e53e693d60. Source datasets and patient-level intermediates are excluded."
 }

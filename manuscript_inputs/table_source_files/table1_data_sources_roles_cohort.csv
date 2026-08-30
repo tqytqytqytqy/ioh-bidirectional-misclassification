@@ -1,4 +1,0 @@
-database,analytic_role,key_n,claim_boundary
-VitalDB,Primary continuous arterial MAP reference; actual NIBP display-level agreement/mechanism audit; monitoring-strategy emulation,2435,selected arterial-reference cohort
-MoVeR,stop_gate_audit; ehr_cadence_audit; minute_level_fallback_sensitivity,0,gate-controlled optional branch; no direct waveform claim if gate fails
-INSPIRE,target_population_resource_scenario; transportability_overlap,89576,resource and target-population scenarios only

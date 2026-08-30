@@ -1,0 +1,62 @@
+project:
+  name: ioh_temporal_observability
+  version: 7.3-anesthesiology-aki-three-level
+  seed: 20260706
+  output_dir: outputs
+
+data:
+  vitaldb_root: VITALDB_DATA_ROOT
+
+tracks:
+  art_map_candidates: [Solar8000/ART_MBP, EV1000/ART_MBP, ART_MBP]
+  nibp_map_candidates: [Solar8000/NIBP_MBP, NIBP_MBP, NIBP_MEAN]
+
+time_window:
+  primary: anaesthetic_interval
+  sensitivity: [surgery_interval]
+
+cohort:
+  adult_min_age: 18
+  min_duration_min: 60
+  art_map_valid_range: [20, 180]
+  min_art_coverage: 0.80
+  exclude_surgery_groups: [cardiac, heart, obstetric, cesarean, transplant, bypass, cpb]
+
+analysis:
+  resample_sec: 10
+  thresholds: [55, 60, 65]
+  primary_threshold: 65
+  primary_endpoint: HDR65_fixed5
+  key_secondary: [ODR65_fixed5, episode_complete_miss, first_low_display_remaining_1min, first_low_display_remaining_2min, pre_display_reference_auc_fraction]
+  reference_interval_min: 5
+  intervals_min: [1, 2.5, 3, 5, 10]
+  bootstrap_reps: 1000
+  offset_mode: all_deterministic
+  offset_policy: all_deterministic_offsets_averaged
+  reference_missing_policy: exclude_timepoint_from_reference_and_display_components
+  display_unavailable_policy: no_displayed_deficit_with_concurrent_reference_deficit_counted_as_hidden
+
+nibp:
+  sample_cases: all
+  sample_selection: all_eligible_candidates
+  require_primary_art_coverage: true
+  timestamp_semantics: recorded_event_time
+  same_value_hold_sec: 90
+  min_gap_new_event_sec: 120
+  plausible_range: [20, 180]
+  pairing_windows:
+    primary: [-30, 30]
+    sensitivity: [[-60, 0], [0, 60], [-60, 60]]
+  min_pair_valid_fraction: 0.80
+  carry_forward_limit_min: 10
+
+exploratory_aki:
+  status: post_hoc_exploratory_noncausal
+  baseline: VitalDB_preop_cr
+  postoperative_window: earlier_of_discharge_or_7_days_after_anaesthesia_end
+  definition: creatinine_only_KDIGO_0.3mg_dl_48h_or_1.5x_7d
+  presence_analysis: any_hidden_auc_vs_none_with_fail_stop_for_zero_cells
+  principal_exposure: absolute_hidden_auc_per_anaesthesia_hour_per_10_mmHg_min_h
+  sequential_adjustment: [none, clinical, clinical_plus_nonlinear_total_reference_burden]
+  secondary_exposure: HDR65_per_10_percentage_points
+  variance: subject_cluster_robust

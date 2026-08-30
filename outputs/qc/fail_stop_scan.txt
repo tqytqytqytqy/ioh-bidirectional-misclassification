@@ -1,0 +1,7 @@
+Release: v1.2.0-submission
+Scope: full local repository, including version-control metadata
+Required content scan: PASS (no matches)
+Restricted filename and extension scan: PASS (no matches)
+Credential-pattern scan: PASS (no matches)
+Workbook package scan: PASS (no matches)
+Decision: eligible for public release

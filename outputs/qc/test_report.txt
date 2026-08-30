@@ -1,1 +1,4 @@
-PASS: 27 automated tests passed under the frozen v6 environment.
+Release: v1.2.0-submission
+Environment: Python 3.12 with versions pinned in requirements.txt
+Command: python -m pytest -q
+Result: 51 passed in 38.38 s

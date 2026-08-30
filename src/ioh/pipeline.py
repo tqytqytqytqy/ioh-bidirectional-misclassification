@@ -27,6 +27,7 @@ from ioh.io.inspire_loader import guard_inspire_metric
 from ioh.qc.nibp_qc import collapse_nibp_display_events, retention_audit
 from ioh.reporting.language import assert_no_forbidden_language
 from ioh.reporting.manifest import build_run_manifest, file_sha256, mover_claim_gate, write_outputs_manifest
+from ioh.revision_v7 import select_nibp_candidates
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -1087,10 +1088,22 @@ def _write_episode_duration_outputs(cfg: dict, panel: pd.DataFrame) -> None:
 
 def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
     manifest = pd.read_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet")) if intermediate_path(cfg, "vitaldb_manifest.parquet").exists() else build_vitaldb_manifest(cfg)
-    candidates = manifest[
+    pre_qc_candidates = manifest[
         manifest["pre_qc_primary_candidate"] & manifest["has_nibp_map"]
     ].sort_values("case_id").copy()
-    linked = candidates.head(int(cfg["nibp"]["sample_cases"])).copy()
+    candidates = pre_qc_candidates
+    if bool(cfg["nibp"].get("require_primary_art_coverage", False)):
+        if not intermediate_path(cfg, "artmap_10s.parquet").exists():
+            preprocess_vitaldb_artmap(cfg)
+        primary_case_ids = set(
+            pd.read_parquet(
+                intermediate_path(cfg, "artmap_10s.parquet"), columns=["case_id"]
+            )["case_id"].drop_duplicates()
+        )
+        candidates = candidates[candidates["case_id"].isin(primary_case_ids)].copy()
+    linked, selection_metadata = select_nibp_candidates(
+        candidates, cfg["nibp"].get("sample_cases", "all")
+    )
     linked["nibp_subset_order"] = np.arange(1, len(linked) + 1)
     raw_frames = []
     event_frames = []
@@ -1117,7 +1130,8 @@ def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
     events_all.to_csv(table_path(cfg, "nibp_display_events.csv"), index=False)
     audit = retention_audit(raw_all, events_all)
     audit.insert(0, "sampled_cases", linked["case_id"].nunique())
-    audit.insert(0, "candidate_art_nibp_cases", int((manifest["pre_qc_primary_candidate"] & manifest["has_nibp_map"]).sum()))
+    audit.insert(0, "primary_coverage_candidate_cases", len(candidates))
+    audit.insert(0, "pre_qc_art_nibp_cases", len(pre_qc_candidates))
     write_table(cfg, "nibp_display_retention_audit.csv", audit)
     write_table(cfg, "nibp_event_audit.csv", audit)
     write_table(cfg, "nibp_collapse_flow.csv", audit)
@@ -1131,11 +1145,15 @@ def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
                 {
                     "candidate_cases": len(candidates),
                     "selected_cases": len(linked),
-                    "selection_method": "predefined processed subset: first 500 eligible cases after ascending case_id ordering",
+                    "selection_method": selection_metadata["selection_method"],
                     "random_sampling": False,
                     "sampling_seed": "not applicable",
                     "selected_case_list_sha256": selection_hash,
-                    "rationale": "prespecified computationally tractable processed subset; no hypothesis-based sample-size calculation",
+                    "rationale": (
+                        "all eligible candidates were processed"
+                        if len(linked) == len(candidates)
+                        else "deterministic computational subset; no hypothesis-based sample-size calculation"
+                    ),
                 }
             ]
         ),
@@ -1183,12 +1201,13 @@ def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
         mechanism_cases = panel_cases & event_cases
         overlap_rows = [
             {"membership": "primary_arterial_series_cohort", "n_cases": len(panel_cases)},
-            {"membership": "nibp_candidate_pool", "n_cases": len(candidate_cases)},
+            {"membership": "pre_qc_art_nibp_pool", "n_cases": len(set(pre_qc_candidates["case_id"]))},
+            {"membership": "primary_coverage_nibp_candidate_pool", "n_cases": len(candidate_cases)},
             {"membership": "candidate_and_primary_intersection", "n_cases": len(candidate_cases & panel_cases)},
             {"membership": "candidate_only_not_primary", "n_cases": len(candidate_cases - panel_cases)},
             {"membership": "primary_only_not_candidate", "n_cases": len(panel_cases - candidate_cases)},
-            {"membership": "predefined_500_subset", "n_cases": len(selected_cases)},
-            {"membership": "predefined_500_and_primary_intersection", "n_cases": len(selected_cases & panel_cases)},
+            {"membership": "processed_nibp_candidate_set", "n_cases": len(selected_cases)},
+            {"membership": "processed_candidates_and_primary_intersection", "n_cases": len(selected_cases & panel_cases)},
             {"membership": "mechanism_subset_with_events_and_primary_coverage", "n_cases": len(mechanism_cases)},
         ]
         write_table(cfg, "cohort_membership_overlap.csv", pd.DataFrame(overlap_rows))

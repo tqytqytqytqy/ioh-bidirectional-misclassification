@@ -1,0 +1,9 @@
+Release: v1.2.0-submission
+Status: PASS
+Public content boundary: PASS
+Creator metadata: PASS
+Source-copy integrity: PASS (101 files)
+Numerical consistency: PASS
+Programmatic figure provenance: PASS
+Workbook inventory: PASS (36 worksheets)
+Automated tests: PASS (51 tests)

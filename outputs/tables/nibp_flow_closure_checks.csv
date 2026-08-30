@@ -1,5 +1,0 @@
-check,left,right,passed
-500_minus_exclusions_equals_365,365,365,True
-365_equals_347_plus_18,365,365,True
-15950_equals_subset_events_plus_excluded_events,15950,15950,True
-13687_equals_paired_plus_failed,13687,13687,True

@@ -1,0 +1,5 @@
+criterion,value,denominator,proportion,pass_rule,status,limitation
+outcome_completeness,2435,2435,1.0,>= 95%,PASS,
+event_count,171,2435,0.07022587268993839,>= 100 events,PASS,
+nonnegative_duration,0,2435,0.0,zero negative ICU durations,PASS,
+overall_gate,171,2435,0.07022587268993839,completeness >= 95%; events >= 100; no invalid durations,PASS_WITH_ENDPOINT_LIMITATION,VitalDB icu_days cannot distinguish planned from unplanned ICU admission.

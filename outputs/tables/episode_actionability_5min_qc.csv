@@ -1,0 +1,37 @@
+source_table,threshold,interval_min,duration_bin,nadir_bin,episode_detection_probability,detection_with_1min_remaining_probability,detection_with_2min_remaining_probability,reference_auc_before_first_low_display_fraction,probability_hierarchy_passed,pre_detection_auc_range_passed,confidence_interval_passed,passed
+episode_observability_5min_overall.csv,55.0,5.0,,,0.50075811419095,0.3619995261786307,0.1746031746031746,0.5400250691616353,True,True,True,True
+episode_observability_5min_overall.csv,60.0,5.0,,,0.5651301749893298,0.4366538625693555,0.24322663252240717,0.4573139132029222,True,True,True,True
+episode_observability_5min_overall.csv,65.0,5.0,,,0.657762780740902,0.5497478320815645,0.35702623272014805,0.3486012684339906,True,True,True,True
+episode_observability_5min_by_duration.csv,55.0,5.0,1-<3 min,,0.40691823899371066,0.25849056603773585,0.057172806229410005,0.7064217983732892,True,True,True,True
+episode_observability_5min_by_duration.csv,55.0,5.0,3-<5 min,,0.7711711711711711,0.6239639639639639,0.4500900900900901,0.5118063667812258,True,True,True,True
+episode_observability_5min_by_duration.csv,55.0,5.0,>=5 min,,1.0,0.9743119266055046,0.9061162079510703,0.21745262145262145,True,True,True,True
+episode_observability_5min_by_duration.csv,60.0,5.0,1-<3 min,,0.44187387387387383,0.3001921921921922,0.08006006006006006,0.6762483323943168,True,True,True,True
+episode_observability_5min_by_duration.csv,60.0,5.0,3-<5 min,,0.7835265700483093,0.6430917874396135,0.4763768115942029,0.4915685584281822,True,True,True,True
+episode_observability_5min_by_duration.csv,60.0,5.0,>=5 min,,1.0,0.973560606060606,0.9066666666666666,0.1934331245134584,True,True,True,True
+episode_observability_5min_by_duration.csv,65.0,5.0,1-<3 min,,0.4914613215643006,0.361303175186956,0.10849577050386171,0.6306859928838735,True,True,True,True
+episode_observability_5min_by_duration.csv,65.0,5.0,3-<5 min,,0.8038839979285344,0.6766442257897463,0.5248748489556361,0.45303824595101044,True,True,True,True
+episode_observability_5min_by_duration.csv,65.0,5.0,>=5 min,,1.0,0.9786395306197286,0.9221488815548221,0.16998520450648258,True,True,True,True
+episode_observability_5min_by_nadir.csv,55.0,5.0,,<55 mmHg,0.50075811419095,0.3619995261786307,0.1746031746031746,0.5400250691616353,True,True,True,True
+episode_observability_5min_by_nadir.csv,60.0,5.0,,55-<60 mmHg,0.49299828178694155,0.3553908934707904,0.1440721649484536,0.5700111546601268,True,True,True,True
+episode_observability_5min_by_nadir.csv,60.0,5.0,,<55 mmHg,0.6127071823204419,0.4902535769939085,0.30862728431789205,0.44405571809287553,True,True,True,True
+episode_observability_5min_by_nadir.csv,65.0,5.0,,55-<60 mmHg,0.6998884799821568,0.5979368796699007,0.417653618824579,0.3508694273026126,True,True,True,True
+episode_observability_5min_by_nadir.csv,65.0,5.0,,60-<65 mmHg,0.5664469742360696,0.44235070900738965,0.20194727381665667,0.48139090318024713,True,True,True,True
+episode_observability_5min_by_nadir.csv,65.0,5.0,,<55 mmHg,0.7203146853146852,0.6247319347319348,0.47466200466200464,0.3292550154338478,True,True,True,True
+episode_observability_5min_duration_severity.csv,55.0,5.0,1-<3 min,<55 mmHg,0.40691823899371066,0.25849056603773585,0.057172806229410005,0.7064217983732892,True,True,True,True
+episode_observability_5min_duration_severity.csv,55.0,5.0,3-<5 min,<55 mmHg,0.7711711711711711,0.6239639639639639,0.4500900900900901,0.5118063667812258,True,True,True,True
+episode_observability_5min_duration_severity.csv,55.0,5.0,>=5 min,<55 mmHg,1.0,0.9743119266055046,0.9061162079510703,0.21745262145262145,True,True,True,True
+episode_observability_5min_duration_severity.csv,60.0,5.0,1-<3 min,55-<60 mmHg,0.4256489334361347,0.28406579285530714,0.060421485479311234,0.6691418466120626,True,True,True,True
+episode_observability_5min_duration_severity.csv,60.0,5.0,1-<3 min,<55 mmHg,0.45611186287776273,0.31434370771312586,0.0972936400541272,0.6775700481586501,True,True,True,True
+episode_observability_5min_duration_severity.csv,60.0,5.0,3-<5 min,55-<60 mmHg,0.7838487972508591,0.6412371134020619,0.47577319587628863,0.4843299034251664,True,True,True,True
+episode_observability_5min_duration_severity.csv,60.0,5.0,3-<5 min,<55 mmHg,0.7834005376344086,0.6438172043010753,0.47661290322580646,0.4925354699771979,True,True,True,True
+episode_observability_5min_duration_severity.csv,60.0,5.0,>=5 min,55-<60 mmHg,1.0,0.9628415300546448,0.8677595628415301,0.2873885452646799,True,True,True,True
+episode_observability_5min_duration_severity.csv,60.0,5.0,>=5 min,<55 mmHg,1.0,0.9752858399296394,0.9129287598944591,0.18946811167270639,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,1-<3 min,55-<60 mmHg,0.5099350649350649,0.38231601731601733,0.13103896103896104,0.5991699010317132,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,1-<3 min,60-<65 mmHg,0.4835194455140547,0.35284302400205364,0.08119625208573995,0.6095864419268675,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,1-<3 min,<55 mmHg,0.48544709198052777,0.35331796054317194,0.13630540609787342,0.6502929151859586,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,3-<5 min,55-<60 mmHg,0.8023148148148149,0.6777314814814814,0.53,0.43436881428849305,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,3-<5 min,60-<65 mmHg,0.7990512333965845,0.6681214421252372,0.5148007590132827,0.4549874363839998,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,3-<5 min,<55 mmHg,0.8092592592592592,0.6820662768031189,0.5272417153996102,0.4621134023608573,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,>=5 min,55-<60 mmHg,1.0,0.9746227709190672,0.9121627800640146,0.19770730401592146,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,>=5 min,60-<65 mmHg,1.0,0.9725856697819315,0.8968847352024922,0.22458222028949493,True,True,True,True
+episode_observability_5min_duration_severity.csv,65.0,5.0,>=5 min,<55 mmHg,1.0,0.9834666666666667,0.9366476190476191,0.15693625723351023,True,True,True,True

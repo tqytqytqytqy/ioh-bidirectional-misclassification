@@ -1,4 +1,0 @@
-strategy,interval_min,n_cases,phase_averaged_primary_HDR,start_anchored_offset0_HDR,strategy_frontier_HDR,strategy_matches_start_anchored,absolute_difference_from_phase_average,phase_convention
-fixed_5min_reference,5.0,2435,0.5974247419434733,0.5941639108363085,0.5941639108363085,True,-0.0032608311071647966,start-anchored offset 0 for all strategy-frontier comparisons
-fixed_3min,3.0,2435,0.5032210323193276,0.5000715043433327,0.5000715043433327,True,-0.0031495279759948813,start-anchored offset 0 for all strategy-frontier comparisons
-fixed_2_5min,2.5,2435,0.4689943607967215,0.4663545051867662,0.4663545051867662,True,-0.0026398556099553327,start-anchored offset 0 for all strategy-frontier comparisons

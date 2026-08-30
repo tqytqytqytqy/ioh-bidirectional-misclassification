@@ -1,0 +1,7 @@
+stage,n_cases
+VitalDB source cases,6388
+Pre-QC arterial candidates,3315
+Primary arterial waveform cohort,2435
+Primary cohort with NIBP track,1995
+Reconstructed NIBP display events,1993
+Cases with paired NIBP-ART events,1908

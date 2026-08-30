@@ -1,31 +1,38 @@
 cff-version: 1.2.0
-title: "Bidirectional misclassification of intraoperative hypotension exposure during intermittent blood pressure monitoring: reproducibility package"
-message: "Please cite the archived release."
+title: "Temporal observability of intraoperative hypotension with emulated intermittent blood pressure display: reproducibility package"
+message: "Please cite the archived release and its version-specific Zenodo DOI."
 type: software
 authors:
   - family-names: "Teng"
     given-names: "Qingyu"
-  - family-names: "Zhang"
-    given-names: "Hui"
-  - family-names: "Yang"
-    given-names: "Yuping"
-  - family-names: "Qian"
-    given-names: "Chen"
-  - family-names: "Gu"
-    given-names: "Ziyan"
   - family-names: "Li"
     given-names: "Qi"
     orcid: "https://orcid.org/0009-0003-3140-5887"
-  - family-names: "Xu"
-    given-names: "Tao"
-    orcid: "https://orcid.org/0000-0001-5868-4079"
+  - family-names: "Gu"
+    given-names: "Ziyan"
+  - family-names: "Yang"
+    given-names: "Yuping"
+  - family-names: "Han"
+    given-names: "Junde"
+  - family-names: "Chen"
+    given-names: "Qian"
+  - family-names: "Zhao"
+    given-names: "Yingya"
+    orcid: "https://orcid.org/0009-0005-3335-8193"
+  - family-names: "Zhang"
+    given-names: "Hui"
+    orcid: "https://orcid.org/0009-0006-5460-3845"
 repository-code: "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification"
-version: "1.1.0"
-date-released: "2026-07-10"
+doi: "10.5281/zenodo.21253616"
+version: "1.2.0"
+date-released: "2026-08-30"
 license: MIT
 keywords:
   - anaesthesia
   - intraoperative hypotension
   - blood pressure monitoring
+  - temporal observability
   - measurement error
+  - acute kidney injury
+  - VitalDB
   - reproducibility

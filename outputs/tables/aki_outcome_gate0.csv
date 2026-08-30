@@ -1,0 +1,15 @@
+criterion,value,denominator,proportion,pass_rule,status,events_per_model_parameter
+Primary arterial cohort,2435,,,informational,PASS,
+Unique subjects,2380,2435.0,0.9774127310061602,informational,PASS,
+Subjects with repeated cases,50,2380.0,0.02100840336134454,subject-cluster variance required,PASS,
+Baseline preoperative creatinine available,2252,2435.0,0.9248459958932238,>=90%,PASS,
+Postoperative creatinine within 48 h,2408,2435.0,0.988911704312115,>=90%,PASS,
+Postoperative creatinine within 7 d or discharge,2428,2435.0,0.9971252566735113,>=90%,PASS,
+AKI-evaluable cases,2246,2435.0,0.922381930184805,>=90%,PASS,
+Creatinine-defined AKI events,106,2246.0,0.04719501335707925,>=100 events for compact exploratory model,PASS,
+KDIGO creatinine stage 1,71,2246.0,0.031611754229741766,informational,PASS,
+KDIGO creatinine stage 2,17,2246.0,0.007569011576135352,informational,PASS,
+KDIGO creatinine stage 3,18,2246.0,0.008014247551202136,creatinine criteria only,PASS,
+Primary adjusted-model cases,2246,2246.0,1.0,informational,PASS,
+Primary adjusted-model events,106,2246.0,0.04719501335707925,>=5 events per model parameter,PASS,7.571428571428571
+Binary hidden-presence effect estimability,2209,2246.0,0.9835262689225289,report descriptively and do not fit an ordinary binary model when any exposure-outcome cell is zero,NOT_ESTIMABLE_COMPLETE_SEPARATION,

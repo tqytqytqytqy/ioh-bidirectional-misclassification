@@ -1,0 +1,6 @@
+step,n_cases,n_events,definition
+pre_qc_cases_with_art_and_nibp_tracks,2788,,pre-QC anaesthetic-interval candidates with ART and NIBP tracks
+primary_art_coverage_processing_pool,1995,,pre-QC ART/NIBP cases retained in the primary arterial-series cohort
+readable_nibp_records_in_window,1993,3756113.0,cases and raw monitor rows readable within the anaesthetic interval
+reconstructed_nibp_display_events,1993,74027.0,cases and display-level events after range and de-duplication rules
+paired_nibp_events_primary_window,1908,58842.0,events paired to median ART MAP in the -30 to +30 s window

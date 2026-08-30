@@ -1,0 +1,14 @@
+characteristic,level,summary,nonmissing_n,missing_n,summary_definition
+"Age, yr",,"62.0 [54.0, 70.0]",2435,0,median [interquartile range]
+Sex,Male,1434 (58.9%),2435,0,n (%) among nonmissing cases
+"Body mass index, kg m-2",,"23.0 [20.8, 25.2]",2435,0,median [interquartile range]
+ASA Physical Status,1,462 (19.4%),2385,50,n (%) among nonmissing cases
+ASA Physical Status,2,1619 (67.9%),2385,50,n (%) among nonmissing cases
+ASA Physical Status,3,286 (12.0%),2385,50,n (%) among nonmissing cases
+ASA Physical Status,4,14 (0.6%),2385,50,n (%) among nonmissing cases
+Emergency surgery,Yes,261 (10.7%),2435,0,n (%) among nonmissing cases
+Preoperative hypertension,Yes,852 (35.0%),2435,0,n (%) among nonmissing cases
+Preoperative diabetes mellitus,Yes,317 (13.0%),2435,0,n (%) among nonmissing cases
+"Anaesthesia duration, min",,"235.0 [180.0, 305.0]",2435,0,median [interquartile range]
+"Surgery duration, min",,"160.0 [110.0, 226.5]",2435,0,median [interquartile range]
+NIBP track available,Yes,1995 (81.9%),2435,0,n (%) among nonmissing cases

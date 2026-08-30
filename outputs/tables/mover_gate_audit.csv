@@ -1,2 +1,0 @@
-gold_links,silver_links,ambiguous_rejects,minimum_gold_required,direct_waveform_claim_allowed,language,gate_level,minute_level_fallback_available,direct_waveform_linkage_completed,claim_boundary
-0,0,0,1000,False,No direct waveform claim; MoVeR may be described only as a gate-failed waveform audit or limited fallback.,G2 minute-level fallback available,True,False,MoVeR is optional and gate-controlled; no direct waveform claim is generated in the current analysis.
