@@ -58,7 +58,7 @@ The ICU resource-use script consumes a private case-level model frame generated 
 
 ## Frozen release
 
-- Tag: `v1.3.0-submission`
+- Tag: `v1.3.1-submission`
 - Aggregate workbook: `outputs/final_workbook.xlsx`
 - Aggregate workbook SHA-256: `eae724fa69aa0fbb7c112d3c1200436a4ad2f315c328c9475949001317b621c1`
 - Outputs manifest: `outputs/manifests/outputs_manifest.json`
@@ -69,4 +69,4 @@ The exact repository inventory is recorded in `outputs/manifests/release_manifes
 
 ## License and citation
 
-Code is released under the MIT License. Dataset access remains governed by the source providers. Cite the archived release using `CITATION.cff` and the version-specific DOI displayed by Zenodo.
+Code is released under the MIT License. Dataset access remains governed by the source providers. Cite the archived release using `CITATION.cff` and the version-specific DOI displayed by Zenodo. Version 1.3.1 updates the title and creator metadata to match the manuscript; the frozen aggregate analyses and their hashes are unchanged from version 1.3.0.

@@ -85,7 +85,7 @@
   "primary_hdr": 0.5974247419434733,
   "primary_net_bias": -0.02443252564145753,
   "primary_odr": 0.5729922163020157,
-  "release_version": "v1.3.0-submission",
+  "release_version": "v1.3.1-submission",
   "sensitive_filename_hits": [],
   "status": "PASS",
   "tests_reported": true,

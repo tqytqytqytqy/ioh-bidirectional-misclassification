@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Temporal observability of intraoperative hypotension with emulated intermittent blood pressure display: reproducibility package"
+title: "Temporal observability of intraoperative hypotension with an emulated 5-minute blood pressure display: reproducibility package"
 message: "Please cite the archived release and its version-specific Zenodo DOI."
 type: software
 authors:
@@ -20,12 +20,15 @@ authors:
   - family-names: "Li"
     given-names: "Qi"
     orcid: "https://orcid.org/0009-0003-3140-5887"
+  - family-names: "Xu"
+    given-names: "Tao"
+    orcid: "https://orcid.org/0000-0001-5868-4079"
   - family-names: "Zhang"
     given-names: "Hui"
     orcid: "https://orcid.org/0009-0006-5460-3845"
 repository-code: "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification"
 doi: "10.5281/zenodo.21253616"
-version: "1.3.0"
+version: "1.3.1"
 date-released: "2026-09-01"
 license: MIT
 keywords:

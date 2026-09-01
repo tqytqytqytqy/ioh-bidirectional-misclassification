@@ -7,13 +7,13 @@
     },
     {
       "relative_path": ".zenodo.json",
-      "sha256": "8f0d04dab3a5697838b89f6b26dd07c5888f0c21749dafc129b85a512e2004aa",
-      "size_bytes": 3120
+      "sha256": "a7faecd4e5295464d0f58743f1775b9082a0290f7691eacfd4ddbaaf67912472",
+      "size_bytes": 3348
     },
     {
       "relative_path": "CITATION.cff",
-      "sha256": "c04aa173be1bd3a2a79d80494af870512e91168e1dcb4057d6af17135c483fa2",
-      "size_bytes": 1226
+      "sha256": "895fb3f8f544c91db976c778e28f1b27300f0d3a71a54bb0b22b0e4e7f7e4e12",
+      "size_bytes": 1322
     },
     {
       "relative_path": "LICENSE",
@@ -27,13 +27,13 @@
     },
     {
       "relative_path": "README.md",
-      "sha256": "798d92ce5d3df17c9d9b408d66de0817f6cc76920a0cda72fe0575e65005872f",
-      "size_bytes": 5504
+      "sha256": "891c93ac546c05596abcb4557d9e85adb0a24d17a6b70c24dc3bf3ea4e2204b8",
+      "size_bytes": 5663
     },
     {
       "relative_path": "codemeta.json",
-      "sha256": "bd515ed323b5c76d4ce1490183001f42813f3b54174dc7a734515ccbcd1aec5c",
-      "size_bytes": 1621
+      "sha256": "4ce9c221a7b48841a21333fdc6662eb14802c886c6a6b0a9984debaead2dd510",
+      "size_bytes": 1810
     },
     {
       "relative_path": "config/reproduction.example.yaml",
@@ -52,8 +52,8 @@
     },
     {
       "relative_path": "docs/release_notes.md",
-      "sha256": "0114b14f8bb678f172e1f419de39d0f4b4c35c00bbe78c3758d55beb27b86c6d",
-      "size_bytes": 1157
+      "sha256": "d2fe492b3e5e4c5f63a1259690858e64c92e37f0b7ada1687530ca381972b456",
+      "size_bytes": 1825
     },
     {
       "relative_path": "docs/reproducibility.md",
@@ -172,22 +172,22 @@
     },
     {
       "relative_path": "outputs/qc/fail_stop_scan.txt",
-      "sha256": "0ecf4487420fd8196cb414de9c161b0cf401f6976a4fd34b4cdbc5cfc5382112",
+      "sha256": "acb4f302f64a9bfe1cfefa165cd3dd188fd7081677b190fe33da9ca99cc980d3",
       "size_bytes": 250
     },
     {
       "relative_path": "outputs/qc/public_release_pass.txt",
-      "sha256": "0ecf4487420fd8196cb414de9c161b0cf401f6976a4fd34b4cdbc5cfc5382112",
+      "sha256": "acb4f302f64a9bfe1cfefa165cd3dd188fd7081677b190fe33da9ca99cc980d3",
       "size_bytes": 250
     },
     {
       "relative_path": "outputs/qc/public_release_qa.json",
-      "sha256": "d9734d8fb09665e3dceabec3f457dc608ff39366f39a9785c712d8eab8efd6bf",
+      "sha256": "b2d5cbf97a19060fb7b79d8d584e4907d5ab22a76ccf4da778c125c68148c73a",
       "size_bytes": 2233
     },
     {
       "relative_path": "outputs/qc/test_report.txt",
-      "sha256": "d414ce2971b8a446c3ce70fff2b8cc1b7638801aa55f9d7546bca33d09c66c14",
+      "sha256": "7520ec8c59e99569125a949ed3f8dbde258585f84c7dd86ee729f56b12fd18e2",
       "size_bytes": 165
     },
     {
@@ -647,7 +647,7 @@
     },
     {
       "relative_path": "scripts/41_build_public_release_manifests.py",
-      "sha256": "16b2239c912098d4c79c3b98dc5b8311eeda6b489857c0e7d869a71c24f73865",
+      "sha256": "2c89c8fac93d332f7a52b80234e0b66675a35656073d5d6b7d100c2331473c2d",
       "size_bytes": 9325
     },
     {
@@ -846,6 +846,6 @@
       "size_bytes": 749
     }
   ],
-  "release": "v1.3.0-submission",
+  "release": "v1.3.1-submission",
   "scope": "public repository inventory"
 }

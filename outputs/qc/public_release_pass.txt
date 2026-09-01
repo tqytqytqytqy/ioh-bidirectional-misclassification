@@ -1,4 +1,4 @@
-Release: v1.3.0-submission
+Release: v1.3.1-submission
 Files scanned: 171
 Aggregate CSVs: 76
 Workbook sheets: 78

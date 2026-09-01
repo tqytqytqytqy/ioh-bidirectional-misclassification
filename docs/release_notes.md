@@ -1,5 +1,19 @@
 # Release notes
 
+## v1.3.1-submission
+
+This metadata-only patch aligns the archived reproducibility package with the final manuscript title and authorship.
+
+Changes since v1.3.0:
+
+- updated the package title to match the manuscript wording;
+- added Tao Xu to the creator metadata between Qi Li and Hui Zhang;
+- retained Hui Zhang as the final creator in the listed manuscript order;
+- updated repository citation metadata and the repository-level integrity inventory;
+- left all analysis code, aggregate results, figures, `outputs/final_workbook.xlsx`, and `outputs/manifests/outputs_manifest.json` unchanged.
+
+The package does not redistribute source datasets or patient-level data.
+
 ## v1.3.0-submission
 
 This release aligns the public reproducibility package with the subject-clustered temporal-observability manuscript revision.

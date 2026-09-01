@@ -1,4 +1,4 @@
-Release: v1.3.0-submission
+Release: v1.3.1-submission
 Environment: Python 3.12 with versions pinned in requirements.txt
 Command: PYTHONPATH=src python -m pytest -q
-Result: 67 passed in 1.32 s
+Result: 67 passed in 2.90 s

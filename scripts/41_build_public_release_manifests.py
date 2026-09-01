@@ -12,7 +12,7 @@ OUTPUTS_MANIFEST = ROOT / "outputs" / "manifests" / "outputs_manifest.json"
 RELEASE_MANIFEST = ROOT / "outputs" / "manifests" / "release_manifest.json"
 CHECKSUMS = ROOT / "checksums.sha256"
 PROVENANCE = ROOT / "outputs" / "manifests" / "provenance.json"
-RELEASE = "v1.3.0-submission"
+RELEASE = "v1.3.1-submission"
 
 
 def sha256(path: Path) -> str:
