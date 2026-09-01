@@ -1,0 +1,2 @@
+method,paired_events,case_clusters,mean_difference,between_case_variance,within_case_variance,loa_low,loa_high,mean_ci_low,mean_ci_high,loa_low_ci_low,loa_low_ci_high,loa_high_ci_low,loa_high_ci_high,role
+random_intercept_variance_components_mom,58842,1908,0.5933964289050395,82.87263840794944,214.41940216847223,-33.20123484705922,34.388027704869295,0.0836680827258628,1.1425759546049916,-34.043758768404274,-32.380761314778916,33.39933630555739,35.41669515678501,primary repeated-measures agreement summary with case-cluster bootstrap

@@ -72,7 +72,7 @@ def main() -> None:
             "episode_definition": "reference MAP below threshold for at least 60 s on the 10-s grid",
             "phase_definition": "all 10-s offsets within each sampling interval",
             "actionability_definition": "probability of first low display with at least 1 or 2 min before arterial recovery; reference AUC accrued strictly before first low display",
-            "uncertainty": "case-cluster non-parametric bootstrap, 1000 replicates",
+            "uncertainty": "subject-cluster non-parametric bootstrap retaining all operations per sampled subject, 1000 replicates; case-cluster sensitivity reported separately",
             "aki_definition": "KDIGO serum-creatinine criteria only: increase at least 0.3 mg/dL within 48 h or at least 1.5 times baseline within 7 d, censored at discharge",
             "aki_model": "post hoc sequential modified Poisson analysis with subject-cluster robust variance: absolute hidden burden unadjusted, clinically adjusted, and additionally adjusted for nonlinear total reference burden; HDR65 secondary",
             "aki_interpretation": "exploratory and noncausal; absolute hidden burden tracked AKI risk after clinical adjustment but did not add clear information beyond total reference burden",

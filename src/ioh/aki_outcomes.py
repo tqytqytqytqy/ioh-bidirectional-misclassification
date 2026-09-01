@@ -10,6 +10,45 @@ from scipy.stats import fisher_exact
 DAY_SEC = 24 * 60 * 60
 
 
+def clean_asa_for_adjustment(values: pd.Series) -> pd.Series:
+    """Return numeric ASA Physical Status values restricted to levels 1-5."""
+
+    recorded = pd.to_numeric(values, errors="coerce")
+    return recorded.where(recorded.between(1, 5))
+
+
+def summarize_asa_validity(values: pd.Series) -> pd.DataFrame:
+    """Summarize valid, nonstandard, and missing ASA values without identifiers."""
+
+    recorded = pd.to_numeric(values, errors="coerce")
+    valid = recorded.between(1, 5)
+    outside_range = recorded.notna() & ~valid
+    outside_values = sorted(recorded.loc[outside_range].unique().tolist())
+    outside_text = ", ".join(f"{value:g}" for value in outside_values)
+    return pd.DataFrame(
+        [
+            {
+                "category": "valid ASA Physical Status 1-5",
+                "n_cases": int(valid.sum()),
+                "recorded_values": "1-5",
+                "primary_model_handling": "retained",
+            },
+            {
+                "category": "source-recorded ASA value outside 1-5",
+                "n_cases": int(outside_range.sum()),
+                "recorded_values": outside_text,
+                "primary_model_handling": "set to missing",
+            },
+            {
+                "category": "missing recorded ASA value",
+                "n_cases": int(recorded.isna().sum()),
+                "recorded_values": "",
+                "primary_model_handling": "missing",
+            },
+        ]
+    )
+
+
 def _require_columns(frame: pd.DataFrame, columns: set[str], label: str) -> None:
     missing = sorted(columns - set(frame.columns))
     if missing:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+import ioh.aki_outcomes as aki_outcomes
 
 from ioh.aki_outcomes import (
     aggregate_invisibility_features,
@@ -13,6 +14,35 @@ from ioh.aki_outcomes import (
 
 
 DAY = 24 * 60 * 60
+
+
+def test_asa_cleaning_keeps_valid_levels_and_sets_invalid_values_missing():
+    assert hasattr(aki_outcomes, "clean_asa_for_adjustment"), (
+        "ASA cleaning helper must be implemented before invalid source values "
+        "can enter adjusted models"
+    )
+    recorded = pd.Series([1, 2, 3, 4, 5, 6, 0, np.nan, "bad"])
+
+    cleaned = aki_outcomes.clean_asa_for_adjustment(recorded)
+
+    assert cleaned.iloc[:5].tolist() == [1.0, 2.0, 3.0, 4.0, 5.0]
+    assert cleaned.iloc[5:].isna().all()
+
+
+def test_asa_validity_summary_reports_recorded_and_outside_range_counts():
+    assert hasattr(aki_outcomes, "summarize_asa_validity"), (
+        "ASA validity summary must be available for an auditable data-quality table"
+    )
+    recorded = pd.Series([1, 2, 3, 4, 5, 6, 6, np.nan])
+
+    summary = aki_outcomes.summarize_asa_validity(recorded).set_index("category")
+
+    assert summary.loc["valid ASA Physical Status 1-5", "n_cases"] == 5
+    assert summary.loc["source-recorded ASA value outside 1-5", "n_cases"] == 2
+    assert summary.loc["missing recorded ASA value", "n_cases"] == 1
+    assert summary.loc[
+        "source-recorded ASA value outside 1-5", "recorded_values"
+    ] == "6"
 
 
 def test_creatinine_aki_uses_postanesthesia_and_discharge_boundaries():

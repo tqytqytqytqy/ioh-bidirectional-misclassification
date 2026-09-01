@@ -10,6 +10,6 @@ Creatinine-defined AKI events,106,2246.0,0.04719501335707925,>=100 events for co
 KDIGO creatinine stage 1,71,2246.0,0.031611754229741766,informational,PASS,
 KDIGO creatinine stage 2,17,2246.0,0.007569011576135352,informational,PASS,
 KDIGO creatinine stage 3,18,2246.0,0.008014247551202136,creatinine criteria only,PASS,
-Primary adjusted-model cases,2246,2246.0,1.0,informational,PASS,
-Primary adjusted-model events,106,2246.0,0.04719501335707925,>=5 events per model parameter,PASS,7.571428571428571
+Primary adjusted-model cases,2242,2246.0,0.9982190560997328,informational,PASS,
+Primary adjusted-model events,104,2242.0,0.0463871543264942,>=5 events per model parameter,PASS,7.428571428571429
 Binary hidden-presence effect estimability,2209,2246.0,0.9835262689225289,report descriptively and do not fit an ordinary binary model when any exposure-outcome cell is zero,NOT_ESTIMABLE_COMPLETE_SEPARATION,

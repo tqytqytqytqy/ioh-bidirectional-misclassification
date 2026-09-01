@@ -58,7 +58,7 @@ def summarize_icu_gate(
     min_completeness: float = 0.95,
     min_events: int = 100,
 ) -> pd.DataFrame:
-    """Apply pre-specified structural feasibility rules to the ICU endpoint."""
+    """Apply analysis-plan-defined structural feasibility rules to the ICU endpoint."""
 
     if not 0 < min_completeness <= 1:
         raise ValueError("min_completeness must be in (0, 1]")

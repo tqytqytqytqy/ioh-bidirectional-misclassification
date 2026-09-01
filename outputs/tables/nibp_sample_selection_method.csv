@@ -1,0 +1,2 @@
+candidate_cases,selected_cases,selection_method,random_sampling,sampling_seed,selected_case_list_sha256,rationale
+1995,1995,all eligible candidates,False,not applicable,10a216aa8add673794cd927b1ef8cd0aa33263a4a4700ed553527202dc67dedd,all eligible candidates were processed

@@ -1,0 +1,4 @@
+analysis,events,cases,mean_difference,ci_low,ci_high,interpretation
+event_weighted_conditioned_on_arterial_map_lt55,790,391,27.0503164556962,24.17859218358396,30.741261188776022,conditional paired difference; arterial-reference conditioning may induce mathematical coupling
+case_equal_weighted_conditioned_on_arterial_map_lt55,790,391,30.2980506332968,27.932905534496403,32.67277333759591,conditional paired difference; arterial-reference conditioning may induce mathematical coupling
+one_random_low_map_event_per_case,391,391,30.30591112531969,29.595907928388748,30.95562659846547,conditional paired difference; arterial-reference conditioning may induce mathematical coupling

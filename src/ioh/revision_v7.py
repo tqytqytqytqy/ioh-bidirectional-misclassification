@@ -5,7 +5,7 @@ import hashlib
 import numpy as np
 import pandas as pd
 
-from ioh.estimands.decomposition import emulate_last_visible
+from ioh.estimands.decomposition import decompose_deficit, emulate_last_visible
 from ioh.estimands.episodes import detect_reference_episodes
 
 
@@ -38,6 +38,93 @@ def _reference_episode_auc(
     values = reference[int(start_index) : int(end_index)]
     deficit = np.maximum(float(threshold) - values, 0.0)
     return float(np.nansum(deficit) * float(step_sec) / 60.0)
+
+
+def phase_averaged_initial_display_decomposition(
+    times,
+    reference,
+    *,
+    threshold,
+    interval_sec,
+    step_sec,
+) -> pd.DataFrame:
+    times_arr = np.asarray(times, dtype=float)
+    reference_arr = np.asarray(reference, dtype=float)
+    if times_arr.shape != reference_arr.shape:
+        raise ValueError("times and reference must have the same shape")
+    if interval_sec <= 0 or step_sec <= 0:
+        raise ValueError("interval_sec and step_sec must be positive")
+
+    offsets = np.arange(0, float(interval_sec), float(step_sec), dtype=float)
+    rows: list[dict] = []
+    dt_min = float(step_sec) / 60.0
+    policies = (
+        "unavailable_before_first_scheduled_sample",
+        "baseline_initialized_at_first_reference",
+        "exclude_before_first_display",
+    )
+
+    for offset_sec in offsets:
+        primary_display = emulate_last_visible(
+            times_arr,
+            reference_arr,
+            interval_sec=float(interval_sec),
+            offset_sec=float(offset_sec),
+        )
+        initialized_display = emulate_last_visible(
+            times_arr,
+            reference_arr,
+            interval_sec=float(interval_sec),
+            offset_sec=float(offset_sec),
+            initialize_at_start=True,
+        )
+        excluded_reference = reference_arr.copy()
+        excluded = np.isfinite(excluded_reference) & ~np.isfinite(primary_display)
+        excluded_reference[excluded] = np.nan
+
+        policy_inputs = {
+            policies[0]: (reference_arr, primary_display, 0.0),
+            policies[1]: (reference_arr, initialized_display, 0.0),
+            policies[2]: (
+                excluded_reference,
+                primary_display,
+                float(excluded.sum()) * dt_min,
+            ),
+        }
+        for policy, (policy_reference, policy_display, excluded_min) in policy_inputs.items():
+            metrics = decompose_deficit(
+                policy_reference,
+                policy_display,
+                threshold=float(threshold),
+                dt_min=dt_min,
+            )
+            rows.append(
+                {
+                    "initial_display_policy": policy,
+                    "offset_sec": float(offset_sec),
+                    "excluded_reference_time_min": excluded_min,
+                    **metrics,
+                }
+            )
+
+    frame = pd.DataFrame(rows)
+    mean_columns = [
+        column
+        for column in frame.columns
+        if column not in {"initial_display_policy", "offset_sec", "threshold"}
+    ]
+    output = (
+        frame.groupby("initial_display_policy", sort=False)[mean_columns]
+        .mean()
+        .reset_index()
+    )
+    output.insert(1, "threshold", float(threshold))
+    output.insert(2, "interval_min", float(interval_sec) / 60.0)
+    output.insert(3, "phase_count", int(len(offsets)))
+    output["anesthesia_hours"] = len(times_arr) * float(step_sec) / 3600.0
+    output["episode_count"] = 0.0
+    output["episode_detected"] = 0.0
+    return output
 
 
 def select_nibp_candidates(candidates, sample_cases):
@@ -134,6 +221,7 @@ def phase_averaged_episode_observability(
     interval_sec,
     min_duration_sec,
     step_sec,
+    initialize_at_start=False,
 ):
     times_arr = np.asarray(times, dtype=float)
     reference_arr = np.asarray(reference, dtype=float)
@@ -176,6 +264,7 @@ def phase_averaged_episode_observability(
             reference_arr,
             interval_sec=float(interval_sec),
             offset_sec=float(offset_sec),
+            initialize_at_start=bool(initialize_at_start),
         )
         for episode_index, episode in enumerate(episodes):
             episode_auc = episode_aucs[episode_index]
@@ -220,10 +309,24 @@ def phase_averaged_episode_observability(
 
     denominator = len(episodes) * len(offsets)
     expected_detected = detected_count / len(offsets) if len(offsets) else np.nan
+    expected_missed = (
+        len(episodes) - expected_detected if len(offsets) else np.nan
+    )
     return {
         "reference_episodes": int(len(episodes)),
         "phase_count": int(len(offsets)),
+        "phase_episode_pairs": int(denominator),
+        "detected_phase_episode_pairs": int(detected_count),
+        "detected_with_60s_remaining_pairs": int(detected_with_60s_remaining),
+        "detected_with_120s_remaining_pairs": int(detected_with_120s_remaining),
+        "reference_episode_auc_phase_sum": float(reference_episode_auc_phase_sum),
+        "pre_detection_reference_auc_sum": float(pre_detection_reference_auc_sum),
+        "detection_delay_sum_sec": float(np.sum(detection_delays)),
+        "remaining_reference_time_sum_sec": float(np.sum(remaining_times)),
+        "stale_display_after_recovery_sum_sec": float(np.sum(stale_times)),
         "expected_detected_episodes": float(expected_detected),
+        "expected_missed_episodes": float(expected_missed),
+        "detection_observations": int(detected_count),
         "complete_miss_fraction": (
             float(1.0 - detected_count / denominator) if denominator else np.nan
         ),
@@ -429,6 +532,8 @@ def summarize_episode_observability(
     group_columns,
     bootstrap_reps,
     seed,
+    case_to_cluster: pd.DataFrame | None = None,
+    cluster_column: str = "case_id",
 ) -> pd.DataFrame:
     case_rows = case_rows.copy()
     optional_columns = (
@@ -491,13 +596,48 @@ def summarize_episode_observability(
             ),
         ).reindex(all_ids, fill_value=0.0)
 
-        arrays = {column: by_case[column].to_numpy(float) for column in by_case.columns}
-        reference_total = float(arrays["reference_episodes"].sum())
-        detected_total = float(arrays["expected_detected_episodes"].sum())
-        missed_total = float(arrays["expected_missed_episodes"].sum())
-        detected_observations = float(arrays["detected_phase_episode_pairs"].sum())
+        case_arrays = {
+            column: by_case[column].to_numpy(float) for column in by_case.columns
+        }
+        if case_to_cluster is None:
+            by_cluster = by_case
+            bootstrap_cluster = "case_id"
+        else:
+            required = {"case_id", cluster_column}
+            missing_columns = required - set(case_to_cluster.columns)
+            if missing_columns:
+                raise ValueError(
+                    f"case_to_cluster is missing columns: {sorted(missing_columns)}"
+                )
+            mapping = case_to_cluster[["case_id", cluster_column]].drop_duplicates()
+            conflicting = mapping.groupby("case_id")[cluster_column].nunique(dropna=False)
+            if bool(conflicting.gt(1).any()):
+                raise ValueError("each case_id must map to exactly one bootstrap cluster")
+            mapping = mapping.drop_duplicates("case_id").set_index("case_id")[cluster_column]
+            cluster_ids = mapping.reindex(by_case.index)
+            if bool(cluster_ids.isna().any()):
+                raise ValueError("every analyzed case_id must have a bootstrap cluster")
+            by_cluster = by_case.assign(
+                _bootstrap_cluster=cluster_ids.to_numpy()
+            ).groupby("_bootstrap_cluster", dropna=False).sum()
+            bootstrap_cluster = cluster_column
 
-        sampled = rng.integers(0, len(all_ids), size=(int(bootstrap_reps), len(all_ids)))
+        arrays = {
+            column: by_cluster[column].to_numpy(float)
+            for column in by_cluster.columns
+        }
+        reference_total = float(case_arrays["reference_episodes"].sum())
+        detected_total = float(case_arrays["expected_detected_episodes"].sum())
+        missed_total = float(case_arrays["expected_missed_episodes"].sum())
+        detected_observations = float(
+            case_arrays["detected_phase_episode_pairs"].sum()
+        )
+
+        sampled = rng.integers(
+            0,
+            len(by_cluster),
+            size=(int(bootstrap_reps), len(by_cluster)),
+        )
         boot_reference = arrays["reference_episodes"][sampled].sum(axis=1)
         boot_detected = arrays["expected_detected_episodes"][sampled].sum(axis=1)
         boot_missed = arrays["expected_missed_episodes"][sampled].sum(axis=1)
@@ -548,8 +688,8 @@ def summarize_episode_observability(
                 actionability_metrics[f"{metric}_ci_low"] = np.nan
                 actionability_metrics[f"{metric}_ci_high"] = np.nan
                 continue
-            numerator_total = float(arrays[numerator_column].sum())
-            denominator_total = float(arrays["phase_episode_pairs"].sum())
+            numerator_total = float(case_arrays[numerator_column].sum())
+            denominator_total = float(case_arrays["phase_episode_pairs"].sum())
             point = (
                 numerator_total / denominator_total
                 if denominator_total > 0
@@ -573,10 +713,10 @@ def summarize_episode_observability(
         )
         if pre_detection_available:
             pre_detection_total = float(
-                arrays["pre_detection_reference_auc_sum"].sum()
+                case_arrays["pre_detection_reference_auc_sum"].sum()
             )
             reference_auc_total = float(
-                arrays["reference_episode_auc_phase_sum"].sum()
+                case_arrays["reference_episode_auc_phase_sum"].sum()
             )
             pre_detection_point = (
                 pre_detection_total / reference_auc_total
@@ -611,7 +751,7 @@ def summarize_episode_observability(
                 metrics[f"{metric}_ci_low"] = np.nan
                 metrics[f"{metric}_ci_high"] = np.nan
                 continue
-            numerator_total = float(arrays[numerator_column].sum())
+            numerator_total = float(case_arrays[numerator_column].sum())
             point = (
                 numerator_total / detected_observations / 60.0
                 if detected_observations > 0
@@ -628,7 +768,12 @@ def summarize_episode_observability(
         row.update(
             {
                 "n_cases_total": int(len(all_ids)),
-                "cases_with_episodes": int((arrays["reference_episodes"] > 0).sum()),
+                "n_clusters_total": int(len(by_cluster)),
+                "bootstrap_cluster": bootstrap_cluster,
+                "bootstrap_reps": int(bootstrap_reps),
+                "cases_with_episodes": int(
+                    (case_arrays["reference_episodes"] > 0).sum()
+                ),
                 "reference_episodes": reference_total,
                 "expected_detected_episodes": detected_total,
                 "expected_missed_episodes": missed_total,

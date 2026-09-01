@@ -2,8 +2,8 @@ analysis,plot_label,adjustment_sequence,population,n_cases,events,relative_risk,
 "Absolute hidden burden, unadjusted","Absolute hidden burden
 Unadjusted",none,"all AKI-evaluable complete cases, including zero reference AUC",2246,106,1.1395383235461962,1.0308051575051227,1.2597410687907062,per 10 mm Hg*min per anaesthesia-hour
 "Absolute hidden burden, clinical adjusted","Absolute hidden burden
-Clinical covariates",clinical,"all AKI-evaluable complete cases, including zero reference AUC",2246,106,1.106510486264329,1.0096267960079728,1.2126911261210755,per 10 mm Hg*min per anaesthesia-hour
+Clinical covariates",clinical,"all AKI-evaluable complete cases, including zero reference AUC",2242,104,1.0928886315013266,0.9922820156812905,1.2036956651328363,per 10 mm Hg*min per anaesthesia-hour
 "Absolute hidden burden, clinical plus reference burden","Absolute hidden burden
-Clinical + reference burden",clinical_plus_reference,"all AKI-evaluable complete cases, including zero reference AUC",2246,106,1.0630360079330687,0.8517122513955326,1.3267926489382922,per 10 mm Hg*min per anaesthesia-hour
+Clinical + reference burden",clinical_plus_reference,"all AKI-evaluable complete cases, including zero reference AUC",2242,104,1.0447074021975933,0.8149135530943874,1.339299796968809,per 10 mm Hg*min per anaesthesia-hour
 HDR65 incremental model,"HDR65
-Clinical + reference burden",clinical_plus_reference,cases with reference AUC >0,2209,106,0.8682091693328456,0.7450238483910769,1.0117624601433601,per 10-percentage-point increase
+Clinical + reference burden",clinical_plus_reference,cases with reference AUC >0,2205,104,0.8669424561983137,0.7422772962660598,1.0125450773450135,per 10-percentage-point increase

@@ -1,0 +1,8 @@
+step,remaining,excluded
+source_cases,6388,0
+adult,6331,57
+general_anaesthesia,5989,342
+eligible_surgery,5559,430
+duration_ge_60min,5449,110
+has_art_map,3315,2134
+art_coverage_ge_80pct,2435,880

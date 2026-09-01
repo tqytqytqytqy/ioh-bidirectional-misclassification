@@ -4,6 +4,7 @@ import ioh.revision_v7 as revision_v7
 
 from ioh.revision_v7 import (
     frequency_offset_to_case_episode_rows,
+    phase_averaged_initial_display_decomposition,
     phase_averaged_episode_observability,
     select_nibp_candidates,
 )
@@ -49,6 +50,70 @@ def test_phase_averaged_observability_quantifies_detection_delay_and_remaining_t
     )
     assert np.isclose(
         result["reference_auc_before_first_low_display_fraction"], 47 / 60
+    )
+
+
+def test_phase_averaged_observability_can_initialize_the_display_at_analytic_start():
+    times = np.arange(0, 60, 10, dtype=float)
+    reference = np.array([60.0, 60.0, 70.0, 70.0, 70.0, 70.0])
+
+    unavailable = phase_averaged_episode_observability(
+        times,
+        reference,
+        threshold=65.0,
+        interval_sec=30,
+        min_duration_sec=20,
+        step_sec=10,
+    )
+    initialized = phase_averaged_episode_observability(
+        times,
+        reference,
+        threshold=65.0,
+        interval_sec=30,
+        min_duration_sec=20,
+        step_sec=10,
+        initialize_at_start=True,
+    )
+
+    assert initialized["expected_detected_episodes"] > unavailable[
+        "expected_detected_episodes"
+    ]
+    assert initialized["detected_phase_episode_pairs"] == 3
+    assert initialized["phase_episode_pairs"] == 3
+
+
+def test_initial_display_policy_sensitivity_separates_unavailable_from_valid_mismatch():
+    times = np.arange(0, 60, 10, dtype=float)
+    reference = np.array([60.0, 60.0, 70.0, 70.0, 70.0, 70.0])
+
+    result = phase_averaged_initial_display_decomposition(
+        times,
+        reference,
+        threshold=65.0,
+        interval_sec=30,
+        step_sec=10,
+    ).set_index("initial_display_policy")
+
+    assert set(result.index) == {
+        "unavailable_before_first_scheduled_sample",
+        "baseline_initialized_at_first_reference",
+        "exclude_before_first_display",
+    }
+    assert np.isclose(
+        result.loc["unavailable_before_first_scheduled_sample", "hidden_auc"],
+        5 / 6,
+    )
+    assert np.isclose(
+        result.loc["baseline_initialized_at_first_reference", "hidden_auc"],
+        0.0,
+    )
+    assert np.isclose(
+        result.loc["exclude_before_first_display", "true_auc"],
+        5 / 6,
+    )
+    assert np.isclose(
+        result.loc["exclude_before_first_display", "excluded_reference_time_min"],
+        1 / 6,
     )
 
 
@@ -307,3 +372,65 @@ def test_cluster_bootstrap_ci_is_invariant_to_unrelated_groups():
         "mean_detection_delay_min_ci_high",
     ):
         assert full_row[column] == isolated_row[column]
+
+
+def test_episode_summary_bootstraps_subjects_while_preserving_case_weighted_point_estimate():
+    case_rows = pd.DataFrame(
+        [
+            {
+                "case_id": 1,
+                "threshold": 65.0,
+                "interval_min": 5.0,
+                "reference_episodes": 1.0,
+                "expected_detected_episodes": 1.0,
+                "expected_missed_episodes": 0.0,
+                "detected_phase_episode_pairs": 1.0,
+                "detection_delay_sum_sec": 10.0,
+                "remaining_reference_time_sum_sec": 50.0,
+                "stale_display_after_recovery_sum_sec": 20.0,
+            },
+            {
+                "case_id": 2,
+                "threshold": 65.0,
+                "interval_min": 5.0,
+                "reference_episodes": 1.0,
+                "expected_detected_episodes": 1.0,
+                "expected_missed_episodes": 0.0,
+                "detected_phase_episode_pairs": 1.0,
+                "detection_delay_sum_sec": 10.0,
+                "remaining_reference_time_sum_sec": 50.0,
+                "stale_display_after_recovery_sum_sec": 20.0,
+            },
+            {
+                "case_id": 3,
+                "threshold": 65.0,
+                "interval_min": 5.0,
+                "reference_episodes": 1.0,
+                "expected_detected_episodes": 0.0,
+                "expected_missed_episodes": 1.0,
+                "detected_phase_episode_pairs": 0.0,
+                "detection_delay_sum_sec": 0.0,
+                "remaining_reference_time_sum_sec": 0.0,
+                "stale_display_after_recovery_sum_sec": 0.0,
+            },
+        ]
+    )
+    case_to_subject = pd.DataFrame(
+        {"case_id": [1, 2, 3], "subjectid": [101, 101, 202]}
+    )
+
+    summary = revision_v7.summarize_episode_observability(
+        case_rows,
+        all_case_ids=[1, 2, 3],
+        group_columns=["threshold", "interval_min"],
+        bootstrap_reps=1000,
+        seed=17,
+        case_to_cluster=case_to_subject,
+        cluster_column="subjectid",
+    )
+
+    row = summary.iloc[0]
+    assert np.isclose(row["episode_detection_probability"], 2 / 3)
+    assert row["n_cases_total"] == 3
+    assert row["n_clusters_total"] == 2
+    assert row["bootstrap_cluster"] == "subjectid"

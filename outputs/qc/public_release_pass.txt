@@ -1,9 +1,9 @@
-Release: v1.2.0-submission
-Status: PASS
-Public content boundary: PASS
-Creator metadata: PASS
-Source-copy integrity: PASS (101 files)
-Numerical consistency: PASS
-Programmatic figure provenance: PASS
-Workbook inventory: PASS (36 worksheets)
-Automated tests: PASS (51 tests)
+Release: v1.3.0-submission
+Files scanned: 171
+Aggregate CSVs: 76
+Workbook sheets: 78
+Required content scan: PASS
+Restricted filename and extension scan: PASS
+Case-level column scan: PASS
+Manifest integrity: PASS
+Decision: eligible for public release

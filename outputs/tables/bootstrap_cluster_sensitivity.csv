@@ -1,0 +1,17 @@
+domain,metric,point_estimate,ci_low,ci_high,bootstrap_cluster,n_clusters,bootstrap_reps
+AUC decomposition,hidden deficit ratio,0.5974247419434733,0.581867624544135,0.6122406941698799,subjectid,2380,1000
+AUC decomposition,hidden deficit ratio,0.5974247419434733,0.581822162196803,0.6122068548849507,case_id,2435,1000
+AUC decomposition,overdisplay deficit ratio,0.5729922163020157,0.5580414311205506,0.5870330839049442,subjectid,2380,1000
+AUC decomposition,overdisplay deficit ratio,0.5729922163020157,0.5582850995811782,0.5861477771976771,case_id,2435,1000
+AUC decomposition,net relative AUC difference,-0.02443252564145753,-0.02697779970201543,-0.02202809364724751,subjectid,2380,1000
+AUC decomposition,net relative AUC difference,-0.02443252564145753,-0.027137092397107904,-0.02194962227475927,case_id,2435,1000
+episode observability,episode detection probability,0.657762780740902,0.6497059432223731,0.6657682756848902,subjectid,2380,1000
+episode observability,episode detection probability,0.657762780740902,0.6504166957393859,0.6652879953103309,case_id,2435,1000
+episode observability,complete-miss probability,0.342237219259098,0.3342317243151098,0.3502940567776268,subjectid,2380,1000
+episode observability,complete-miss probability,0.342237219259098,0.334712004689669,0.3495833042606142,case_id,2435,1000
+episode observability,first low display with at least 1 min remaining,0.5497478320815645,0.5399051012980192,0.5594620795032317,subjectid,2380,1000
+episode observability,first low display with at least 1 min remaining,0.5497478320815645,0.5407247381929973,0.5588882038690198,case_id,2435,1000
+episode observability,first low display with at least 2 min remaining,0.357026232720148,0.3461822795506273,0.3678682110543115,subjectid,2380,1000
+episode observability,first low display with at least 2 min remaining,0.357026232720148,0.3472900519232256,0.3671467456256402,case_id,2435,1000
+episode observability,reference AUC before first low display,0.3486012684339906,0.3312029294062873,0.3639561155790825,subjectid,2380,1000
+episode observability,reference AUC before first low display,0.3486012684339906,0.3334619266197654,0.3631239172944364,case_id,2435,1000

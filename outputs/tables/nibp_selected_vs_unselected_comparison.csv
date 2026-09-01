@@ -1,0 +1,6 @@
+variable,selected_n,selected_mean,unselected_n,unselected_mean,standardised_mean_difference
+age,1995,61.13583959899749,0,,
+sex_male,1995,0.5994987468671679,0,,
+asa_num,1952,1.9431352459016393,0,,
+emergency,1995,0.09924812030075188,0,,
+duration_min,1995,251.7363408521554,0,,

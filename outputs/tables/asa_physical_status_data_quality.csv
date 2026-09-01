@@ -1,0 +1,4 @@
+category,n_cases,recorded_values,primary_model_handling
+valid ASA Physical Status 1-5,2381,1-5,retained
+source-recorded ASA value outside 1-5,4,6,set to missing
+missing recorded ASA value,50,,missing

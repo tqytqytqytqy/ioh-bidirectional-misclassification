@@ -5,12 +5,13 @@
   "creators": [
     {
       "name": "Teng, Qingyu",
+      "orcid": "0009-0005-5476-4553",
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
-      "name": "Li, Qi",
-      "orcid": "0009-0003-3140-5887",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+      "name": "Zhao, Yingya",
+      "orcid": "0009-0005-3335-8193",
+      "affiliation": "School of Public Health, Fudan University, Shanghai, China"
     },
     {
       "name": "Gu, Ziyan",
@@ -29,9 +30,9 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
-      "name": "Zhao, Yingya",
-      "orcid": "0009-0005-3335-8193",
-      "affiliation": "School of Public Health, Fudan University, Shanghai, China"
+      "name": "Li, Qi",
+      "orcid": "0009-0003-3140-5887",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
       "name": "Zhang, Hui",
@@ -39,7 +40,7 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     }
   ],
-  "version": "v1.2.0-submission",
+  "version": "v1.3.0-submission",
   "license": "MIT",
   "keywords": [
     "anaesthesia",
@@ -63,5 +64,5 @@
       "scheme": "doi"
     }
   ],
-  "notes": "Outputs manifest SHA-256: fcea2d43fef6e0b38043fcd8b30c32d03ce4772e7825388903c659e850e0badd. Final workbook SHA-256: e4f8c2f5e3aa2af1a320b87d2ff552c3f9d60e26c33778eb73bb61e53e693d60. Source datasets and patient-level intermediates are excluded."
+  "notes": "Outputs manifest SHA-256: 60b085d5b45f269eb6206429fd24aee0743491c80be63b45a2df3dd59b7b37de. Final workbook SHA-256: eae724fa69aa0fbb7c112d3c1200436a4ad2f315c328c9475949001317b621c1. Source datasets and patient-level intermediates are excluded."
 }

@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from _common import load_args
+from ioh.aki_outcomes import clean_asa_for_adjustment, summarize_asa_validity
 from ioh.pipeline import (
     build_nibp_display_events,
     decompose_nibp_timing_vs_cuff,
@@ -57,6 +58,7 @@ def _cohort_characteristics(
                 "nonmissing_n": int(values.notna().sum()),
                 "missing_n": int(values.isna().sum()),
                 "summary_definition": "median [interquartile range]",
+                "note": None,
             }
         )
 
@@ -75,6 +77,7 @@ def _cohort_characteristics(
                 "nonmissing_n": denominator,
                 "missing_n": int((~nonmissing).sum()),
                 "summary_definition": "n (%) among nonmissing cases",
+                "note": None,
             }
         )
 
@@ -91,13 +94,26 @@ def _cohort_characteristics(
             "nonmissing_n": sex_denominator,
             "missing_n": int((~sex_nonmissing).sum()),
             "summary_definition": "n (%) among nonmissing cases",
+            "note": None,
+        }
+    )
+    female = int(sex.str.startswith("F", na=False).sum())
+    rows.append(
+        {
+            "characteristic": "Sex",
+            "level": "Female",
+            "summary": f"{female} ({100.0 * female / sex_denominator:.1f}%)",
+            "nonmissing_n": sex_denominator,
+            "missing_n": np.nan,
+            "summary_definition": "n (%) among nonmissing cases",
+            "note": None,
         }
     )
     continuous("Body mass index, kg m-2", "bmi")
 
-    asa = pd.to_numeric(cohort["asa"], errors="coerce")
+    asa = clean_asa_for_adjustment(cohort["asa"])
     asa_denominator = int(asa.notna().sum())
-    for level in [1, 2, 3, 4]:
+    for level in [1, 2, 3, 4, 5]:
         count = int(asa.eq(level).sum())
         rows.append(
             {
@@ -107,8 +123,14 @@ def _cohort_characteristics(
                 if asa_denominator
                 else "not available",
                 "nonmissing_n": asa_denominator,
-                "missing_n": int(asa.isna().sum()),
+                "missing_n": int(asa.isna().sum()) if level == 1 else np.nan,
                 "summary_definition": "n (%) among nonmissing cases",
+                "note": (
+                    f"ASA Physical Status was missing in {int(asa.isna().sum())} cases; "
+                    f"percentages use {asa_denominator} cases with valid values."
+                    if level == 1
+                    else None
+                ),
             }
         )
     binary("Emergency surgery", "emop")
@@ -124,6 +146,13 @@ def _run_episode_observability(cfg: dict) -> None:
     start = time.monotonic()
     panel = pd.read_parquet(intermediate_path(cfg, "artmap_10s.parquet"))
     all_case_ids = pd.Index(panel["case_id"].drop_duplicates())
+    manifest = pd.read_parquet(
+        intermediate_path(cfg, "vitaldb_manifest.parquet"),
+        columns=["case_id", "subjectid"],
+    )
+    case_to_subject = manifest[manifest["case_id"].isin(set(all_case_ids))][
+        ["case_id", "subjectid"]
+    ].drop_duplicates()
     print(f"ART cohort: {len(all_case_ids):,} cases; {len(panel):,} 10-s rows", flush=True)
 
     canonical_offset = intermediate_path(cfg, "frequency_decomp_case_offset.parquet")
@@ -148,11 +177,25 @@ def _run_episode_observability(cfg: dict) -> None:
         group_columns=["threshold", "interval_min"],
         bootstrap_reps=int(cfg["analysis"]["bootstrap_reps"]),
         seed=int(cfg["project"]["seed"]),
+        case_to_cluster=case_to_subject,
+        cluster_column="subjectid",
     ).sort_values(["threshold", "interval_min"])
     write_table(
         cfg,
         "episode_observability_by_threshold_interval.csv",
         frequency_summary,
+    )
+    frequency_case_cluster = summarize_episode_observability(
+        frequency_case,
+        all_case_ids=all_case_ids,
+        group_columns=["threshold", "interval_min"],
+        bootstrap_reps=int(cfg["analysis"]["bootstrap_reps"]),
+        seed=int(cfg["project"]["seed"]),
+    ).sort_values(["threshold", "interval_min"])
+    write_table(
+        cfg,
+        "episode_observability_by_threshold_interval_case_cluster_sensitivity.csv",
+        frequency_case_cluster,
     )
     print(
         f"All-interval episode summary complete in {time.monotonic() - start:.1f}s",
@@ -211,9 +254,23 @@ def _run_episode_observability(cfg: dict) -> None:
             group_columns=group_columns,
             bootstrap_reps=int(cfg["analysis"]["bootstrap_reps"]),
             seed=int(cfg["project"]["seed"]),
+            case_to_cluster=case_to_subject,
+            cluster_column="subjectid",
         )
         summaries[filename] = summary
         write_table(cfg, filename, summary)
+        case_cluster_summary = summarize_episode_observability(
+            detailed,
+            all_case_ids=all_case_ids,
+            group_columns=group_columns,
+            bootstrap_reps=int(cfg["analysis"]["bootstrap_reps"]),
+            seed=int(cfg["project"]["seed"]),
+        )
+        write_table(
+            cfg,
+            filename.replace(".csv", "_case_cluster_sensitivity.csv"),
+            case_cluster_summary,
+        )
 
     actionability_qc_frames: list[pd.DataFrame] = []
     for filename, summary in summaries.items():
@@ -293,7 +350,7 @@ def _run_episode_observability(cfg: dict) -> None:
         "episode_actionability_5min_qc.md",
         "# Episode actionability quality control\n\n"
         "All reported 5-min actionability estimates passed probability hierarchy, "
-        "range, and case-cluster bootstrap confidence-interval closure checks. "
+        "range, and subject-cluster bootstrap confidence-interval closure checks. "
         "Specifically, P(>=2 min remaining) <= P(>=1 min remaining) <= "
         "P(detected), and all probabilities and pre-detection AUC fractions were "
         "bounded by 0 and 1.\n\n"
@@ -408,7 +465,8 @@ def _write_nibp_flow(cfg: dict) -> None:
 def _run_full_nibp(cfg: dict) -> None:
     start = time.monotonic()
     print("Starting all-eligible NIBP reconstruction", flush=True)
-    build_nibp_display_events(cfg)
+    frozen_raw_sample = os.environ.get("IOH_NIBP_RAW_SAMPLE", "").strip() or None
+    build_nibp_display_events(cfg, raw_sample_path=frozen_raw_sample)
     print(
         f"NIBP display reconstruction complete in {time.monotonic() - start:.1f}s",
         flush=True,
@@ -426,6 +484,61 @@ def _run_full_nibp(cfg: dict) -> None:
     print(f"Full NIBP analyses complete in {time.monotonic() - start:.1f}s", flush=True)
 
 
+def _write_updated_cohort_flow(
+    cfg: dict, manifest: pd.DataFrame, panel_case_ids: pd.Index
+) -> None:
+    keep = pd.Series(True, index=manifest.index)
+    rows = [{"step": "source_cases", "remaining": int(len(manifest)), "excluded": 0}]
+    for name, mask in (
+        ("adult", manifest["adult"]),
+        ("general_anaesthesia", manifest["general_anaesthesia"]),
+        ("eligible_surgery", manifest["eligible_surgery"]),
+        ("duration_ge_60min", manifest["duration_eligible"]),
+        ("has_art_map", manifest["has_art_map"]),
+    ):
+        before = int(keep.sum())
+        keep &= mask.fillna(False).astype(bool)
+        rows.append(
+            {
+                "step": name,
+                "remaining": int(keep.sum()),
+                "excluded": before - int(keep.sum()),
+            }
+        )
+    pre_qc_cases = int(keep.sum())
+    rows.append(
+        {
+            "step": "art_coverage_ge_80pct",
+            "remaining": int(len(panel_case_ids)),
+            "excluded": pre_qc_cases - int(len(panel_case_ids)),
+        }
+    )
+    write_table(cfg, "cohort_flow.csv", pd.DataFrame(rows))
+
+    before_surgical = manifest[
+        manifest["adult"] & manifest["general_anaesthesia"]
+    ].copy()
+    exclusion_rows = []
+    for category in ["cardiac", "obstetric", "transplant", "other_prespecified"]:
+        exclusion_rows.append(
+            {
+                "hierarchy_order": len(exclusion_rows) + 1,
+                "exclusion_category": category,
+                "excluded_cases": int(
+                    before_surgical["surgical_exclusion_category"].eq(category).sum()
+                ),
+                "eligible_before_surgical_exclusions": int(len(before_surgical)),
+                "remaining_after_all_surgical_exclusions": int(
+                    before_surgical["eligible_surgery"].sum()
+                ),
+                "total_surgically_excluded": int(
+                    (~before_surgical["eligible_surgery"]).sum()
+                ),
+            }
+        )
+    write_table(cfg, "surgical_exclusion_flow.csv", pd.DataFrame(exclusion_rows))
+
+
 def run(cfg: dict) -> None:
     ensure_dirs(cfg)
     panel_case_ids = pd.Index(
@@ -434,10 +547,38 @@ def run(cfg: dict) -> None:
         )["case_id"].drop_duplicates()
     )
     manifest = pd.read_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet"))
+    cohort = manifest[manifest["case_id"].isin(set(panel_case_ids))].copy()
+    _write_updated_cohort_flow(cfg, manifest, panel_case_ids)
+    subject_case_counts = cohort.groupby("subjectid", dropna=False)["case_id"].nunique()
+    repeated = subject_case_counts[subject_case_counts.gt(1)]
+    write_table(
+        cfg,
+        "repeated_surgery_audit.csv",
+        pd.DataFrame(
+            [
+                {
+                    "n_cases": int(cohort["case_id"].nunique()),
+                    "n_subjects": int(cohort["subjectid"].nunique()),
+                    "subjects_with_repeated_surgery": int(len(repeated)),
+                    "additional_cases_from_repeated_surgery": int(
+                        (repeated - 1).sum()
+                    ),
+                    "maximum_cases_per_subject": int(subject_case_counts.max()),
+                    "primary_analysis_unit": "surgical case",
+                    "bootstrap_cluster": "subjectid",
+                }
+            ]
+        ),
+    )
     write_table(
         cfg,
         "table1_primary_cohort_characteristics.csv",
         _cohort_characteristics(manifest, panel_case_ids),
+    )
+    write_table(
+        cfg,
+        "asa_physical_status_data_quality.csv",
+        summarize_asa_validity(cohort["asa"]),
     )
     _run_episode_observability(cfg)
     if os.environ.get("IOH_SKIP_FULL_NIBP", "").strip().lower() in {

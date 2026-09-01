@@ -1,0 +1,10 @@
+membership,n_cases
+primary_arterial_series_cohort,2435
+pre_qc_art_nibp_pool,2788
+primary_coverage_nibp_candidate_pool,1995
+candidate_and_primary_intersection,1995
+candidate_only_not_primary,0
+primary_only_not_candidate,440
+processed_nibp_candidate_set,1995
+processed_candidates_and_primary_intersection,1995
+mechanism_subset_with_events_and_primary_coverage,1993

@@ -17,6 +17,11 @@ from ioh.pipeline import (
     table_path,
     write_table,
 )
+from ioh.revision_v7 import (
+    phase_averaged_episode_observability,
+    phase_averaged_initial_display_decomposition,
+    summarize_episode_observability,
+)
 
 
 COLORS = {
@@ -63,6 +68,347 @@ def _case_mean_from_offsets(offset: pd.DataFrame) -> pd.DataFrame:
     )
 
 
+def _case_to_subject(cfg: dict, case_ids) -> pd.DataFrame:
+    manifest = pd.read_parquet(
+        intermediate_path(cfg, "vitaldb_manifest.parquet"),
+        columns=["case_id", "subjectid"],
+    )
+    mapping = manifest[manifest["case_id"].isin(set(case_ids))][
+        ["case_id", "subjectid"]
+    ].drop_duplicates()
+    if mapping["case_id"].nunique() != len(set(case_ids)):
+        raise AssertionError("every analyzed case must have one subject identifier")
+    return mapping
+
+
+def _write_initial_display_policy_sensitivity(
+    cfg: dict,
+    case_to_subject: pd.DataFrame,
+    primary_auc: pd.DataFrame,
+) -> None:
+    panel = pd.read_parquet(intermediate_path(cfg, "artmap_10s.parquet"))
+    threshold = float(cfg["analysis"]["primary_threshold"])
+    interval_min = float(cfg["analysis"]["reference_interval_min"])
+    interval_sec = int(round(interval_min * 60.0))
+    step_sec = int(cfg["analysis"]["resample_sec"])
+    frames: list[pd.DataFrame] = []
+    case_groups = panel.groupby("case_id", sort=False)
+    for index, (case_id, sub) in enumerate(case_groups, start=1):
+        sub = sub.sort_values("time_sec")
+        frame = phase_averaged_initial_display_decomposition(
+            sub["time_sec"].to_numpy(float),
+            sub["art_map"].to_numpy(float),
+            threshold=threshold,
+            interval_sec=interval_sec,
+            step_sec=step_sec,
+        )
+        frame.insert(0, "case_id", case_id)
+        frames.append(frame)
+        if index % 250 == 0:
+            print(
+                f"Initial-display sensitivity: {index:,}/{panel['case_id'].nunique():,} cases",
+                flush=True,
+            )
+    case_table = pd.concat(frames, ignore_index=True)
+    case_table.to_parquet(
+        intermediate_path(cfg, "initial_display_policy_case_v10.parquet"),
+        index=False,
+    )
+
+    descriptions = {
+        "unavailable_before_first_scheduled_sample": (
+            "Primary convention: no displayed value before the first scheduled sample; "
+            "concurrent reference deficit is counted as hidden."
+        ),
+        "baseline_initialized_at_first_reference": (
+            "Sensitivity: initialize the display with the first finite reference value, "
+            "then follow the same phase-specific schedule."
+        ),
+        "exclude_before_first_display": (
+            "Sensitivity: exclude reference time points before the first finite displayed value "
+            "from both numerator and denominator."
+        ),
+    }
+    summary_rows: list[pd.DataFrame] = []
+    for policy, sub in case_table.groupby("initial_display_policy", sort=False):
+        summary = _frequency_population_table(
+            cfg,
+            sub,
+            case_to_cluster=case_to_subject,
+            cluster_column="subjectid",
+        )
+        summary.insert(0, "initial_display_policy", policy)
+        summary.insert(1, "policy_description", descriptions[policy])
+        excluded_total = float(sub["excluded_reference_time_min"].sum())
+        reference_minutes = float(sub["anesthesia_hours"].sum()) * 60.0
+        summary["excluded_reference_time_min_total"] = excluded_total
+        summary["excluded_reference_time_fraction"] = (
+            excluded_total / reference_minutes if reference_minutes > 0 else np.nan
+        )
+        summary_rows.append(summary)
+    sensitivity = pd.concat(summary_rows, ignore_index=True)
+    order = {name: index for index, name in enumerate(descriptions)}
+    sensitivity["_order"] = sensitivity["initial_display_policy"].map(order)
+    sensitivity = sensitivity.sort_values("_order").drop(columns="_order")
+
+    primary = sensitivity[
+        sensitivity["initial_display_policy"].eq(
+            "unavailable_before_first_scheduled_sample"
+        )
+    ].iloc[0]
+    frozen = primary_auc[
+        primary_auc["threshold"].eq(threshold)
+        & primary_auc["interval_min"].eq(interval_min)
+    ].iloc[0]
+    for metric in ("HDR", "ODR", "NetBias"):
+        if not np.isclose(primary[metric], frozen[metric], rtol=0.0, atol=1e-12):
+            raise AssertionError(
+                f"recomputed initial-display primary {metric} does not match frozen primary"
+            )
+    write_table(cfg, "initial_display_policy_sensitivity.csv", sensitivity)
+
+
+def _write_initial_display_episode_sensitivity(
+    cfg: dict,
+    case_to_subject: pd.DataFrame,
+) -> None:
+    panel = pd.read_parquet(intermediate_path(cfg, "artmap_10s.parquet"))
+    threshold = float(cfg["analysis"]["primary_threshold"])
+    interval_min = float(cfg["analysis"]["reference_interval_min"])
+    interval_sec = int(round(interval_min * 60.0))
+    step_sec = int(cfg["analysis"]["resample_sec"])
+    min_duration_sec = 60
+    case_ids = panel["case_id"].drop_duplicates().tolist()
+
+    primary = pd.read_parquet(
+        intermediate_path(cfg, "episode_observability_case_5min.parquet")
+    )
+    primary = primary[
+        primary["threshold"].eq(threshold)
+        & primary["interval_min"].eq(interval_min)
+    ].copy()
+    primary["initial_display_episode_policy"] = (
+        "unavailable_before_first_scheduled_sample"
+    )
+
+    sensitivity_rows: list[dict] = []
+    for index, (case_id, sub) in enumerate(panel.groupby("case_id", sort=False), start=1):
+        sub = sub.sort_values("time_sec")
+        times = sub["time_sec"].to_numpy(float)
+        reference = sub["art_map"].to_numpy(float)
+        baseline = phase_averaged_episode_observability(
+            times,
+            reference,
+            threshold=threshold,
+            interval_sec=interval_sec,
+            min_duration_sec=min_duration_sec,
+            step_sec=step_sec,
+            initialize_at_start=True,
+        )
+        sensitivity_rows.append(
+            {
+                "case_id": case_id,
+                "threshold": threshold,
+                "interval_min": interval_min,
+                "initial_display_episode_policy": "baseline_initialized_at_first_reference",
+                **baseline,
+            }
+        )
+
+        after_first_interval = times >= float(interval_sec)
+        excluded = phase_averaged_episode_observability(
+            times[after_first_interval] - float(interval_sec),
+            reference[after_first_interval],
+            threshold=threshold,
+            interval_sec=interval_sec,
+            min_duration_sec=min_duration_sec,
+            step_sec=step_sec,
+            initialize_at_start=True,
+        )
+        sensitivity_rows.append(
+            {
+                "case_id": case_id,
+                "threshold": threshold,
+                "interval_min": interval_min,
+                "initial_display_episode_policy": "exclude_first_sampling_interval_then_initialize",
+                **excluded,
+            }
+        )
+        if index % 250 == 0:
+            print(
+                f"Initial-display episode sensitivity: {index:,}/{len(case_ids):,} cases",
+                flush=True,
+            )
+
+    sensitivity_case = pd.DataFrame(sensitivity_rows)
+    sensitivity_case.to_parquet(
+        intermediate_path(cfg, "initial_display_episode_policy_case_v10.parquet"),
+        index=False,
+    )
+    combined = pd.concat([primary, sensitivity_case], ignore_index=True, sort=False)
+    descriptions = {
+        "unavailable_before_first_scheduled_sample": (
+            "Primary convention: no displayed value before the first scheduled sample."
+        ),
+        "baseline_initialized_at_first_reference": (
+            "Initialize the display with the first finite reference value at analytic start."
+        ),
+        "exclude_first_sampling_interval_then_initialize": (
+            "Exclude the first 5 min of the analytic interval, then initialize the display "
+            "with the first finite remaining reference value."
+        ),
+    }
+    summaries: list[pd.DataFrame] = []
+    for policy, sub in combined.groupby(
+        "initial_display_episode_policy", sort=False
+    ):
+        summary = summarize_episode_observability(
+            sub,
+            all_case_ids=case_ids,
+            group_columns=["threshold", "interval_min"],
+            bootstrap_reps=int(cfg["analysis"]["bootstrap_reps"]),
+            seed=int(cfg["project"]["seed"]),
+            case_to_cluster=case_to_subject,
+            cluster_column="subjectid",
+        )
+        summary.insert(0, "initial_display_episode_policy", policy)
+        summary.insert(1, "policy_description", descriptions[policy])
+        summaries.append(summary)
+    output = pd.concat(summaries, ignore_index=True)
+    order = {name: index for index, name in enumerate(descriptions)}
+    output["_order"] = output["initial_display_episode_policy"].map(order)
+    output = output.sort_values("_order").drop(columns="_order")
+
+    frozen = pd.read_csv(table_path(cfg, "episode_observability_5min_overall.csv"))
+    frozen = frozen[
+        frozen["threshold"].eq(threshold)
+        & frozen["interval_min"].eq(interval_min)
+    ].iloc[0]
+    primary_summary = output[
+        output["initial_display_episode_policy"].eq(
+            "unavailable_before_first_scheduled_sample"
+        )
+    ].iloc[0]
+    for metric in (
+        "episode_detection_probability",
+        "complete_miss_probability",
+        "reference_auc_before_first_low_display_fraction",
+    ):
+        if not np.isclose(primary_summary[metric], frozen[metric], rtol=0.0, atol=1e-12):
+            raise AssertionError(
+                f"recomputed initial-display episode primary {metric} does not match frozen primary"
+            )
+    write_table(cfg, "initial_display_episode_sensitivity.csv", output)
+
+
+def _write_bootstrap_cluster_sensitivity(
+    cfg: dict,
+    subject_auc: pd.DataFrame,
+    case_auc: pd.DataFrame,
+) -> None:
+    subject_episode = pd.read_csv(
+        table_path(cfg, "episode_observability_5min_overall.csv")
+    )
+    case_episode = pd.read_csv(
+        table_path(
+            cfg,
+            "episode_observability_5min_overall_case_cluster_sensitivity.csv",
+        )
+    )
+    selectors = lambda frame: frame[
+        frame["threshold"].eq(65.0) & frame["interval_min"].eq(5.0)
+    ].iloc[0]
+    auc_subject_row = selectors(subject_auc)
+    auc_case_row = selectors(case_auc)
+    episode_subject_row = selectors(subject_episode)
+    episode_case_row = selectors(case_episode)
+    rows: list[dict] = []
+
+    def add_pair(domain, metric, point_column, low_column, high_column, left, right):
+        if not np.isclose(left[point_column], right[point_column], rtol=0.0, atol=1e-12):
+            raise AssertionError(f"{metric} point estimate changed with bootstrap cluster")
+        for row in (left, right):
+            rows.append(
+                {
+                    "domain": domain,
+                    "metric": metric,
+                    "point_estimate": row[point_column],
+                    "ci_low": row[low_column],
+                    "ci_high": row[high_column],
+                    "bootstrap_cluster": row["bootstrap_cluster"],
+                    "n_clusters": row.get("n_clusters", row.get("n_clusters_total")),
+                    "bootstrap_reps": row["bootstrap_reps"],
+                }
+            )
+
+    for metric, point, low, high in (
+        ("hidden deficit ratio", "HDR", "HDR_ci_low", "HDR_ci_high"),
+        ("overdisplay deficit ratio", "ODR", "ODR_ci_low", "ODR_ci_high"),
+        ("net relative AUC difference", "NetBias", "NetBias_ci_low", "NetBias_ci_high"),
+    ):
+        add_pair("AUC decomposition", metric, point, low, high, auc_subject_row, auc_case_row)
+    for metric, point in (
+        ("episode detection probability", "episode_detection_probability"),
+        ("complete-miss probability", "complete_miss_probability"),
+        ("first low display with at least 1 min remaining", "detection_with_1min_remaining_probability"),
+        ("first low display with at least 2 min remaining", "detection_with_2min_remaining_probability"),
+        ("reference AUC before first low display", "reference_auc_before_first_low_display_fraction"),
+    ):
+        add_pair(
+            "episode observability",
+            metric,
+            point,
+            f"{point}_ci_low" if point.startswith("detection_with") or point.startswith("reference_auc") else point.replace("probability", "ci_low"),
+            f"{point}_ci_high" if point.startswith("detection_with") or point.startswith("reference_auc") else point.replace("probability", "ci_high"),
+            episode_subject_row,
+            episode_case_row,
+        )
+    write_table(cfg, "bootstrap_cluster_sensitivity.csv", pd.DataFrame(rows))
+
+
+def _figure1_flow_source(
+    cohort_flow: pd.DataFrame, nibp_count: dict[str, int]
+) -> pd.DataFrame:
+    values = cohort_flow.set_index("step")
+    primary_specs = [
+        ("VitalDB source cases", "source_cases", None),
+        ("Adults", "adult", "age <18 yr"),
+        ("General anaesthesia", "general_anaesthesia", "not general anaesthesia"),
+        ("Eligible surgery groups", "eligible_surgery", "prespecified surgery groups"),
+        ("Anaesthesia duration >=60 min", "duration_ge_60min", "anaesthesia duration <60 min"),
+        ("Pre-QC arterial candidates", "has_art_map", "no candidate arterial MAP track"),
+        ("Primary arterial waveform cohort", "art_coverage_ge_80pct", "valid arterial MAP coverage <80%"),
+    ]
+    rows = [
+        {
+            "branch": "primary",
+            "stage": label,
+            "n_cases": int(values.loc[step, "remaining"]),
+            "excluded_from_previous": int(values.loc[step, "excluded"]),
+            "exclusion_reason": reason,
+        }
+        for label, step, reason in primary_specs
+    ]
+    prior = rows[-1]["n_cases"]
+    for stage, key, reason in (
+        ("Primary cohort with NIBP track", "primary_art_coverage_processing_pool", "no NIBP MAP track"),
+        ("Reconstructed NIBP display events", "reconstructed_nibp_display_events", "display event reconstruction unavailable"),
+        ("Cases with paired NIBP-ART events", "paired_nibp_events_primary_window", "no paired event in the primary window"),
+    ):
+        current = int(nibp_count[key])
+        rows.append(
+            {
+                "branch": "NIBP agreement",
+                "stage": stage,
+                "n_cases": current,
+                "excluded_from_previous": prior - current,
+                "exclusion_reason": reason,
+            }
+        )
+        prior = current
+    return pd.DataFrame(rows)
+
+
 def _write_publication_tables(cfg: dict) -> None:
     offset = pd.read_parquet(
         intermediate_path(cfg, "frequency_decomp_case_offset.parquet")
@@ -71,9 +417,24 @@ def _write_publication_tables(cfg: dict) -> None:
     case_mean.to_parquet(
         intermediate_path(cfg, "frequency_decomp_case_mean_v7.parquet"), index=False
     )
-    auc = _frequency_population_table(cfg, case_mean)
+    case_to_subject = _case_to_subject(cfg, case_mean["case_id"].unique())
+    auc = _frequency_population_table(
+        cfg,
+        case_mean,
+        case_to_cluster=case_to_subject,
+        cluster_column="subjectid",
+    )
+    auc_case_cluster = _frequency_population_table(cfg, case_mean)
     write_table(cfg, "frequency_decomposition_bootstrap.csv", auc)
     write_table(cfg, "primary_auc_by_threshold_interval.csv", auc)
+    write_table(
+        cfg,
+        "frequency_decomposition_case_cluster_sensitivity.csv",
+        auc_case_cluster,
+    )
+    _write_initial_display_policy_sensitivity(cfg, case_to_subject, auc)
+    _write_initial_display_episode_sensitivity(cfg, case_to_subject)
+    _write_bootstrap_cluster_sensitivity(cfg, auc, auc_case_cluster)
 
     overall = pd.read_csv(table_path(cfg, "episode_observability_5min_overall.csv"))
     duration = pd.read_csv(
@@ -223,34 +584,10 @@ def _save_figure(fig: plt.Figure, figure_dir: Path, stem: str) -> None:
 
 
 def _figure1(cfg: dict) -> None:
-    manifest = pd.read_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet"))
-    panel_cases = pd.read_parquet(
-        intermediate_path(cfg, "artmap_10s.parquet"), columns=["case_id"]
-    )["case_id"].nunique()
+    cohort_flow = pd.read_csv(table_path(cfg, "cohort_flow.csv"))
     nibp_flow = pd.read_csv(table_path(cfg, "nibp_case_event_flow_v7.csv"))
     count = dict(zip(nibp_flow["step"], nibp_flow["n_cases"]))
-    flow = pd.DataFrame(
-        [
-            {"stage": "VitalDB source cases", "n_cases": len(manifest)},
-            {
-                "stage": "Pre-QC arterial candidates",
-                "n_cases": int(manifest["pre_qc_primary_candidate"].sum()),
-            },
-            {"stage": "Primary arterial waveform cohort", "n_cases": panel_cases},
-            {
-                "stage": "Primary cohort with NIBP track",
-                "n_cases": int(count["primary_art_coverage_processing_pool"]),
-            },
-            {
-                "stage": "Reconstructed NIBP display events",
-                "n_cases": int(count["reconstructed_nibp_display_events"]),
-            },
-            {
-                "stage": "Cases with paired NIBP-ART events",
-                "n_cases": int(count["paired_nibp_events_primary_window"]),
-            },
-        ]
-    )
+    flow = _figure1_flow_source(cohort_flow, count)
     write_table(cfg, "figure1_cohort_flow_source.csv", flow)
 
     time_min = np.arange(0, 10.01, 1 / 6)
@@ -266,51 +603,88 @@ def _figure1(cfg: dict) -> None:
     )
     write_table(cfg, "figure1_schematic_source.csv", schematic)
 
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.35), gridspec_kw={"width_ratios": [1.0, 1.45]})
+    fig, axes = plt.subplots(
+        1,
+        2,
+        figsize=(8.4, 4.15),
+        gridspec_kw={"width_ratios": [1.25, 1.45]},
+    )
     ax = axes[0]
     ax.axis("off")
-    y_positions = [0.9, 0.73, 0.56]
+    flow_index = flow.set_index("stage")
+    y_positions = [0.94, 0.78, 0.62, 0.46]
     labels = [
-        ("VitalDB source", len(manifest)),
-        ("Pre-QC arterial candidates", int(manifest["pre_qc_primary_candidate"].sum())),
-        ("Primary waveform cohort", panel_cases),
+        ("VitalDB source", int(flow_index.loc["VitalDB source cases", "n_cases"])),
+        (
+            "Eligible clinical cohort",
+            int(flow_index.loc["Anaesthesia duration >=60 min", "n_cases"]),
+        ),
+        (
+            "Pre-QC arterial candidates",
+            int(flow_index.loc["Pre-QC arterial candidates", "n_cases"]),
+        ),
+        (
+            "Primary waveform cohort",
+            int(flow_index.loc["Primary arterial waveform cohort", "n_cases"]),
+        ),
     ]
     for y, (label, number) in zip(y_positions, labels):
         ax.text(
-            0.5,
+            0.34,
             y,
             f"{label}\n{number:,} cases",
             ha="center",
             va="center",
             transform=ax.transAxes,
-            bbox={"boxstyle": "round,pad=0.28", "fc": "#F4F4F4", "ec": "#555555", "lw": 0.8},
+            fontsize=7.8,
+            bbox={"boxstyle": "round,pad=0.24", "fc": "#F4F4F4", "ec": "#555555", "lw": 0.8},
         )
     for y1, y2 in zip(y_positions[:-1], y_positions[1:]):
         ax.annotate(
             "",
-            xy=(0.5, y2 + 0.065),
-            xytext=(0.5, y1 - 0.065),
+            xy=(0.34, y2 + 0.055),
+            xytext=(0.34, y1 - 0.055),
             xycoords=ax.transAxes,
             arrowprops={"arrowstyle": "-|>", "lw": 0.8, "color": "#555555"},
         )
-    ax.text(0.05, 0.43, "NIBP agreement branch", transform=ax.transAxes, weight="bold")
+    exclusion_labels = [
+        (
+            0.86,
+            "Excluded 939\nAge <18: 57; not general\nanaesthesia: 342; surgery\ngroups: 430; duration <60 min: 110",
+        ),
+        (0.70, "Excluded 2,134\nNo candidate arterial MAP track"),
+        (0.54, "Excluded 880\nValid arterial MAP coverage <80%"),
+    ]
+    for y, label in exclusion_labels:
+        ax.text(
+            0.64,
+            y,
+            label,
+            ha="left",
+            va="center",
+            transform=ax.transAxes,
+            fontsize=6.3,
+            color="#444444",
+        )
+    ax.text(0.02, 0.37, "NIBP agreement branch", transform=ax.transAxes, weight="bold", fontsize=8)
     branch = [
         ("NIBP processing pool", int(count["primary_art_coverage_processing_pool"])),
         ("Display events reconstructed", int(count["reconstructed_nibp_display_events"])),
         ("Cases with paired events", int(count["paired_nibp_events_primary_window"])),
     ]
     for index, (label, number) in enumerate(branch):
-        y = 0.33 - index * 0.13
+        y = 0.29 - index * 0.12
         ax.text(
-            0.5,
+            0.42,
             y,
             f"{label}: {number:,}",
             ha="center",
             va="center",
             transform=ax.transAxes,
+            fontsize=7.4,
             bbox={"boxstyle": "round,pad=0.22", "fc": "#EAF2F8", "ec": "#4C72B0", "lw": 0.8},
         )
-    ax.text(-0.08, 1.02, "A", transform=ax.transAxes, weight="bold", fontsize=11)
+    ax.text(-0.02, 1.01, "A", transform=ax.transAxes, weight="bold", fontsize=11)
 
     ax = axes[1]
     ax.step(time_min, reference, where="post", color=COLORS["reference"], lw=1.7, label="Arterial reference")
@@ -341,9 +715,9 @@ def _figure1(cfg: dict) -> None:
     ax.set_ylim(54, 78)
     ax.set_xlabel("Time from analytic start, min")
     ax.set_ylabel("MAP, mm Hg")
-    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.42), ncol=2, frameon=False)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.35), ncol=2, frameon=False)
     ax.text(-0.13, 1.02, "B", transform=ax.transAxes, weight="bold", fontsize=11)
-    fig.subplots_adjust(bottom=0.26, wspace=0.34)
+    fig.subplots_adjust(bottom=0.23, wspace=0.40)
     _save_figure(fig, out_root(cfg) / "figures", "Figure_1_study_flow_and_observability")
 
 
@@ -471,7 +845,7 @@ def _figure3(cfg: dict) -> None:
     write_table(cfg, "figure3_timing_consequences_source.csv", sub)
 
     fig, axes = plt.subplots(
-        1, 2, figsize=(7.2, 3.45), gridspec_kw={"width_ratios": [1.45, 1.0]}
+        1, 2, figsize=(7.2, 3.65), gridspec_kw={"width_ratios": [1.45, 1.0]}
     )
     x = np.arange(len(sub))
     ax = axes[0]
@@ -488,7 +862,7 @@ def _figure3(cfg: dict) -> None:
         bottom += values
     ax.axvline(3.5, color="#777777", lw=0.8, ls="--")
     ax.set_xticks(x, sub["display_group"])
-    ax.tick_params(axis="x", labelsize=7.5)
+    ax.tick_params(axis="x", labelsize=8.5)
     ax.set_ylim(0, 1.0)
     ax.set_ylabel("Phase-episode proportion")
     ax.set_xlabel("Threshold / episode duration")
@@ -514,12 +888,12 @@ def _figure3(cfg: dict) -> None:
     ax.axhline(0.5, color="#777777", lw=0.8, ls="--")
     ax.axvline(3.5, color="#777777", lw=0.8, ls="--")
     ax.set_xticks(x, sub["display_group"])
-    ax.tick_params(axis="x", labelsize=7.5)
+    ax.tick_params(axis="x", labelsize=8.5)
     ax.set_ylim(0, 0.82)
     ax.set_ylabel("Reference AUC accrued\nbefore first low display")
     ax.set_xlabel("Threshold / episode duration")
     ax.text(-0.16, 1.03, "B", transform=ax.transAxes, weight="bold", fontsize=11)
-    fig.subplots_adjust(bottom=0.37, wspace=0.36)
+    fig.subplots_adjust(bottom=0.36, wspace=0.36)
     _save_figure(fig, out_root(cfg) / "figures", "Figure_3_timing_consequences")
 
 
@@ -530,9 +904,9 @@ def _write_legends(cfg: dict) -> None:
                 "figure": "Figure 1",
                 "title": "Study flow and temporal observability under an emulated 5-min display",
                 "legend": (
-                    "Panel A shows derivation of the primary arterial waveform cohort and the nested NIBP agreement branch. "
+                    "Panel A shows sequential eligibility and waveform-coverage exclusions for the primary arterial cohort and the nested NIBP agreement branch. "
                     "Panel B illustrates how last-observation-carried-forward display can hide an arterial hypotensive interval and retain a low value after arterial recovery. "
-                    "The schematic is an analytic illustration rather than a patient trace. MAP, mean arterial pressure; NIBP, non-invasive blood pressure."
+                    "The schematic is an analytic illustration rather than a patient trace. ART, arterial; MAP, mean arterial pressure; NIBP, noninvasive blood pressure."
                 ),
             },
             {
@@ -540,7 +914,7 @@ def _write_legends(cfg: dict) -> None:
                 "title": "Phase-averaged observability of reference hypotensive episodes",
                 "legend": (
                     "Panel A shows the probability that a reference episode lasting at least 60 s was represented by at least one displayed value below the same threshold across all possible 10-s sampling phases. "
-                    "Panel B shows complete-miss probability at MAP <65 mm Hg with a 5-min interval, stratified by reference episode duration. Error bars are 95% case-cluster bootstrap confidence intervals."
+                    "Panel B shows complete-miss probability at MAP <65 mm Hg with a 5-min interval, stratified by reference episode duration. Error bars are 95% subject-cluster bootstrap confidence intervals."
                 ),
             },
             {
@@ -549,7 +923,8 @@ def _write_legends(cfg: dict) -> None:
                 "legend": (
                     "Panel A partitions each phase-episode combination into first low display at least 2 min before arterial recovery, 1 to less than 2 min before recovery, less than 1 min before recovery, or complete miss. "
                     "Panel B shows the proportion of reference hypotension area under the deficit curve accrued strictly before the first low display; a completely missed episode contributes its entire reference area. "
-                    "The MAP <55 mm Hg, 1- to less than 3-min group is a secondary severe-episode anchor. Error bars are 95% case-cluster bootstrap confidence intervals."
+                    "The vertical dashed line separates the secondary MAP <55 mm Hg, 1- to less than 3-min severe-episode anchor from the MAP <65 mm Hg groups. "
+                    "The horizontal dashed line in Panel B marks 50% of reference AUC accrued before the first low display. Error bars are 95% subject-cluster bootstrap confidence intervals."
                 ),
             },
         ]

@@ -67,7 +67,7 @@ def assess_model_stability(
         "ci_width_ratio": ci_width_ratio,
         "model_stability_status": "PASS" if not failed else "NOT_PASS",
         "model_stability_reason": (
-            "all pre-specified numerical stability criteria passed"
+            "all analysis-plan-defined numerical stability criteria passed"
             if not failed
             else "failed: " + ", ".join(failed)
         ),

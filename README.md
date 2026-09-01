@@ -6,11 +6,13 @@ The release contains analysis code, a configuration template, tests, figure sour
 
 ## Scientific scope
 
-The primary analysis uses a fixed 10-s arterial mean arterial pressure (MAP) reference trajectory and emulates intermittent displays at prespecified sampling intervals. At MAP below 65 mm Hg with a 5-min display interval, 9,187 reference episodes lasting at least 60 s were identified among 2,435 selected VitalDB cases. Complete miss occurred in 34.2% of episodes; the first displayed low value arrived with at least 1 min of reference hypotension remaining in 55.0% and at least 2 min remaining in 35.7%. The pre-display portion represented 34.9% of reference episode area under the threshold.
+The primary analysis uses a fixed 10-s arterial mean arterial pressure (MAP) reference trajectory and emulates intermittent displays at prespecified sampling intervals. At MAP below 65 mm Hg with a 5-min display interval, 9,187 reference episodes lasting at least 60 s were identified among 2,435 selected VitalDB cases from 2,380 subjects. Complete miss occurred in 34.2% of episodes; the first displayed low value arrived with at least 1 min of reference hypotension remaining in 55.0% and at least 2 min remaining in 35.7%. The pre-display portion represented 34.9% of reference episode area under the threshold. Confidence intervals resample subjects and retain all operations from each sampled subject.
+
+Sensitivity analyses compare case- and subject-cluster bootstrap estimates and test alternate conventions before the first scheduled display. These checks leave the substantive temporal-observability findings unchanged while making the initial no-display period explicit.
 
 The supplementary cuff analysis reconstructs non-invasive blood pressure (NIBP) display events. Each event is paired to the median of valid arterial MAP samples from 30 s before through 30 s after the recorded event time.
 
-Exploratory postoperative analyses evaluate creatinine-defined acute kidney injury (AKI) and ICU length of stay of at least 2 days. Hidden hypotension burden was associated with AKI after clinical adjustment, but the association was attenuated after nonlinear adjustment for total reference hypotension burden. The ICU analysis provides exploratory resource-use context. These observational associations do not estimate a causal effect of monitoring frequency, treatment, or organ protection.
+Exploratory postoperative analyses evaluate creatinine-defined acute kidney injury (AKI) and ICU length of stay of at least 2 days. The clinically adjusted association between hidden hypotension burden and AKI was modest and imprecise (RR 1.09 per 10 mm Hg*min/h; 95% CI, 0.99 to 1.20); after nonlinear adjustment for total reference hypotension burden, the RR was 1.04 (95% CI, 0.81 to 1.34). The ICU analysis provides exploratory resource-use context. These observational associations do not estimate a causal effect of monitoring frequency, treatment, or organ protection.
 
 ## Data boundary
 
@@ -26,7 +28,7 @@ Case-level trajectories, reconstructed display events, paired measurements, crea
 - `config/reproduction.example.yaml`: data-path and analysis-setting template.
 - `outputs/tables/`: non-identifiable aggregate CSV outputs.
 - `manuscript_inputs/figure_source_files/`: source data and legends for all figures.
-- `outputs/figures/`: programmatically generated PDF and PNG figures.
+- `outputs/figures/`: programmatically generated PDF, PNG, and TIFF figures.
 - `outputs/final_workbook.xlsx`: README plus all aggregate tables in separate worksheets.
 - `outputs/manifests/`: provenance and frozen file-level SHA-256 inventories.
 
@@ -56,11 +58,11 @@ The ICU resource-use script consumes a private case-level model frame generated 
 
 ## Frozen release
 
-- Tag: `v1.2.0-submission`
+- Tag: `v1.3.0-submission`
 - Aggregate workbook: `outputs/final_workbook.xlsx`
-- Aggregate workbook SHA-256: `e4f8c2f5e3aa2af1a320b87d2ff552c3f9d60e26c33778eb73bb61e53e693d60`
+- Aggregate workbook SHA-256: `eae724fa69aa0fbb7c112d3c1200436a4ad2f315c328c9475949001317b621c1`
 - Outputs manifest: `outputs/manifests/outputs_manifest.json`
-- Outputs manifest SHA-256: `fcea2d43fef6e0b38043fcd8b30c32d03ce4772e7825388903c659e850e0badd`
+- Outputs manifest SHA-256: `60b085d5b45f269eb6206429fd24aee0743491c80be63b45a2df3dd59b7b37de`
 - Stable Zenodo concept DOI: [10.5281/zenodo.21253616](https://doi.org/10.5281/zenodo.21253616)
 
 The exact repository inventory is recorded in `outputs/manifests/release_manifest.json` and `checksums.sha256`.

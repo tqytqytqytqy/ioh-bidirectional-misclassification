@@ -1,7 +1,11 @@
-stage,n_cases
-VitalDB source cases,6388
-Pre-QC arterial candidates,3315
-Primary arterial waveform cohort,2435
-Primary cohort with NIBP track,1995
-Reconstructed NIBP display events,1993
-Cases with paired NIBP-ART events,1908
+branch,stage,n_cases,excluded_from_previous,exclusion_reason
+primary,VitalDB source cases,6388,0,
+primary,Adults,6331,57,age <18 yr
+primary,General anaesthesia,5989,342,not general anaesthesia
+primary,Eligible surgery groups,5559,430,prespecified surgery groups
+primary,Anaesthesia duration >=60 min,5449,110,anaesthesia duration <60 min
+primary,Pre-QC arterial candidates,3315,2134,no candidate arterial MAP track
+primary,Primary arterial waveform cohort,2435,880,valid arterial MAP coverage <80%
+NIBP agreement,Primary cohort with NIBP track,1995,440,no NIBP MAP track
+NIBP agreement,Reconstructed NIBP display events,1993,2,display event reconstruction unavailable
+NIBP agreement,Cases with paired NIBP-ART events,1908,85,no paired event in the primary window

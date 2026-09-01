@@ -1,0 +1,2 @@
+n_cases,n_subjects,subjects_with_repeated_surgery,additional_cases_from_repeated_surgery,maximum_cases_per_subject,primary_analysis_unit,bootstrap_cluster
+2435,2380,50,55,4,surgical case,subjectid

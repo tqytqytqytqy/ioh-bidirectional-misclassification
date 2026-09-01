@@ -80,7 +80,14 @@ def decompose_deficit(reference_map, display_map, threshold: float, dt_min: floa
     }
 
 
-def emulate_last_visible(times_sec, values, interval_sec: float, offset_sec: float, carry_forward_limit_sec: float | None = None) -> np.ndarray:
+def emulate_last_visible(
+    times_sec,
+    values,
+    interval_sec: float,
+    offset_sec: float,
+    carry_forward_limit_sec: float | None = None,
+    initialize_at_start: bool = False,
+) -> np.ndarray:
     """Sample a reference trajectory and forward-fill the last visible value."""
     times = np.asarray(times_sec, dtype=float)
     vals = np.asarray(values, dtype=float)
@@ -89,6 +96,11 @@ def emulate_last_visible(times_sec, values, interval_sec: float, offset_sec: flo
         return out
     sample_times = np.arange(times[0] + float(offset_sec), times[-1] + 1e-9, float(interval_sec))
     samples: list[tuple[float, float]] = []
+    if initialize_at_start and float(offset_sec) > 0:
+        finite = np.flatnonzero(np.isfinite(vals))
+        if len(finite):
+            first = int(finite[0])
+            samples.append((float(times[first]), float(vals[first])))
     for sample_time in sample_times:
         idx = int(np.searchsorted(times, sample_time, side="left"))
         if idx >= len(times):

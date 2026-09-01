@@ -1,29 +1,94 @@
 {
-  "automated_tests": "51 passed",
-  "copied_files_verified": 101,
-  "creator_metadata": "PASS",
-  "numerical_results": {
-    "aki_events": 106,
-    "complete_miss_percent": 34.2,
-    "figures_programmatically_generated": true,
-    "first_display_with_at_least_1min_remaining_percent": 55.0,
-    "first_display_with_at_least_2min_remaining_percent": 35.7,
-    "icu_events_ge2d": 171,
-    "pre_display_auc_percent": 34.9,
-    "primary_cases": 2435,
-    "reference_episodes": 9187
+  "aggregate_csv_count": 76,
+  "asa_missing_rows": [
+    {
+      "characteristic": "ASA Physical Status",
+      "level": "1",
+      "missing_n": "54.0",
+      "nonmissing_n": "2381",
+      "note": "ASA Physical Status was missing in 54 cases; percentages use 2381 cases with valid values.",
+      "summary": "462 (19.4%)",
+      "summary_definition": "n (%) among nonmissing cases"
+    }
+  ],
+  "case_level_column_hits": {},
+  "cohort_counts": {
+    "additional_cases": 55,
+    "cases": 2435,
+    "maximum_cases_per_subject": 4,
+    "repeated_subjects": 50,
+    "subjects": 2380
   },
-  "outputs": {
-    "aggregate_csv_files": 36,
-    "figure_files": 8,
-    "figure_source_files": 6,
-    "manifest_entries": 52,
-    "outputs_manifest_sha256": "fcea2d43fef6e0b38043fcd8b30c32d03ce4772e7825388903c659e850e0badd",
-    "workbook_sha256": "e4f8c2f5e3aa2af1a320b87d2ff552c3f9d60e26c33778eb73bb61e53e693d60",
-    "workbook_sheets": 36
-  },
-  "public_content_boundary": "PASS",
-  "release": "v1.2.0-submission",
-  "source_copy_integrity": "PASS",
-  "status": "PASS"
+  "cohort_flow": [
+    [
+      "source_cases",
+      6388,
+      0
+    ],
+    [
+      "adult",
+      6331,
+      57
+    ],
+    [
+      "general_anaesthesia",
+      5989,
+      342
+    ],
+    [
+      "eligible_surgery",
+      5559,
+      430
+    ],
+    [
+      "duration_ge_60min",
+      5449,
+      110
+    ],
+    [
+      "has_art_map",
+      3315,
+      2134
+    ],
+    [
+      "art_coverage_ge_80pct",
+      2435,
+      880
+    ]
+  ],
+  "complete_miss_probability": 0.342237219259098,
+  "episode_detection_probability": 0.657762780740902,
+  "female_row": [
+    {
+      "characteristic": "Sex",
+      "level": "Female",
+      "missing_n": "",
+      "nonmissing_n": "2435",
+      "note": "",
+      "summary": "1001 (41.1%)",
+      "summary_definition": "n (%) among nonmissing cases"
+    }
+  ],
+  "figure_source_mismatches": [],
+  "files_scanned": 171,
+  "forbidden_text_hits": [],
+  "initial_display_policies": [
+    "unavailable_before_first_scheduled_sample",
+    "baseline_initialized_at_first_reference",
+    "exclude_before_first_display"
+  ],
+  "manifest_errors": [],
+  "metadata_has_current_hashes": true,
+  "metadata_has_old_hashes": [],
+  "outputs_manifest_sha256": "60b085d5b45f269eb6206429fd24aee0743491c80be63b45a2df3dd59b7b37de",
+  "primary_bootstrap_cluster": "subjectid",
+  "primary_hdr": 0.5974247419434733,
+  "primary_net_bias": -0.02443252564145753,
+  "primary_odr": 0.5729922163020157,
+  "release_version": "v1.3.0-submission",
+  "sensitive_filename_hits": [],
+  "status": "PASS",
+  "tests_reported": true,
+  "workbook_sha256": "eae724fa69aa0fbb7c112d3c1200436a4ad2f315c328c9475949001317b621c1",
+  "workbook_sheet_count": 78
 }

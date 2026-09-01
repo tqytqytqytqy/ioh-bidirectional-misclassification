@@ -1,73 +1,80 @@
 {
-  "aki_baseline": "VitalDB preop_cr clinical-information field",
+  "additional_cases_from_repeated_surgery": 55,
   "aki_definition": "KDIGO serum-creatinine criteria only: at least 0.3 mg/dL within 48 h or at least 1.5 times baseline within 7 d, censored at discharge",
   "aki_evaluable_cases": 2246,
   "aki_events": 106,
-  "aki_hidden_absence_cases": 37,
-  "aki_hidden_absence_events": 0,
-  "aki_hidden_presence_cases": 2209,
-  "aki_hidden_presence_status": "not estimable by ordinary regression because of complete separation",
+  "aki_hidden_presence_status": "NOT_ESTIMABLE_COMPLETE_SEPARATION",
   "aki_incremental_absolute_burden_ci95": [
-    0.851712251396,
-    1.326792648938
+    0.8149135530943874,
+    1.339299796968809
   ],
-  "aki_incremental_absolute_burden_p_value": 0.588800658036,
-  "aki_incremental_absolute_burden_rr_per_10_mmHg_min_h": 1.063036007933,
-  "aki_interpretation": "absolute hidden burden tracked clinically relevant hypotension exposure after clinical adjustment; attenuation after total reference-burden adjustment did not support an independent invisibility effect",
-  "aki_principal_absolute_burden_model_cases": 2246,
-  "aki_principal_absolute_burden_model_subjects": 2198,
+  "aki_incremental_absolute_burden_p_value": 0.7300303132514938,
+  "aki_incremental_absolute_burden_rr_per_10_mmHg_min_h": 1.0447074021975933,
+  "aki_principal_absolute_burden_model_cases": 2242,
   "aki_principal_ci95": [
-    1.009626796008,
-    1.212691126121
+    0.9922820156812905,
+    1.2036956651328363
   ],
-  "aki_principal_p_value": 0.030395744389,
-  "aki_principal_rr_per_10_mmHg_min_h": 1.106510486264,
+  "aki_principal_p_value": 0.07143259894644313,
+  "aki_principal_rr_per_10_mmHg_min_h": 1.0928886315013266,
   "aki_secondary_hdr65_ci95": [
-    0.745023848391,
-    1.011762460143
+    0.7422772962660598,
+    1.0125450773450135
   ],
-  "aki_secondary_hdr65_rr_per_10_percentage_points": 0.868209169333,
-  "analysis_version": "v1.2.0-submission",
-  "automated_tests_passed": 51,
+  "aki_secondary_hdr65_rr_per_10_percentage_points": 0.8669424561983137,
+  "analysis_version": "v1.3.0-submission",
+  "bootstrap_cluster": "subjectid",
   "cases_with_map65_episodes_ge60s": 1899,
-  "freeze_date": "2026-08-30",
+  "freeze_date": "2026-09-01",
   "icu_clinical_ci95": [
-    1.0657178987854852,
-    1.228153400418
+    1.0656017578285286,
+    1.229061972230728
   ],
-  "icu_clinical_model_cases": 2252,
+  "icu_clinical_model_cases": 2248,
   "icu_clinical_model_events": 153,
-  "icu_clinical_model_subjects": 2204,
-  "icu_clinical_p_value": 0.0002002594962231,
-  "icu_clinical_rr_per_10_mmHg_min_h": 1.1440564065113743,
-  "icu_endpoint": "postoperative ICU length of stay at least 2 days",
-  "icu_endpoint_limitation": "VitalDB icu_days cannot distinguish planned from unplanned ICU admission",
+  "icu_clinical_model_subjects": 2203,
+  "icu_clinical_p_value": 0.0002111916779974862,
+  "icu_clinical_rr_per_10_mmHg_min_h": 1.1444171433918937,
+  "icu_endpoint": "postoperative ICU length of stay >=2 days",
+  "icu_endpoint_limitation": "VitalDB does not distinguish planned from unplanned ICU admission",
   "icu_endpoint_role": "exploratory postoperative resource-use outcome",
-  "icu_event_rate": 0.07022587268993839,
-  "icu_events_ge2d": 171,
-  "icu_gate0_status": "PASS_WITH_ENDPOINT_LIMITATION",
   "icu_incremental_ci95": [
-    1.018843015638056,
-    1.360296365446854
+    1.0190145493451477,
+    1.3624857920149336
   ],
-  "icu_incremental_p_value": 0.0268881680253676,
-  "icu_incremental_rr_per_10_mmHg_min_h": 1.1772546245962936,
-  "icu_model_stability": "PASS for all three sequential models",
-  "icu_total_cases": 2435,
-  "in_hospital_deaths": 18,
-  "independent_r_verification": "three sequential AKI models and three sequential ICU resource-use models reproduced with separately implemented Poisson fits and subject-cluster robust variance",
-  "map55_short_complete_miss_probability": 0.5930817610062893,
-  "map55_short_reference_auc_before_first_display_fraction": 0.7064217983732892,
+  "icu_incremental_p_value": 0.026818163623338293,
+  "icu_incremental_rr_per_10_mmHg_min_h": 1.1783008297286666,
+  "map65_complete_miss_probability": 0.342237219259098,
+  "map65_episode_detection_probability": 0.657762780740902,
   "map65_episodes_ge60s": 9187,
   "map65_first_display_ge1min_probability": 0.5497478320815645,
   "map65_first_display_ge2min_probability": 0.35702623272014805,
+  "map65_hdr": 0.5974247419434733,
+  "map65_hdr_ci95": [
+    0.581867624544135,
+    0.6122406941698799
+  ],
+  "map65_net_bias": -0.02443252564145753,
+  "map65_net_bias_ci95": [
+    -0.02697779970201543,
+    -0.02202809364724751
+  ],
+  "map65_odr": 0.5729922163020157,
+  "map65_odr_ci95": [
+    0.5580414311205506,
+    0.5870330839049442
+  ],
   "map65_reference_auc_before_first_display_fraction": 0.3486012684339906,
-  "mortality_modeling": "not performed because events were sparse",
+  "maximum_cases_per_subject": 4,
+  "nibp_pairing_window": "median arterial MAP from -30 to +30 s around each NIBP event",
   "nibp_processing_pool_cases": 1995,
   "paired_nibp_art_cases": 1908,
   "paired_nibp_art_events": 58842,
+  "primary_analysis_unit": "surgical case",
   "primary_cohort_cases": 2435,
+  "primary_cohort_subjects": 2380,
   "primary_dataset": "VitalDB",
   "privacy": "aggregate release only; no raw source or case-level data redistributed",
-  "source_template_sha256": "bfd5bf1f353a20290a080c5c1d95a916b450c142df6866e637dcc7b64b406efa"
+  "source_template_sha256": "ebbf973a1096230ca01138b1411197138bb5b8b68fc20a88110df86f2571f9f7",
+  "subjects_with_repeated_surgery": 50
 }

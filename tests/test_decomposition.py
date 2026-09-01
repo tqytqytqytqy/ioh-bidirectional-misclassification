@@ -1,6 +1,6 @@
 import numpy as np
 
-from ioh.estimands.decomposition import decompose_deficit
+from ioh.estimands.decomposition import decompose_deficit, emulate_last_visible
 
 
 def test_pointwise_decomposition_separates_hidden_and_overdisplay_without_net_cancellation():
@@ -56,3 +56,26 @@ def test_discordance_uses_strict_below_threshold_and_separates_unavailable_displ
     assert out["normotensive_display_discordance_min"] == 1.0
     assert out["hypotensive_display_discordance_min"] == 2.0
     assert out["reference_hypotension_with_display_unavailable_min"] == 1.0
+
+
+def test_emulate_last_visible_can_initialize_display_at_analytic_start():
+    times = np.arange(0, 70, 10, dtype=float)
+    values = np.array([72.0, 71.0, 60.0, 61.0, 75.0, 76.0, 77.0])
+
+    uninitialized = emulate_last_visible(
+        times,
+        values,
+        interval_sec=30,
+        offset_sec=20,
+    )
+    initialized = emulate_last_visible(
+        times,
+        values,
+        interval_sec=30,
+        offset_sec=20,
+        initialize_at_start=True,
+    )
+
+    assert np.isnan(uninitialized[:2]).all()
+    assert np.allclose(initialized[:2], [72.0, 72.0])
+    assert np.allclose(initialized[2:], uninitialized[2:], equal_nan=True)

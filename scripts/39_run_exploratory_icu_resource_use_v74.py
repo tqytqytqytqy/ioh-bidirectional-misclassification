@@ -9,6 +9,14 @@ from ioh.icu_analysis import fit_sequential_icu_models
 from ioh.icu_outcomes import build_prolonged_icu_outcome, summarize_icu_gate
 
 
+def _recorded_asa_sensitivity_frame(frame: pd.DataFrame) -> pd.DataFrame:
+    """Return a copy using recorded ASA >=3 for data-quality sensitivity models."""
+
+    sensitivity = frame.copy()
+    sensitivity["asa_high"] = sensitivity["asa_high_recorded"]
+    return sensitivity
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, required=True)
@@ -29,6 +37,15 @@ def main() -> None:
         outcome["prolonged_icu_ge2d"], errors="coerce"
     )
     models = fit_sequential_icu_models(model_frame)
+    asa_sensitivity = fit_sequential_icu_models(
+        _recorded_asa_sensitivity_frame(model_frame)
+    ).iloc[1:].copy()
+    asa_sensitivity["analysis"] = (
+        asa_sensitivity["analysis"] + " (recorded ASA sensitivity)"
+    )
+    asa_sensitivity["analysis_role"] = (
+        "ASA coding sensitivity; " + asa_sensitivity["analysis_role"]
+    )
 
     gate_pass = (
         gate.loc[gate["criterion"].eq("overall_gate"), "status"].iloc[0]
@@ -49,6 +66,10 @@ def main() -> None:
     models.to_csv(
         args.output_dir / "exploratory_icu_sequential_models.csv", index=False
     )
+    asa_sensitivity.to_csv(
+        args.output_dir / "exploratory_icu_asa_coding_sensitivity.csv",
+        index=False,
+    )
     model_columns = [
         "case_id",
         "subjectid",
@@ -59,6 +80,7 @@ def main() -> None:
         "male",
         "bmi5",
         "asa_high",
+        "asa_high_recorded",
         "emop",
         "preop_htn",
         "preop_dm",
@@ -96,6 +118,14 @@ def main() -> None:
             f"- {row.analysis}: N={row.n_cases:,}; events={row.events:,}; "
             f"RR {row.relative_risk:.3f} (95% CI {row.ci_low:.3f} to "
             f"{row.ci_high:.3f}); P={row.p_value:.4f}; stability={row.model_stability_status}."
+        )
+    lines.extend(["", "## ASA coding sensitivity", ""])
+    for row in asa_sensitivity.itertuples(index=False):
+        lines.append(
+            f"- {row.analysis}: N={row.n_cases:,}; events={row.events:,}; "
+            f"RR {row.relative_risk:.3f} (95% CI {row.ci_low:.3f} to "
+            f"{row.ci_high:.3f}); P={row.p_value:.4f}; "
+            f"stability={row.model_stability_status}."
         )
     lines.extend(
         [

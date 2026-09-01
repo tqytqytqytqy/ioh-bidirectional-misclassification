@@ -897,12 +897,18 @@ def _complete_waveform_sensitivity_row(
     }
 
 
-def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFrame:
-    rng = np.random.default_rng(int(cfg["project"]["seed"]))
+def _frequency_population_table(
+    cfg: dict,
+    case_mean: pd.DataFrame,
+    *,
+    case_to_cluster: pd.DataFrame | None = None,
+    cluster_column: str = "case_id",
+) -> pd.DataFrame:
+    base_seed = int(cfg["project"]["seed"])
     reps = int(cfg["analysis"]["bootstrap_reps"])
     rows = []
     for (threshold, interval_min), sub in case_mean.groupby(["threshold", "interval_min"]):
-        grouped = sub.groupby("case_id")[
+        by_case = sub.groupby("case_id")[
             [
                 "true_auc",
                 "display_auc",
@@ -922,8 +928,41 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
                 "episode_detected",
             ]
         ].sum()
-        n = len(grouped)
-        idx = rng.integers(0, n, size=(reps, n)) if n else np.empty((0, 0), dtype=int)
+        n_cases = len(by_case)
+        if case_to_cluster is None:
+            grouped = by_case
+            bootstrap_cluster = "case_id"
+        else:
+            required = {"case_id", cluster_column}
+            missing_columns = required - set(case_to_cluster.columns)
+            if missing_columns:
+                raise ValueError(
+                    f"case_to_cluster is missing columns: {sorted(missing_columns)}"
+                )
+            mapping = case_to_cluster[["case_id", cluster_column]].drop_duplicates()
+            conflicting = mapping.groupby("case_id")[cluster_column].nunique(dropna=False)
+            if bool(conflicting.gt(1).any()):
+                raise ValueError("each case_id must map to exactly one bootstrap cluster")
+            mapping = mapping.drop_duplicates("case_id").set_index("case_id")[cluster_column]
+            cluster_ids = mapping.reindex(by_case.index)
+            if bool(cluster_ids.isna().any()):
+                raise ValueError("every analyzed case_id must have a bootstrap cluster")
+            grouped = by_case.assign(_bootstrap_cluster=cluster_ids.to_numpy()).groupby(
+                "_bootstrap_cluster", dropna=False
+            ).sum()
+            bootstrap_cluster = cluster_column
+        n_clusters = len(grouped)
+        group_seed_material = (
+            f"frequency_population|{base_seed}|{float(threshold):.12g}|"
+            f"{float(interval_min):.12g}|{bootstrap_cluster}"
+        ).encode("utf-8")
+        group_seed = int.from_bytes(hashlib.sha256(group_seed_material).digest()[:8], "big")
+        rng = np.random.default_rng(group_seed)
+        idx = (
+            rng.integers(0, n_clusters, size=(reps, n_clusters))
+            if n_clusters
+            else np.empty((0, 0), dtype=int)
+        )
         true = grouped["true_auc"].to_numpy(float)
         hidden = grouped["hidden_auc"].to_numpy(float)
         over = grouped["overdisplay_auc"].to_numpy(float)
@@ -945,7 +984,10 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
         row = {
             "threshold": threshold,
             "interval_min": interval_min,
-            "n_cases": n,
+            "n_cases": n_cases,
+            "n_clusters": n_clusters,
+            "bootstrap_cluster": bootstrap_cluster,
+            "bootstrap_reps": reps,
             "true_auc_total": total_true,
             "display_auc_total": display.sum(),
             "hidden_auc_total": hidden.sum(),
@@ -970,7 +1012,7 @@ def _frequency_population_table(cfg: dict, case_mean: pd.DataFrame) -> pd.DataFr
             "display_unavailable_fraction": display_unavailable_min.sum() / (display_valid_min.sum() + display_unavailable_min.sum()) if (display_valid_min.sum() + display_unavailable_min.sum()) > 0 else np.nan,
             "episode_sensitivity": ep_det.sum() / ep.sum() if ep.sum() > 0 else np.nan,
         }
-        if n:
+        if n_clusters:
             def ratio_ci(num_arr, den_arr):
                 num_rep = num_arr[idx].sum(axis=1)
                 den_rep = den_arr[idx].sum(axis=1)
@@ -1086,7 +1128,10 @@ def _write_episode_duration_outputs(cfg: dict, panel: pd.DataFrame) -> None:
     )
 
 
-def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
+def build_nibp_display_events(
+    cfg: dict, raw_sample_path: str | Path | None = None
+) -> pd.DataFrame:
+    ensure_dirs(cfg)
     manifest = pd.read_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet")) if intermediate_path(cfg, "vitaldb_manifest.parquet").exists() else build_vitaldb_manifest(cfg)
     pre_qc_candidates = manifest[
         manifest["pre_qc_primary_candidate"] & manifest["has_nibp_map"]
@@ -1105,30 +1150,81 @@ def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
         candidates, cfg["nibp"].get("sample_cases", "all")
     )
     linked["nibp_subset_order"] = np.arange(1, len(linked) + 1)
-    raw_frames = []
-    event_frames = []
     sensitivity_rows = []
-    for _, row in linked.iterrows():
-        times, values = read_vitaldb_track(cfg, str(row["nibp_tid"]))
-        if len(times) == 0:
-            continue
-        _, start_sec, end_sec = _time_window_bounds(row, cfg["time_window"]["primary"])
-        in_window = np.isfinite(times) & (times >= start_sec) & (times <= end_sec)
-        raw = pd.DataFrame({"case_id": row["case_id"], "time_sec": times[in_window] - start_sec, "map": values[in_window]})
-        raw = raw[pd.to_numeric(raw["time_sec"], errors="coerce") >= 0]
-        raw_frames.append(raw)
-        events = collapse_nibp_display_events(
-            raw,
+    if raw_sample_path is not None:
+        frozen_path = Path(raw_sample_path).expanduser()
+        if not frozen_path.is_file():
+            raise FileNotFoundError(f"frozen NIBP raw sample not found: {frozen_path}")
+        raw_all = pd.read_parquet(frozen_path)
+        required_columns = {"case_id", "time_sec", "map"}
+        missing_columns = required_columns - set(raw_all.columns)
+        if missing_columns:
+            raise ValueError(
+                f"frozen NIBP raw sample is missing columns: {sorted(missing_columns)}"
+            )
+        selected_case_ids = set(linked["case_id"])
+        unexpected_case_ids = set(raw_all["case_id"].dropna()) - selected_case_ids
+        if unexpected_case_ids:
+            raise ValueError(
+                "frozen NIBP raw sample contains cases outside the selected cohort"
+            )
+        events_all = collapse_nibp_display_events(
+            raw_all,
             same_value_hold_sec=float(cfg["nibp"]["same_value_hold_sec"]),
             min_gap_new_event_sec=float(cfg["nibp"]["min_gap_new_event_sec"]),
             plausible_range=tuple(cfg["nibp"]["plausible_range"]),
         )
-        event_frames.append(events)
-    raw_all = pd.concat(raw_frames, ignore_index=True) if raw_frames else pd.DataFrame(columns=["case_id", "time_sec", "map"])
-    events_all = pd.concat(event_frames, ignore_index=True) if event_frames else pd.DataFrame(columns=["case_id", "display_time_sec", "nibp_map"])
+        input_mode = "frozen_derived_raw_sample"
+        input_sha256 = hashlib.sha256(frozen_path.read_bytes()).hexdigest()
+    else:
+        raw_frames = []
+        event_frames = []
+        for _, row in linked.iterrows():
+            times, values = read_vitaldb_track(cfg, str(row["nibp_tid"]))
+            if len(times) == 0:
+                continue
+            _, start_sec, end_sec = _time_window_bounds(
+                row, cfg["time_window"]["primary"]
+            )
+            in_window = np.isfinite(times) & (times >= start_sec) & (times <= end_sec)
+            raw = pd.DataFrame(
+                {
+                    "case_id": row["case_id"],
+                    "time_sec": times[in_window] - start_sec,
+                    "map": values[in_window],
+                }
+            )
+            raw = raw[pd.to_numeric(raw["time_sec"], errors="coerce") >= 0]
+            raw_frames.append(raw)
+            events = collapse_nibp_display_events(
+                raw,
+                same_value_hold_sec=float(cfg["nibp"]["same_value_hold_sec"]),
+                min_gap_new_event_sec=float(cfg["nibp"]["min_gap_new_event_sec"]),
+                plausible_range=tuple(cfg["nibp"]["plausible_range"]),
+            )
+            event_frames.append(events)
+        raw_all = (
+            pd.concat(raw_frames, ignore_index=True)
+            if raw_frames
+            else pd.DataFrame(columns=["case_id", "time_sec", "map"])
+        )
+        events_all = (
+            pd.concat(event_frames, ignore_index=True)
+            if event_frames
+            else pd.DataFrame(columns=["case_id", "display_time_sec", "nibp_map"])
+        )
+        if len(linked) and raw_all.empty:
+            raise RuntimeError(
+                "no NIBP records were readable for the selected cohort; verify that "
+                "the configured VitalDB track directory is mounted"
+            )
+        input_mode = "source_track_files"
+        input_sha256 = "not applicable"
     raw_all.to_parquet(intermediate_path(cfg, "nibp_raw_sample.parquet"), index=False)
     events_all.to_csv(table_path(cfg, "nibp_display_events.csv"), index=False)
     audit = retention_audit(raw_all, events_all)
+    audit.insert(0, "input_sha256", input_sha256)
+    audit.insert(0, "input_mode", input_mode)
     audit.insert(0, "sampled_cases", linked["case_id"].nunique())
     audit.insert(0, "primary_coverage_candidate_cases", len(candidates))
     audit.insert(0, "pre_qc_art_nibp_cases", len(pre_qc_candidates))
@@ -1234,7 +1330,9 @@ def build_nibp_display_events(cfg: dict) -> pd.DataFrame:
     )
     write_table(cfg, "nibp_dedup_sensitivity_grid.csv", sensitivity)
     write_table(cfg, "nibp_dedup_sensitivity.csv", sensitivity)
-    (PROJECT_ROOT / "docs" / "nibp_event_algorithm.md").write_text(
+    algorithm_path = PROJECT_ROOT / "docs" / "nibp_event_algorithm.md"
+    algorithm_path.parent.mkdir(parents=True, exist_ok=True)
+    algorithm_path.write_text(
         "# Actual NIBP Display-Event Algorithm\n\n"
         "Raw NIBP monitor records are grouped by case, filtered to physiologic MAP values, sorted by monitor time, "
         "and collapsed into display-level events. The primary rule keeps the first value, keeps value changes, "
@@ -1333,7 +1431,22 @@ def _pair_events(events: pd.DataFrame, panel: pd.DataFrame, window: tuple[float,
                 "paired": bool(paired),
             }
         )
-    return pd.DataFrame(rows)
+    return pd.DataFrame(
+        rows,
+        columns=[
+            "case_id",
+            "display_time_sec",
+            "nibp_map",
+            "window_before_sec",
+            "window_after_sec",
+            "art_points",
+            "expected_art_points",
+            "valid_fraction",
+            "art_map_ref",
+            "nibp_art_bias",
+            "paired",
+        ],
+    )
 
 
 def _write_nibp_agreement_tables(cfg: dict, pairs: pd.DataFrame) -> None:

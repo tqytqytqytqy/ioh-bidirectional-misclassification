@@ -1,0 +1,6 @@
+art_map_stratum,conditioning_variable,paired_events,cases,mean_bias,sd_bias,median_abs_error,mean_bias_ci_low,mean_bias_ci_high,interpretation
+<55,art_map_ref,790,391,27.0503164556962,25.329994128726632,20.5,24.17859218358396,30.741261188776022,conditional paired difference; not calibration bias
+55-60,art_map_ref,1270,591,15.375393700787402,17.667903711388213,11.0,13.953773354016999,16.954044365817683,conditional paired difference; not calibration bias
+60-65,art_map_ref,3149,985,10.176325817719912,15.217418196878484,8.5,9.340176104617296,11.092833228916081,conditional paired difference; not calibration bias
+65-75,art_map_ref,12766,1601,5.264844117186276,13.93865557488932,7.5,4.714961795682658,5.891940064672506,conditional paired difference; not calibration bias
+>=75,art_map_ref,40867,1872,-3.7937945041231314,16.581032830189105,9.5,-4.313669179456522,-3.285233688468933,conditional paired difference; not calibration bias

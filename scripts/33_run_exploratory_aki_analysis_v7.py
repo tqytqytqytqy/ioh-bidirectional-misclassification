@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import os
 from pathlib import Path
 
 import matplotlib
@@ -14,9 +16,11 @@ from _common import load_args
 from ioh.aki_outcomes import (
     aggregate_invisibility_features,
     build_creatinine_aki_outcomes,
+    clean_asa_for_adjustment,
     derive_last_preoperative_creatinine,
     fit_modified_poisson,
     summarize_hidden_presence,
+    summarize_asa_validity,
 )
 from ioh.pipeline import (
     ensure_dirs,
@@ -32,12 +36,36 @@ BASE_COVARIATES = (
     "age10 + male + bmi5 + asa_high + emop + preop_htn + preop_dm + "
     "baseline_cr05 + duration_hr + C(department)"
 )
+RECORDED_ASA_COVARIATES = BASE_COVARIATES.replace("asa_high", "asa_high_recorded")
 REFERENCE_BURDEN = "bs(log_true_twa, df=3, degree=2, include_intercept=False)"
 COVARIATE_DESCRIPTION = (
     "age, sex, body mass index, ASA Physical Status >=3, emergency surgery, "
     "hypertension, diabetes, baseline creatinine, anaesthesia duration, and "
     "surgical department"
 )
+
+
+def _load_laboratory_data(cfg: dict) -> tuple[pd.DataFrame, dict]:
+    explicit_path = os.environ.get("IOH_VITALDB_LABS", "").strip()
+    labs_path = (
+        Path(explicit_path).expanduser()
+        if explicit_path
+        else Path(cfg["data"]["vitaldb_root"]) / "labs.csv"
+    )
+    if not labs_path.is_file():
+        raise FileNotFoundError(
+            f"VitalDB laboratory file not found: {labs_path}; set IOH_VITALDB_LABS "
+            "to an explicit official labs or labs.csv.gz file"
+        )
+    labs = pd.read_csv(labs_path, usecols=["caseid", "dt", "name", "result"])
+    audit = {
+        "input_mode": "explicit_official_download" if explicit_path else "configured_data_root",
+        "input_filename": labs_path.name,
+        "input_sha256": hashlib.sha256(labs_path.read_bytes()).hexdigest(),
+        "laboratory_rows": int(len(labs)),
+        "laboratory_cases": int(labs["caseid"].nunique()),
+    }
+    return labs, audit
 
 
 def _analysis_frame(
@@ -71,9 +99,12 @@ def _analysis_frame(
         frame["sex"].astype("string").str.upper().str.strip().eq("M").astype(float)
     )
     frame["bmi5"] = pd.to_numeric(frame["bmi"], errors="coerce") / 5.0
-    asa = pd.to_numeric(frame["asa"], errors="coerce")
-    frame["asa_high"] = asa.ge(3).astype(float)
-    frame.loc[asa.isna(), "asa_high"] = np.nan
+    asa_recorded = pd.to_numeric(frame["asa"], errors="coerce")
+    asa_clean = clean_asa_for_adjustment(frame["asa"])
+    frame["asa_high"] = asa_clean.ge(3).astype(float)
+    frame.loc[asa_clean.isna(), "asa_high"] = np.nan
+    frame["asa_high_recorded"] = asa_recorded.ge(3).astype(float)
+    frame.loc[asa_recorded.isna(), "asa_high_recorded"] = np.nan
     for column in ("emop", "preop_htn", "preop_dm"):
         frame[column] = pd.to_numeric(frame[column], errors="coerce")
     frame["baseline_cr05"] = (
@@ -91,6 +122,14 @@ def _analysis_frame(
         pd.to_numeric(frame["hidden_twa"], errors="coerce") / 10.0
     )
     return frame
+
+
+def _recorded_asa_sensitivity_frame(frame: pd.DataFrame) -> pd.DataFrame:
+    """Return a copy using the recorded ASA >=3 indicator for sensitivity models."""
+
+    sensitivity = frame.copy()
+    sensitivity["asa_high"] = sensitivity["asa_high_recorded"]
+    return sensitivity
 
 
 def _fit_spec(
@@ -353,8 +392,8 @@ def run(cfg: dict) -> None:
     )
     manifest_all = pd.read_parquet(intermediate_path(cfg, "vitaldb_manifest.parquet"))
     manifest = manifest_all[manifest_all["case_id"].isin(panel_case_ids)].copy()
-    labs_path = Path(cfg["data"]["vitaldb_root"]) / "labs.csv"
-    labs = pd.read_csv(labs_path, usecols=["caseid", "dt", "name", "result"])
+    labs, labs_audit = _load_laboratory_data(cfg)
+    write_table(cfg, "aki_labs_source_audit.csv", pd.DataFrame([labs_audit]))
 
     outcomes = build_creatinine_aki_outcomes(manifest, labs)
     outcomes.to_parquet(
@@ -373,6 +412,7 @@ def run(cfg: dict) -> None:
         for threshold in (65.0, 60.0, 55.0)
     }
     primary = _analysis_frame(manifest, outcomes, feature_sets[65.0])
+    recorded_asa_primary = _recorded_asa_sensitivity_frame(primary)
     primary.to_parquet(
         intermediate_path(cfg, "aki_invisibility_analysis_case_v7.parquet"),
         index=False,
@@ -385,6 +425,7 @@ def run(cfg: dict) -> None:
         "male",
         "bmi5",
         "asa_high",
+        "asa_high_recorded",
         "emop",
         "preop_htn",
         "preop_dm",
@@ -398,6 +439,11 @@ def run(cfg: dict) -> None:
     ]
     primary[r_columns].to_csv(
         intermediate_path(cfg, "aki_model_frame_v73.csv"), index=False
+    )
+    write_table(
+        cfg,
+        "asa_physical_status_data_quality.csv",
+        summarize_asa_validity(manifest["asa"]),
     )
 
     presence = summarize_hidden_presence(primary)
@@ -458,6 +504,46 @@ def run(cfg: dict) -> None:
         threshold=65.0,
     )
     results = [hdr65_result]
+
+    asa_sensitivity_results = [
+        _fit_spec(
+            recorded_asa_primary,
+            label="Absolute hidden burden, clinical adjusted (recorded ASA sensitivity)",
+            analysis_role="ASA coding sensitivity for the primary exploratory association",
+            exposure_term="hidden_twa10",
+            exposure_label="hidden AUC per anaesthesia-hour at MAP <65 mm Hg",
+            exposure_scale="per 10 mm Hg*min per anaesthesia-hour",
+            outcome_definition="creatinine-defined KDIGO AKI through postoperative day 7",
+            baseline_definition="VitalDB preop_cr clinical-information field",
+            threshold=65.0,
+            adjustment="clinical",
+            require_reference_hypotension=False,
+        ),
+        _fit_spec(
+            recorded_asa_primary,
+            label="Absolute hidden burden, clinical plus reference burden (recorded ASA sensitivity)",
+            analysis_role="ASA coding sensitivity beyond total reference burden",
+            exposure_term="hidden_twa10",
+            exposure_label="hidden AUC per anaesthesia-hour at MAP <65 mm Hg",
+            exposure_scale="per 10 mm Hg*min per anaesthesia-hour",
+            outcome_definition="creatinine-defined KDIGO AKI through postoperative day 7",
+            baseline_definition="VitalDB preop_cr clinical-information field",
+            threshold=65.0,
+            adjustment="clinical_plus_reference",
+            require_reference_hypotension=False,
+        ),
+        _fit_spec(
+            recorded_asa_primary,
+            label="HDR65 incremental model (recorded ASA sensitivity)",
+            analysis_role="ASA coding sensitivity for the compositional incremental model",
+            exposure_term="hdr10",
+            exposure_label="hidden-deficit ratio at MAP <65 mm Hg",
+            exposure_scale="per 10-percentage-point increase",
+            outcome_definition="creatinine-defined KDIGO AKI through postoperative day 7",
+            baseline_definition="VitalDB preop_cr clinical-information field",
+            threshold=65.0,
+        ),
+    ]
 
     for threshold in (60.0, 55.0):
         threshold_frame = _analysis_frame(manifest, outcomes, feature_sets[threshold])
@@ -624,6 +710,12 @@ def run(cfg: dict) -> None:
     result_table = pd.DataFrame(results)
     result_table = result_table[ordered_columns]
     write_table(cfg, "exploratory_aki_incremental_models.csv", result_table)
+    asa_sensitivity_table = pd.DataFrame(asa_sensitivity_results)[ordered_columns]
+    write_table(
+        cfg,
+        "exploratory_aki_asa_coding_sensitivity.csv",
+        asa_sensitivity_table,
+    )
     pd.concat([sequential_table, result_table], ignore_index=True).to_csv(
         intermediate_path(cfg, "aki_models_for_r_verification_v73.csv"),
         index=False,
