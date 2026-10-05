@@ -1,0 +1,4 @@
+Diagnostic,"Records, n",Meaning
+Timer records,53653,Same retained value after 120 s
+Nearby any-channel update within 2 s,249,Numerical-update evidence only
+No nearby update evidence,53404,Does not prove no true measurement

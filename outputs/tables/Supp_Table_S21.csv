@@ -1,0 +1,17 @@
+Domain,Metric,Bootstrap cluster,"Clusters, n",Point estimate,95% CI
+AUC decomposition,hidden deficit ratio,Subject,"2,380",0.597,0.582 to 0.612
+AUC decomposition,hidden deficit ratio,Case,"2,435",0.597,0.582 to 0.612
+AUC decomposition,overdisplay deficit ratio,Subject,"2,380",0.573,0.558 to 0.587
+AUC decomposition,overdisplay deficit ratio,Case,"2,435",0.573,0.558 to 0.586
+AUC decomposition,net relative AUC difference,Subject,"2,380",-0.024,-0.027 to -0.022
+AUC decomposition,net relative AUC difference,Case,"2,435",-0.024,-0.027 to -0.022
+episode observability,episode detection probability,Subject,"2,380",0.658,0.650 to 0.666
+episode observability,episode detection probability,Case,"2,435",0.658,0.650 to 0.665
+episode observability,complete-miss probability,Subject,"2,380",0.342,0.334 to 0.350
+episode observability,complete-miss probability,Case,"2,435",0.342,0.335 to 0.350
+episode observability,first low display with at least 1 min remaining,Subject,"2,380",0.550,0.540 to 0.559
+episode observability,first low display with at least 1 min remaining,Case,"2,435",0.550,0.541 to 0.559
+episode observability,first low display with at least 2 min remaining,Subject,"2,380",0.357,0.346 to 0.368
+episode observability,first low display with at least 2 min remaining,Case,"2,435",0.357,0.347 to 0.367
+episode observability,reference AUC before first low display,Subject,"2,380",0.349,0.331 to 0.364
+episode observability,reference AUC before first low display,Case,"2,435",0.349,0.333 to 0.363

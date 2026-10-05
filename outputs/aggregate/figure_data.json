@@ -1,0 +1,355 @@
+{
+  "flow": {
+    "source": 6388,
+    "adults": 6331,
+    "general_anaesthesia": 5989,
+    "surgery_groups": 5559,
+    "duration": 5449,
+    "arterial_candidates": 3315,
+    "primary_cases": 2435,
+    "subjects": 2380,
+    "pump_cases": 133,
+    "raw_changes": 834,
+    "adjustments": 640,
+    "adjustment_cases": 124,
+    "adjustment_subjects": 120,
+    "low_events": 236,
+    "low_cases": 85,
+    "low_subjects": 83,
+    "post_support_events": 234,
+    "recoveries": 184,
+    "recovery_cases": 80,
+    "recovery_subjects": 78
+  },
+  "intervals": [
+    [
+      "Sampling interval, min",
+      "Reference events with low display, expected n",
+      "Events with low display, %",
+      "Total low-display duration, min",
+      "Total deficit AUC, 10\u00b3 mmHg min",
+      "Pooled TWA deficit, mmHg (95% CI)"
+    ],
+    [
+      "Continuous reference",
+      "9,187.0",
+      "100.0",
+      "39,908",
+      "262.222",
+      "0.493 (0.467\u20130.520)"
+    ],
+    [
+      "1",
+      "9,187.0",
+      "100.0",
+      "39,775",
+      "257.645",
+      "0.484 (0.460\u20130.509)"
+    ],
+    [
+      "2.5",
+      "7,800.5",
+      "84.9",
+      "39,709",
+      "256.350",
+      "0.482 (0.458\u20130.508)"
+    ],
+    [
+      "3",
+      "7,372.1",
+      "80.2",
+      "39,686",
+      "256.084",
+      "0.481 (0.455\u20130.507)"
+    ],
+    [
+      "5",
+      "6,042.9",
+      "65.8",
+      "39,639",
+      "255.815",
+      "0.481 (0.455\u20130.508)"
+    ],
+    [
+      "10",
+      "4,343.7",
+      "47.3",
+      "39,504",
+      "255.033",
+      "0.479 (0.453\u20130.506)"
+    ]
+  ],
+  "sources_by_duration": [
+    {
+      "Duration": "1 to <3 min",
+      "Reference episodes": "5438",
+      "Category": "fresh",
+      "Percent": "34.14919700870418",
+      "Lower 95%": "33.83659645364622",
+      "Upper 95%": "34.48651048886909"
+    },
+    {
+      "Duration": "1 to <3 min",
+      "Reference episodes": "5438",
+      "Category": "inherited_only",
+      "Percent": "14.996935147725878",
+      "Lower 95%": "14.377563649128412",
+      "Upper 95%": "15.691037356782667"
+    },
+    {
+      "Duration": "1 to <3 min",
+      "Reference episodes": "5438",
+      "Category": "never_low",
+      "Percent": "50.853867843569944",
+      "Lower 95%": "50.161335578002245",
+      "Upper 95%": "51.548203096880805"
+    },
+    {
+      "Duration": "3 to <5 min",
+      "Reference episodes": "1931",
+      "Category": "fresh",
+      "Percent": "75.45313309166235",
+      "Lower 95%": "74.89714370729443",
+      "Upper 95%": "76.00044100156495"
+    },
+    {
+      "Duration": "3 to <5 min",
+      "Reference episodes": "1931",
+      "Category": "inherited_only",
+      "Percent": "4.935266701191092",
+      "Lower 95%": "4.554071577996174",
+      "Upper 95%": "5.296570540599617"
+    },
+    {
+      "Duration": "3 to <5 min",
+      "Reference episodes": "1931",
+      "Category": "never_low",
+      "Percent": "19.611600207146555",
+      "Lower 95%": "19.07512475055887",
+      "Upper 95%": "20.125888533947254"
+    },
+    {
+      "Duration": "At least 5 min",
+      "Reference episodes": "1818",
+      "Category": "fresh",
+      "Percent": "100.0",
+      "Lower 95%": "100.0",
+      "Upper 95%": "100.0"
+    },
+    {
+      "Duration": "At least 5 min",
+      "Reference episodes": "1818",
+      "Category": "inherited_only",
+      "Percent": "0.0",
+      "Lower 95%": "0.0",
+      "Upper 95%": "0.0"
+    },
+    {
+      "Duration": "At least 5 min",
+      "Reference episodes": "1818",
+      "Category": "never_low",
+      "Percent": "0.0",
+      "Lower 95%": "0.0",
+      "Upper 95%": "0.0"
+    }
+  ],
+  "overall_sources": {
+    "fresh": 55.9,
+    "inherited_only": 9.9,
+    "never_low": 34.2,
+    "episodes": 9187
+  },
+  "case_miss": {
+    "cases": 1899,
+    "P5": 3.3,
+    "Q1": 24.8,
+    "Median": 36.7,
+    "Q3": 50.2,
+    "P95": 70.0
+  },
+  "phase_range": {
+    "cases": 1899,
+    "Q1": 50.0,
+    "Median": 66.7,
+    "Q3": 100.0
+  },
+  "display_states": [
+    {
+      "scenario": "Primary",
+      "interval_min": "1.0",
+      "category": "normal_display",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "15.324858757062149",
+      "lower95": "12.2841292198389",
+      "upper95": "18.367443568336427"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "1.0",
+      "category": "fresh_low",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "82.20338983050846",
+      "lower95": "78.73981072487892",
+      "upper95": "85.89148136814903"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "1.0",
+      "category": "inherited_low",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "2.4717514124293785",
+      "lower95": "1.3633292383292381",
+      "upper95": "3.807522577996715"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "1.0",
+      "category": "unavailable",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "0.0",
+      "lower95": "0.0",
+      "upper95": "0.0"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "2.5",
+      "category": "normal_display",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "29.915254237288142",
+      "lower95": "25.212077081494556",
+      "upper95": "34.23989728594991"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "2.5",
+      "category": "fresh_low",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "62.062146892655356",
+      "lower95": "57.14637445887446",
+      "upper95": "67.44615416179398"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "2.5",
+      "category": "inherited_low",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "8.022598870056498",
+      "lower95": "5.861088709677418",
+      "upper95": "10.38054655094287"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "2.5",
+      "category": "unavailable",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "0.0",
+      "lower95": "0.0",
+      "upper95": "0.0"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "5.0",
+      "category": "normal_display",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "41.93502824858756",
+      "lower95": "37.054695158587094",
+      "upper95": "47.062342923779084"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "5.0",
+      "category": "fresh_low",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "44.29378531073446",
+      "lower95": "38.88378587486495",
+      "upper95": "49.920475220995606"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "5.0",
+      "category": "inherited_low",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "13.58757062146892",
+      "lower95": "10.801612306968455",
+      "upper95": "16.291296166296164"
+    },
+    {
+      "scenario": "Primary",
+      "interval_min": "5.0",
+      "category": "unavailable",
+      "subjects": "83",
+      "cases": "85",
+      "events": "236",
+      "estimate": "0.18361581920903952",
+      "lower95": "0.0",
+      "upper95": "0.532724505327245"
+    }
+  ],
+  "recovery": [
+    {
+      "interval_min": "1.0",
+      "eligible_low_events": "236",
+      "full_post_support_events": "234",
+      "confirmed_recovery_events": "184",
+      "subjects": "78",
+      "cases": "80",
+      "estimate": "0.23144892215152876",
+      "lower95": "0.21946146064985889",
+      "upper95": "0.24149438103727022",
+      "median_min": "0.27777777777777773",
+      "q1_min": "0.19444444444444442",
+      "q3_min": "0.27777777777777773"
+    },
+    {
+      "interval_min": "2.5",
+      "eligible_low_events": "236",
+      "full_post_support_events": "234",
+      "confirmed_recovery_events": "184",
+      "subjects": "78",
+      "cases": "80",
+      "estimate": "0.6500622977611525",
+      "lower95": "0.5911578240186515",
+      "upper95": "0.7025104043222805",
+      "median_min": "0.8058866670396592",
+      "q1_min": "0.26666666666666666",
+      "q3_min": "1.0"
+    },
+    {
+      "interval_min": "5.0",
+      "eligible_low_events": "236",
+      "full_post_support_events": "234",
+      "confirmed_recovery_events": "184",
+      "subjects": "78",
+      "cases": "80",
+      "estimate": "0.9521254513977808",
+      "lower95": "0.8470638982245509",
+      "upper95": "1.0477932184763217",
+      "median_min": "0.9821494446860406",
+      "q1_min": "0.25499097300900353",
+      "q3_min": "1.4999999999999998"
+    }
+  ],
+  "provenance": "Frozen aggregate statistical outputs; no raw trajectories or individual records. Coordinates computed by code; no image generation model."
+}

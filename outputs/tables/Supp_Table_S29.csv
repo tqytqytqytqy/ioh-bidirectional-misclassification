@@ -1,0 +1,8 @@
+Rule,Subjects,Events,"Normal display, % (95% CI)"
+Merge 30 s,83,261,42.7 (37.3 to 48.2)
+Merge 120 s,82,213,42.4 (37.1 to 47.9)
+No stability requirement,92,252,43.1 (38.1 to 48.0)
+At least 30 s preceding low MAP,79,205,36.6 (31.7 to 41.4)
+One low event per subject,83,83,43.7 (36.9 to 50.2)
+Exclude first 10 min,83,228,42.4 (37.6 to 47.6)
+Equal subject weighting,83,236,43.1 (37.5 to 48.5)

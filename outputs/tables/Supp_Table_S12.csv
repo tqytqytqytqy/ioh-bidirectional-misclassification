@@ -1,0 +1,6 @@
+Field or operation,Interpretation
+Recorded timestamp,"Device-output time, not verified cycle completion"
+MAP numerical update,"Value change, not complete enumeration of measurements"
+Same-value timer,"Research-algorithm record, not new measurement evidence"
+-30 to +30 s arterial median,"Legacy record comparator, not pretreatment pump reference"
+Clinical agreement and classification,Not retained without independent cycle authentication

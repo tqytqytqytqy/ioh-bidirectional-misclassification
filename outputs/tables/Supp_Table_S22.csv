@@ -1,0 +1,7 @@
+Domain,Initial-display convention,Excluded/eligible,"Detected, %","Complete miss, %","Pre-display AUC, %",HDR,ODR,"Net AUC difference, %"
+Deficit area,Primary: unavailable before first scheduled sample,0,,,,0.597,0.573,-2.4
+Deficit area,Initialize with first finite reference value,0,,,,0.474,0.994,52.0
+Deficit area,Exclude reference time before first display,1.06% time,,,,0.529,0.670,14.1
+Episode observability,Primary: unavailable before first scheduled sample,"9,187 episodes",65.8,34.2,34.9,,,
+Episode observability,Initialize with first finite reference value,"9,187 episodes",68.7,31.3,28.0,,,
+Episode observability,"Exclude first 5 min, then initialize","9,099 episodes",68.6,31.4,28.4,,,

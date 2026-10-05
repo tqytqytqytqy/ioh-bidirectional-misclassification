@@ -1,0 +1,6 @@
+Diagnostic,Count,Meaning
+Cases with MAP/SBP/DBP tracks,1987,Nearest alignment within 2 s
+Any-channel updates,18958,Excludes initial observations
+SBP or DBP changed without MAP change,724,MAP-only filtering misses these updates
+Updates after record gap >10 s,5677,Update time uncertain
+Updates with arterial-window support,10191,Not authenticated cuff cycles

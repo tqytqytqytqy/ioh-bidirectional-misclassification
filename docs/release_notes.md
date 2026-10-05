@@ -1,5 +1,32 @@
 # Release notes
 
+## v1.4.0
+
+This release contains analysis code, configuration templates, reproducibility
+manifests, figure source data, final workbook, editable figures and
+non-identifiable aggregate outputs.
+
+Raw VitalDB, MoVeR and INSPIRE datasets are not redistributed.
+
+Changes since v1.3.1:
+
+- added new-versus-inherited low-value classification, case/phase distributions,
+  common-denominator interval summaries and event-definition robustness;
+- added recorded vasopressor infusion-adjustment display states and restricted
+  recovery persistence, with a fixed protocol and synthetic tests;
+- corrected NIBP record semantics: retained numerical output is not verified
+  independent cuff cycles; legacy cuff-agreement and diagnostic outputs are
+  excluded from the current publication artifacts;
+- replaced the prior figures, aggregate presentation tables and workbook with
+  the current four main figures, four main tables, 29 supplementary tables and
+  40-sheet workbook;
+- retained baseline statistical implementations and independent R checks;
+- retained the current nine-creator order and created one current output
+  manifest and a complete repository checksum inventory.
+
+The release assembles previously frozen aggregate results; it does not claim
+a new source-data refit, treatment-delay estimate or monitoring outcome benefit.
+
 ## v1.3.1-submission
 
 This metadata-only patch aligns the archived reproducibility package with the final manuscript title and authorship.

@@ -1,0 +1,8 @@
+Measure,Cases,Median [interquartile range],5th to 95th percentile
+Combined state discordance (min/h),2435,2.73 [1.04 to 5.21],0.11 to 9.75
+"Low reference, normal display (min/h)",2435,1.29 [0.44 to 2.51],0.00 to 4.77
+"Normal reference, low display (min/h)",2435,1.45 [0.58 to 2.68],0.08 to 5.03
+Hidden deficit / reference deficit,2393,0.78 [0.62 to 0.90],0.43 to 0.96
+Overdisplay deficit / reference deficit,2393,0.72 [0.58 to 0.85],0.41 to 0.96
+Absolute area disagreement / reference area,2393,1.49 [1.21 to 1.73],0.85 to 1.91
+Net area bias (%),2393,-0.61 [-4.90 to 0.00],-22.42 to 0.95

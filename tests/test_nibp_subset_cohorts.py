@@ -1,46 +1,23 @@
-from __future__ import annotations
-
 import csv
 from pathlib import Path
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-
-
-def test_nibp_subset_characteristics_use_correct_cohort_labels_and_counts() -> None:
-    path = PROJECT_ROOT / "outputs" / "tables" / "supp_nibp_subset_characteristics.csv"
-    with path.open(encoding="utf-8", newline="") as handle:
-        rows = list(csv.DictReader(handle))
-
-    obsolete_group = "failed" + "_pairing_cases"
-    assert obsolete_group not in {row["group"] for row in rows}
-    counts = {
-        row["group"]: int(row["n_cases"])
-        for row in rows
-        if row["variable"] == "age"
-    }
-    assert counts == {
-        "primary_waveform_cohort": 2435,
-        "nibp_mechanism_subset": 1993,
-        "paired_agreement_cases": 1908,
-        "mechanism_without_paired_agreement": 85,
-    }
-    assert counts["nibp_mechanism_subset"] == (
-        counts["paired_agreement_cases"]
-        + counts["mechanism_without_paired_agreement"]
-    )
+ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_timing_only_cases_have_no_paired_events() -> None:
-    path = PROJECT_ROOT / "outputs" / "tables" / "supp_nibp_subset_characteristics.csv"
-    with path.open(encoding="utf-8", newline="") as handle:
-        rows = list(csv.DictReader(handle))
+def test_record_classes_are_not_authenticated_cuff_cycles():
+    with (ROOT / 'outputs/tables/Supp_Table_S07.csv').open(newline='') as stream:
+        rows = list(csv.DictReader(stream))
+    classes = {row['Record class']: row for row in rows}
+    assert int(classes['Same-value timer record']['Records, n']) == 53653
+    assert int(classes['Total']['Records, n']) == 74027
+    assert sum(int(row['Records, n']) for row in rows[:-1]) == 74027
+    assert 'Not independent cuff measurements' in classes['Total']['Meaning']
 
-    row = next(
-        item
-        for item in rows
-        if item["group"] == "mechanism_without_paired_agreement"
-        and item["variable"] == "paired_events"
-    )
-    assert int(row["n_cases"]) == 85
-    assert float(row["value"]) == 0.0
+
+def test_paired_record_total_retains_record_level_denominator():
+    with (ROOT / 'outputs/tables/Supp_Table_S08.csv').open(newline='') as stream:
+        rows = list(csv.DictReader(stream))
+    classes = {row['Paired record class']: row for row in rows}
+    assert int(classes['Same-value timer']['Records, n']) == 48885
+    assert int(classes['Total']['Records, n']) == 58842
+    assert sum(int(row['Records, n']) for row in rows[:-1]) == 58842

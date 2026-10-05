@@ -6,10 +6,10 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_figure3_legend_explains_both_dashed_reference_lines():
-    legends = pd.read_csv(ROOT / "outputs" / "tables" / "figure_legends_v7.csv")
+def test_figure3_legend_distinguishes_quantiles_from_confidence_limits():
+    legends = pd.read_csv(ROOT / "outputs" / "tables" / "figure_legends.csv")
     legend = legends.loc[legends["figure"].eq("Figure 3"), "legend"].iloc[0]
 
-    assert "vertical dashed line" in legend
-    assert "horizontal dashed line" in legend
-    assert "50%" in legend
+    assert "interquartile range" in legend
+    assert "5th and 95th percentiles" in legend
+    assert "not confidence limits" in legend

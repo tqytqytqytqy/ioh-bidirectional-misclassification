@@ -1,94 +1,24 @@
 {
-  "aggregate_csv_count": 76,
-  "asa_missing_rows": [
-    {
-      "characteristic": "ASA Physical Status",
-      "level": "1",
-      "missing_n": "54.0",
-      "nonmissing_n": "2381",
-      "note": "ASA Physical Status was missing in 54 cases; percentages use 2381 cases with valid values.",
-      "summary": "462 (19.4%)",
-      "summary_definition": "n (%) among nonmissing cases"
-    }
+  "release": "v1.4.0",
+  "status": "PASS_FAIL_STOP_AND_AGGREGATE_PRESERVATION",
+  "scanned_files": 135,
+  "forbidden_text_hits": 0,
+  "sensitive_file_hits": 0,
+  "patient_identifier_headers": 0,
+  "publication_tables": 33,
+  "workbook_sheets": 40,
+  "workbook_numeric_sheets_identical": true,
+  "workbook_metadata_only_changes": [
+    "ReadMe B4",
+    "ReadMe B15"
   ],
-  "case_level_column_hits": {},
-  "cohort_counts": {
-    "additional_cases": 55,
-    "cases": 2435,
-    "maximum_cases_per_subject": 4,
-    "repeated_subjects": 50,
-    "subjects": 2380
-  },
-  "cohort_flow": [
-    [
-      "source_cases",
-      6388,
-      0
-    ],
-    [
-      "adult",
-      6331,
-      57
-    ],
-    [
-      "general_anaesthesia",
-      5989,
-      342
-    ],
-    [
-      "eligible_surgery",
-      5559,
-      430
-    ],
-    [
-      "duration_ge_60min",
-      5449,
-      110
-    ],
-    [
-      "has_art_map",
-      3315,
-      2134
-    ],
-    [
-      "art_coverage_ge_80pct",
-      2435,
-      880
-    ]
-  ],
-  "complete_miss_probability": 0.342237219259098,
-  "episode_detection_probability": 0.657762780740902,
-  "female_row": [
-    {
-      "characteristic": "Sex",
-      "level": "Female",
-      "missing_n": "",
-      "nonmissing_n": "2435",
-      "note": "",
-      "summary": "1001 (41.1%)",
-      "summary_definition": "n (%) among nonmissing cases"
-    }
-  ],
-  "figure_source_mismatches": [],
-  "files_scanned": 171,
-  "forbidden_text_hits": [],
-  "initial_display_policies": [
-    "unavailable_before_first_scheduled_sample",
-    "baseline_initialized_at_first_reference",
-    "exclude_before_first_display"
-  ],
-  "manifest_errors": [],
-  "metadata_has_current_hashes": true,
-  "metadata_has_old_hashes": [],
-  "outputs_manifest_sha256": "60b085d5b45f269eb6206429fd24aee0743491c80be63b45a2df3dd59b7b37de",
-  "primary_bootstrap_cluster": "subjectid",
-  "primary_hdr": 0.5974247419434733,
-  "primary_net_bias": -0.02443252564145753,
-  "primary_odr": 0.5729922163020157,
-  "release_version": "v1.3.1-submission",
-  "sensitive_filename_hits": [],
-  "status": "PASS",
-  "tests_reported": true,
-  "workbook_sha256": "eae724fa69aa0fbb7c112d3c1200436a4ad2f315c328c9475949001317b621c1",
-  "workbook_sheet_count": 78
+  "editable_figure_slide_XML_identical": 4,
+  "creators_verified": 9,
+  "source_statistical_refit_on_release_date": false,
+  "synthetic_tests": {
+    "baseline_pytest": 67,
+    "events": 11,
+    "record_audit": 13,
+    "infusion": 13
+  }
 }

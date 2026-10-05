@@ -1,0 +1,15 @@
+Measure,n,Denominator,%
+Primary arterial cohort,"2,435",,
+Unique subjects,"2,380",,
+Subjects with repeated cases,50,"2,380",2.1
+Baseline preoperative creatinine available,"2,252","2,435",92.5
+Postoperative creatinine within 48 h,"2,408","2,435",98.9
+Postoperative creatinine within 7 d or discharge,"2,428","2,435",99.7
+AKI-evaluable cases,"2,246","2,435",92.2
+Creatinine-defined AKI events,106,"2,246",4.7
+KDIGO creatinine stage 1,71,"2,246",3.2
+KDIGO creatinine stage 2,17,"2,246",0.8
+KDIGO creatinine stage 3,18,"2,246",0.8
+Primary adjusted-model cases,"2,242","2,246",99.8
+Primary adjusted-model events,104,"2,242",4.6
+Cases with any hidden burden,"2,209","2,246",98.4

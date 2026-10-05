@@ -1,0 +1,4 @@
+"MAP threshold, mmHg",Reference episodes,Detection probability,Complete-miss probability,"Mean delay, min",Maximum absolute difference,Match
+<55,"1,407",0.501,0.499,0.960,<1 × 10−12,Yes
+<60,"3,905",0.565,0.435,1.021,<1 × 10−12,Yes
+<65,"9,187",0.658,0.342,1.091,<1 × 10−12,Yes

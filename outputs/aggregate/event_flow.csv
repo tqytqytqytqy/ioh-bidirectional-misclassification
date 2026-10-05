@@ -1,0 +1,18 @@
+Metric,Count
+Fixed primary cohort cases,2435
+Fixed primary cohort subjects,2380
+Cases with either target pump track,133
+Raw recorded increases or starts,834
+Changes passing 5-s stability,776
+Anchored 60-s adjustment blocks,648
+Excluded before 5 min,3
+Excluded for preceding reference quality,5
+Quality-eligible blocks,640
+Quality-eligible cases,124
+Quality-eligible subjects,120
+Low-reference blocks at adjustment,236
+Low-reference cases,85
+Low-reference subjects,83
+Normal-reference blocks,404
+Low-reference blocks with full 5-min support,234
+Blocks with confirmed reference recovery,184

@@ -1,9 +1,7 @@
-Release: v1.3.1-submission
-Files scanned: 171
-Aggregate CSVs: 76
-Workbook sheets: 78
-Required content scan: PASS
-Restricted filename and extension scan: PASS
-Case-level column scan: PASS
-Manifest integrity: PASS
-Decision: eligible for public release
+PASS: forbidden text hits = 0
+PASS: sensitive file hits = 0
+PASS: source datasets and case-level derivatives excluded
+PASS: 33 publication tables match frozen inputs
+PASS: 40-sheet workbook numeric sheets unchanged
+PASS: four editable figure drawing definitions match author package
+PASS: nine creators match approved order
