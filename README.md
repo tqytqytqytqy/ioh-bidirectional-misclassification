@@ -98,6 +98,7 @@ analyses. The source outputs were frozen before package assembly.
 - Workbook SHA-256: `900a621f7c9b9ce40d87d6aa03f68f8ab97a9254539f92be08310e309432c2e6`
 - Outputs manifest: `outputs/manifests/outputs_manifest.json`
 - Outputs manifest SHA-256: `4294bb7e5bb7223b78614cbcc2cc212cecbbed197efc00455f7bbf906e50a55b`
+- Zenodo version DOI: [10.5281/zenodo.23153577](https://doi.org/10.5281/zenodo.23153577)
 - Zenodo concept DOI: [10.5281/zenodo.21253616](https://doi.org/10.5281/zenodo.21253616)
 
 Use the version DOI displayed by Zenodo for this exact v1.4.0 release.

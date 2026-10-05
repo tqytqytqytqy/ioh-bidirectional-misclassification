@@ -12,7 +12,7 @@
     },
     {
       "relative_path": "CITATION.cff",
-      "sha256": "c03e9b9e5d4575b97a55e2c5580d763549c6eaacc5f17c41c3b0d2f45ed49432",
+      "sha256": "574f669accc72895c414b6747c891fdb36c31ad388fa6fa3d41460bbf9d8d7ea",
       "size_bytes": 1213
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "relative_path": "README.md",
-      "sha256": "43817cc95cdf9f3d9e76f20fa0745f9e59c7a7310d4035ebc1e390cb59b20f0a",
-      "size_bytes": 6096
+      "sha256": "069cb7aa8469c2e74387679d8f802e730747c1bcc1193de77ae43795e9e60166",
+      "size_bytes": 6185
     },
     {
       "relative_path": "codemeta.json",
-      "sha256": "5f77f3735d7226da705c0eff0d83298c8d40e7e62a0f36529c6cd28607ff2b25",
+      "sha256": "d4f6e2566bc13c6f616628b106db04b157005bbdc163f778ef341bb3b1cbe1a5",
       "size_bytes": 2682
     },
     {
