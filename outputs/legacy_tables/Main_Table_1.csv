@@ -1,0 +1,16 @@
+Characteristic,Category,Value,"Missing, n"
+"Age, yr",,"62.0 [54.0, 70.0]",0
+Sex,Male,1434 (58.9%),0
+Sex,Female,1001 (41.1%),
+"Body mass index, kg/m²",,"23.0 [20.8, 25.2]",0
+ASA Physical Status,1,462 (19.4%),
+ASA Physical Status,2,1619 (68.0%),
+ASA Physical Status,3,286 (12.0%),
+ASA Physical Status,4,14 (0.6%),
+ASA Physical Status,5,0 (0.0%),
+Emergency surgery,Yes,261 (10.7%),0
+Preoperative hypertension,Yes,852 (35.0%),0
+Preoperative diabetes mellitus,Yes,317 (13.0%),0
+"Anaesthesia duration, min",,"235.0 [180.0, 305.0]",0
+"Surgery duration, min",,"160.0 [110.0, 226.5]",0
+NIBP track available,Yes,1995 (81.9%),0

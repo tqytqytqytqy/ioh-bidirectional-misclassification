@@ -1,0 +1,92 @@
+scenario,interval_min,stop_reason,phase_events
+Primary,5.0,normal_display,2763
+Primary,2.5,normal_display,1785
+Primary,5.0,recurrent_low_reference,1289
+Primary,5.0,window_end,1062
+Primary,1.0,normal_display,883
+Primary,2.5,recurrent_low_reference,552
+Primary,2.5,window_end,230
+Primary,5.0,missing_reference,131
+Primary,1.0,recurrent_low_reference,128
+Primary,2.5,missing_reference,58
+Primary,1.0,window_end,25
+Primary,1.0,missing_reference,14
+Primary,5.0,unavailable_display,5
+Merge 30 s,5.0,normal_display,3114
+Merge 30 s,2.5,normal_display,2012
+Merge 30 s,5.0,recurrent_low_reference,1411
+Merge 30 s,5.0,window_end,1191
+Merge 30 s,1.0,normal_display,987
+Merge 30 s,2.5,recurrent_low_reference,608
+Merge 30 s,2.5,window_end,249
+Merge 30 s,5.0,missing_reference,159
+Merge 30 s,1.0,recurrent_low_reference,142
+Merge 30 s,2.5,missing_reference,71
+Merge 30 s,1.0,window_end,29
+Merge 30 s,1.0,missing_reference,18
+Merge 30 s,5.0,unavailable_display,5
+Merge 120 s,5.0,normal_display,2597
+Merge 120 s,2.5,normal_display,1654
+Merge 120 s,5.0,recurrent_low_reference,1181
+Merge 120 s,5.0,window_end,946
+Merge 120 s,1.0,normal_display,812
+Merge 120 s,2.5,recurrent_low_reference,523
+Merge 120 s,2.5,window_end,195
+Merge 120 s,5.0,missing_reference,131
+Merge 120 s,1.0,recurrent_low_reference,124
+Merge 120 s,2.5,missing_reference,58
+Merge 120 s,1.0,window_end,22
+Merge 120 s,1.0,missing_reference,14
+Merge 120 s,5.0,unavailable_display,5
+No stability requirement,5.0,normal_display,3006
+No stability requirement,2.5,normal_display,1941
+No stability requirement,5.0,recurrent_low_reference,1337
+No stability requirement,5.0,window_end,1191
+No stability requirement,1.0,normal_display,959
+No stability requirement,2.5,recurrent_low_reference,576
+No stability requirement,2.5,window_end,260
+No stability requirement,1.0,recurrent_low_reference,131
+No stability requirement,5.0,missing_reference,131
+No stability requirement,2.5,missing_reference,58
+No stability requirement,1.0,window_end,30
+No stability requirement,1.0,missing_reference,14
+No stability requirement,5.0,unavailable_display,5
+At least 30 s preceding low MAP,5.0,normal_display,2306
+At least 30 s preceding low MAP,2.5,normal_display,1528
+At least 30 s preceding low MAP,5.0,recurrent_low_reference,1123
+At least 30 s preceding low MAP,5.0,window_end,934
+At least 30 s preceding low MAP,1.0,normal_display,760
+At least 30 s preceding low MAP,2.5,recurrent_low_reference,455
+At least 30 s preceding low MAP,2.5,window_end,210
+At least 30 s preceding low MAP,5.0,missing_reference,102
+At least 30 s preceding low MAP,1.0,recurrent_low_reference,100
+At least 30 s preceding low MAP,2.5,missing_reference,42
+At least 30 s preceding low MAP,1.0,window_end,22
+At least 30 s preceding low MAP,1.0,missing_reference,12
+At least 30 s preceding low MAP,5.0,unavailable_display,5
+First low event per subject,5.0,normal_display,1069
+First low event per subject,2.5,normal_display,679
+First low event per subject,5.0,recurrent_low_reference,493
+First low event per subject,5.0,window_end,370
+First low event per subject,1.0,normal_display,333
+First low event per subject,2.5,recurrent_low_reference,215
+First low event per subject,2.5,window_end,78
+First low event per subject,1.0,recurrent_low_reference,55
+First low event per subject,5.0,missing_reference,43
+First low event per subject,2.5,missing_reference,18
+First low event per subject,5.0,unavailable_display,5
+First low event per subject,1.0,missing_reference,4
+First low event per subject,1.0,window_end,4
+Exclude first 10 min,5.0,normal_display,2763
+Exclude first 10 min,2.5,normal_display,1785
+Exclude first 10 min,5.0,recurrent_low_reference,1289
+Exclude first 10 min,5.0,window_end,1062
+Exclude first 10 min,1.0,normal_display,883
+Exclude first 10 min,2.5,recurrent_low_reference,552
+Exclude first 10 min,2.5,window_end,230
+Exclude first 10 min,5.0,missing_reference,131
+Exclude first 10 min,1.0,recurrent_low_reference,128
+Exclude first 10 min,2.5,missing_reference,58
+Exclude first 10 min,1.0,window_end,25
+Exclude first 10 min,1.0,missing_reference,14
+Exclude first 10 min,5.0,unavailable_display,5

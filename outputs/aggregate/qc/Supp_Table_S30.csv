@@ -1,0 +1,5 @@
+Rule,Retained cases,Retained subjects,Cases with masked values,Coverage exclusions,Masked time (min),Retained reference AUC (mmHg min)
+Original,2435,2380,0,0,0.0,262221.8
+Sustained segments,2433,2378,28,2,95.0,258072.3
+All flagged bins,2429,2374,355,6,224.8,252480.3
+Exclude startup 10 min,2435,2380,2435,0,21799.5,197519.7

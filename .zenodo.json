@@ -1,7 +1,7 @@
 {
   "title": "Temporal observability of intraoperative hypotension with an emulated 5-minute blood pressure display: reproducibility package",
   "upload_type": "software",
-  "description": "Code, configuration template, reproducibility manifests, figure source data, editable vector figures, final workbook and non-identifiable aggregate outputs for a retrospective waveform study of intermittent blood pressure display. Version 1.4.0 adds new versus inherited low-value classification, case and phase distributions, event robustness, interval summaries, recorded vasopressor infusion-adjustment analyses and a corrected cuff-record audit. Raw VitalDB, MoVeR and INSPIRE datasets and patient-level derivatives are not redistributed. The archived emulation describes monitoring information on fixed recorded arterial trajectories; it does not estimate treatment delay or monitoring-related outcome benefit.",
+  "description": "Analysis code, configuration templates, reproducibility manifests, figure source data, editable scientific figures, the final workbook and non-identifiable aggregate results for a retrospective waveform study of intermittent blood pressure display. Version 1.5.0 retains the original analyses and adds the completed rule-based startup signal-quality sensitivities, consolidated supplementary-table presentation and current artwork. Independent physician clinical adjudication was not performed. The emulation describes displayed information on fixed recorded arterial trajectories and does not estimate monitoring-related treatment delay or patient-outcome benefit. This release assembly does not rerun source-data analyses. Raw VitalDB, MoVeR and INSPIRE datasets and case-level derivatives are not redistributed.",
   "creators": [
     {
       "name": "Teng, Qingyu",
@@ -9,9 +9,9 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
-      "name": "Zhao, Yingya",
-      "orcid": "0009-0005-3335-8193",
-      "affiliation": "School of Public Health, Fudan University, Shanghai, China"
+      "name": "Li, Qi",
+      "orcid": "0009-0003-3140-5887",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
       "name": "Gu, Ziyan",
@@ -30,14 +30,14 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     },
     {
-      "name": "Li, Qi",
-      "orcid": "0009-0003-3140-5887",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+      "name": "Zhao, Jing",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China",
+      "orcid": "0009-0005-8117-9157"
     },
     {
-      "name": "Xu, Tao",
-      "orcid": "0000-0001-5868-4079",
-      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+      "name": "Zhao, Yingya",
+      "orcid": "0009-0005-3335-8193",
+      "affiliation": "School of Public Health, Fudan University, Shanghai, China"
     },
     {
       "name": "Zhang, Hui",
@@ -45,7 +45,8 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     }
   ],
-  "version": "v1.4.0",
+  "version": "v1.5.0",
+  "publication_date": "2026-10-09",
   "license": "MIT",
   "keywords": [
     "anaesthesia",
@@ -64,11 +65,10 @@
       "scheme": "url"
     },
     {
-      "identifier": "10.5281/zenodo.21253616",
-      "relation": "isVersionOf",
+      "identifier": "10.5281/zenodo.23153577",
+      "relation": "isDerivedFrom",
       "scheme": "doi"
     }
   ],
-  "notes": "Outputs manifest SHA-256: 4294bb7e5bb7223b78614cbcc2cc212cecbbed197efc00455f7bbf906e50a55b. Final workbook SHA-256: 900a621f7c9b9ce40d87d6aa03f68f8ab97a9254539f92be08310e309432c2e6. Raw datasets and case-level derivatives are not redistributed.",
-  "publication_date": "2026-10-05"
+  "notes": "Outputs manifest SHA-256: a37967894feae2680c66868e776e3a18d277c534be7840e1b93c478fc1c55bdc. Final workbook SHA-256: 3733746c860584c799f597e714c609efeee037daa6d5c5b0682d647ae3d52171. Raw datasets and case-level derivatives are not redistributed. Independent physician clinical adjudication was not performed."
 }

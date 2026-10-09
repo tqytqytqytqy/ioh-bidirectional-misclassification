@@ -1,0 +1,8 @@
+{
+  "targeted_exit_code": 0,
+  "frozen_full_suite_exit_code": 2,
+  "targeted_output": "============================== 32 passed in 0.51s ==============================",
+  "full_suite_limitation": "Eight collection errors: missing statsmodels and yaml in supplied runtime; unrelated frozen modules not validated by event tests",
+  "no_dependencies_installed": true,
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

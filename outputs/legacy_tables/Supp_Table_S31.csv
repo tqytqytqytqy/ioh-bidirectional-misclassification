@@ -1,0 +1,9 @@
+Measure,Original,Sustained segments,All flagged bins,Exclude startup 10 min
+Cases with qualifying episodes,1899,1894,1867,1767
+Reference episodes,9187,9158,9071,8140
+Hidden-deficit ratio,0.597 (0.582 to 0.612),0.603 (0.587 to 0.618),0.602 (0.586 to 0.617),0.564 (0.547 to 0.580)
+Overdisplay-deficit ratio,0.573 (0.558 to 0.587),0.578 (0.562 to 0.592),0.578 (0.562 to 0.591),0.553 (0.536 to 0.568)
+Net AUC difference (%),-2.44 (-2.70 to -2.20),-2.49 (-2.77 to -2.24),-2.41 (-2.68 to -2.17),-1.14 (-1.33 to -0.96)
+Episodes with no low display (%),34.2 (33.4 to 35.0),34.3 (33.5 to 35.0),34.1 (33.4 to 34.8),33.8 (33.0 to 34.6)
+Episodes with new low samples (%),55.9 (55.1 to 56.7),55.8 (55.1 to 56.6),56.0 (55.2 to 56.8),56.5 (55.6 to 57.4)
+Inherited low display only (%),9.9 (9.5 to 10.4),9.9 (9.4 to 10.4),9.9 (9.5 to 10.3),9.7 (9.3 to 10.2)

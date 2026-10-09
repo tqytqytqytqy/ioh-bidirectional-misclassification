@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_record_classes_are_not_authenticated_cuff_cycles():
-    with (ROOT / 'outputs/tables/Supp_Table_S07.csv').open(newline='') as stream:
+    with (ROOT / 'outputs/legacy_tables/Supp_Table_S07.csv').open(newline='') as stream:
         rows = list(csv.DictReader(stream))
     classes = {row['Record class']: row for row in rows}
     assert int(classes['Same-value timer record']['Records, n']) == 53653
@@ -15,7 +15,7 @@ def test_record_classes_are_not_authenticated_cuff_cycles():
 
 
 def test_paired_record_total_retains_record_level_denominator():
-    with (ROOT / 'outputs/tables/Supp_Table_S08.csv').open(newline='') as stream:
+    with (ROOT / 'outputs/legacy_tables/Supp_Table_S08.csv').open(newline='') as stream:
         rows = list(csv.DictReader(stream))
     classes = {row['Paired record class']: row for row in rows}
     assert int(classes['Same-value timer']['Records, n']) == 48885

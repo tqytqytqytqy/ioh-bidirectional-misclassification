@@ -1,0 +1,58 @@
+{
+  "protected_sources_unchanged": true,
+  "protocol_sha256": "e176c74e7c9405edad20d0bdc67b40451e1820b29dc865f3cd6077b131055bc7",
+  "policies": [
+    {
+      "policy": "original",
+      "cases": 2435,
+      "subjects": 2380,
+      "affected_cases_before_coverage": 0,
+      "excluded_coverage_cases": 0,
+      "masked_minutes_before_coverage": 0.0,
+      "masked_reference_auc_before_coverage": 0.0,
+      "reference_auc_retained": 262221.8333333333,
+      "retained_valid_reference_hours": 8869.841666666667,
+      "panel_sha256": "37301285eac3fa243fdb6c9df12307b6d73cd5f37e429cf17811d55291a85667"
+    },
+    {
+      "policy": "qc60",
+      "cases": 2433,
+      "subjects": 2378,
+      "affected_cases_before_coverage": 28,
+      "excluded_coverage_cases": 2,
+      "masked_minutes_before_coverage": 95.0,
+      "masked_reference_auc_before_coverage": 3567.5,
+      "reference_auc_retained": 258072.33333333334,
+      "retained_valid_reference_hours": 8863.888888888889,
+      "panel_sha256": "a71ab41672cf3691b813bf84d91c4cc73dd92e122cff8f3a3d3e08db6f9129e2"
+    },
+    {
+      "policy": "qc_all",
+      "cases": 2429,
+      "subjects": 2374,
+      "affected_cases_before_coverage": 355,
+      "excluded_coverage_cases": 6,
+      "masked_minutes_before_coverage": 224.83333333333334,
+      "masked_reference_auc_before_coverage": 8725.166666666668,
+      "reference_auc_retained": 252480.33333333334,
+      "retained_valid_reference_hours": 8854.244444444445,
+      "panel_sha256": "3e5467ba854241f73e43bd2329f9e4b3dcf6e7e19511e98d9d22ea25042274e0"
+    },
+    {
+      "policy": "startup10",
+      "cases": 2435,
+      "subjects": 2380,
+      "affected_cases_before_coverage": 2435,
+      "excluded_coverage_cases": 0,
+      "masked_minutes_before_coverage": 21799.5,
+      "masked_reference_auc_before_coverage": 64702.16666666667,
+      "reference_auc_retained": 197519.66666666666,
+      "retained_valid_reference_hours": 8506.516666666666,
+      "panel_sha256": "684e8cffe17257338b4f0acdcbb0d9dd1d210da0ad56acc76b82f75637963278"
+    }
+  ],
+  "clinical_adjudication": "PENDING_CLINICIAN",
+  "status": "PASS",
+  "private_provenance_fields_omitted": 1,
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

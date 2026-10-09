@@ -1,0 +1,169 @@
+scenario,Metric,Count
+Primary,Policy cohort cases,2435
+Primary,Policy cohort subjects,2380
+Primary,Frozen raw changes,834
+Primary,Frozen stable changes,776
+Primary,Frozen adjustment blocks,648
+Primary,Retained adjustment blocks,648
+Primary,excluded_policy_case,0
+Primary,before_initial_support,3
+Primary,pre_reference_quality,21
+Primary,insufficient_preceding_low,0
+Primary,not_first_low_subject_event,0
+Primary,Quality-eligible blocks,624
+Primary,Quality-eligible cases,124
+Primary,Quality-eligible subjects,120
+Primary,Low-reference blocks at adjustment,222
+Primary,Low-reference cases,84
+Primary,Low-reference subjects,82
+Primary,Normal-reference blocks,402
+Primary,Low-reference blocks with full 5-min support,220
+Primary,Blocks with confirmed reference recovery,175
+Primary,post_incomplete_post_interval,1
+Primary,post_insufficient_post_reference,1
+Primary,post_no_confirmed_recovery,45
+Primary,post_confirmed_recovery,175
+Merge 30 s,Policy cohort cases,2435
+Merge 30 s,Policy cohort subjects,2380
+Merge 30 s,Frozen raw changes,834
+Merge 30 s,Frozen stable changes,776
+Merge 30 s,Frozen adjustment blocks,698
+Merge 30 s,Retained adjustment blocks,698
+Merge 30 s,excluded_policy_case,0
+Merge 30 s,before_initial_support,4
+Merge 30 s,pre_reference_quality,22
+Merge 30 s,insufficient_preceding_low,0
+Merge 30 s,not_first_low_subject_event,0
+Merge 30 s,Quality-eligible blocks,672
+Merge 30 s,Quality-eligible cases,124
+Merge 30 s,Quality-eligible subjects,120
+Merge 30 s,Low-reference blocks at adjustment,246
+Merge 30 s,Low-reference cases,84
+Merge 30 s,Low-reference subjects,82
+Merge 30 s,Normal-reference blocks,426
+Merge 30 s,Low-reference blocks with full 5-min support,244
+Merge 30 s,Blocks with confirmed reference recovery,196
+Merge 30 s,post_incomplete_post_interval,1
+Merge 30 s,post_insufficient_post_reference,1
+Merge 30 s,post_no_confirmed_recovery,48
+Merge 30 s,post_confirmed_recovery,196
+Merge 120 s,Policy cohort cases,2435
+Merge 120 s,Policy cohort subjects,2380
+Merge 120 s,Frozen raw changes,834
+Merge 120 s,Frozen stable changes,776
+Merge 120 s,Frozen adjustment blocks,603
+Merge 120 s,Retained adjustment blocks,603
+Merge 120 s,excluded_policy_case,0
+Merge 120 s,before_initial_support,3
+Merge 120 s,pre_reference_quality,15
+Merge 120 s,insufficient_preceding_low,0
+Merge 120 s,not_first_low_subject_event,0
+Merge 120 s,Quality-eligible blocks,585
+Merge 120 s,Quality-eligible cases,124
+Merge 120 s,Quality-eligible subjects,120
+Merge 120 s,Low-reference blocks at adjustment,203
+Merge 120 s,Low-reference cases,83
+Merge 120 s,Low-reference subjects,81
+Merge 120 s,Normal-reference blocks,382
+Merge 120 s,Low-reference blocks with full 5-min support,201
+Merge 120 s,Blocks with confirmed reference recovery,162
+Merge 120 s,post_incomplete_post_interval,1
+Merge 120 s,post_insufficient_post_reference,1
+Merge 120 s,post_no_confirmed_recovery,39
+Merge 120 s,post_confirmed_recovery,162
+No stability requirement,Policy cohort cases,2435
+No stability requirement,Policy cohort subjects,2380
+No stability requirement,Frozen raw changes,834
+No stability requirement,Frozen stable changes,776
+No stability requirement,Frozen adjustment blocks,688
+No stability requirement,Retained adjustment blocks,688
+No stability requirement,excluded_policy_case,0
+No stability requirement,before_initial_support,3
+No stability requirement,pre_reference_quality,22
+No stability requirement,insufficient_preceding_low,0
+No stability requirement,not_first_low_subject_event,0
+No stability requirement,Quality-eligible blocks,663
+No stability requirement,Quality-eligible cases,133
+No stability requirement,Quality-eligible subjects,127
+No stability requirement,Low-reference blocks at adjustment,237
+No stability requirement,Low-reference cases,92
+No stability requirement,Low-reference subjects,90
+No stability requirement,Normal-reference blocks,426
+No stability requirement,Low-reference blocks with full 5-min support,235
+No stability requirement,Blocks with confirmed reference recovery,189
+No stability requirement,post_incomplete_post_interval,1
+No stability requirement,post_insufficient_post_reference,1
+No stability requirement,post_no_confirmed_recovery,46
+No stability requirement,post_confirmed_recovery,189
+At least 30 s preceding low MAP,Policy cohort cases,2435
+At least 30 s preceding low MAP,Policy cohort subjects,2380
+At least 30 s preceding low MAP,Frozen raw changes,834
+At least 30 s preceding low MAP,Frozen stable changes,776
+At least 30 s preceding low MAP,Frozen adjustment blocks,648
+At least 30 s preceding low MAP,Retained adjustment blocks,648
+At least 30 s preceding low MAP,excluded_policy_case,0
+At least 30 s preceding low MAP,before_initial_support,3
+At least 30 s preceding low MAP,pre_reference_quality,21
+At least 30 s preceding low MAP,insufficient_preceding_low,29
+At least 30 s preceding low MAP,not_first_low_subject_event,0
+At least 30 s preceding low MAP,Quality-eligible blocks,595
+At least 30 s preceding low MAP,Quality-eligible cases,124
+At least 30 s preceding low MAP,Quality-eligible subjects,120
+At least 30 s preceding low MAP,Low-reference blocks at adjustment,193
+At least 30 s preceding low MAP,Low-reference cases,78
+At least 30 s preceding low MAP,Low-reference subjects,77
+At least 30 s preceding low MAP,Normal-reference blocks,402
+At least 30 s preceding low MAP,Low-reference blocks with full 5-min support,191
+At least 30 s preceding low MAP,Blocks with confirmed reference recovery,149
+At least 30 s preceding low MAP,post_incomplete_post_interval,1
+At least 30 s preceding low MAP,post_insufficient_post_reference,1
+At least 30 s preceding low MAP,post_no_confirmed_recovery,42
+At least 30 s preceding low MAP,post_confirmed_recovery,149
+First low event per subject,Policy cohort cases,2435
+First low event per subject,Policy cohort subjects,2380
+First low event per subject,Frozen raw changes,834
+First low event per subject,Frozen stable changes,776
+First low event per subject,Frozen adjustment blocks,648
+First low event per subject,Retained adjustment blocks,648
+First low event per subject,excluded_policy_case,0
+First low event per subject,before_initial_support,3
+First low event per subject,pre_reference_quality,21
+First low event per subject,insufficient_preceding_low,0
+First low event per subject,not_first_low_subject_event,140
+First low event per subject,Quality-eligible blocks,484
+First low event per subject,Quality-eligible cases,123
+First low event per subject,Quality-eligible subjects,120
+First low event per subject,Low-reference blocks at adjustment,82
+First low event per subject,Low-reference cases,82
+First low event per subject,Low-reference subjects,82
+First low event per subject,Normal-reference blocks,402
+First low event per subject,Low-reference blocks with full 5-min support,82
+First low event per subject,Blocks with confirmed reference recovery,66
+First low event per subject,post_incomplete_post_interval,0
+First low event per subject,post_insufficient_post_reference,0
+First low event per subject,post_no_confirmed_recovery,16
+First low event per subject,post_confirmed_recovery,66
+Exclude first 10 min,Policy cohort cases,2435
+Exclude first 10 min,Policy cohort subjects,2380
+Exclude first 10 min,Frozen raw changes,834
+Exclude first 10 min,Frozen stable changes,776
+Exclude first 10 min,Frozen adjustment blocks,648
+Exclude first 10 min,Retained adjustment blocks,648
+Exclude first 10 min,excluded_policy_case,0
+Exclude first 10 min,before_initial_support,11
+Exclude first 10 min,pre_reference_quality,13
+Exclude first 10 min,insufficient_preceding_low,0
+Exclude first 10 min,not_first_low_subject_event,0
+Exclude first 10 min,Quality-eligible blocks,624
+Exclude first 10 min,Quality-eligible cases,124
+Exclude first 10 min,Quality-eligible subjects,120
+Exclude first 10 min,Low-reference blocks at adjustment,222
+Exclude first 10 min,Low-reference cases,84
+Exclude first 10 min,Low-reference subjects,82
+Exclude first 10 min,Normal-reference blocks,402
+Exclude first 10 min,Low-reference blocks with full 5-min support,220
+Exclude first 10 min,Blocks with confirmed reference recovery,175
+Exclude first 10 min,post_incomplete_post_interval,1
+Exclude first 10 min,post_insufficient_post_reference,1
+Exclude first 10 min,post_no_confirmed_recovery,45
+Exclude first 10 min,post_confirmed_recovery,175

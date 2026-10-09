@@ -1,11 +1,27 @@
-Branch,Stage,"Cases, n","Excluded from previous, n",Principal reason
-primary,VitalDB source cases,"6,388",,
-primary,Adults,"6,331",57,age <18 yr
-primary,General anaesthesia,"5,989",342,not general anaesthesia
-primary,Eligible surgery groups,"5,559",430,"cardiac, obstetric or transplant surgery"
-primary,Anaesthesia duration >=60 min,"5,449",110,anaesthesia duration <60 min
-primary,Pre-QC arterial candidates,"3,315","2,134",no candidate arterial MAP track
-primary,Primary arterial waveform cohort,"2,435",880,valid arterial MAP coverage <80%
-NIBP record audit,Primary cohort with NIBP track,"1,995",440,no NIBP MAP track
-NIBP record audit,Cases with anesthesia-window NIBP records,"1,993",2,no records within anesthesia window
-NIBP record audit,Cases with paired legacy algorithm records,"1,908",85,no paired algorithm record; not a measurement-cycle count
+Branch,Stage,"Count, n","Excluded, n",Principal reason
+primary,VitalDB source cases,6388,,
+primary,Adults,6331,57,age <18 yr
+primary,General anaesthesia,5989,342,not general anaesthesia
+primary,Eligible surgery groups,5559,430,"cardiac, obstetric or transplant surgery"
+primary,Anaesthesia duration ≥60 min,5449,110,anaesthesia duration <60 min
+primary,Pre-QC arterial candidates,3315,2134,no candidate arterial MAP track
+primary,Primary arterial waveform cohort,2435,880,valid arterial MAP coverage <80%
+NIBP record audit,Primary cohort with NIBP track,1995,440,no NIBP MAP track
+NIBP record audit,Cases with anaesthesia-window NIBP records,1993,2,no records within anaesthesia window
+NIBP record audit,Cases with paired legacy algorithm records,1908,85,no paired algorithm record; not a measurement-cycle count
+Primary cohort,Fixed primary cohort subjects,2380,,
+Infusion adjustments,Cases with either target pump track,133,,
+Infusion adjustments,Raw recorded increases or starts,834,,
+Infusion adjustments,Changes passing 5 s stability,776,,
+Infusion adjustments,Anchored 60 s adjustment blocks,648,,
+Infusion adjustments,Excluded before 5 min,3,,
+Infusion adjustments,Excluded for preceding reference quality,5,,
+Infusion adjustments,Quality-eligible blocks,640,,
+Infusion adjustments,Quality-eligible cases,124,,
+Infusion adjustments,Quality-eligible subjects,120,,
+Infusion adjustments,Low-reference blocks at adjustment,236,,
+Infusion adjustments,Low-reference cases,85,,
+Infusion adjustments,Low-reference subjects,83,,
+Infusion adjustments,Normal-reference blocks,404,,
+Infusion adjustments,Low-reference blocks with full 5 min support,234,,
+Infusion adjustments,Blocks with confirmed reference recovery,184,,

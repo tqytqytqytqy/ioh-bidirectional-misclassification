@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "treatment_adapter_unit_tests": 22,
+  "frozen_treatment_core_unit_tests": 13,
+  "current_qc_code_pytest_suite": {
+    "passed": 50,
+    "failed": 0,
+    "cache_provider_disabled": true,
+    "bytecode_writes_disabled": true
+  },
+  "all_four_policies_and_seven_event_scenarios_completed": true,
+  "frozen_primary_counts": [
+    640,
+    236,
+    184
+  ],
+  "baseline_event_records_all_seven_scenarios_match": true,
+  "baseline_display_strata_recovery_and_ci_match": true,
+  "qc60_and_qc_all_all_event_recovery_post_support_fields_match_original": true,
+  "qc60_and_qc_all_relevant_mask_window_overlap_counts_all_zero": true,
+  "principal_summary_schema": "treatment_qc_v1",
+  "publication_wide_table_rows": 4,
+  "publication_wide_table_columns": 21,
+  "fresh_input_hashes_verified": 31,
+  "portable_source_and_output_paths_tested": true,
+  "private_absolute_paths_in_owned_source_or_aggregate_summary": false,
+  "clinical_adjudication": "NOT_PERFORMED",
+  "earlier_concurrent_suite_state": "An earlier broad discovery encountered 17 failures because the other event/outcome adapters were not yet implemented. The final full pytest run passed all 50 tests.",
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

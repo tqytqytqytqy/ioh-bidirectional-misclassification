@@ -1,0 +1,85 @@
+scenario,interval_min,stop_reason,phase_events
+Primary,5.0,normal_display,2885
+Primary,2.5,normal_display,1865
+Primary,5.0,recurrent_low_reference,1330
+Primary,5.0,window_end,1174
+Primary,1.0,normal_display,925
+Primary,2.5,recurrent_low_reference,573
+Primary,2.5,window_end,264
+Primary,1.0,recurrent_low_reference,132
+Primary,5.0,missing_reference,131
+Primary,2.5,missing_reference,58
+Primary,1.0,window_end,33
+Primary,1.0,missing_reference,14
+Merge 30 s,5.0,normal_display,3261
+Merge 30 s,2.5,normal_display,2107
+Merge 30 s,5.0,recurrent_low_reference,1452
+Merge 30 s,5.0,window_end,1308
+Merge 30 s,1.0,normal_display,1035
+Merge 30 s,2.5,recurrent_low_reference,629
+Merge 30 s,2.5,window_end,283
+Merge 30 s,5.0,missing_reference,159
+Merge 30 s,1.0,recurrent_low_reference,146
+Merge 30 s,2.5,missing_reference,71
+Merge 30 s,1.0,window_end,37
+Merge 30 s,1.0,missing_reference,18
+Merge 120 s,5.0,normal_display,2697
+Merge 120 s,2.5,normal_display,1712
+Merge 120 s,5.0,recurrent_low_reference,1222
+Merge 120 s,5.0,window_end,1020
+Merge 120 s,1.0,normal_display,842
+Merge 120 s,2.5,recurrent_low_reference,544
+Merge 120 s,2.5,window_end,221
+Merge 120 s,5.0,missing_reference,131
+Merge 120 s,1.0,recurrent_low_reference,128
+Merge 120 s,2.5,missing_reference,58
+Merge 120 s,1.0,window_end,30
+Merge 120 s,1.0,missing_reference,14
+No stability requirement,5.0,normal_display,3143
+No stability requirement,2.5,normal_display,2024
+No stability requirement,5.0,recurrent_low_reference,1393
+No stability requirement,5.0,window_end,1303
+No stability requirement,1.0,normal_display,1004
+No stability requirement,2.5,recurrent_low_reference,609
+No stability requirement,2.5,window_end,294
+No stability requirement,1.0,recurrent_low_reference,138
+No stability requirement,5.0,missing_reference,131
+No stability requirement,2.5,missing_reference,58
+No stability requirement,1.0,window_end,38
+No stability requirement,1.0,missing_reference,14
+At least 30 s preceding low MAP,5.0,normal_display,2410
+At least 30 s preceding low MAP,2.5,normal_display,1600
+At least 30 s preceding low MAP,5.0,recurrent_low_reference,1150
+At least 30 s preceding low MAP,5.0,window_end,1018
+At least 30 s preceding low MAP,1.0,normal_display,794
+At least 30 s preceding low MAP,2.5,recurrent_low_reference,467
+At least 30 s preceding low MAP,2.5,window_end,231
+At least 30 s preceding low MAP,1.0,recurrent_low_reference,104
+At least 30 s preceding low MAP,5.0,missing_reference,102
+At least 30 s preceding low MAP,2.5,missing_reference,42
+At least 30 s preceding low MAP,1.0,window_end,26
+At least 30 s preceding low MAP,1.0,missing_reference,12
+First low event per subject,5.0,normal_display,1049
+First low event per subject,2.5,normal_display,658
+First low event per subject,5.0,recurrent_low_reference,486
+First low event per subject,5.0,window_end,342
+First low event per subject,1.0,normal_display,319
+First low event per subject,2.5,recurrent_low_reference,222
+First low event per subject,2.5,window_end,62
+First low event per subject,1.0,recurrent_low_reference,56
+First low event per subject,5.0,missing_reference,43
+First low event per subject,2.5,missing_reference,18
+First low event per subject,1.0,window_end,5
+First low event per subject,1.0,missing_reference,4
+Exclude first 10 min,5.0,normal_display,2825
+Exclude first 10 min,2.5,normal_display,1825
+Exclude first 10 min,5.0,recurrent_low_reference,1326
+Exclude first 10 min,5.0,window_end,1088
+Exclude first 10 min,1.0,normal_display,904
+Exclude first 10 min,2.5,recurrent_low_reference,569
+Exclude first 10 min,2.5,window_end,233
+Exclude first 10 min,1.0,recurrent_low_reference,131
+Exclude first 10 min,5.0,missing_reference,131
+Exclude first 10 min,2.5,missing_reference,58
+Exclude first 10 min,1.0,window_end,25
+Exclude first 10 min,1.0,missing_reference,14

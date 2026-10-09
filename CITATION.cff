@@ -1,43 +1,73 @@
-cff-version: 1.2.0
-title: 'Temporal observability of intraoperative hypotension with an emulated 5-minute
-  blood pressure display: reproducibility package'
-message: Please cite the archived release and its version-specific Zenodo DOI.
-type: software
-authors:
-- family-names: Teng
-  given-names: Qingyu
-  orcid: https://orcid.org/0009-0005-5476-4553
-- family-names: Zhao
-  given-names: Yingya
-  orcid: https://orcid.org/0009-0005-3335-8193
-- family-names: Gu
-  given-names: Ziyan
-- family-names: Yang
-  given-names: Yuping
-- family-names: Han
-  given-names: Junde
-- family-names: Chen
-  given-names: Qian
-- family-names: Li
-  given-names: Qi
-  orcid: https://orcid.org/0009-0003-3140-5887
-- family-names: Xu
-  given-names: Tao
-  orcid: https://orcid.org/0000-0001-5868-4079
-- family-names: Zhang
-  given-names: Hui
-  orcid: https://orcid.org/0009-0006-5460-3845
-repository-code: https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification
-doi: 10.5281/zenodo.23153577
-version: 1.4.0
-date-released: '2026-10-05'
-license: MIT
-keywords:
-- anaesthesia
-- intraoperative hypotension
-- blood pressure monitoring
-- temporal observability
-- measurement freshness
-- vasopressor infusion
-- VitalDB
-- reproducibility
+{
+  "cff-version": "1.2.0",
+  "message": "Please cite the version-specific Zenodo software record for this release.",
+  "type": "software",
+  "title": "Temporal observability of intraoperative hypotension with an emulated 5-minute blood pressure display: reproducibility package",
+  "version": "1.5.0",
+  "date-released": "2026-10-09",
+  "license": "MIT",
+  "repository-code": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
+  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0",
+  "authors": [
+    {
+      "family-names": "Teng",
+      "given-names": "Qingyu",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China",
+      "orcid": "https://orcid.org/0009-0005-5476-4553"
+    },
+    {
+      "family-names": "Li",
+      "given-names": "Qi",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China",
+      "orcid": "https://orcid.org/0009-0003-3140-5887"
+    },
+    {
+      "family-names": "Gu",
+      "given-names": "Ziyan",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "family-names": "Yang",
+      "given-names": "Yuping",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "family-names": "Han",
+      "given-names": "Junde",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "family-names": "Chen",
+      "given-names": "Qian",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
+    },
+    {
+      "family-names": "Zhao",
+      "given-names": "Jing",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China",
+      "orcid": "https://orcid.org/0009-0005-8117-9157"
+    },
+    {
+      "family-names": "Zhao",
+      "given-names": "Yingya",
+      "affiliation": "School of Public Health, Fudan University, Shanghai, China",
+      "orcid": "https://orcid.org/0009-0005-3335-8193"
+    },
+    {
+      "family-names": "Zhang",
+      "given-names": "Hui",
+      "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China",
+      "orcid": "https://orcid.org/0009-0006-5460-3845"
+    }
+  ],
+  "keywords": [
+    "anaesthesia",
+    "intraoperative hypotension",
+    "blood pressure monitoring",
+    "temporal observability",
+    "measurement freshness",
+    "vasopressor infusion",
+    "VitalDB",
+    "reproducibility"
+  ]
+}

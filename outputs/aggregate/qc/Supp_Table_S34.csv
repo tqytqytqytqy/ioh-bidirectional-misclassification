@@ -1,0 +1,13 @@
+Rule,Interval (min),Visible events (expected n),Visible events (%),Low-display time (min),Displayed AUC (mmHg min),TWA (mmHg)
+Original,1.0,9187.0,100.0,39775.4,257644.6,0.484
+Original,2.5,7800.5,84.9,39708.5,256349.8,0.482
+Original,5.0,6042.9,65.8,39638.5,255815.1,0.481
+Sustained segments,1.0,9158.0,100.0,39629.1,253431.3,0.477
+Sustained segments,2.5,7773.9,84.9,39559.6,252051.3,0.474
+Sustained segments,5.0,6019.6,65.7,39492.9,251646.5,0.473
+All flagged bins,1.0,9071.0,100.0,39451.2,247660.3,0.466
+All flagged bins,2.5,7710.4,85.0,39385.4,246430.1,0.464
+All flagged bins,5.0,5979.2,65.9,39328.5,246394.5,0.464
+Exclude startup 10 min,1.0,8140.0,100.0,35436.6,196161.8,0.384
+Exclude startup 10 min,2.5,6934.7,85.2,35392.8,195708.5,0.383
+Exclude startup 10 min,5.0,5389.7,66.2,35335.2,195274.9,0.383

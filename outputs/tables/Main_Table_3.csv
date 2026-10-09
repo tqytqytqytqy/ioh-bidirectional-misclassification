@@ -1,5 +1,5 @@
 Reference MAP / duration,"Episodes
-n","Detection, %","Complete miss, %","First low display ≥1 min before recovery, %","First low display ≥2 min before recovery, %","Reference AUC before first low display, %","Detection delay, min","Low display after recovery, min"
+n","Detection, %","Complete miss, %","First low display ≥1 min before run end, %","First low display ≥2 min before run end, %","Reference AUC before first low display, %","Detection delay, min","Observed post-run persistence, min"
 "<65 mmHg
 All durations","9,187",65.8 (65.0–66.6),34.2 (33.4–35.0),55.0 (54.0–55.9),35.7 (34.6–36.8),34.9 (33.1–36.4),1.09 (1.07–1.12),1.61 (1.57–1.65)
 "<65 mmHg

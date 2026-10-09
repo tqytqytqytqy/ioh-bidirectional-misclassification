@@ -1,0 +1,4 @@
+Model,Cases,AKI,Adjustment,RR (95% CI),P value
+"Absolute hidden burden, clinical adjusted",2246,106,Clinical covariates,1.11 (1.01 to 1.21),0.030
+"Absolute hidden burden, clinical plus reference burden",2246,106,Clinical + total reference burden,1.06 (0.85 to 1.33),0.589
+HDR65 incremental model,2209,106,Clinical + total reference burden,0.87 (0.75 to 1.01),0.070

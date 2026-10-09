@@ -1,7 +1,0 @@
-Python 3.12.14; baseline dependency versions recorded in environment.txt
-Baseline pytest: 67 passed
-Added event tests: 11 passed
-Record audit tests: 13 passed
-Infusion tests: 13 passed
-Total: 104 passed
-Tests use synthetic inputs; no source-data refit was performed for release assembly.

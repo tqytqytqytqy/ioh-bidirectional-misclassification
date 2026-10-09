@@ -1,0 +1,80 @@
+{
+  "Primary": {
+    "events_checked": 640,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 3,
+    "original_reference_ineligible_events_not_evaluated": 5,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "Merge 30 s": {
+    "events_checked": 689,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 4,
+    "original_reference_ineligible_events_not_evaluated": 5,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "Merge 120 s": {
+    "events_checked": 597,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 3,
+    "original_reference_ineligible_events_not_evaluated": 3,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "No stability requirement": {
+    "events_checked": 680,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 3,
+    "original_reference_ineligible_events_not_evaluated": 5,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "At least 30 s preceding low MAP": {
+    "events_checked": 640,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 3,
+    "original_reference_ineligible_events_not_evaluated": 5,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "First low event per subject": {
+    "events_checked": 640,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 3,
+    "original_reference_ineligible_events_not_evaluated": 5,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "Exclude first 10 min": {
+    "events_checked": 632,
+    "excluded_case_events": 0,
+    "events_before_minimum_time_not_evaluated": 11,
+    "original_reference_ineligible_events_not_evaluated": 5,
+    "events_with_masked_pre_reference_support": 0,
+    "events_with_masked_preceding_low_run": 0,
+    "event_phases_with_masked_active_sample": 0,
+    "events_with_masked_post_support": 0,
+    "post_phase_bins_with_masked_active_sample": 0
+  },
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "laboratory_sha256": "c6e84fb397afe8182a7e6cc3aac6b34502d6ac0fadf1abf0ef643cc8bd50ea8b",
+  "primary_outcomes_exactly_reproduced": true,
+  "alternative_baseline_derived_once_then_frozen": true,
+  "outcome_definition_unchanged": true,
+  "clinical_signoff": false,
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

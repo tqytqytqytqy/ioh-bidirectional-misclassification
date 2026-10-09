@@ -1,0 +1,6 @@
+# Core numerical versions are retained in requirements.txt.
+-r requirements.txt
+Pillow
+pypdf
+reportlab
+# Node artifact dependencies are documented separately, not vendored.

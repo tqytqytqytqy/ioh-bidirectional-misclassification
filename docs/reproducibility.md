@@ -1,65 +1,56 @@
-# Reproducibility instructions
+# Presentation Reproduction
 
-Baseline analytical dependencies are pinned in `requirements.txt`; the original
-environment is recorded in `environment.txt`. Current release verification is
-documented in `outputs/qc/`. Baseline statistical code uses Python; independent
-postoperative model checks use R. Added modules use Python, NumPy and pandas.
+Release v1.5.0 packages the completed v1.5.0-algorithmic-qc analysis snapshot, with rule-based signal-quality sensitivity analysis.
+The current presentation has 4 main tables, 16 supplementary tables (26 panels) and 2 supplementary figures.
+This revision changes titles, notes, grouping, numbering and navigation only.
+It does not rerun statistical calculations or refit models.
 
-## Public integrity and synthetic tests
+## Aggregate-Only Presentation Inputs
 
-Run the commands in the repository README. These verify file integrity and
-analytical edge cases using synthetic data. They do not constitute a new
-source-data replication or clinical signal-quality adjudication.
+The complete 35-table source is `presentation_inputs/source_tables.json`.
+The current target is `outputs/tables/condensed_tables.json` and the mapping is
+`presentation_inputs/table_map.json`. Titles and notes come from these supplied
+inputs, not from historical statistical table names. Retained original main
+table CSVs are byte-identical. A workbook-only Main Table 2 pointer changes no
+numerical cell. The current S2 caption is separate from the unchanged historical
+caption in `outputs/aggregate/qc`.
 
-The workbook has 40 sheets: four main tables, 29 supplementary tables, five
-detailed aggregate sheets and two documentation/summary sheets. The
-`Interval_Unrounded` sheet and corresponding CSV retain full-precision
-interval/threshold estimates and marginal subject-bootstrap confidence limits.
+Portable presentation code is `code/condense_tables.py`; inspect its help for
+supported arguments. Archive copying is `code/build_condensed_archive.py`.
+For aggregate-only reconstruction outside the frozen archive directory:
 
-## Private source-data workflow
+    python code/condense_tables.py --source presentation_inputs/source_tables.json --output ../presentation_rebuild
 
-Obtain VitalDB independently and keep all source and case-level output outside
-the repository. Copy `config/reproduction.example.yaml` to a private location,
-set its data root and output path, then execute the baseline cohort, waveform,
-frequency-decomposition and postoperative scripts as documented in the
-Makefile. Keep the baseline `src/` modules alongside the regenerated private
-`outputs/` tree. The baseline figure/table builder reflects the earlier display
-audit; current publication inputs are those in `outputs/aggregate/` and the
-added modules below.
+Neither archive staging nor hash verification establishes clinical validity.
+No clean independent raw-source-to-release execution is claimed.
 
-```sh
-python scripts/01_build_vitaldb_manifest.py --config PRIVATE_CONFIG
-python scripts/02_preprocess_vitaldb_artmap.py --config PRIVATE_CONFIG
-python scripts/03_emulate_frequency_decomposition.py --config PRIVATE_CONFIG
-python scripts/27_execute_anesthesiology_revision_v7.py --config PRIVATE_CONFIG
-python scripts/33_run_exploratory_aki_analysis_v7.py --config PRIVATE_CONFIG
-python extensions/events/run_extension.py --analysis PRIVATE_BASELINE --output PRIVATE_EVENTS
-python extensions/events/simple_interval_summary.py --analysis PRIVATE_BASELINE --root PRIVATE_INTERVALS
-python extensions/audit/scripts/run_audit.py --frozen PRIVATE_BASELINE --output PRIVATE_AUDIT --track-roots PRIVATE_TRACK_EXPORTS
-python extensions/infusion/run_analysis.py --frozen PRIVATE_BASELINE --audit PRIVATE_AUDIT --track-roots PRIVATE_TRACK_EXPORTS --output PRIVATE_INFUSION
-```
+## Historical Scientific Reproduction
 
-The `--analysis`/`--frozen` paths must point to the private baseline tree with
-regenerated intermediates and `src/ioh/`. The track roots are independently
-acquired numeric MAP and pump exports. Restricted output remains private.
-Infusion tests cover timing support, record merging, missingness and recovery
-censoring; the analysis protocol is in `extensions/infusion/protocol.md`.
+All inherited scientific code and aggregate outputs are retained unchanged.
+Historical source dependencies, statistical commands and QC policy assumptions
+are documented in `docs/scientific_reproduction.md` and `docs/qc_protocol.md`.
+Those commands reproduce the prior scientific outputs with 35-table numbering,
+not the current 16-table presentation. Do not invoke the historical archive
+builder to update this presentation. Raw data and individual derivatives must
+be obtained and governed separately; they are not redistributed here.
 
-## Publication artwork
+Python numerical requirements remain `requirements.txt` and
+`requirements-qc.txt`. The boundary checker additionally uses PyYAML and pypdf.
+No installed runtime or Node dependency directory is bundled.
 
-Four main figures are editable PowerPoint vector objects with geometry derived
-from aggregate outputs by JavaScript. The supplementary forest figure is
-Python/Matplotlib output. No generative image model produced the scientific
-plots. The optional JS exporters require the `@oai/artifact-tool` runtime;
-`EJA_ARTIFACT_SKILL_DIR` and `EJA_PYTHON` identify its artwork finalisation tools.
-This export environment is separate from the Python statistical calculations.
-Portable figure source data and the final editable objects are included.
+## Scan and Approved Freeze
 
-## Interpretation
+`--scan` performs one complete archive boundary scan and records fingerprints
+of scanned payloads. A later freeze rechecks the fingerprints; it does not
+needlessly rescan unchanged payloads. After explicit approval, `--freeze`
+requires `--expected-workbook-sha256`, `--expected-condensed-sha256`, and
+`--expected-s2-caption-sha256`. Changing any approved input prevents freezing.
+The local final workbook QA receipt must match the current JSON and workbook
+hashes, verified original-data preservation, and exact current worksheet notes.
+Its aggregate-only check is `outputs/qc/workbook_presentation_checks.json`.
 
-Raw data and case-level records are excluded. New source acquisition can change
-software or file availability; it must be reconciled against the frozen cohort,
-definitions, denominators and aggregate results before claiming reproduction.
-Clinical review of arterial startup signal quality remains outside the supplied
-software checks. The archive describes an emulated display on fixed recorded
-trajectories, not the counterfactual treatment course under cuff-only care.
+One current output manifest excludes all manifests. The release manifest
+includes that output manifest but excludes itself and `checksums.sha256`.
+The checksum list includes both manifests and excludes itself. These form a
+noncircular sequence, generated only after approval. Old freeze files and `.skip`
+files are not reused. `--verify` checks the inventories and hashes without upload.

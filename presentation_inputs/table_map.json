@@ -1,0 +1,184 @@
+{
+  "current_supplement_tables": 16,
+  "original_supplement_tables": 35,
+  "old_to_new": {
+    "1": 1,
+    "27": 1,
+    "7": 2,
+    "8": 2,
+    "9": 2,
+    "10": 2,
+    "11": 2,
+    "12": 2,
+    "2": 3,
+    "24": 3,
+    "3": 4,
+    "4": 4,
+    "6": 5,
+    "23": 6,
+    "21": 7,
+    "22": 7,
+    "25": 8,
+    "35": 8,
+    "28": 9,
+    "29": 9,
+    "13": 10,
+    "16": 10,
+    "14": 11,
+    "15": 11,
+    "17": 12,
+    "18": 13,
+    "19": 13,
+    "20": 13,
+    "30": 14,
+    "31": 14,
+    "32": 15,
+    "33": 16
+  },
+  "archived_only": {
+    "5": {
+      "description": "implementation consistency check",
+      "sheet": "Legacy_S05"
+    },
+    "26": {
+      "description": "complete absolute interval estimates",
+      "sheet": "Legacy_S26"
+    },
+    "34": {
+      "description": "complete startup interval estimates",
+      "sheet": "Legacy_S34"
+    }
+  },
+  "groups": [
+    {
+      "new_number": 1,
+      "title": "Supplementary Table S1. Cohort construction and recorded infusion-adjustment flow",
+      "old_numbers": [
+        1,
+        27
+      ]
+    },
+    {
+      "new_number": 2,
+      "title": "Supplementary Table S2. NIBP record classification and measurement-cycle audit",
+      "old_numbers": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "new_number": 3,
+      "title": "Supplementary Table S3. Episode visibility across intervals and source of low display",
+      "old_numbers": [
+        2,
+        24
+      ]
+    },
+    {
+      "new_number": 4,
+      "title": "Supplementary Table S4. Episode visibility by nadir and duration",
+      "old_numbers": [
+        3,
+        4
+      ]
+    },
+    {
+      "new_number": 5,
+      "title": "Supplementary Table S5. Bidirectional deficit across thresholds and sampling intervals",
+      "old_numbers": [
+        6
+      ]
+    },
+    {
+      "new_number": 6,
+      "title": "Supplementary Table S6. Case-level variation under a 5 min display",
+      "old_numbers": [
+        23
+      ]
+    },
+    {
+      "new_number": 7,
+      "title": "Supplementary Table S7. Sensitivity to clustering and initial-display convention",
+      "old_numbers": [
+        21,
+        22
+      ]
+    },
+    {
+      "new_number": 8,
+      "title": "Supplementary Table S8. Event-definition robustness before and after startup quality checks",
+      "old_numbers": [
+        25,
+        35
+      ]
+    },
+    {
+      "new_number": 9,
+      "title": "Supplementary Table S9. Display information at infusion adjustments and event-definition sensitivity",
+      "old_numbers": [
+        28,
+        29
+      ]
+    },
+    {
+      "new_number": 10,
+      "title": "Supplementary Table S10. AKI ascertainment and characteristics by evaluability",
+      "old_numbers": [
+        13,
+        16
+      ]
+    },
+    {
+      "new_number": 11,
+      "title": "Supplementary Table S11. Sequential and sensitivity associations with postoperative AKI",
+      "old_numbers": [
+        14,
+        15
+      ]
+    },
+    {
+      "new_number": 12,
+      "title": "Supplementary Table S12. Sequential associations with postoperative ICU stay of at least 2 days",
+      "old_numbers": [
+        17
+      ]
+    },
+    {
+      "new_number": 13,
+      "title": "Supplementary Table S13. ASA coding audit and outcome-model sensitivity",
+      "old_numbers": [
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "new_number": 14,
+      "title": "Supplementary Table S14. Cohort retention and episode visibility under startup quality rules",
+      "old_numbers": [
+        30,
+        31
+      ]
+    },
+    {
+      "new_number": 15,
+      "title": "Supplementary Table S15. Infusion-adjustment results under startup quality rules",
+      "old_numbers": [
+        32
+      ]
+    },
+    {
+      "new_number": 16,
+      "title": "Supplementary Table S16. Postoperative associations under startup quality rules",
+      "old_numbers": [
+        33
+      ]
+    }
+  ],
+  "statistics_rerun": false,
+  "original_primary_analysis_retained": true
+}

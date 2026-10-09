@@ -92,7 +92,7 @@ function lineSegment(x1,y1,x2,y2,color){
  const p=create(640);text('a  Source of low display within each reference event',8,2,610,28,15,true);
  const groups=[{label:'All events',n:9187,vals:[55.9,9.9,34.2]},...['1 to <3 min','3 to <5 min','At least 5 min'].map(label=>{
   const r=D.sources_by_duration.filter(r=>r.Duration===label);return{label,n:+r[0]['Reference episodes'],vals:['fresh','inherited_only','never_low'].map(c=>+r.find(t=>t.Category===c).Percent)};})];
- groups.forEach((g,i)=>{let x=167;const y=56+i*62;text(g.label+'\n'+g.n+' episodes',8,y-2,150,48,13);g.vals.forEach((v,k)=>{if(v>0){box(x,y,435*v/100,35,[BLUE,GRAY,ORANGE][k]);if(v>8)text(v.toFixed(1)+'%',x+1,y+6,435*v/100-2,24,12,false,'#FFFFFF','center');x+=435*v/100;}});});
+ groups.forEach((g,i)=>{let x=167;const y=56+i*62;text(g.label+'\n'+g.n+' episodes',8,y-2,150,48,13);g.vals.forEach((v,k)=>{if(v>0){box(x,y,435*v/100,35,[BLUE,GRAY,ORANGE][k]);if(v>8)text(v.toFixed(1)+'%',x+1,y+6,435*v/100-2,24,12,false,k===1?BLACK:'#FFFFFF','center');x+=435*v/100;}});});
  text('Inherited low only: 4.9%',167,217,260,20,11,false,GRAY);
  [0,25,50,75,100].forEach(t=>text(String(t),167+435*t/100-20,291,40,21,12,false,BLACK,'center'));
  text('Phase-averaged percentage of reference events',167,314,435,25,13,false,BLACK,'center');

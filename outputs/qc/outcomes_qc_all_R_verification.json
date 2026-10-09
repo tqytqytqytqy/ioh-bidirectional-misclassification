@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "unique_models_checked": 7,
+  "new_QC_specific_verification": true,
+  "legacy_proof_not_reused": true,
+  "runs": [
+    {
+      "verification": "aki",
+      "returncode": 0,
+      "passed": true,
+      "output": "[local path omitted]"
+    },
+    {
+      "verification": "aki_sequence",
+      "returncode": 0,
+      "passed": true,
+      "output": "[local path omitted]"
+    },
+    {
+      "verification": "icu",
+      "returncode": 0,
+      "passed": true,
+      "output": "[local path omitted]"
+    }
+  ],
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

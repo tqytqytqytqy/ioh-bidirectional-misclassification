@@ -1,0 +1,118 @@
+{
+  "version": "v1.5.0-algorithmic-qc",
+  "status": "PASS",
+  "clinical_adjudication": "NOT_PERFORMED",
+  "scope": "Current table labels/notes, aggregate workbook values and publication consistency; not statistical reanalysis",
+  "workbook_sha256": "3733746c860584c799f597e714c609efeee037daa6d5c5b0682d647ae3d52171",
+  "schema_sha256": {
+    "condensed_tables": "fec60a8eed74a53c9f8c146a459e57842cc7a3b27077b1a171bfa52a7c916dde"
+  },
+  "current_notes": [
+    {
+      "sheet": "Supp_Table_S01",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S02",
+      "note_paragraphs": 5,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S03",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S04",
+      "note_paragraphs": 3,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S05",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S06",
+      "note_paragraphs": 1,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S07",
+      "note_paragraphs": 3,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S08",
+      "note_paragraphs": 1,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S09",
+      "note_paragraphs": 3,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S10",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S11",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S12",
+      "note_paragraphs": 1,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S13",
+      "note_paragraphs": 3,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S14",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S15",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S16",
+      "note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    }
+  ],
+  "counts": {
+    "sheets": 72,
+    "current_tables": 16,
+    "panels": 26,
+    "text_cells_changed": 42,
+    "unchanged_numeric_cells": 17455
+  },
+  "all_other_cells_and_styles_exact": true,
+  "visual_review": "PASS_CHANGED_VIEWS",
+  "statistical_rerun": false
+}

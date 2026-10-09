@@ -1,0 +1,4 @@
+Initial-display convention,Eligible episodes,"Any low display, %","Complete miss, %","Pre-display AUC, %"
+Primary: unavailable before first scheduled sample,9187 episodes,65.8,34.2,34.9
+Initialise with first finite reference value,9187 episodes,68.7,31.3,28.0
+"Exclude first 5 min, then initialise",9099 episodes,68.6,31.4,28.4

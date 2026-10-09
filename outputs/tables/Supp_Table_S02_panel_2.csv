@@ -1,0 +1,11 @@
+Diagnostic,Value,Interpretation
+Cases with window records,1993,Of 1995 track candidates
+Frozen raw rows,3 756 113,Before exact duplicate normalisation
+Exact duplicate window rows,5114,No source rewrite
+"Positive record interval, median",2.0 s,"Output cadence, not measurement interval"
+Adjacent same-MAP proportion,99.51%,Retained numerical output
+Source and frozen reconciliation,1993/1993 cases,Exact after duplicate normalisation
+Any-channel updates,18 958,Excludes initial observations
+SBP or DBP changed without MAP change,724,MAP-only filtering misses these updates
+Updates with arterial-window support,10 191,Not authenticated cuff cycles
+No nearby update evidence,53 404,Does not prove no true measurement

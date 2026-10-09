@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "rows": 15,
+  "columns": 15,
+  "maximum_absolute_difference": 5.238689482212067e-10,
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

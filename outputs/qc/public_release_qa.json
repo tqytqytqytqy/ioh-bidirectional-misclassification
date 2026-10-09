@@ -1,24 +1,82 @@
 {
-  "release": "v1.4.0",
-  "status": "PASS_FAIL_STOP_AND_AGGREGATE_PRESERVATION",
-  "scanned_files": 135,
-  "forbidden_text_hits": 0,
-  "sensitive_file_hits": 0,
-  "patient_identifier_headers": 0,
-  "publication_tables": 33,
-  "workbook_sheets": 40,
-  "workbook_numeric_sheets_identical": true,
-  "workbook_metadata_only_changes": [
-    "ReadMe B4",
-    "ReadMe B15"
-  ],
-  "editable_figure_slide_XML_identical": 4,
-  "creators_verified": 9,
-  "source_statistical_refit_on_release_date": false,
+  "release": "v1.5.0",
+  "privacy_boundary_scan": "PASS",
+  "source_output_files_verified": 243,
+  "scientific_output_files_preserved": 200,
+  "current_workbook_sheets": 72,
+  "workbook_sha256": "3733746c860584c799f597e714c609efeee037daa6d5c5b0682d647ae3d52171",
+  "four_main_figures_match_uploaded_drawing_XML": true,
+  "creator_count": 9,
+  "clinical_adjudication": "NOT_PERFORMED",
+  "source_data_refit_during_release_assembly": false,
   "synthetic_tests": {
-    "baseline_pytest": 67,
-    "events": 11,
-    "record_audit": 13,
-    "infusion": 13
-  }
+    "status": "PASS",
+    "exit_code": 0,
+    "tests": 187,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": [
+      {
+        "suite": "tests",
+        "exit_code": 0,
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "extensions/audit/scripts",
+        "exit_code": 0,
+        "tests": 13,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "extensions/events",
+        "exit_code": 0,
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "extensions/infusion",
+        "exit_code": 0,
+        "tests": 13,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "extensions/qc_startup",
+        "exit_code": 0,
+        "tests": 74,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "extensions/startup_screening",
+        "exit_code": 0,
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.18.0",
+      "statsmodels": "0.14.6",
+      "matplotlib": "3.11.0",
+      "pytest": "9.1.1",
+      "PyYAML": "6.0.3"
+    },
+    "scope": "Synthetic-input unit tests and file/aggregate verification; no source-data statistical refit."
+  },
+  "limitations": "Software and aggregate-file verification; no new source-data analysis, clinical adjudication or independent raw-to-release execution."
 }

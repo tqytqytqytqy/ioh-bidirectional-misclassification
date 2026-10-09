@@ -1,0 +1,1251 @@
+{
+  "schema_version": "treatment_qc_v1",
+  "status": "TECHNICAL_QC_REANALYSIS_COMPLETE_FOR_REQUESTED_POLICIES",
+  "policies": {
+    "original": {
+      "source": "parent_policy_panel_and_cohort",
+      "mask_validation": {
+        "retained_cases": 2435,
+        "excluded_cases": 0,
+        "newly_masked_complete_bins": 0,
+        "global_grid_and_retained_values_unchanged": true
+      },
+      "primary_flow": {
+        "Policy cohort cases": 2435,
+        "Policy cohort subjects": 2380,
+        "Frozen raw changes": 834,
+        "Frozen stable changes": 776,
+        "Frozen adjustment blocks": 648,
+        "Retained adjustment blocks": 648,
+        "excluded_policy_case": 0,
+        "before_initial_support": 3,
+        "pre_reference_quality": 5,
+        "insufficient_preceding_low": 0,
+        "not_first_low_subject_event": 0,
+        "Quality-eligible blocks": 640,
+        "Quality-eligible cases": 124,
+        "Quality-eligible subjects": 120,
+        "Low-reference blocks at adjustment": 236,
+        "Low-reference cases": 85,
+        "Low-reference subjects": 83,
+        "Normal-reference blocks": 404,
+        "Low-reference blocks with full 5-min support": 234,
+        "Blocks with confirmed reference recovery": 184,
+        "post_incomplete_post_interval": 1,
+        "post_insufficient_post_reference": 1,
+        "post_no_confirmed_recovery": 50,
+        "post_confirmed_recovery": 184
+      },
+      "principal_numbers": {
+        "cohort_cases": 2435,
+        "cohort_subjects": 2380,
+        "eligible_adjustment_events": 640,
+        "eligible_adjustment_cases": 124,
+        "eligible_adjustment_subjects": 120,
+        "low_reference_events": 236,
+        "low_reference_cases": 85,
+        "low_reference_subjects": 83,
+        "normal_reference_events": 404,
+        "full_5min_post_support_events": 234,
+        "confirmed_recovery_events": 184,
+        "recovery_cases": 80,
+        "recovery_subjects": 78,
+        "display_by_interval_min": {
+          "1": {
+            "normal_display": {
+              "estimate_pct": 15.324858757062149,
+              "lower95_pct": 12.2841292198389,
+              "upper95_pct": 18.367443568336427,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 82.20338983050846,
+              "lower95_pct": 78.73981072487892,
+              "upper95_pct": 85.89148136814903,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 2.4717514124293785,
+              "lower95_pct": 1.3633292383292381,
+              "upper95_pct": 3.807522577996715,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          },
+          "2.5": {
+            "normal_display": {
+              "estimate_pct": 29.915254237288142,
+              "lower95_pct": 25.212077081494556,
+              "upper95_pct": 34.23989728594991,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 62.062146892655356,
+              "lower95_pct": 57.14637445887446,
+              "upper95_pct": 67.44615416179398,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 8.022598870056498,
+              "lower95_pct": 5.861088709677418,
+              "upper95_pct": 10.38054655094287,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          },
+          "5": {
+            "normal_display": {
+              "estimate_pct": 41.93502824858756,
+              "lower95_pct": 37.054695158587094,
+              "upper95_pct": 47.062342923779084,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 44.29378531073446,
+              "lower95_pct": 38.88378587486495,
+              "upper95_pct": 49.920475220995606,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 13.58757062146892,
+              "lower95_pct": 10.801612306968455,
+              "upper95_pct": 16.291296166296164,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.18361581920903952,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.532724505327245,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          }
+        },
+        "recovery_by_interval_min": {
+          "1": {
+            "mean_persistence_min": 0.23144892215152876,
+            "lower95_min": 0.21946146064985889,
+            "upper95_min": 0.24149438103727022,
+            "median_min": 0.27777777777777773,
+            "q1_min": 0.19444444444444442,
+            "q3_min": 0.27777777777777773,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          },
+          "2.5": {
+            "mean_persistence_min": 0.6500622977611525,
+            "lower95_min": 0.5911578240186515,
+            "upper95_min": 0.7025104043222805,
+            "median_min": 0.8058866670396592,
+            "q1_min": 0.26666666666666666,
+            "q3_min": 1.0,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          },
+          "5": {
+            "mean_persistence_min": 0.9521254513977808,
+            "lower95_min": 0.8470638982245509,
+            "upper95_min": 1.0477932184763217,
+            "median_min": 0.9821494446860406,
+            "q1_min": 0.25499097300900353,
+            "q3_min": 1.4999999999999998,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          }
+        }
+      },
+      "primary_normal_display_pct": {
+        "scenario": "Primary",
+        "interval_min": 5.0,
+        "category": "normal_display",
+        "subjects": 83,
+        "cases": 85,
+        "events": 236,
+        "estimate": 41.93502824858756,
+        "lower95": 37.054695158587094,
+        "upper95": 47.062342923779084
+      },
+      "primary_recovery": [
+        {
+          "scenario": "Primary",
+          "interval_min": 1.0,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.23144892215152876,
+          "lower95": 0.21946146064985889,
+          "upper95": 0.24149438103727022,
+          "median_min": 0.27777777777777773,
+          "q1_min": 0.19444444444444442,
+          "q3_min": 0.27777777777777773
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 2.5,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.6500622977611525,
+          "lower95": 0.5911578240186515,
+          "upper95": 0.7025104043222805,
+          "median_min": 0.8058866670396592,
+          "q1_min": 0.26666666666666666,
+          "q3_min": 1.0
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 5.0,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.9521254513977808,
+          "lower95": 0.8470638982245509,
+          "upper95": 1.0477932184763217,
+          "median_min": 0.9821494446860406,
+          "q1_min": 0.25499097300900353,
+          "q3_min": 1.4999999999999998
+        }
+      ],
+      "treatment_overlap_audit": {
+        "affected_cases_with_frozen_raw_changes": 0,
+        "excluded_cases_with_frozen_raw_changes": 0,
+        "affected_cases_with_frozen_eligible_events": 0,
+        "affected_cases_with_frozen_low_events": 0
+      },
+      "exact_aggregate_match_to_original_all_scenarios": {
+        "display": true,
+        "recovery": true,
+        "strata": true,
+        "recovery_stop_reasons": true
+      },
+      "all_event_and_recovery_fields_exactly_match_original": true
+    },
+    "qc60": {
+      "source": "parent_policy_panel_and_cohort",
+      "mask_validation": {
+        "retained_cases": 2433,
+        "excluded_cases": 2,
+        "newly_masked_complete_bins": 518,
+        "global_grid_and_retained_values_unchanged": true
+      },
+      "primary_flow": {
+        "Policy cohort cases": 2433,
+        "Policy cohort subjects": 2378,
+        "Frozen raw changes": 834,
+        "Frozen stable changes": 776,
+        "Frozen adjustment blocks": 648,
+        "Retained adjustment blocks": 648,
+        "excluded_policy_case": 0,
+        "before_initial_support": 3,
+        "pre_reference_quality": 5,
+        "insufficient_preceding_low": 0,
+        "not_first_low_subject_event": 0,
+        "Quality-eligible blocks": 640,
+        "Quality-eligible cases": 124,
+        "Quality-eligible subjects": 120,
+        "Low-reference blocks at adjustment": 236,
+        "Low-reference cases": 85,
+        "Low-reference subjects": 83,
+        "Normal-reference blocks": 404,
+        "Low-reference blocks with full 5-min support": 234,
+        "Blocks with confirmed reference recovery": 184,
+        "post_incomplete_post_interval": 1,
+        "post_insufficient_post_reference": 1,
+        "post_no_confirmed_recovery": 50,
+        "post_confirmed_recovery": 184
+      },
+      "principal_numbers": {
+        "cohort_cases": 2433,
+        "cohort_subjects": 2378,
+        "eligible_adjustment_events": 640,
+        "eligible_adjustment_cases": 124,
+        "eligible_adjustment_subjects": 120,
+        "low_reference_events": 236,
+        "low_reference_cases": 85,
+        "low_reference_subjects": 83,
+        "normal_reference_events": 404,
+        "full_5min_post_support_events": 234,
+        "confirmed_recovery_events": 184,
+        "recovery_cases": 80,
+        "recovery_subjects": 78,
+        "display_by_interval_min": {
+          "1": {
+            "normal_display": {
+              "estimate_pct": 15.324858757062149,
+              "lower95_pct": 12.2841292198389,
+              "upper95_pct": 18.367443568336427,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 82.20338983050846,
+              "lower95_pct": 78.73981072487892,
+              "upper95_pct": 85.89148136814903,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 2.4717514124293785,
+              "lower95_pct": 1.3633292383292381,
+              "upper95_pct": 3.807522577996715,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          },
+          "2.5": {
+            "normal_display": {
+              "estimate_pct": 29.915254237288142,
+              "lower95_pct": 25.212077081494556,
+              "upper95_pct": 34.23989728594991,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 62.062146892655356,
+              "lower95_pct": 57.14637445887446,
+              "upper95_pct": 67.44615416179398,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 8.022598870056498,
+              "lower95_pct": 5.861088709677418,
+              "upper95_pct": 10.38054655094287,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          },
+          "5": {
+            "normal_display": {
+              "estimate_pct": 41.93502824858756,
+              "lower95_pct": 37.054695158587094,
+              "upper95_pct": 47.062342923779084,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 44.29378531073446,
+              "lower95_pct": 38.88378587486495,
+              "upper95_pct": 49.920475220995606,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 13.58757062146892,
+              "lower95_pct": 10.801612306968455,
+              "upper95_pct": 16.291296166296164,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.18361581920903952,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.532724505327245,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          }
+        },
+        "recovery_by_interval_min": {
+          "1": {
+            "mean_persistence_min": 0.23144892215152876,
+            "lower95_min": 0.21946146064985889,
+            "upper95_min": 0.24149438103727022,
+            "median_min": 0.27777777777777773,
+            "q1_min": 0.19444444444444442,
+            "q3_min": 0.27777777777777773,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          },
+          "2.5": {
+            "mean_persistence_min": 0.6500622977611525,
+            "lower95_min": 0.5911578240186515,
+            "upper95_min": 0.7025104043222805,
+            "median_min": 0.8058866670396592,
+            "q1_min": 0.26666666666666666,
+            "q3_min": 1.0,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          },
+          "5": {
+            "mean_persistence_min": 0.9521254513977808,
+            "lower95_min": 0.8470638982245509,
+            "upper95_min": 1.0477932184763217,
+            "median_min": 0.9821494446860406,
+            "q1_min": 0.25499097300900353,
+            "q3_min": 1.4999999999999998,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          }
+        }
+      },
+      "primary_normal_display_pct": {
+        "scenario": "Primary",
+        "interval_min": 5.0,
+        "category": "normal_display",
+        "subjects": 83,
+        "cases": 85,
+        "events": 236,
+        "estimate": 41.93502824858756,
+        "lower95": 37.054695158587094,
+        "upper95": 47.062342923779084
+      },
+      "primary_recovery": [
+        {
+          "scenario": "Primary",
+          "interval_min": 1.0,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.23144892215152876,
+          "lower95": 0.21946146064985889,
+          "upper95": 0.24149438103727022,
+          "median_min": 0.27777777777777773,
+          "q1_min": 0.19444444444444442,
+          "q3_min": 0.27777777777777773
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 2.5,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.6500622977611525,
+          "lower95": 0.5911578240186515,
+          "upper95": 0.7025104043222805,
+          "median_min": 0.8058866670396592,
+          "q1_min": 0.26666666666666666,
+          "q3_min": 1.0
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 5.0,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.9521254513977808,
+          "lower95": 0.8470638982245509,
+          "upper95": 1.0477932184763217,
+          "median_min": 0.9821494446860406,
+          "q1_min": 0.25499097300900353,
+          "q3_min": 1.4999999999999998
+        }
+      ],
+      "mask_window_audit": {
+        "Primary": {
+          "events_checked": 640,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "Merge 30 s": {
+          "events_checked": 689,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 4,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "Merge 120 s": {
+          "events_checked": 597,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 3,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "No stability requirement": {
+          "events_checked": 680,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "At least 30 s preceding low MAP": {
+          "events_checked": 640,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "First low event per subject": {
+          "events_checked": 640,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "Exclude first 10 min": {
+          "events_checked": 632,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 11,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        }
+      },
+      "treatment_overlap_audit": {
+        "affected_cases_with_frozen_raw_changes": 3,
+        "excluded_cases_with_frozen_raw_changes": 0,
+        "affected_cases_with_frozen_eligible_events": 2,
+        "affected_cases_with_frozen_low_events": 1
+      },
+      "exact_aggregate_match_to_original_all_scenarios": {
+        "display": true,
+        "recovery": true,
+        "strata": true,
+        "recovery_stop_reasons": true
+      },
+      "all_event_and_recovery_fields_exactly_match_original": true
+    },
+    "qc_all": {
+      "source": "parent_policy_panel_and_cohort",
+      "mask_validation": {
+        "retained_cases": 2429,
+        "excluded_cases": 6,
+        "newly_masked_complete_bins": 1283,
+        "global_grid_and_retained_values_unchanged": true
+      },
+      "primary_flow": {
+        "Policy cohort cases": 2429,
+        "Policy cohort subjects": 2374,
+        "Frozen raw changes": 834,
+        "Frozen stable changes": 776,
+        "Frozen adjustment blocks": 648,
+        "Retained adjustment blocks": 648,
+        "excluded_policy_case": 0,
+        "before_initial_support": 3,
+        "pre_reference_quality": 5,
+        "insufficient_preceding_low": 0,
+        "not_first_low_subject_event": 0,
+        "Quality-eligible blocks": 640,
+        "Quality-eligible cases": 124,
+        "Quality-eligible subjects": 120,
+        "Low-reference blocks at adjustment": 236,
+        "Low-reference cases": 85,
+        "Low-reference subjects": 83,
+        "Normal-reference blocks": 404,
+        "Low-reference blocks with full 5-min support": 234,
+        "Blocks with confirmed reference recovery": 184,
+        "post_incomplete_post_interval": 1,
+        "post_insufficient_post_reference": 1,
+        "post_no_confirmed_recovery": 50,
+        "post_confirmed_recovery": 184
+      },
+      "principal_numbers": {
+        "cohort_cases": 2429,
+        "cohort_subjects": 2374,
+        "eligible_adjustment_events": 640,
+        "eligible_adjustment_cases": 124,
+        "eligible_adjustment_subjects": 120,
+        "low_reference_events": 236,
+        "low_reference_cases": 85,
+        "low_reference_subjects": 83,
+        "normal_reference_events": 404,
+        "full_5min_post_support_events": 234,
+        "confirmed_recovery_events": 184,
+        "recovery_cases": 80,
+        "recovery_subjects": 78,
+        "display_by_interval_min": {
+          "1": {
+            "normal_display": {
+              "estimate_pct": 15.324858757062149,
+              "lower95_pct": 12.2841292198389,
+              "upper95_pct": 18.367443568336427,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 82.20338983050846,
+              "lower95_pct": 78.73981072487892,
+              "upper95_pct": 85.89148136814903,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 2.4717514124293785,
+              "lower95_pct": 1.3633292383292381,
+              "upper95_pct": 3.807522577996715,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          },
+          "2.5": {
+            "normal_display": {
+              "estimate_pct": 29.915254237288142,
+              "lower95_pct": 25.212077081494556,
+              "upper95_pct": 34.23989728594991,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 62.062146892655356,
+              "lower95_pct": 57.14637445887446,
+              "upper95_pct": 67.44615416179398,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 8.022598870056498,
+              "lower95_pct": 5.861088709677418,
+              "upper95_pct": 10.38054655094287,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          },
+          "5": {
+            "normal_display": {
+              "estimate_pct": 41.93502824858756,
+              "lower95_pct": 37.054695158587094,
+              "upper95_pct": 47.062342923779084,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "fresh_low": {
+              "estimate_pct": 44.29378531073446,
+              "lower95_pct": 38.88378587486495,
+              "upper95_pct": 49.920475220995606,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "inherited_low": {
+              "estimate_pct": 13.58757062146892,
+              "lower95_pct": 10.801612306968455,
+              "upper95_pct": 16.291296166296164,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            },
+            "unavailable": {
+              "estimate_pct": 0.18361581920903952,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.532724505327245,
+              "events": 236,
+              "cases": 85,
+              "subjects": 83
+            }
+          }
+        },
+        "recovery_by_interval_min": {
+          "1": {
+            "mean_persistence_min": 0.23144892215152876,
+            "lower95_min": 0.21946146064985889,
+            "upper95_min": 0.24149438103727022,
+            "median_min": 0.27777777777777773,
+            "q1_min": 0.19444444444444442,
+            "q3_min": 0.27777777777777773,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          },
+          "2.5": {
+            "mean_persistence_min": 0.6500622977611525,
+            "lower95_min": 0.5911578240186515,
+            "upper95_min": 0.7025104043222805,
+            "median_min": 0.8058866670396592,
+            "q1_min": 0.26666666666666666,
+            "q3_min": 1.0,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          },
+          "5": {
+            "mean_persistence_min": 0.9521254513977808,
+            "lower95_min": 0.8470638982245509,
+            "upper95_min": 1.0477932184763217,
+            "median_min": 0.9821494446860406,
+            "q1_min": 0.25499097300900353,
+            "q3_min": 1.4999999999999998,
+            "events": 184,
+            "cases": 80,
+            "subjects": 78
+          }
+        }
+      },
+      "primary_normal_display_pct": {
+        "scenario": "Primary",
+        "interval_min": 5.0,
+        "category": "normal_display",
+        "subjects": 83,
+        "cases": 85,
+        "events": 236,
+        "estimate": 41.93502824858756,
+        "lower95": 37.054695158587094,
+        "upper95": 47.062342923779084
+      },
+      "primary_recovery": [
+        {
+          "scenario": "Primary",
+          "interval_min": 1.0,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.23144892215152876,
+          "lower95": 0.21946146064985889,
+          "upper95": 0.24149438103727022,
+          "median_min": 0.27777777777777773,
+          "q1_min": 0.19444444444444442,
+          "q3_min": 0.27777777777777773
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 2.5,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.6500622977611525,
+          "lower95": 0.5911578240186515,
+          "upper95": 0.7025104043222805,
+          "median_min": 0.8058866670396592,
+          "q1_min": 0.26666666666666666,
+          "q3_min": 1.0
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 5.0,
+          "eligible_low_events": 236,
+          "full_post_support_events": 234,
+          "confirmed_recovery_events": 184,
+          "subjects": 78,
+          "cases": 80,
+          "estimate": 0.9521254513977808,
+          "lower95": 0.8470638982245509,
+          "upper95": 1.0477932184763217,
+          "median_min": 0.9821494446860406,
+          "q1_min": 0.25499097300900353,
+          "q3_min": 1.4999999999999998
+        }
+      ],
+      "mask_window_audit": {
+        "Primary": {
+          "events_checked": 640,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "Merge 30 s": {
+          "events_checked": 689,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 4,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "Merge 120 s": {
+          "events_checked": 597,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 3,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "No stability requirement": {
+          "events_checked": 680,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "At least 30 s preceding low MAP": {
+          "events_checked": 640,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "First low event per subject": {
+          "events_checked": 640,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 3,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        },
+        "Exclude first 10 min": {
+          "events_checked": 632,
+          "excluded_case_events": 0,
+          "events_before_minimum_time_not_evaluated": 11,
+          "original_reference_ineligible_events_not_evaluated": 5,
+          "events_with_masked_pre_reference_support": 0,
+          "events_with_masked_preceding_low_run": 0,
+          "event_phases_with_masked_active_sample": 0,
+          "events_with_masked_post_support": 0,
+          "post_phase_bins_with_masked_active_sample": 0
+        }
+      },
+      "treatment_overlap_audit": {
+        "affected_cases_with_frozen_raw_changes": 14,
+        "excluded_cases_with_frozen_raw_changes": 0,
+        "affected_cases_with_frozen_eligible_events": 12,
+        "affected_cases_with_frozen_low_events": 7
+      },
+      "exact_aggregate_match_to_original_all_scenarios": {
+        "display": true,
+        "recovery": true,
+        "strata": true,
+        "recovery_stop_reasons": true
+      },
+      "all_event_and_recovery_fields_exactly_match_original": true
+    },
+    "startup10": {
+      "source": "parent_policy_panel_and_cohort",
+      "mask_validation": {
+        "retained_cases": 2435,
+        "excluded_cases": 0,
+        "newly_masked_complete_bins": 130797,
+        "global_grid_and_retained_values_unchanged": true
+      },
+      "primary_flow": {
+        "Policy cohort cases": 2435,
+        "Policy cohort subjects": 2380,
+        "Frozen raw changes": 834,
+        "Frozen stable changes": 776,
+        "Frozen adjustment blocks": 648,
+        "Retained adjustment blocks": 648,
+        "excluded_policy_case": 0,
+        "before_initial_support": 3,
+        "pre_reference_quality": 21,
+        "insufficient_preceding_low": 0,
+        "not_first_low_subject_event": 0,
+        "Quality-eligible blocks": 624,
+        "Quality-eligible cases": 124,
+        "Quality-eligible subjects": 120,
+        "Low-reference blocks at adjustment": 222,
+        "Low-reference cases": 84,
+        "Low-reference subjects": 82,
+        "Normal-reference blocks": 402,
+        "Low-reference blocks with full 5-min support": 220,
+        "Blocks with confirmed reference recovery": 175,
+        "post_incomplete_post_interval": 1,
+        "post_insufficient_post_reference": 1,
+        "post_no_confirmed_recovery": 45,
+        "post_confirmed_recovery": 175
+      },
+      "principal_numbers": {
+        "cohort_cases": 2435,
+        "cohort_subjects": 2380,
+        "eligible_adjustment_events": 624,
+        "eligible_adjustment_cases": 124,
+        "eligible_adjustment_subjects": 120,
+        "low_reference_events": 222,
+        "low_reference_cases": 84,
+        "low_reference_subjects": 82,
+        "normal_reference_events": 402,
+        "full_5min_post_support_events": 220,
+        "confirmed_recovery_events": 175,
+        "recovery_cases": 79,
+        "recovery_subjects": 77,
+        "display_by_interval_min": {
+          "1": {
+            "normal_display": {
+              "estimate_pct": 15.315315315315313,
+              "lower95_pct": 11.876158903644503,
+              "upper95_pct": 18.825942170240413,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "fresh_low": {
+              "estimate_pct": 82.20720720720718,
+              "lower95_pct": 78.06997144022847,
+              "upper95_pct": 86.26955704561617,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "inherited_low": {
+              "estimate_pct": 2.477477477477477,
+              "lower95_pct": 1.2704348072884146,
+              "upper95_pct": 3.913470666413516,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "unavailable": {
+              "estimate_pct": 0.0,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.0,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            }
+          },
+          "2.5": {
+            "normal_display": {
+              "estimate_pct": 29.969969969969974,
+              "lower95_pct": 25.168570725534302,
+              "upper95_pct": 35.0649456752398,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "fresh_low": {
+              "estimate_pct": 62.16216216216216,
+              "lower95_pct": 56.419569993722554,
+              "upper95_pct": 67.76915928175508,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "inherited_low": {
+              "estimate_pct": 7.597597597597597,
+              "lower95_pct": 5.416583333333333,
+              "upper95_pct": 10.087393348846225,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "unavailable": {
+              "estimate_pct": 0.27027027027027023,
+              "lower95_pct": 0.0,
+              "upper95_pct": 0.8377976977453412,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            }
+          },
+          "5": {
+            "normal_display": {
+              "estimate_pct": 42.31231231231231,
+              "lower95_pct": 37.1573465488835,
+              "upper95_pct": 47.48564960789067,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "fresh_low": {
+              "estimate_pct": 43.87387387387386,
+              "lower95_pct": 38.06665246553494,
+              "upper95_pct": 49.925070028011184,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "inherited_low": {
+              "estimate_pct": 12.582582582582576,
+              "lower95_pct": 9.854289470642627,
+              "upper95_pct": 15.362029590417045,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            },
+            "unavailable": {
+              "estimate_pct": 1.2312312312312312,
+              "lower95_pct": 0.1641834894877491,
+              "upper95_pct": 2.551133786848072,
+              "events": 222,
+              "cases": 84,
+              "subjects": 82
+            }
+          }
+        },
+        "recovery_by_interval_min": {
+          "1": {
+            "mean_persistence_min": 0.23209270798213905,
+            "lower95_min": 0.22000965181489787,
+            "upper95_min": 0.24339955374760305,
+            "median_min": 0.27777777777777773,
+            "q1_min": 0.19444444444444442,
+            "q3_min": 0.27777777777777773,
+            "events": 175,
+            "cases": 79,
+            "subjects": 77
+          },
+          "2.5": {
+            "mean_persistence_min": 0.6550585937136698,
+            "lower95_min": 0.5963737156957286,
+            "upper95_min": 0.712816490134744,
+            "median_min": 0.8117733340793184,
+            "q1_min": 0.2777777777777778,
+            "q3_min": 1.0,
+            "events": 175,
+            "cases": 79,
+            "subjects": 77
+          },
+          "5": {
+            "mean_persistence_min": 0.9599465762153508,
+            "lower95_min": 0.8504616497397246,
+            "upper95_min": 1.0601378360594433,
+            "median_min": 0.9920766671498586,
+            "q1_min": 0.2694444444444444,
+            "q3_min": 1.5,
+            "events": 175,
+            "cases": 79,
+            "subjects": 77
+          }
+        }
+      },
+      "primary_normal_display_pct": {
+        "scenario": "Primary",
+        "interval_min": 5.0,
+        "category": "normal_display",
+        "subjects": 82,
+        "cases": 84,
+        "events": 222,
+        "estimate": 42.31231231231231,
+        "lower95": 37.1573465488835,
+        "upper95": 47.48564960789067
+      },
+      "primary_recovery": [
+        {
+          "scenario": "Primary",
+          "interval_min": 1.0,
+          "eligible_low_events": 222,
+          "full_post_support_events": 220,
+          "confirmed_recovery_events": 175,
+          "subjects": 77,
+          "cases": 79,
+          "estimate": 0.23209270798213905,
+          "lower95": 0.22000965181489787,
+          "upper95": 0.24339955374760305,
+          "median_min": 0.27777777777777773,
+          "q1_min": 0.19444444444444442,
+          "q3_min": 0.27777777777777773
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 2.5,
+          "eligible_low_events": 222,
+          "full_post_support_events": 220,
+          "confirmed_recovery_events": 175,
+          "subjects": 77,
+          "cases": 79,
+          "estimate": 0.6550585937136698,
+          "lower95": 0.5963737156957286,
+          "upper95": 0.712816490134744,
+          "median_min": 0.8117733340793184,
+          "q1_min": 0.2777777777777778,
+          "q3_min": 1.0
+        },
+        {
+          "scenario": "Primary",
+          "interval_min": 5.0,
+          "eligible_low_events": 222,
+          "full_post_support_events": 220,
+          "confirmed_recovery_events": 175,
+          "subjects": 77,
+          "cases": 79,
+          "estimate": 0.9599465762153508,
+          "lower95": 0.8504616497397246,
+          "upper95": 1.0601378360594433,
+          "median_min": 0.9920766671498586,
+          "q1_min": 0.2694444444444444,
+          "q3_min": 1.5
+        }
+      ],
+      "treatment_overlap_audit": {
+        "affected_cases_with_frozen_raw_changes": 133,
+        "excluded_cases_with_frozen_raw_changes": 0,
+        "affected_cases_with_frozen_eligible_events": 124,
+        "affected_cases_with_frozen_low_events": 85
+      },
+      "exact_aggregate_match_to_original_all_scenarios": {
+        "display": false,
+        "recovery": false,
+        "strata": false,
+        "recovery_stop_reasons": false
+      },
+      "all_event_and_recovery_fields_exactly_match_original": false
+    }
+  },
+  "field_definitions": {
+    "principal_numbers": "Primary frozen treatment-event definition evaluated within the named reference policy",
+    "events": "Merged recorded pump adjustment blocks, not individual patients or verified administrations",
+    "cases": "Distinct operations",
+    "subjects": "Distinct patients; bootstrap clustering unit",
+    "estimate_pct": "Mean within-event proportion over all global sampling phases, multiplied by 100",
+    "display_denominator": "Quality-eligible adjustment events with low preceding reference MAP",
+    "mean_persistence_min": "Mean phase-averaged low-display persistence after confirmed reference recovery",
+    "recovery_denominator": "Low-reference adjustment events with complete 5-min horizon, at least 80% finite reference, and confirmed recovery",
+    "ci": "Two-sided percentile 95% CI from 2000 subject-cluster bootstrap replicates; fixed seed 20261004",
+    "wide_table": "One row per policy; formatted estimates with 95% CI. JSON retains unrounded numeric values."
+  },
+  "baseline_reproduction": {
+    "primary_event_records": "PASS",
+    "merge30_event_records": "PASS",
+    "merge120_event_records": "PASS",
+    "no_stability_event_records": "PASS",
+    "preceding_low30_event_records": "PASS",
+    "first_low_subject_event_records": "PASS",
+    "exclude_first10_event_records": "PASS",
+    "display": "PASS",
+    "strata": "PASS",
+    "recovery": "PASS",
+    "recovery_stop_reasons": "PASS",
+    "primary_recovery_records": "PASS",
+    "frozen_primary_counts_640_236_184": "PASS",
+    "numeric_absolute_tolerance": 1e-10
+  },
+  "seed": 20261004,
+  "bootstrap_replicates": 2000,
+  "bootstrap_unit": "subject",
+  "within_event_phases": "all_global_phases_equally_weighted",
+  "raw_pump_transitions": "REUSED_FROZEN_834_RAW_AND_776_STABLE_RECORDS_NOT_REREAD",
+  "six_original_event_sensitivities_rerun": true,
+  "recovery_sensitivity_extension": "Also recomputed recovery for each of the six frozen event sensitivity definitions",
+  "reference_quality_adjudication": "NOT_CLINICALLY_ADJUDICATED_TECHNICAL_CANDIDATES_ONLY",
+  "manuscript_primary_policy": "original",
+  "qc_policy_role": "Sensitivity analyses only pending clinical adjudication",
+  "clinical_notes": [
+    "Recorded pump starts/increases are not verified administrations or treatment effects.",
+    "No clinician signoff is claimed.",
+    "Missing post support and no confirmed recovery are excluded, not assigned zero persistence.",
+    "QC masks preserve the frozen time zero, global sampling phases, and case durations.",
+    "The startup10 policy is distinct from the frozen Exclude first 10 min event sensitivity."
+  ],
+  "publication": "LOCAL_QC_CANDIDATE_TABLE_DATA_ONLY_NO_DOCUMENTS_CHANGED",
+  "all_inputs_unchanged": true
+}

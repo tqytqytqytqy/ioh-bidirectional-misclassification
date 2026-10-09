@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "independently_recomputed_cases": 30,
+  "display_schedules_compared": 3870,
+  "frequency_comparison": {
+    "rows": 11610,
+    "columns": 27,
+    "maximum_absolute_difference": 0.0
+  },
+  "original_panel_sha256": "37301285eac3fa243fdb6c9df12307b6d73cd5f37e429cf17811d55291a85667",
+  "frozen_panel_sha256": "37301285eac3fa243fdb6c9df12307b6d73cd5f37e429cf17811d55291a85667",
+  "frequency_source_sha256": "1b2101acb978efa153bad82a16c388860a481085599231cc99d6334e49cfcffe",
+  "source_definition": "Frozen core decomposition plus >=60-s contiguous low runs",
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

@@ -1,0 +1,2 @@
+definition,n_evaluable,absent_n,absent_events,absent_non_events,absent_aki_risk,present_n,present_events,present_non_events,present_aki_risk,crude_odds_ratio,fisher_exact_p_value,estimability_status,estimability_reason
+any hidden_auc > 0,2246,169,5,164,0.029585798816568046,2077,101,1976,0.04862782859894078,1.6765182186234817,0.3449446415781471,ESTIMABLE,all four exposure-outcome cells observed

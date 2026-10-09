@@ -1,0 +1,17 @@
+{
+  "primary_event_records": "PASS",
+  "merge30_event_records": "PASS",
+  "merge120_event_records": "PASS",
+  "no_stability_event_records": "PASS",
+  "preceding_low30_event_records": "PASS",
+  "first_low_subject_event_records": "PASS",
+  "exclude_first10_event_records": "PASS",
+  "display": "PASS",
+  "strata": "PASS",
+  "recovery": "PASS",
+  "recovery_stop_reasons": "PASS",
+  "primary_recovery_records": "PASS",
+  "frozen_primary_counts_640_236_184": "PASS",
+  "numeric_absolute_tolerance": 1e-10,
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

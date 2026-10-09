@@ -1,0 +1,9 @@
+Variable,"Evaluable, n","Evaluable, mean ± SD","Not evaluable, n","Not evaluable, mean ± SD",SMD
+"Age, yr",2246,61.47 ± 13.03,189,58.06 ± 13.83,0.25
+"Body mass index, kg m-2",2246,23.16 ± 3.53,189,23.06 ± 3.27,0.03
+ASA Physical Status ≥3,2242,0.13 ± 0.34,139,0.06 ± 0.25,0.22
+Emergency surgery,2246,0.10 ± 0.30,189,0.20 ± 0.40,-0.29
+Pre-operative hypertension,2246,0.35 ± 0.48,189,0.33 ± 0.47,0.05
+Pre-operative diabetes,2246,0.13 ± 0.34,189,0.10 ± 0.29,0.12
+"Anaesthesia duration, h",2246,4.24 ± 1.72,189,3.57 ± 1.61,0.41
+Reference AUC per anaesthesia-hour,2246,28.05 ± 34.56,189,25.47 ± 35.96,0.07

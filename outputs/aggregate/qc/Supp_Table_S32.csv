@@ -1,0 +1,9 @@
+Measure,Original,Sustained segments,All flagged bins,Exclude startup 10 min
+Quality-eligible adjustment blocks,640,640,640,624
+Low-reference adjustments,236,236,236,222
+Low-reference subjects,83,83,83,82
+Confirmed recoveries,184,184,184,175
+Normal display at 1 min (%),15.3 (12.3 to 18.4),15.3 (12.3 to 18.4),15.3 (12.3 to 18.4),15.3 (11.9 to 18.8)
+Normal display at 2.5 min (%),29.9 (25.2 to 34.2),29.9 (25.2 to 34.2),29.9 (25.2 to 34.2),30.0 (25.2 to 35.1)
+Normal display at 5 min (%),41.9 (37.1 to 47.1),41.9 (37.1 to 47.1),41.9 (37.1 to 47.1),42.3 (37.2 to 47.5)
+Recovery persistence at 5 min (min),0.95 (0.85 to 1.05),0.95 (0.85 to 1.05),0.95 (0.85 to 1.05),0.96 (0.85 to 1.06)

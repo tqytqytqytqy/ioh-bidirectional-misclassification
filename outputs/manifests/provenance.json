@@ -1,102 +1,21 @@
 {
-  "release": "v1.4.0",
-  "freeze_date": "2026-10-05",
+  "release": "v1.5.0",
+  "freeze_date": "2026-10-09",
+  "source_analysis_version": "v1.5.0-algorithmic-qc",
+  "source_input_manifest_sha256": "53b57e37c4b14278345bf48ce916ce15f986efc97fd78808c8dd3c3f7d4bee1e",
   "primary_dataset": "VitalDB",
-  "cohort_cases": 2435,
-  "cohort_subjects": 2380,
-  "reference_MAP_grid_seconds": 10,
-  "primary_threshold_mmHg": 65,
+  "cases": 2435,
+  "subjects": 2380,
+  "reference_grid_seconds": 10,
   "primary_interval_minutes": 5,
+  "primary_threshold_mmHg": 65,
   "primary_episode_minimum_seconds": 60,
   "bootstrap_cluster": "subject",
-  "baseline_release": "v1.3.1-submission",
-  "frozen_baseline_results": {
-    "aki_definition": "KDIGO serum-creatinine criteria only: at least 0.3 mg/dL within 48 h or at least 1.5 times baseline within 7 d, censored at discharge",
-    "aki_evaluable_cases": 2246,
-    "aki_events": 106,
-    "aki_hidden_presence_status": "NOT_ESTIMABLE_COMPLETE_SEPARATION",
-    "aki_incremental_absolute_burden_ci95": [
-      0.8149135530943874,
-      1.339299796968809
-    ],
-    "aki_incremental_absolute_burden_p_value": 0.7300303132514938,
-    "aki_incremental_absolute_burden_rr_per_10_mmHg_min_h": 1.0447074021975933,
-    "aki_principal_absolute_burden_model_cases": 2242,
-    "aki_principal_ci95": [
-      0.9922820156812905,
-      1.2036956651328363
-    ],
-    "aki_principal_p_value": 0.07143259894644313,
-    "aki_principal_rr_per_10_mmHg_min_h": 1.0928886315013266,
-    "aki_secondary_hdr65_ci95": [
-      0.7422772962660598,
-      1.0125450773450135
-    ],
-    "aki_secondary_hdr65_rr_per_10_percentage_points": 0.8669424561983137,
-    "icu_clinical_ci95": [
-      1.0656017578285286,
-      1.229061972230728
-    ],
-    "icu_clinical_model_cases": 2248,
-    "icu_clinical_model_events": 153,
-    "icu_clinical_model_subjects": 2203,
-    "icu_clinical_p_value": 0.0002111916779974862,
-    "icu_clinical_rr_per_10_mmHg_min_h": 1.1444171433918937,
-    "icu_endpoint": "postoperative ICU length of stay >=2 days",
-    "icu_endpoint_limitation": "VitalDB does not distinguish planned from unplanned ICU admission",
-    "icu_endpoint_role": "exploratory postoperative resource-use outcome",
-    "icu_incremental_ci95": [
-      1.0190145493451477,
-      1.3624857920149336
-    ],
-    "icu_incremental_p_value": 0.026818163623338293,
-    "icu_incremental_rr_per_10_mmHg_min_h": 1.1783008297286666,
-    "map65_complete_miss_probability": 0.342237219259098,
-    "map65_episode_detection_probability": 0.657762780740902,
-    "map65_episodes_ge60s": 9187,
-    "map65_first_display_ge1min_probability": 0.5497478320815645,
-    "map65_first_display_ge2min_probability": 0.35702623272014805,
-    "map65_hdr": 0.5974247419434733,
-    "map65_hdr_ci95": [
-      0.581867624544135,
-      0.6122406941698799
-    ],
-    "map65_net_bias": -0.02443252564145753,
-    "map65_net_bias_ci95": [
-      -0.02697779970201543,
-      -0.02202809364724751
-    ],
-    "map65_odr": 0.5729922163020157,
-    "map65_odr_ci95": [
-      0.5580414311205506,
-      0.5870330839049442
-    ],
-    "map65_reference_auc_before_first_display_fraction": 0.3486012684339906
-  },
-  "NIBP_role": "record-semantics audit only; independent cuff cycles not authenticated",
-  "pairing_window": "-30 to +30 s window median of arterial MAP; minimum 80% support",
-  "infusion_flow": {
-    "Fixed primary cohort cases": 2435,
-    "Fixed primary cohort subjects": 2380,
-    "Cases with either target pump track": 133,
-    "Raw recorded increases or starts": 834,
-    "Changes passing 5-s stability": 776,
-    "Anchored 60-s adjustment blocks": 648,
-    "Excluded before 5 min": 3,
-    "Excluded for preceding reference quality": 5,
-    "Quality-eligible blocks": 640,
-    "Quality-eligible cases": 124,
-    "Quality-eligible subjects": 120,
-    "Low-reference blocks at adjustment": 236,
-    "Low-reference cases": 85,
-    "Low-reference subjects": 83,
-    "Normal-reference blocks": 404,
-    "Low-reference blocks with full 5-min support": 234,
-    "Blocks with confirmed reference recovery": 184
-  },
-  "infusion_bootstrap_replicates": 2000,
-  "infusion_bootstrap_seed": 20261004,
-  "startup_signal_quality": "Clinical adjudication not certified by the supplementary module",
-  "statistical_refit_on_release_date": false,
-  "redistribution": "Code and non-identifiable aggregate outputs only"
+  "clinical_adjudication": "NOT_PERFORMED",
+  "statistical_refit_during_release_assembly": false,
+  "NIBP_role": "record-semantics audit; independent cuff cycles not authenticated",
+  "NIBP_pairing_window": "-30 to +30 s window median, at least 80% reference support",
+  "MoVeR_role": "waveform gate failed; no direct waveform claim",
+  "INSPIRE_role": "resource and transportability context",
+  "redistribution": "Analysis code and non-identifiable aggregate outputs only"
 }

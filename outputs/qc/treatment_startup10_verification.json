@@ -1,0 +1,38 @@
+{
+  "Primary": {
+    "event_phase_checks": 31824,
+    "recovery_events_checked": 175,
+    "status": "PASS"
+  },
+  "Merge 30 s": {
+    "event_phase_checks": 34272,
+    "recovery_events_checked": 196,
+    "status": "PASS"
+  },
+  "Merge 120 s": {
+    "event_phase_checks": 29835,
+    "recovery_events_checked": 162,
+    "status": "PASS"
+  },
+  "No stability requirement": {
+    "event_phase_checks": 33813,
+    "recovery_events_checked": 189,
+    "status": "PASS"
+  },
+  "At least 30 s preceding low MAP": {
+    "event_phase_checks": 30345,
+    "recovery_events_checked": 149,
+    "status": "PASS"
+  },
+  "First low event per subject": {
+    "event_phase_checks": 24684,
+    "recovery_events_checked": 66,
+    "status": "PASS"
+  },
+  "Exclude first 10 min": {
+    "event_phase_checks": 31824,
+    "recovery_events_checked": 175,
+    "status": "PASS"
+  },
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

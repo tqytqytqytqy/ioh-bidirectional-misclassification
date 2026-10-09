@@ -1,0 +1,425 @@
+policy,module,metric,unit,scenario,interval_min,subjects,cases,events,estimate,lower95,upper95,eligible_low_events,full_post_support_events,confirmed_recovery_events,median_min,q1_min,q3_min
+original,treatment_display,normal_display,percent,Primary,1.0,83,85,236.0,15.324858757062149,12.2841292198389,18.367443568336427,,,,,,
+original,treatment_display,fresh_low,percent,Primary,1.0,83,85,236.0,82.20338983050846,78.73981072487892,85.89148136814903,,,,,,
+original,treatment_display,inherited_low,percent,Primary,1.0,83,85,236.0,2.4717514124293785,1.3633292383292381,3.807522577996715,,,,,,
+original,treatment_display,unavailable,percent,Primary,1.0,83,85,236.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Primary,2.5,83,85,236.0,29.915254237288142,25.212077081494556,34.23989728594991,,,,,,
+original,treatment_display,fresh_low,percent,Primary,2.5,83,85,236.0,62.062146892655356,57.14637445887446,67.44615416179398,,,,,,
+original,treatment_display,inherited_low,percent,Primary,2.5,83,85,236.0,8.022598870056498,5.861088709677418,10.38054655094287,,,,,,
+original,treatment_display,unavailable,percent,Primary,2.5,83,85,236.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Primary,5.0,83,85,236.0,41.93502824858756,37.054695158587094,47.062342923779084,,,,,,
+original,treatment_display,fresh_low,percent,Primary,5.0,83,85,236.0,44.29378531073446,38.88378587486495,49.920475220995606,,,,,,
+original,treatment_display,inherited_low,percent,Primary,5.0,83,85,236.0,13.58757062146892,10.801612306968455,16.291296166296164,,,,,,
+original,treatment_display,unavailable,percent,Primary,5.0,83,85,236.0,0.18361581920903952,0.0,0.532724505327245,,,,,,
+original,treatment_display,normal_display,percent,Equal subject weighting,5.0,83,85,236.0,43.112536726994556,37.532091352422675,48.4985843808133,,,,,,
+original,treatment_display,normal_display,percent,Merge 30 s,1.0,83,85,261.0,15.32567049808429,12.127968275075988,18.328659774692984,,,,,,
+original,treatment_display,fresh_low,percent,Merge 30 s,1.0,83,85,261.0,82.37547892720305,79.07755955628296,86.01619069319966,,,,,,
+original,treatment_display,inherited_low,percent,Merge 30 s,1.0,83,85,261.0,2.298850574712643,1.2761759851454506,3.439381499726326,,,,,,
+original,treatment_display,unavailable,percent,Merge 30 s,1.0,83,85,261.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Merge 30 s,2.5,83,85,261.0,30.242656449553003,25.359477633477635,34.62675059776508,,,,,,
+original,treatment_display,fresh_low,percent,Merge 30 s,2.5,83,85,261.0,61.787994891443155,56.94894465233451,67.33068219128407,,,,,,
+original,treatment_display,inherited_low,percent,Merge 30 s,2.5,83,85,261.0,7.969348659003832,5.859355271464646,10.183164604424443,,,,,,
+original,treatment_display,unavailable,percent,Merge 30 s,2.5,83,85,261.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Merge 30 s,5.0,83,85,261.0,42.681992337164736,37.30434122883465,48.17953771289537,,,,,,
+original,treatment_display,fresh_low,percent,Merge 30 s,5.0,83,85,261.0,43.70370370370369,38.0572063577586,49.65515573035493,,,,,,
+original,treatment_display,inherited_low,percent,Merge 30 s,5.0,83,85,261.0,13.448275862068964,10.715078059889738,16.090887692029984,,,,,,
+original,treatment_display,unavailable,percent,Merge 30 s,5.0,83,85,261.0,0.16602809706257982,0.0,0.48418682319603223,,,,,,
+original,treatment_display,normal_display,percent,Merge 120 s,1.0,82,84,213.0,16.901408450704224,12.806476808459502,21.033947316300257,,,,,,
+original,treatment_display,fresh_low,percent,Merge 120 s,1.0,82,84,213.0,80.28169014084504,75.80378760816066,84.91239035087717,,,,,,
+original,treatment_display,inherited_low,percent,Merge 120 s,1.0,82,84,213.0,2.816901408450704,1.486422877543036,4.248539841468502,,,,,,
+original,treatment_display,unavailable,percent,Merge 120 s,1.0,82,84,213.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Merge 120 s,2.5,82,84,213.0,31.142410015649457,25.895833333333336,36.363915654238234,,,,,,
+original,treatment_display,fresh_low,percent,Merge 120 s,2.5,82,84,213.0,60.34428794992176,54.255540626444756,66.35960038986354,,,,,,
+original,treatment_display,inherited_low,percent,Merge 120 s,2.5,82,84,213.0,8.513302034428794,6.187804878048779,11.000242047026273,,,,,,
+original,treatment_display,unavailable,percent,Merge 120 s,2.5,82,84,213.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Merge 120 s,5.0,82,84,213.0,42.42566510172142,37.08336148529764,47.93103971048513,,,,,,
+original,treatment_display,fresh_low,percent,Merge 120 s,5.0,82,84,213.0,43.458528951486706,37.26311421707797,49.909662956091516,,,,,,
+original,treatment_display,inherited_low,percent,Merge 120 s,5.0,82,84,213.0,13.912363067292638,11.26551750293928,16.684996376811593,,,,,,
+original,treatment_display,unavailable,percent,Merge 120 s,5.0,82,84,213.0,0.2034428794992175,0.0,0.5834066164154099,,,,,,
+original,treatment_display,normal_display,percent,No stability requirement,1.0,92,94,252.0,15.608465608465611,12.39474680922953,18.772136409865244,,,,,,
+original,treatment_display,fresh_low,percent,No stability requirement,1.0,92,94,252.0,81.87830687830686,78.32585949177874,85.50523535952557,,,,,,
+original,treatment_display,inherited_low,percent,No stability requirement,1.0,92,94,252.0,2.5132275132275126,1.4284262485481998,3.7947134945750443,,,,,,
+original,treatment_display,unavailable,percent,No stability requirement,1.0,92,94,252.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,No stability requirement,2.5,92,94,252.0,30.846560846560845,26.20574258559487,35.337186862691375,,,,,,
+original,treatment_display,fresh_low,percent,No stability requirement,2.5,92,94,252.0,61.137566137566125,55.957894255755356,66.27830893758637,,,,,,
+original,treatment_display,inherited_low,percent,No stability requirement,2.5,92,94,252.0,8.015873015873016,5.953212021390598,10.347847310654291,,,,,,
+original,treatment_display,unavailable,percent,No stability requirement,2.5,92,94,252.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,No stability requirement,5.0,92,94,252.0,43.14814814814814,38.13135503470646,48.04392897361648,,,,,,
+original,treatment_display,fresh_low,percent,No stability requirement,5.0,92,94,252.0,43.386243386243386,38.00921420539917,49.12980132965888,,,,,,
+original,treatment_display,inherited_low,percent,No stability requirement,5.0,92,94,252.0,13.293650793650787,10.775187639631497,16.014669580515694,,,,,,
+original,treatment_display,unavailable,percent,No stability requirement,5.0,92,94,252.0,0.17195767195767195,0.0,0.5106647380863505,,,,,,
+original,treatment_display,normal_display,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,8.130081300813007,5.936543276108727,10.381260032102727,,,,,,
+original,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,90.8130081300813,88.28563110833854,93.19031214114204,,,,,,
+original,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,1.0569105691056913,0.29580368236755905,1.9970046082949304,,,,,,
+original,treatment_display,unavailable,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,23.349593495934965,18.971470771144283,27.440299560387345,,,,,,
+original,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,69.91869918699184,65.0617088607595,75.01741395298096,,,,,,
+original,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,6.73170731707317,4.630285375195555,9.15133647798742,,,,,,
+original,treatment_display,unavailable,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,36.601626016260155,31.712919637551995,41.37007405772578,,,,,,
+original,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,50.227642276422756,44.54675996911668,56.2964881980426,,,,,,
+original,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,12.959349593495931,10.190587633731905,15.964096279537454,,,,,,
+original,treatment_display,unavailable,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,0.21138211382113822,0.0,0.623885918003565,,,,,,
+original,treatment_display,normal_display,percent,First low event per subject,1.0,83,83,83.0,16.465863453815263,11.44578313253012,22.08835341365462,,,,,,
+original,treatment_display,fresh_low,percent,First low event per subject,1.0,83,83,83.0,81.52610441767068,75.70281124497991,87.14859437751004,,,,,,
+original,treatment_display,inherited_low,percent,First low event per subject,1.0,83,83,83.0,2.0080321285140563,0.4016064257028112,3.8152610441767063,,,,,,
+original,treatment_display,unavailable,percent,First low event per subject,1.0,83,83,83.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,First low event per subject,2.5,83,83,83.0,31.887550200803215,25.54216867469879,38.313253012048186,,,,,,
+original,treatment_display,fresh_low,percent,First low event per subject,2.5,83,83,83.0,59.19678714859439,52.126506024096365,66.34738955823292,,,,,,
+original,treatment_display,inherited_low,percent,First low event per subject,2.5,83,83,83.0,8.915662650602412,5.622489959839359,12.690763052208833,,,,,,
+original,treatment_display,unavailable,percent,First low event per subject,2.5,83,83,83.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,First low event per subject,5.0,83,83,83.0,43.654618473895574,36.866465863453804,50.24096385542168,,,,,,
+original,treatment_display,fresh_low,percent,First low event per subject,5.0,83,83,83.0,41.32530120481928,34.45682730923697,48.434738955823306,,,,,,
+original,treatment_display,inherited_low,percent,First low event per subject,5.0,83,83,83.0,14.497991967871485,10.32128514056225,19.19779116465863,,,,,,
+original,treatment_display,unavailable,percent,First low event per subject,5.0,83,83,83.0,0.5220883534136546,0.0,1.4457831325301207,,,,,,
+original,treatment_display,normal_display,percent,Exclude first 10 min,1.0,83,85,228.0,15.423976608187138,12.174122909960655,18.53642651952733,,,,,,
+original,treatment_display,fresh_low,percent,Exclude first 10 min,1.0,83,85,228.0,82.09064327485378,78.5271208708709,85.8799342105263,,,,,,
+original,treatment_display,inherited_low,percent,Exclude first 10 min,1.0,83,85,228.0,2.4853801169590644,1.3139695712309822,3.834148545386685,,,,,,
+original,treatment_display,unavailable,percent,Exclude first 10 min,1.0,83,85,228.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Exclude first 10 min,2.5,83,85,228.0,30.116959064327492,25.392186379928315,34.650280112044804,,,,,,
+original,treatment_display,fresh_low,percent,Exclude first 10 min,2.5,83,85,228.0,61.81286549707601,56.764512521703296,67.48844786729859,,,,,,
+original,treatment_display,inherited_low,percent,Exclude first 10 min,2.5,83,85,228.0,8.070175438596488,5.822680443112519,10.467422271770095,,,,,,
+original,treatment_display,unavailable,percent,Exclude first 10 min,2.5,83,85,228.0,0.0,0.0,0.0,,,,,,
+original,treatment_display,normal_display,percent,Exclude first 10 min,5.0,83,85,228.0,42.426900584795305,37.582917241752575,47.58491381881076,,,,,,
+original,treatment_display,fresh_low,percent,Exclude first 10 min,5.0,83,85,228.0,43.757309941520454,38.34024421801715,49.63105444525425,,,,,,
+original,treatment_display,inherited_low,percent,Exclude first 10 min,5.0,83,85,228.0,13.640350877192976,10.799108608615967,16.37690489519189,,,,,,
+original,treatment_display,unavailable,percent,Exclude first 10 min,5.0,83,85,228.0,0.17543859649122806,0.0,0.5314179764577803,,,,,,
+original,post_adjustment_recovery,low_display_persistence,minutes,Primary,1.0,78,80,,0.23144892215152876,0.21946146064985889,0.24149438103727022,236.0,234.0,184.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,Primary,2.5,78,80,,0.6500622977611525,0.5911578240186515,0.7025104043222805,236.0,234.0,184.0,0.8058866670396592,0.26666666666666666,1.0
+original,post_adjustment_recovery,low_display_persistence,minutes,Primary,5.0,78,80,,0.9521254513977808,0.8470638982245509,1.0477932184763217,236.0,234.0,184.0,0.9821494446860406,0.25499097300900353,1.4999999999999998
+original,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,1.0,79,81,,0.23167933931628482,0.21904829757969477,0.24253100247931078,261.0,259.0,206.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,2.5,79,81,,0.6571237050110985,0.5922392722868874,0.7151939084835255,261.0,259.0,206.0,0.8444444444444444,0.26944444444444443,1.001404444641537
+original,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,5.0,79,81,,0.9680817284514605,0.854755551809831,1.068308944452899,261.0,259.0,206.0,1.0014827778604296,0.2299909730090035,1.5152377764383953
+original,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,1.0,76,78,,0.2288092637046398,0.21733025520741264,0.2391510009655706,213.0,211.0,169.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,2.5,76,78,,0.6395753479035258,0.5837808809183563,0.694530835227214,213.0,211.0,169.0,0.7970977762010362,0.2555555555555556,1.0
+original,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,5.0,76,78,,0.9395969162764792,0.8380725528527175,1.0364996741564292,213.0,211.0,169.0,0.9571155548095702,0.22777777777777772,1.4567755556106567
+original,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,1.0,86,88,,0.23193041602038328,0.22125032019814536,0.24164856353125885,252.0,250.0,199.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,2.5,86,88,,0.6515302317612406,0.5957722101453611,0.7034992143386207,252.0,250.0,199.0,0.8,0.2777777777777778,1.0
+original,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,5.0,86,88,,0.9543975977029703,0.8540192604126808,1.0522372784212395,252.0,250.0,199.0,0.9722222222222225,0.26388888888888884,1.5002311113145619
+original,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,1.0,75,76,,0.23817577995466038,0.22654949092119434,0.24934986762441033,205.0,203.0,156.0,0.27777777777777773,0.21370694504843818,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,2.5,75,76,,0.6866090904987099,0.6273965694768848,0.7461536912338319,205.0,203.0,156.0,0.8500000000000001,0.2777777777777778,1.004165277481079
+original,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,5.0,75,76,,1.0316918101932249,0.9183066950351344,1.1456658364813543,205.0,203.0,156.0,1.1158740290006002,0.3055555555555556,1.5699299734168584
+original,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,1.0,64,64,,0.23181571182277463,0.21435205511748787,0.2483087673783302,83.0,83.0,64.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,2.5,64,64,,0.6494783402648237,0.5621621706475401,0.7359460609075096,83.0,83.0,64.0,0.7777777777777777,0.2611111111111111,1.0035894441604616
+original,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,5.0,64,64,,0.9452905563347869,0.7893015793830984,1.11999985781343,83.0,83.0,64.0,0.8750000000000001,0.1916666666666666,1.5160513341426851
+original,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,1.0,78,80,,0.2326480540483358,0.2203837238692284,0.24321929973793693,228.0,226.0,179.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+original,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,2.5,78,80,,0.6558547455623683,0.5948903129608176,0.7104387529237766,228.0,226.0,179.0,0.8117733340793184,0.2777777777777778,1.0
+original,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,5.0,78,80,,0.9605395329272358,0.8518446694372994,1.0593526226661465,228.0,226.0,179.0,0.9920766671498586,0.2694444444444444,1.5
+qc60,treatment_display,normal_display,percent,Primary,1.0,83,85,236.0,15.324858757062149,12.2841292198389,18.367443568336427,,,,,,
+qc60,treatment_display,fresh_low,percent,Primary,1.0,83,85,236.0,82.20338983050846,78.73981072487892,85.89148136814903,,,,,,
+qc60,treatment_display,inherited_low,percent,Primary,1.0,83,85,236.0,2.4717514124293785,1.3633292383292381,3.807522577996715,,,,,,
+qc60,treatment_display,unavailable,percent,Primary,1.0,83,85,236.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Primary,2.5,83,85,236.0,29.915254237288142,25.212077081494556,34.23989728594991,,,,,,
+qc60,treatment_display,fresh_low,percent,Primary,2.5,83,85,236.0,62.062146892655356,57.14637445887446,67.44615416179398,,,,,,
+qc60,treatment_display,inherited_low,percent,Primary,2.5,83,85,236.0,8.022598870056498,5.861088709677418,10.38054655094287,,,,,,
+qc60,treatment_display,unavailable,percent,Primary,2.5,83,85,236.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Primary,5.0,83,85,236.0,41.93502824858756,37.054695158587094,47.062342923779084,,,,,,
+qc60,treatment_display,fresh_low,percent,Primary,5.0,83,85,236.0,44.29378531073446,38.88378587486495,49.920475220995606,,,,,,
+qc60,treatment_display,inherited_low,percent,Primary,5.0,83,85,236.0,13.58757062146892,10.801612306968455,16.291296166296164,,,,,,
+qc60,treatment_display,unavailable,percent,Primary,5.0,83,85,236.0,0.18361581920903952,0.0,0.532724505327245,,,,,,
+qc60,treatment_display,normal_display,percent,Equal subject weighting,5.0,83,85,236.0,43.112536726994556,37.532091352422675,48.4985843808133,,,,,,
+qc60,treatment_display,normal_display,percent,Merge 30 s,1.0,83,85,261.0,15.32567049808429,12.127968275075988,18.328659774692984,,,,,,
+qc60,treatment_display,fresh_low,percent,Merge 30 s,1.0,83,85,261.0,82.37547892720305,79.07755955628296,86.01619069319966,,,,,,
+qc60,treatment_display,inherited_low,percent,Merge 30 s,1.0,83,85,261.0,2.298850574712643,1.2761759851454506,3.439381499726326,,,,,,
+qc60,treatment_display,unavailable,percent,Merge 30 s,1.0,83,85,261.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Merge 30 s,2.5,83,85,261.0,30.242656449553003,25.359477633477635,34.62675059776508,,,,,,
+qc60,treatment_display,fresh_low,percent,Merge 30 s,2.5,83,85,261.0,61.787994891443155,56.94894465233451,67.33068219128407,,,,,,
+qc60,treatment_display,inherited_low,percent,Merge 30 s,2.5,83,85,261.0,7.969348659003832,5.859355271464646,10.183164604424443,,,,,,
+qc60,treatment_display,unavailable,percent,Merge 30 s,2.5,83,85,261.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Merge 30 s,5.0,83,85,261.0,42.681992337164736,37.30434122883465,48.17953771289537,,,,,,
+qc60,treatment_display,fresh_low,percent,Merge 30 s,5.0,83,85,261.0,43.70370370370369,38.0572063577586,49.65515573035493,,,,,,
+qc60,treatment_display,inherited_low,percent,Merge 30 s,5.0,83,85,261.0,13.448275862068964,10.715078059889738,16.090887692029984,,,,,,
+qc60,treatment_display,unavailable,percent,Merge 30 s,5.0,83,85,261.0,0.16602809706257982,0.0,0.48418682319603223,,,,,,
+qc60,treatment_display,normal_display,percent,Merge 120 s,1.0,82,84,213.0,16.901408450704224,12.806476808459502,21.033947316300257,,,,,,
+qc60,treatment_display,fresh_low,percent,Merge 120 s,1.0,82,84,213.0,80.28169014084504,75.80378760816066,84.91239035087717,,,,,,
+qc60,treatment_display,inherited_low,percent,Merge 120 s,1.0,82,84,213.0,2.816901408450704,1.486422877543036,4.248539841468502,,,,,,
+qc60,treatment_display,unavailable,percent,Merge 120 s,1.0,82,84,213.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Merge 120 s,2.5,82,84,213.0,31.142410015649457,25.895833333333336,36.363915654238234,,,,,,
+qc60,treatment_display,fresh_low,percent,Merge 120 s,2.5,82,84,213.0,60.34428794992176,54.255540626444756,66.35960038986354,,,,,,
+qc60,treatment_display,inherited_low,percent,Merge 120 s,2.5,82,84,213.0,8.513302034428794,6.187804878048779,11.000242047026273,,,,,,
+qc60,treatment_display,unavailable,percent,Merge 120 s,2.5,82,84,213.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Merge 120 s,5.0,82,84,213.0,42.42566510172142,37.08336148529764,47.93103971048513,,,,,,
+qc60,treatment_display,fresh_low,percent,Merge 120 s,5.0,82,84,213.0,43.458528951486706,37.26311421707797,49.909662956091516,,,,,,
+qc60,treatment_display,inherited_low,percent,Merge 120 s,5.0,82,84,213.0,13.912363067292638,11.26551750293928,16.684996376811593,,,,,,
+qc60,treatment_display,unavailable,percent,Merge 120 s,5.0,82,84,213.0,0.2034428794992175,0.0,0.5834066164154099,,,,,,
+qc60,treatment_display,normal_display,percent,No stability requirement,1.0,92,94,252.0,15.608465608465611,12.39474680922953,18.772136409865244,,,,,,
+qc60,treatment_display,fresh_low,percent,No stability requirement,1.0,92,94,252.0,81.87830687830686,78.32585949177874,85.50523535952557,,,,,,
+qc60,treatment_display,inherited_low,percent,No stability requirement,1.0,92,94,252.0,2.5132275132275126,1.4284262485481998,3.7947134945750443,,,,,,
+qc60,treatment_display,unavailable,percent,No stability requirement,1.0,92,94,252.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,No stability requirement,2.5,92,94,252.0,30.846560846560845,26.20574258559487,35.337186862691375,,,,,,
+qc60,treatment_display,fresh_low,percent,No stability requirement,2.5,92,94,252.0,61.137566137566125,55.957894255755356,66.27830893758637,,,,,,
+qc60,treatment_display,inherited_low,percent,No stability requirement,2.5,92,94,252.0,8.015873015873016,5.953212021390598,10.347847310654291,,,,,,
+qc60,treatment_display,unavailable,percent,No stability requirement,2.5,92,94,252.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,No stability requirement,5.0,92,94,252.0,43.14814814814814,38.13135503470646,48.04392897361648,,,,,,
+qc60,treatment_display,fresh_low,percent,No stability requirement,5.0,92,94,252.0,43.386243386243386,38.00921420539917,49.12980132965888,,,,,,
+qc60,treatment_display,inherited_low,percent,No stability requirement,5.0,92,94,252.0,13.293650793650787,10.775187639631497,16.014669580515694,,,,,,
+qc60,treatment_display,unavailable,percent,No stability requirement,5.0,92,94,252.0,0.17195767195767195,0.0,0.5106647380863505,,,,,,
+qc60,treatment_display,normal_display,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,8.130081300813007,5.936543276108727,10.381260032102727,,,,,,
+qc60,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,90.8130081300813,88.28563110833854,93.19031214114204,,,,,,
+qc60,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,1.0569105691056913,0.29580368236755905,1.9970046082949304,,,,,,
+qc60,treatment_display,unavailable,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,23.349593495934965,18.971470771144283,27.440299560387345,,,,,,
+qc60,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,69.91869918699184,65.0617088607595,75.01741395298096,,,,,,
+qc60,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,6.73170731707317,4.630285375195555,9.15133647798742,,,,,,
+qc60,treatment_display,unavailable,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,36.601626016260155,31.712919637551995,41.37007405772578,,,,,,
+qc60,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,50.227642276422756,44.54675996911668,56.2964881980426,,,,,,
+qc60,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,12.959349593495931,10.190587633731905,15.964096279537454,,,,,,
+qc60,treatment_display,unavailable,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,0.21138211382113822,0.0,0.623885918003565,,,,,,
+qc60,treatment_display,normal_display,percent,First low event per subject,1.0,83,83,83.0,16.465863453815263,11.44578313253012,22.08835341365462,,,,,,
+qc60,treatment_display,fresh_low,percent,First low event per subject,1.0,83,83,83.0,81.52610441767068,75.70281124497991,87.14859437751004,,,,,,
+qc60,treatment_display,inherited_low,percent,First low event per subject,1.0,83,83,83.0,2.0080321285140563,0.4016064257028112,3.8152610441767063,,,,,,
+qc60,treatment_display,unavailable,percent,First low event per subject,1.0,83,83,83.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,First low event per subject,2.5,83,83,83.0,31.887550200803215,25.54216867469879,38.313253012048186,,,,,,
+qc60,treatment_display,fresh_low,percent,First low event per subject,2.5,83,83,83.0,59.19678714859439,52.126506024096365,66.34738955823292,,,,,,
+qc60,treatment_display,inherited_low,percent,First low event per subject,2.5,83,83,83.0,8.915662650602412,5.622489959839359,12.690763052208833,,,,,,
+qc60,treatment_display,unavailable,percent,First low event per subject,2.5,83,83,83.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,First low event per subject,5.0,83,83,83.0,43.654618473895574,36.866465863453804,50.24096385542168,,,,,,
+qc60,treatment_display,fresh_low,percent,First low event per subject,5.0,83,83,83.0,41.32530120481928,34.45682730923697,48.434738955823306,,,,,,
+qc60,treatment_display,inherited_low,percent,First low event per subject,5.0,83,83,83.0,14.497991967871485,10.32128514056225,19.19779116465863,,,,,,
+qc60,treatment_display,unavailable,percent,First low event per subject,5.0,83,83,83.0,0.5220883534136546,0.0,1.4457831325301207,,,,,,
+qc60,treatment_display,normal_display,percent,Exclude first 10 min,1.0,83,85,228.0,15.423976608187138,12.174122909960655,18.53642651952733,,,,,,
+qc60,treatment_display,fresh_low,percent,Exclude first 10 min,1.0,83,85,228.0,82.09064327485378,78.5271208708709,85.8799342105263,,,,,,
+qc60,treatment_display,inherited_low,percent,Exclude first 10 min,1.0,83,85,228.0,2.4853801169590644,1.3139695712309822,3.834148545386685,,,,,,
+qc60,treatment_display,unavailable,percent,Exclude first 10 min,1.0,83,85,228.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Exclude first 10 min,2.5,83,85,228.0,30.116959064327492,25.392186379928315,34.650280112044804,,,,,,
+qc60,treatment_display,fresh_low,percent,Exclude first 10 min,2.5,83,85,228.0,61.81286549707601,56.764512521703296,67.48844786729859,,,,,,
+qc60,treatment_display,inherited_low,percent,Exclude first 10 min,2.5,83,85,228.0,8.070175438596488,5.822680443112519,10.467422271770095,,,,,,
+qc60,treatment_display,unavailable,percent,Exclude first 10 min,2.5,83,85,228.0,0.0,0.0,0.0,,,,,,
+qc60,treatment_display,normal_display,percent,Exclude first 10 min,5.0,83,85,228.0,42.426900584795305,37.582917241752575,47.58491381881076,,,,,,
+qc60,treatment_display,fresh_low,percent,Exclude first 10 min,5.0,83,85,228.0,43.757309941520454,38.34024421801715,49.63105444525425,,,,,,
+qc60,treatment_display,inherited_low,percent,Exclude first 10 min,5.0,83,85,228.0,13.640350877192976,10.799108608615967,16.37690489519189,,,,,,
+qc60,treatment_display,unavailable,percent,Exclude first 10 min,5.0,83,85,228.0,0.17543859649122806,0.0,0.5314179764577803,,,,,,
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Primary,1.0,78,80,,0.23144892215152876,0.21946146064985889,0.24149438103727022,236.0,234.0,184.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Primary,2.5,78,80,,0.6500622977611525,0.5911578240186515,0.7025104043222805,236.0,234.0,184.0,0.8058866670396592,0.26666666666666666,1.0
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Primary,5.0,78,80,,0.9521254513977808,0.8470638982245509,1.0477932184763217,236.0,234.0,184.0,0.9821494446860406,0.25499097300900353,1.4999999999999998
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,1.0,79,81,,0.23167933931628482,0.21904829757969477,0.24253100247931078,261.0,259.0,206.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,2.5,79,81,,0.6571237050110985,0.5922392722868874,0.7151939084835255,261.0,259.0,206.0,0.8444444444444444,0.26944444444444443,1.001404444641537
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,5.0,79,81,,0.9680817284514605,0.854755551809831,1.068308944452899,261.0,259.0,206.0,1.0014827778604296,0.2299909730090035,1.5152377764383953
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,1.0,76,78,,0.2288092637046398,0.21733025520741264,0.2391510009655706,213.0,211.0,169.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,2.5,76,78,,0.6395753479035258,0.5837808809183563,0.694530835227214,213.0,211.0,169.0,0.7970977762010362,0.2555555555555556,1.0
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,5.0,76,78,,0.9395969162764792,0.8380725528527175,1.0364996741564292,213.0,211.0,169.0,0.9571155548095702,0.22777777777777772,1.4567755556106567
+qc60,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,1.0,86,88,,0.23193041602038328,0.22125032019814536,0.24164856353125885,252.0,250.0,199.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,2.5,86,88,,0.6515302317612406,0.5957722101453611,0.7034992143386207,252.0,250.0,199.0,0.8,0.2777777777777778,1.0
+qc60,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,5.0,86,88,,0.9543975977029703,0.8540192604126808,1.0522372784212395,252.0,250.0,199.0,0.9722222222222225,0.26388888888888884,1.5002311113145619
+qc60,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,1.0,75,76,,0.23817577995466038,0.22654949092119434,0.24934986762441033,205.0,203.0,156.0,0.27777777777777773,0.21370694504843818,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,2.5,75,76,,0.6866090904987099,0.6273965694768848,0.7461536912338319,205.0,203.0,156.0,0.8500000000000001,0.2777777777777778,1.004165277481079
+qc60,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,5.0,75,76,,1.0316918101932249,0.9183066950351344,1.1456658364813543,205.0,203.0,156.0,1.1158740290006002,0.3055555555555556,1.5699299734168584
+qc60,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,1.0,64,64,,0.23181571182277463,0.21435205511748787,0.2483087673783302,83.0,83.0,64.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,2.5,64,64,,0.6494783402648237,0.5621621706475401,0.7359460609075096,83.0,83.0,64.0,0.7777777777777777,0.2611111111111111,1.0035894441604616
+qc60,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,5.0,64,64,,0.9452905563347869,0.7893015793830984,1.11999985781343,83.0,83.0,64.0,0.8750000000000001,0.1916666666666666,1.5160513341426851
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,1.0,78,80,,0.2326480540483358,0.2203837238692284,0.24321929973793693,228.0,226.0,179.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,2.5,78,80,,0.6558547455623683,0.5948903129608176,0.7104387529237766,228.0,226.0,179.0,0.8117733340793184,0.2777777777777778,1.0
+qc60,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,5.0,78,80,,0.9605395329272358,0.8518446694372994,1.0593526226661465,228.0,226.0,179.0,0.9920766671498586,0.2694444444444444,1.5
+qc_all,treatment_display,normal_display,percent,Primary,1.0,83,85,236.0,15.324858757062149,12.2841292198389,18.367443568336427,,,,,,
+qc_all,treatment_display,fresh_low,percent,Primary,1.0,83,85,236.0,82.20338983050846,78.73981072487892,85.89148136814903,,,,,,
+qc_all,treatment_display,inherited_low,percent,Primary,1.0,83,85,236.0,2.4717514124293785,1.3633292383292381,3.807522577996715,,,,,,
+qc_all,treatment_display,unavailable,percent,Primary,1.0,83,85,236.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Primary,2.5,83,85,236.0,29.915254237288142,25.212077081494556,34.23989728594991,,,,,,
+qc_all,treatment_display,fresh_low,percent,Primary,2.5,83,85,236.0,62.062146892655356,57.14637445887446,67.44615416179398,,,,,,
+qc_all,treatment_display,inherited_low,percent,Primary,2.5,83,85,236.0,8.022598870056498,5.861088709677418,10.38054655094287,,,,,,
+qc_all,treatment_display,unavailable,percent,Primary,2.5,83,85,236.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Primary,5.0,83,85,236.0,41.93502824858756,37.054695158587094,47.062342923779084,,,,,,
+qc_all,treatment_display,fresh_low,percent,Primary,5.0,83,85,236.0,44.29378531073446,38.88378587486495,49.920475220995606,,,,,,
+qc_all,treatment_display,inherited_low,percent,Primary,5.0,83,85,236.0,13.58757062146892,10.801612306968455,16.291296166296164,,,,,,
+qc_all,treatment_display,unavailable,percent,Primary,5.0,83,85,236.0,0.18361581920903952,0.0,0.532724505327245,,,,,,
+qc_all,treatment_display,normal_display,percent,Equal subject weighting,5.0,83,85,236.0,43.112536726994556,37.532091352422675,48.4985843808133,,,,,,
+qc_all,treatment_display,normal_display,percent,Merge 30 s,1.0,83,85,261.0,15.32567049808429,12.127968275075988,18.328659774692984,,,,,,
+qc_all,treatment_display,fresh_low,percent,Merge 30 s,1.0,83,85,261.0,82.37547892720305,79.07755955628296,86.01619069319966,,,,,,
+qc_all,treatment_display,inherited_low,percent,Merge 30 s,1.0,83,85,261.0,2.298850574712643,1.2761759851454506,3.439381499726326,,,,,,
+qc_all,treatment_display,unavailable,percent,Merge 30 s,1.0,83,85,261.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Merge 30 s,2.5,83,85,261.0,30.242656449553003,25.359477633477635,34.62675059776508,,,,,,
+qc_all,treatment_display,fresh_low,percent,Merge 30 s,2.5,83,85,261.0,61.787994891443155,56.94894465233451,67.33068219128407,,,,,,
+qc_all,treatment_display,inherited_low,percent,Merge 30 s,2.5,83,85,261.0,7.969348659003832,5.859355271464646,10.183164604424443,,,,,,
+qc_all,treatment_display,unavailable,percent,Merge 30 s,2.5,83,85,261.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Merge 30 s,5.0,83,85,261.0,42.681992337164736,37.30434122883465,48.17953771289537,,,,,,
+qc_all,treatment_display,fresh_low,percent,Merge 30 s,5.0,83,85,261.0,43.70370370370369,38.0572063577586,49.65515573035493,,,,,,
+qc_all,treatment_display,inherited_low,percent,Merge 30 s,5.0,83,85,261.0,13.448275862068964,10.715078059889738,16.090887692029984,,,,,,
+qc_all,treatment_display,unavailable,percent,Merge 30 s,5.0,83,85,261.0,0.16602809706257982,0.0,0.48418682319603223,,,,,,
+qc_all,treatment_display,normal_display,percent,Merge 120 s,1.0,82,84,213.0,16.901408450704224,12.806476808459502,21.033947316300257,,,,,,
+qc_all,treatment_display,fresh_low,percent,Merge 120 s,1.0,82,84,213.0,80.28169014084504,75.80378760816066,84.91239035087717,,,,,,
+qc_all,treatment_display,inherited_low,percent,Merge 120 s,1.0,82,84,213.0,2.816901408450704,1.486422877543036,4.248539841468502,,,,,,
+qc_all,treatment_display,unavailable,percent,Merge 120 s,1.0,82,84,213.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Merge 120 s,2.5,82,84,213.0,31.142410015649457,25.895833333333336,36.363915654238234,,,,,,
+qc_all,treatment_display,fresh_low,percent,Merge 120 s,2.5,82,84,213.0,60.34428794992176,54.255540626444756,66.35960038986354,,,,,,
+qc_all,treatment_display,inherited_low,percent,Merge 120 s,2.5,82,84,213.0,8.513302034428794,6.187804878048779,11.000242047026273,,,,,,
+qc_all,treatment_display,unavailable,percent,Merge 120 s,2.5,82,84,213.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Merge 120 s,5.0,82,84,213.0,42.42566510172142,37.08336148529764,47.93103971048513,,,,,,
+qc_all,treatment_display,fresh_low,percent,Merge 120 s,5.0,82,84,213.0,43.458528951486706,37.26311421707797,49.909662956091516,,,,,,
+qc_all,treatment_display,inherited_low,percent,Merge 120 s,5.0,82,84,213.0,13.912363067292638,11.26551750293928,16.684996376811593,,,,,,
+qc_all,treatment_display,unavailable,percent,Merge 120 s,5.0,82,84,213.0,0.2034428794992175,0.0,0.5834066164154099,,,,,,
+qc_all,treatment_display,normal_display,percent,No stability requirement,1.0,92,94,252.0,15.608465608465611,12.39474680922953,18.772136409865244,,,,,,
+qc_all,treatment_display,fresh_low,percent,No stability requirement,1.0,92,94,252.0,81.87830687830686,78.32585949177874,85.50523535952557,,,,,,
+qc_all,treatment_display,inherited_low,percent,No stability requirement,1.0,92,94,252.0,2.5132275132275126,1.4284262485481998,3.7947134945750443,,,,,,
+qc_all,treatment_display,unavailable,percent,No stability requirement,1.0,92,94,252.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,No stability requirement,2.5,92,94,252.0,30.846560846560845,26.20574258559487,35.337186862691375,,,,,,
+qc_all,treatment_display,fresh_low,percent,No stability requirement,2.5,92,94,252.0,61.137566137566125,55.957894255755356,66.27830893758637,,,,,,
+qc_all,treatment_display,inherited_low,percent,No stability requirement,2.5,92,94,252.0,8.015873015873016,5.953212021390598,10.347847310654291,,,,,,
+qc_all,treatment_display,unavailable,percent,No stability requirement,2.5,92,94,252.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,No stability requirement,5.0,92,94,252.0,43.14814814814814,38.13135503470646,48.04392897361648,,,,,,
+qc_all,treatment_display,fresh_low,percent,No stability requirement,5.0,92,94,252.0,43.386243386243386,38.00921420539917,49.12980132965888,,,,,,
+qc_all,treatment_display,inherited_low,percent,No stability requirement,5.0,92,94,252.0,13.293650793650787,10.775187639631497,16.014669580515694,,,,,,
+qc_all,treatment_display,unavailable,percent,No stability requirement,5.0,92,94,252.0,0.17195767195767195,0.0,0.5106647380863505,,,,,,
+qc_all,treatment_display,normal_display,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,8.130081300813007,5.936543276108727,10.381260032102727,,,,,,
+qc_all,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,90.8130081300813,88.28563110833854,93.19031214114204,,,,,,
+qc_all,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,1.0569105691056913,0.29580368236755905,1.9970046082949304,,,,,,
+qc_all,treatment_display,unavailable,percent,At least 30 s preceding low MAP,1.0,79,80,205.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,23.349593495934965,18.971470771144283,27.440299560387345,,,,,,
+qc_all,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,69.91869918699184,65.0617088607595,75.01741395298096,,,,,,
+qc_all,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,6.73170731707317,4.630285375195555,9.15133647798742,,,,,,
+qc_all,treatment_display,unavailable,percent,At least 30 s preceding low MAP,2.5,79,80,205.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,36.601626016260155,31.712919637551995,41.37007405772578,,,,,,
+qc_all,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,50.227642276422756,44.54675996911668,56.2964881980426,,,,,,
+qc_all,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,12.959349593495931,10.190587633731905,15.964096279537454,,,,,,
+qc_all,treatment_display,unavailable,percent,At least 30 s preceding low MAP,5.0,79,80,205.0,0.21138211382113822,0.0,0.623885918003565,,,,,,
+qc_all,treatment_display,normal_display,percent,First low event per subject,1.0,83,83,83.0,16.465863453815263,11.44578313253012,22.08835341365462,,,,,,
+qc_all,treatment_display,fresh_low,percent,First low event per subject,1.0,83,83,83.0,81.52610441767068,75.70281124497991,87.14859437751004,,,,,,
+qc_all,treatment_display,inherited_low,percent,First low event per subject,1.0,83,83,83.0,2.0080321285140563,0.4016064257028112,3.8152610441767063,,,,,,
+qc_all,treatment_display,unavailable,percent,First low event per subject,1.0,83,83,83.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,First low event per subject,2.5,83,83,83.0,31.887550200803215,25.54216867469879,38.313253012048186,,,,,,
+qc_all,treatment_display,fresh_low,percent,First low event per subject,2.5,83,83,83.0,59.19678714859439,52.126506024096365,66.34738955823292,,,,,,
+qc_all,treatment_display,inherited_low,percent,First low event per subject,2.5,83,83,83.0,8.915662650602412,5.622489959839359,12.690763052208833,,,,,,
+qc_all,treatment_display,unavailable,percent,First low event per subject,2.5,83,83,83.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,First low event per subject,5.0,83,83,83.0,43.654618473895574,36.866465863453804,50.24096385542168,,,,,,
+qc_all,treatment_display,fresh_low,percent,First low event per subject,5.0,83,83,83.0,41.32530120481928,34.45682730923697,48.434738955823306,,,,,,
+qc_all,treatment_display,inherited_low,percent,First low event per subject,5.0,83,83,83.0,14.497991967871485,10.32128514056225,19.19779116465863,,,,,,
+qc_all,treatment_display,unavailable,percent,First low event per subject,5.0,83,83,83.0,0.5220883534136546,0.0,1.4457831325301207,,,,,,
+qc_all,treatment_display,normal_display,percent,Exclude first 10 min,1.0,83,85,228.0,15.423976608187138,12.174122909960655,18.53642651952733,,,,,,
+qc_all,treatment_display,fresh_low,percent,Exclude first 10 min,1.0,83,85,228.0,82.09064327485378,78.5271208708709,85.8799342105263,,,,,,
+qc_all,treatment_display,inherited_low,percent,Exclude first 10 min,1.0,83,85,228.0,2.4853801169590644,1.3139695712309822,3.834148545386685,,,,,,
+qc_all,treatment_display,unavailable,percent,Exclude first 10 min,1.0,83,85,228.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Exclude first 10 min,2.5,83,85,228.0,30.116959064327492,25.392186379928315,34.650280112044804,,,,,,
+qc_all,treatment_display,fresh_low,percent,Exclude first 10 min,2.5,83,85,228.0,61.81286549707601,56.764512521703296,67.48844786729859,,,,,,
+qc_all,treatment_display,inherited_low,percent,Exclude first 10 min,2.5,83,85,228.0,8.070175438596488,5.822680443112519,10.467422271770095,,,,,,
+qc_all,treatment_display,unavailable,percent,Exclude first 10 min,2.5,83,85,228.0,0.0,0.0,0.0,,,,,,
+qc_all,treatment_display,normal_display,percent,Exclude first 10 min,5.0,83,85,228.0,42.426900584795305,37.582917241752575,47.58491381881076,,,,,,
+qc_all,treatment_display,fresh_low,percent,Exclude first 10 min,5.0,83,85,228.0,43.757309941520454,38.34024421801715,49.63105444525425,,,,,,
+qc_all,treatment_display,inherited_low,percent,Exclude first 10 min,5.0,83,85,228.0,13.640350877192976,10.799108608615967,16.37690489519189,,,,,,
+qc_all,treatment_display,unavailable,percent,Exclude first 10 min,5.0,83,85,228.0,0.17543859649122806,0.0,0.5314179764577803,,,,,,
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Primary,1.0,78,80,,0.23144892215152876,0.21946146064985889,0.24149438103727022,236.0,234.0,184.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Primary,2.5,78,80,,0.6500622977611525,0.5911578240186515,0.7025104043222805,236.0,234.0,184.0,0.8058866670396592,0.26666666666666666,1.0
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Primary,5.0,78,80,,0.9521254513977808,0.8470638982245509,1.0477932184763217,236.0,234.0,184.0,0.9821494446860406,0.25499097300900353,1.4999999999999998
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,1.0,79,81,,0.23167933931628482,0.21904829757969477,0.24253100247931078,261.0,259.0,206.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,2.5,79,81,,0.6571237050110985,0.5922392722868874,0.7151939084835255,261.0,259.0,206.0,0.8444444444444444,0.26944444444444443,1.001404444641537
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,5.0,79,81,,0.9680817284514605,0.854755551809831,1.068308944452899,261.0,259.0,206.0,1.0014827778604296,0.2299909730090035,1.5152377764383953
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,1.0,76,78,,0.2288092637046398,0.21733025520741264,0.2391510009655706,213.0,211.0,169.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,2.5,76,78,,0.6395753479035258,0.5837808809183563,0.694530835227214,213.0,211.0,169.0,0.7970977762010362,0.2555555555555556,1.0
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,5.0,76,78,,0.9395969162764792,0.8380725528527175,1.0364996741564292,213.0,211.0,169.0,0.9571155548095702,0.22777777777777772,1.4567755556106567
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,1.0,86,88,,0.23193041602038328,0.22125032019814536,0.24164856353125885,252.0,250.0,199.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,2.5,86,88,,0.6515302317612406,0.5957722101453611,0.7034992143386207,252.0,250.0,199.0,0.8,0.2777777777777778,1.0
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,5.0,86,88,,0.9543975977029703,0.8540192604126808,1.0522372784212395,252.0,250.0,199.0,0.9722222222222225,0.26388888888888884,1.5002311113145619
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,1.0,75,76,,0.23817577995466038,0.22654949092119434,0.24934986762441033,205.0,203.0,156.0,0.27777777777777773,0.21370694504843818,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,2.5,75,76,,0.6866090904987099,0.6273965694768848,0.7461536912338319,205.0,203.0,156.0,0.8500000000000001,0.2777777777777778,1.004165277481079
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,5.0,75,76,,1.0316918101932249,0.9183066950351344,1.1456658364813543,205.0,203.0,156.0,1.1158740290006002,0.3055555555555556,1.5699299734168584
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,1.0,64,64,,0.23181571182277463,0.21435205511748787,0.2483087673783302,83.0,83.0,64.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,2.5,64,64,,0.6494783402648237,0.5621621706475401,0.7359460609075096,83.0,83.0,64.0,0.7777777777777777,0.2611111111111111,1.0035894441604616
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,5.0,64,64,,0.9452905563347869,0.7893015793830984,1.11999985781343,83.0,83.0,64.0,0.8750000000000001,0.1916666666666666,1.5160513341426851
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,1.0,78,80,,0.2326480540483358,0.2203837238692284,0.24321929973793693,228.0,226.0,179.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,2.5,78,80,,0.6558547455623683,0.5948903129608176,0.7104387529237766,228.0,226.0,179.0,0.8117733340793184,0.2777777777777778,1.0
+qc_all,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,5.0,78,80,,0.9605395329272358,0.8518446694372994,1.0593526226661465,228.0,226.0,179.0,0.9920766671498586,0.2694444444444444,1.5
+startup10,treatment_display,normal_display,percent,Primary,1.0,82,84,222.0,15.315315315315313,11.876158903644503,18.825942170240413,,,,,,
+startup10,treatment_display,fresh_low,percent,Primary,1.0,82,84,222.0,82.20720720720718,78.06997144022847,86.26955704561617,,,,,,
+startup10,treatment_display,inherited_low,percent,Primary,1.0,82,84,222.0,2.477477477477477,1.2704348072884146,3.913470666413516,,,,,,
+startup10,treatment_display,unavailable,percent,Primary,1.0,82,84,222.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,Primary,2.5,82,84,222.0,29.969969969969974,25.168570725534302,35.0649456752398,,,,,,
+startup10,treatment_display,fresh_low,percent,Primary,2.5,82,84,222.0,62.16216216216216,56.419569993722554,67.76915928175508,,,,,,
+startup10,treatment_display,inherited_low,percent,Primary,2.5,82,84,222.0,7.597597597597597,5.416583333333333,10.087393348846225,,,,,,
+startup10,treatment_display,unavailable,percent,Primary,2.5,82,84,222.0,0.27027027027027023,0.0,0.8377976977453412,,,,,,
+startup10,treatment_display,normal_display,percent,Primary,5.0,82,84,222.0,42.31231231231231,37.1573465488835,47.48564960789067,,,,,,
+startup10,treatment_display,fresh_low,percent,Primary,5.0,82,84,222.0,43.87387387387386,38.06665246553494,49.925070028011184,,,,,,
+startup10,treatment_display,inherited_low,percent,Primary,5.0,82,84,222.0,12.582582582582576,9.854289470642627,15.362029590417045,,,,,,
+startup10,treatment_display,unavailable,percent,Primary,5.0,82,84,222.0,1.2312312312312312,0.1641834894877491,2.551133786848072,,,,,,
+startup10,treatment_display,normal_display,percent,Equal subject weighting,5.0,82,84,222.0,43.06851617217471,37.433612694893185,48.8149544222715,,,,,,
+startup10,treatment_display,normal_display,percent,Merge 30 s,1.0,82,84,246.0,15.379403794037941,11.914354584809129,18.78819335220719,,,,,,
+startup10,treatment_display,fresh_low,percent,Merge 30 s,1.0,82,84,246.0,82.31707317073167,78.48944444444447,86.23203439773891,,,,,,
+startup10,treatment_display,inherited_low,percent,Merge 30 s,1.0,82,84,246.0,2.303523035230352,1.229382736701238,3.575996246141437,,,,,,
+startup10,treatment_display,unavailable,percent,Merge 30 s,1.0,82,84,246.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,Merge 30 s,2.5,82,84,246.0,30.379403794037934,25.36520191409898,35.43073399286745,,,,,,
+startup10,treatment_display,fresh_low,percent,Merge 30 s,2.5,82,84,246.0,61.788617886178834,56.201686962840455,67.76094584837541,,,,,,
+startup10,treatment_display,inherited_low,percent,Merge 30 s,2.5,82,84,246.0,7.588075880758807,5.463814616755793,9.926859548167089,,,,,,
+startup10,treatment_display,unavailable,percent,Merge 30 s,2.5,82,84,246.0,0.24390243902439024,0.0,0.7645287341203293,,,,,,
+startup10,treatment_display,normal_display,percent,Merge 30 s,5.0,82,84,246.0,43.075880758807585,37.38656639878611,48.48621262458471,,,,,,
+startup10,treatment_display,fresh_low,percent,Merge 30 s,5.0,82,84,246.0,43.306233062330605,37.40111642743222,49.83798762867977,,,,,,
+startup10,treatment_display,inherited_low,percent,Merge 30 s,5.0,82,84,246.0,12.506775067750675,9.804741181859827,15.272080667454704,,,,,,
+startup10,treatment_display,unavailable,percent,Merge 30 s,5.0,82,84,246.0,1.1111111111111112,0.14947683109118085,2.329372134099681,,,,,,
+startup10,treatment_display,normal_display,percent,Merge 120 s,1.0,81,83,203.0,16.83087027914614,12.702169055324394,21.149377528789294,,,,,,
+startup10,treatment_display,fresh_low,percent,Merge 120 s,1.0,81,83,203.0,80.37766830870278,75.34701050135502,85.17650462962962,,,,,,
+startup10,treatment_display,inherited_low,percent,Merge 120 s,1.0,81,83,203.0,2.791461412151067,1.4603989446603947,4.303732966907132,,,,,,
+startup10,treatment_display,unavailable,percent,Merge 120 s,1.0,81,83,203.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,Merge 120 s,2.5,81,83,203.0,30.870279146141222,25.42900756603691,36.36945062185981,,,,,,
+startup10,treatment_display,fresh_low,percent,Merge 120 s,2.5,81,83,203.0,60.65681444991792,54.217343828941154,67.18731707317075,,,,,,
+startup10,treatment_display,inherited_low,percent,Merge 120 s,2.5,81,83,203.0,8.177339901477831,5.840820424555363,10.80771520419097,,,,,,
+startup10,treatment_display,unavailable,percent,Merge 120 s,2.5,81,83,203.0,0.29556650246305416,0.0,0.990520487264673,,,,,,
+startup10,treatment_display,normal_display,percent,Merge 120 s,5.0,81,83,203.0,42.28243021346469,36.400265957446805,48.10464041914866,,,,,,
+startup10,treatment_display,fresh_low,percent,Merge 120 s,5.0,81,83,203.0,43.464696223316906,36.609029619805476,50.13993055555554,,,,,,
+startup10,treatment_display,inherited_low,percent,Merge 120 s,5.0,81,83,203.0,13.037766830870275,10.398448889460598,15.902522641722305,,,,,,
+startup10,treatment_display,unavailable,percent,Merge 120 s,5.0,81,83,203.0,1.2151067323481117,0.2788992839517387,2.6297008547008542,,,,,,
+startup10,treatment_display,normal_display,percent,No stability requirement,1.0,90,92,237.0,15.682137834036569,12.391139657444002,19.141590958523654,,,,,,
+startup10,treatment_display,fresh_low,percent,No stability requirement,1.0,90,92,237.0,81.78621659634315,77.73149071709756,85.63248575292184,,,,,,
+startup10,treatment_display,inherited_low,percent,No stability requirement,1.0,90,92,237.0,2.531645569620253,1.3490213882163034,3.964497611342272,,,,,,
+startup10,treatment_display,unavailable,percent,No stability requirement,1.0,90,92,237.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,No stability requirement,2.5,90,92,237.0,30.857946554149084,26.06528329277144,35.485965649924836,,,,,,
+startup10,treatment_display,fresh_low,percent,No stability requirement,2.5,90,92,237.0,61.237693389592096,55.50223563929102,67.1522708840227,,,,,,
+startup10,treatment_display,inherited_low,percent,No stability requirement,2.5,90,92,237.0,7.6511954992967635,5.42764145883615,10.032370391522303,,,,,,
+startup10,treatment_display,unavailable,percent,No stability requirement,2.5,90,92,237.0,0.25316455696202533,0.0,0.810187462425533,,,,,,
+startup10,treatment_display,normal_display,percent,No stability requirement,5.0,90,92,237.0,43.459915611814345,37.88922002996207,48.429305915986234,,,,,,
+startup10,treatment_display,fresh_low,percent,No stability requirement,5.0,90,92,237.0,43.0239099859353,37.44775478603603,49.09236265546495,,,,,,
+startup10,treatment_display,inherited_low,percent,No stability requirement,5.0,90,92,237.0,12.362869198312232,9.852507374631271,15.07975222609369,,,,,,
+startup10,treatment_display,unavailable,percent,No stability requirement,5.0,90,92,237.0,1.1533052039381153,0.18986022269604363,2.423182981829818,,,,,,
+startup10,treatment_display,normal_display,percent,At least 30 s preceding low MAP,1.0,77,78,193.0,8.117443868739205,5.882234536326608,10.599241740046658,,,,,,
+startup10,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,1.0,77,78,193.0,90.84628670120897,88.15751287422539,93.2292955858086,,,,,,
+startup10,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,1.0,77,78,193.0,1.0362694300518136,0.2630893640350877,2.042669340463457,,,,,,
+startup10,treatment_display,unavailable,percent,At least 30 s preceding low MAP,1.0,77,78,193.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,At least 30 s preceding low MAP,2.5,77,78,193.0,23.419689119170982,18.80574162679426,27.967133699633706,,,,,,
+startup10,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,2.5,77,78,193.0,70.01727115716753,64.78908647770356,75.18899889418758,,,,,,
+startup10,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,2.5,77,78,193.0,6.25215889464594,4.0720246562351825,8.65047630779338,,,,,,
+startup10,treatment_display,unavailable,percent,At least 30 s preceding low MAP,2.5,77,78,193.0,0.31088082901554404,0.0,0.9982111249199702,,,,,,
+startup10,treatment_display,normal_display,percent,At least 30 s preceding low MAP,5.0,77,78,193.0,36.68393782383419,31.567842185417856,41.82046790760366,,,,,,
+startup10,treatment_display,fresh_low,percent,At least 30 s preceding low MAP,5.0,77,78,193.0,49.72366148531951,43.70744725872323,55.54481663283135,,,,,,
+startup10,treatment_display,inherited_low,percent,At least 30 s preceding low MAP,5.0,77,78,193.0,12.176165803108807,9.311148980594451,15.234858156028366,,,,,,
+startup10,treatment_display,unavailable,percent,At least 30 s preceding low MAP,5.0,77,78,193.0,1.4162348877374784,0.22500585000585002,2.9674683457197903,,,,,,
+startup10,treatment_display,normal_display,percent,First low event per subject,1.0,82,82,82.0,16.056910569105693,10.772357723577235,21.544715447154474,,,,,,
+startup10,treatment_display,fresh_low,percent,First low event per subject,1.0,82,82,82.0,82.31707317073169,76.6260162601626,88.00813008130082,,,,,,
+startup10,treatment_display,inherited_low,percent,First low event per subject,1.0,82,82,82.0,1.6260162601626014,0.20325203252032517,3.6585365853658534,,,,,,
+startup10,treatment_display,unavailable,percent,First low event per subject,1.0,82,82,82.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,First low event per subject,2.5,82,82,82.0,30.650406504065042,24.308943089430887,37.398373983739845,,,,,,
+startup10,treatment_display,fresh_low,percent,First low event per subject,2.5,82,82,82.0,60.89430894308941,53.41463414634149,68.21138211382113,,,,,,
+startup10,treatment_display,inherited_low,percent,First low event per subject,2.5,82,82,82.0,7.723577235772357,4.550813008130081,11.221544715447147,,,,,,
+startup10,treatment_display,unavailable,percent,First low event per subject,2.5,82,82,82.0,0.7317073170731707,0.0,2.113821138211382,,,,,,
+startup10,treatment_display,normal_display,percent,First low event per subject,5.0,82,82,82.0,42.96747967479675,35.73170731707319,50.32520325203254,,,,,,
+startup10,treatment_display,fresh_low,percent,First low event per subject,5.0,82,82,82.0,41.91056910569106,34.8780487804878,48.86483739837396,,,,,,
+startup10,treatment_display,inherited_low,percent,First low event per subject,5.0,82,82,82.0,12.35772357723577,8.454268292682926,16.585365853658534,,,,,,
+startup10,treatment_display,unavailable,percent,First low event per subject,5.0,82,82,82.0,2.7642276422764227,0.40650406504065034,5.528455284552845,,,,,,
+startup10,treatment_display,normal_display,percent,Exclude first 10 min,1.0,82,84,222.0,15.315315315315313,11.876158903644503,18.825942170240413,,,,,,
+startup10,treatment_display,fresh_low,percent,Exclude first 10 min,1.0,82,84,222.0,82.20720720720718,78.06997144022847,86.26955704561617,,,,,,
+startup10,treatment_display,inherited_low,percent,Exclude first 10 min,1.0,82,84,222.0,2.477477477477477,1.2704348072884146,3.913470666413516,,,,,,
+startup10,treatment_display,unavailable,percent,Exclude first 10 min,1.0,82,84,222.0,0.0,0.0,0.0,,,,,,
+startup10,treatment_display,normal_display,percent,Exclude first 10 min,2.5,82,84,222.0,29.969969969969974,25.168570725534302,35.0649456752398,,,,,,
+startup10,treatment_display,fresh_low,percent,Exclude first 10 min,2.5,82,84,222.0,62.16216216216216,56.419569993722554,67.76915928175508,,,,,,
+startup10,treatment_display,inherited_low,percent,Exclude first 10 min,2.5,82,84,222.0,7.597597597597597,5.416583333333333,10.087393348846225,,,,,,
+startup10,treatment_display,unavailable,percent,Exclude first 10 min,2.5,82,84,222.0,0.27027027027027023,0.0,0.8377976977453412,,,,,,
+startup10,treatment_display,normal_display,percent,Exclude first 10 min,5.0,82,84,222.0,42.31231231231231,37.1573465488835,47.48564960789067,,,,,,
+startup10,treatment_display,fresh_low,percent,Exclude first 10 min,5.0,82,84,222.0,43.87387387387386,38.06665246553494,49.925070028011184,,,,,,
+startup10,treatment_display,inherited_low,percent,Exclude first 10 min,5.0,82,84,222.0,12.582582582582576,9.854289470642627,15.362029590417045,,,,,,
+startup10,treatment_display,unavailable,percent,Exclude first 10 min,5.0,82,84,222.0,1.2312312312312312,0.1641834894877491,2.551133786848072,,,,,,
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Primary,1.0,77,79,,0.23209270798213905,0.22000965181489787,0.24339955374760305,222.0,220.0,175.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Primary,2.5,77,79,,0.6550585937136698,0.5963737156957286,0.712816490134744,222.0,220.0,175.0,0.8117733340793184,0.2777777777777778,1.0
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Primary,5.0,77,79,,0.9599465762153508,0.8504616497397246,1.0601378360594433,222.0,220.0,175.0,0.9920766671498586,0.2694444444444444,1.5
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,1.0,78,80,,0.23202953235903026,0.21859064318442878,0.24366805357181948,246.0,244.0,196.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,2.5,78,80,,0.6601028736378333,0.5934062327116879,0.7233311682375526,246.0,244.0,196.0,0.8444444444444444,0.2777777777777778,1.0013288887341818
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Merge 30 s,5.0,78,80,,0.9705514510026598,0.8537377954710499,1.0808807238205729,246.0,244.0,196.0,1.0014827778604296,0.23441736347145506,1.5127711126539445
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,1.0,75,77,,0.22996261322612793,0.21793396218253763,0.24076289551575705,203.0,201.0,162.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,2.5,75,77,,0.6478159699224153,0.5890685766028412,0.7052859116447608,203.0,201.0,162.0,0.8055555555555556,0.26666666666666666,0.9973999998304579
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Merge 120 s,5.0,75,77,,0.9511335045548953,0.8423914638885007,1.0561735326206205,203.0,201.0,162.0,0.9821494446860406,0.2299909730090035,1.4550701394346026
+startup10,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,1.0,84,86,,0.23274778076510513,0.22068935151080202,0.24257089857186256,237.0,235.0,189.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,2.5,84,86,,0.6582038595478793,0.6014710133558843,0.7118456135400058,237.0,235.0,189.0,0.8117733340793184,0.2777777777777778,1.0
+startup10,post_adjustment_recovery,low_display_persistence,minutes,No stability requirement,5.0,84,86,,0.9659154659085666,0.8653854444038703,1.0652092674914921,237.0,235.0,189.0,0.9920766671498586,0.27222222222222225,1.5004622226291235
+startup10,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,1.0,73,74,,0.23860685686670433,0.2259466172909924,0.2505120286868969,193.0,191.0,149.0,0.27777777777777773,0.22012777858310276,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,2.5,73,74,,0.690351680151835,0.6264514153096316,0.7545999405775055,193.0,191.0,149.0,0.8444444444444446,0.33428111288282597,1.0020588885413275
+startup10,post_adjustment_recovery,low_display_persistence,minutes,At least 30 s preceding low MAP,5.0,73,74,,1.0352873762519748,0.9132484154358849,1.15543868903912,193.0,191.0,149.0,1.0985200023651123,0.3666666666666666,1.56281866868337
+startup10,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,1.0,66,66,,0.233032154876375,0.2162463531209162,0.2493971254026849,82.0,82.0,66.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,2.5,66,66,,0.6564532222009267,0.5732045012975382,0.7414941312207116,82.0,82.0,66.0,0.7777777777777777,0.2777777777777778,1.000968333085378
+startup10,post_adjustment_recovery,low_display_persistence,minutes,First low event per subject,5.0,66,66,,0.9442165706213876,0.7846998676042564,1.1047455802171517,82.0,82.0,66.0,0.8750000000000001,0.23888888888888882,1.4873044437832301
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,1.0,77,79,,0.23209270798213905,0.22000965181489787,0.24339955374760305,222.0,220.0,175.0,0.27777777777777773,0.19444444444444442,0.27777777777777773
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,2.5,77,79,,0.6550585937136698,0.5963737156957286,0.712816490134744,222.0,220.0,175.0,0.8117733340793184,0.2777777777777778,1.0
+startup10,post_adjustment_recovery,low_display_persistence,minutes,Exclude first 10 min,5.0,77,79,,0.9599465762153508,0.8504616497397246,1.0601378360594433,222.0,220.0,175.0,0.9920766671498586,0.2694444444444444,1.5

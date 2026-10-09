@@ -1,9 +1,38 @@
-Variable,"Evaluable, n","Evaluable, mean ± SD","Not evaluable, n","Not evaluable, mean ± SD",SMD
-"Age, yr","2,246",61.47 ± 13.03,189,58.06 ± 13.83,0.25
-"Body mass index, kg/m2","2,246",23.16 ± 3.53,189,23.06 ± 3.27,0.03
-ASA Physical Status >=3,"2,242",0.13 ± 0.34,139,0.06 ± 0.25,0.22
-Emergency surgery,"2,246",0.10 ± 0.30,189,0.20 ± 0.40,-0.29
-Preoperative hypertension,"2,246",0.35 ± 0.48,189,0.33 ± 0.47,0.05
-Preoperative diabetes,"2,246",0.13 ± 0.34,189,0.10 ± 0.29,0.12
-"Anaesthesia duration, h","2,246",4.24 ± 1.72,189,3.57 ± 1.61,0.41
-Reference AUC per anaesthesia-hour,"2,246",28.05 ± 34.56,189,25.47 ± 35.96,0.07
+"Outcome and adjustment
+RR (95% CI)",Original,Sustained segments,All flagged bins,Exclude startup 10 min
+"AKI
+Unadjusted","1.140 (1.031 to 1.260)
+n=2246; events=106","1.145 (1.038 to 1.264)
+n=2244; events=106","1.157 (1.049 to 1.276)
+n=2240; events=106","1.244 (1.147 to 1.349)
+n=2246; events=106"
+"AKI
+Clinical adjustment","1.093 (0.992 to 1.204)
+n=2242; events=104","1.097 (0.998 to 1.207)
+n=2240; events=104","1.104 (1.004 to 1.213)
+n=2236; events=104","1.144 (1.040 to 1.259)
+n=2242; events=104"
+"AKI
+Clinical and total-reference-burden adjustment","1.045 (0.815 to 1.339)
+n=2242; events=104","1.038 (0.806 to 1.336)
+n=2240; events=104","1.044 (0.813 to 1.339)
+n=2236; events=104","1.181 (1.003 to 1.391)
+n=2242; events=104"
+"ICU >=2 days
+Unadjusted","1.245 (1.187 to 1.306)
+n=2435; events=171","1.245 (1.187 to 1.306)
+n=2433; events=171","1.258 (1.201 to 1.318)
+n=2429; events=171","1.317 (1.254 to 1.383)
+n=2435; events=171"
+"ICU >=2 days
+Clinical adjustment","1.144 (1.066 to 1.229)
+n=2248; events=153","1.143 (1.064 to 1.228)
+n=2246; events=153","1.149 (1.068 to 1.236)
+n=2242; events=153","1.170 (1.077 to 1.270)
+n=2248; events=153"
+"ICU >=2 days
+Clinical and total-reference-burden adjustment","1.178 (1.019 to 1.362)
+n=2248; events=153","1.165 (1.009 to 1.346)
+n=2246; events=153","1.174 (1.012 to 1.363)
+n=2242; events=153","1.223 (1.024 to 1.462)
+n=2248; events=153"

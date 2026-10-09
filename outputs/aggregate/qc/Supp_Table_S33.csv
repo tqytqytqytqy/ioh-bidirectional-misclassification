@@ -1,0 +1,37 @@
+Outcome and adjustment,Original,Sustained segments,All flagged bins,Exclude startup 10 min
+"AKI
+Unadjusted","1.140 (1.031 to 1.260)
+N=2246; events=106","1.145 (1.038 to 1.264)
+N=2244; events=106","1.157 (1.049 to 1.276)
+N=2240; events=106","1.244 (1.147 to 1.349)
+N=2246; events=106"
+"AKI
+Clinical adjustment","1.093 (0.992 to 1.204)
+N=2242; events=104","1.097 (0.998 to 1.207)
+N=2240; events=104","1.104 (1.004 to 1.213)
+N=2236; events=104","1.144 (1.040 to 1.259)
+N=2242; events=104"
+"AKI
+Clinical and total-reference-burden adjustment","1.045 (0.815 to 1.339)
+N=2242; events=104","1.038 (0.806 to 1.336)
+N=2240; events=104","1.044 (0.813 to 1.339)
+N=2236; events=104","1.181 (1.003 to 1.391)
+N=2242; events=104"
+"ICU >=2 days
+Unadjusted","1.245 (1.187 to 1.306)
+N=2435; events=171","1.245 (1.187 to 1.306)
+N=2433; events=171","1.258 (1.201 to 1.318)
+N=2429; events=171","1.317 (1.254 to 1.383)
+N=2435; events=171"
+"ICU >=2 days
+Clinical adjustment","1.144 (1.066 to 1.229)
+N=2248; events=153","1.143 (1.064 to 1.228)
+N=2246; events=153","1.149 (1.068 to 1.236)
+N=2242; events=153","1.170 (1.077 to 1.270)
+N=2248; events=153"
+"ICU >=2 days
+Clinical and total-reference-burden adjustment","1.178 (1.019 to 1.362)
+N=2248; events=153","1.165 (1.009 to 1.346)
+N=2246; events=153","1.174 (1.012 to 1.363)
+N=2242; events=153","1.223 (1.024 to 1.462)
+N=2248; events=153"

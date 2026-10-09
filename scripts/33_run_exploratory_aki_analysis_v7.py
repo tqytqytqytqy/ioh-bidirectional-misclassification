@@ -351,7 +351,7 @@ def _make_forest(
     ax.set_yticks(y)
     ax.set_yticklabels(
         [
-            f"{row.plot_label}\nN={int(row.n_cases):,}; AKI={int(row.events):,}"
+            f"{row.plot_label}\n" + r"$\mathit{n}$" + f"={int(row.n_cases)}; AKI={int(row.events)}"
             for row in plot_rows.itertuples()
         ]
     )
@@ -361,7 +361,7 @@ def _make_forest(
     fig.text(
         0.01,
         0.01,
-        "Absolute hidden burden is scaled per 10 mm Hg·min/h; HDR65 is scaled per 10 percentage points. Models are exploratory and noncausal.",
+        r"Absolute hidden burden is scaled per 10 mmHg min h$^{-1}$; HDR65 is scaled per 10 percentage points. Models are exploratory and noncausal.",
         fontsize=7.5,
     )
     fig.subplots_adjust(left=0.39, bottom=0.19, right=0.97, top=0.88)

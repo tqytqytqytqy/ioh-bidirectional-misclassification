@@ -1,0 +1,23 @@
+Metric,Unit,original,qc60,qc_all,startup10
+Included cases,n,"2,435","2,433","2,429","2,435"
+Included subjects,n,"2,380","2,378","2,374","2,380"
+Cases with qualifying reference events,n,"1,899","1,894","1,867","1,767"
+Reference events >=60 s,n,"9,187","9,158","9,071","8,140"
+"Detected events, phase-averaged expected count",expected n,"6,042.9","6,019.6","5,979.2","5,389.7"
+"Missed events, phase-averaged expected count",expected n,"3,144.1","3,138.4","3,091.8","2,750.3"
+Any low display during event,% (95% CI),65.8 (65.0 to 66.6),65.7 (65.0 to 66.5),65.9 (65.2 to 66.6),66.2 (65.4 to 67.0)
+No low display during event,% (95% CI),34.2 (33.4 to 35.0),34.3 (33.5 to 35.0),34.1 (33.4 to 34.8),33.8 (33.0 to 34.6)
+Fresh within-event low sample,% (95% CI),55.9 (55.1 to 56.7),55.8 (55.1 to 56.6),56.0 (55.2 to 56.8),56.5 (55.6 to 57.4)
+Inherited low display only,% (95% CI),9.9 (9.5 to 10.4),9.9 (9.4 to 10.4),9.9 (9.5 to 10.3),9.7 (9.3 to 10.2)
+Valid reference observation time,min,"532,190.5","531,833.3","531,254.7","510,391.0"
+Original anaesthesia duration,hours,"9,656.1","9,650.6","9,641.3","9,656.1"
+Reference hypotension duration,min (95% CI),"39,908.0 (37,766.2 to 42,151.9)","39,763.3 (37,583.2 to 42,116.0)","39,591.8 (37,397.4 to 42,108.1)","35,490.8 (33,441.1 to 37,691.9)"
+Reference deficit AUC,mmHg min (95% CI),"262,221.8 (248,183.4 to 277,776.6)","258,072.3 (244,107.7 to 274,067.9)","252,480.3 (238,086.4 to 269,046.1)","197,519.7 (184,171.5 to 211,435.8)"
+Reference pooled TWA deficit,mmHg (95% CI),0.493 (0.467 to 0.520),0.485 (0.460 to 0.512),0.475 (0.451 to 0.505),0.387 (0.363 to 0.413)
+Display hypotension duration,min (95% CI),"39,638.5 (37,519.7 to 41,882.9)","39,492.9 (37,310.2 to 41,836.0)","39,328.5 (37,106.1 to 41,842.5)","35,335.2 (33,287.1 to 37,533.6)"
+Display deficit AUC,mmHg min (95% CI),"255,815.1 (241,753.9 to 271,304.0)","251,646.5 (237,440.8 to 267,369.0)","246,394.5 (231,991.9 to 263,082.5)","195,274.9 (182,150.7 to 209,153.6)"
+Display pooled TWA deficit,mmHg (95% CI),0.481 (0.455 to 0.508),0.473 (0.449 to 0.501),0.464 (0.439 to 0.494),0.383 (0.358 to 0.409)
+Hidden deficit fraction,% (95% CI),59.7 (58.2 to 61.2),60.3 (58.7 to 61.8),60.2 (58.6 to 61.7),56.4 (54.7 to 58.0)
+Overdisplay deficit fraction,% (95% CI),57.3 (55.8 to 58.7),57.8 (56.2 to 59.2),57.8 (56.2 to 59.1),55.3 (53.6 to 56.8)
+Net AUC bias,% (95% CI),-2.4 (-2.7 to -2.2),-2.5 (-2.8 to -2.2),-2.4 (-2.7 to -2.2),-1.1 (-1.3 to -1.0)
+Either-direction state discordance,min/anaesthesia-hour (95% CI),3.53 (3.40 to 3.66),3.53 (3.40 to 3.66),3.52 (3.39 to 3.67),3.14 (3.01 to 3.27)

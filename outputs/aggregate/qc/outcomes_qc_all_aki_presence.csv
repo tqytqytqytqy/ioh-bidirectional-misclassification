@@ -1,0 +1,2 @@
+definition,n_evaluable,absent_n,absent_events,absent_non_events,absent_aki_risk,present_n,present_events,present_non_events,present_aki_risk,crude_odds_ratio,fisher_exact_p_value,estimability_status,estimability_reason
+any hidden_auc > 0,2240,39,0,39,0.0,2201,106,2095,0.0481599273057701,inf,0.2581736471103412,NOT_ESTIMABLE_COMPLETE_SEPARATION,at least one zero outcome cell produces complete separation

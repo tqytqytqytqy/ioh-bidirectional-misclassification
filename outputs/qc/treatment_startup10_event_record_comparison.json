@@ -1,0 +1,388 @@
+{
+  "Primary": {
+    "events": {
+      "exact_match": false,
+      "rows": 624,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 175,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 222,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "Merge 30 s": {
+    "events": {
+      "exact_match": false,
+      "rows": 672,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 196,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 246,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "Merge 120 s": {
+    "events": {
+      "exact_match": false,
+      "rows": 585,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 162,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 203,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "No stability requirement": {
+    "events": {
+      "exact_match": false,
+      "rows": 663,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 189,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 237,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "At least 30 s preceding low MAP": {
+    "events": {
+      "exact_match": false,
+      "rows": 595,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 149,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 193,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "First low event per subject": {
+    "events": {
+      "exact_match": false,
+      "rows": 484,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 66,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 82,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "Exclude first 10 min": {
+    "events": {
+      "exact_match": false,
+      "rows": 624,
+      "compared_fields": [
+        "case_id",
+        "time_sec",
+        "drug",
+        "kind",
+        "record_changes",
+        "subjectid",
+        "reference",
+        "low",
+        "pre_low_sec",
+        "6_normal_display",
+        "6_fresh_low",
+        "6_inherited_low",
+        "6_unavailable",
+        "15_normal_display",
+        "15_fresh_low",
+        "15_inherited_low",
+        "15_unavailable",
+        "30_normal_display",
+        "30_fresh_low",
+        "30_inherited_low",
+        "30_unavailable"
+      ]
+    },
+    "recovery": {
+      "exact_match": false,
+      "rows": 175,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "recovery_delay_sec",
+        "persistence_6",
+        "persistence_15",
+        "persistence_30"
+      ]
+    },
+    "post_support": {
+      "exact_match": false,
+      "rows": 222,
+      "compared_fields": [
+        "case_id",
+        "subjectid",
+        "time_sec",
+        "post_bins",
+        "post_valid_bins",
+        "post_valid_fraction",
+        "status"
+      ]
+    }
+  },
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

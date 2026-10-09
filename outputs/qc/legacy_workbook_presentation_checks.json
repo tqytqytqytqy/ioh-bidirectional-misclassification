@@ -1,0 +1,124 @@
+{
+  "version": "v1.5.0-qc-condensed-candidate",
+  "status": "PASS",
+  "blockers": [],
+  "scope": "Current aggregate presentation schema, final workbook receipt and exact current worksheet notes",
+  "schema_sha256": {
+    "condensed_tables": "19e5efc40cec8877f278056822b1171c43fd9f6702df42e6ca8d7e2ab47db5e2",
+    "table_map": "3f0872e19f2f5a93fe9137d362ea9d4a930c2110434b6033620295e460a1dadf"
+  },
+  "workbook_sha256": "56d43a790de41ca7004f5fe73a7a276df44692207d58f76abec9a28d8165312d",
+  "source_workbook_sha256": "7796182851868ef2120a47ec25bfe1f3578875a9cae671c4a0d02a5ccdcdff78",
+  "evidence_sha256": {
+    "receipt": "5007ed20c9b258c37dbcced71407b26df09b5b83310b88ad93998de0c4205f3d",
+    "verification": "f34597e2eb2b4a9c21ccb593a6a01b4127379bae663b3f06073530c43f4f174f",
+    "readback": "0fa58137607fe234e873274b86531e8b6d474587930de3619c0f7fdc137b352b"
+  },
+  "counts": {
+    "totalSheets": 72,
+    "currentTables": 16,
+    "panels": 26,
+    "dataRows": 200
+  },
+  "current_notes": [
+    {
+      "sheet": "Supp_Table_S01",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S02",
+      "expected_note_paragraphs": 5,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S03",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S04",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S05",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S06",
+      "expected_note_paragraphs": 1,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S07",
+      "expected_note_paragraphs": 3,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S08",
+      "expected_note_paragraphs": 1,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S09",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S10",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S11",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S12",
+      "expected_note_paragraphs": 1,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S13",
+      "expected_note_paragraphs": 3,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S14",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S15",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    },
+    {
+      "sheet": "Supp_Table_S16",
+      "expected_note_paragraphs": 2,
+      "missing_note_paragraphs": 0,
+      "title_present": true
+    }
+  ],
+  "old_worksheets_verified": 55,
+  "statistical_rerun": false,
+  "clinical_adjudication": "PENDING"
+}

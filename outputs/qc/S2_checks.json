@@ -1,0 +1,102 @@
+{
+  "font_family": "Arial",
+  "page_inches": [
+    12.0,
+    5.0
+  ],
+  "figure_text_clipping": [],
+  "caption_external_for_DOCX_embedding": true,
+  "caption_words": 208,
+  "at_9_1_inch_embed": {
+    "height_inches": 3.7916666666666665,
+    "minimum_text_points": 9.1
+  },
+  "axes_count": 3,
+  "data_points": 20,
+  "ICU_group_heading_layout": {
+    "status": "PASS",
+    "heading_wrapped": true,
+    "heading_bbox_px": [
+      1200.6000000000001,
+      328.2953158291903,
+      1415.6000000000001,
+      378.3865023526278
+    ],
+    "forest_left_px": 1458.0,
+    "clearance_to_lower_row_px": 3.5802371863161966,
+    "clearance_to_upper_row_px": 3.5802371863163103
+  },
+  "png_dimensions": [
+    3600,
+    1500
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "panel_pixel_checks": {
+    "A": {
+      "nonwhite_fraction": 0.07097398212057736,
+      "nonblank": true
+    },
+    "B": {
+      "nonwhite_fraction": 0.07060769433284113,
+      "nonblank": true
+    },
+    "C": {
+      "nonwhite_fraction": 0.08258628861844682,
+      "nonblank": true
+    }
+  },
+  "svg_text_elements": 72,
+  "svg_embedded_images": 0,
+  "pdf_vector_images": 0,
+  "pdf_pages": 1,
+  "pdf_key_text_verified": true,
+  "landscape_A4_3cm_margins": {
+    "usable_width_in": 9.330708661417326,
+    "usable_height_in": 5.905511811023623,
+    "embedded_figure_width_in": 9.1,
+    "embedded_figure_height_in": 3.7916666666666665,
+    "caption_font_pt": 9,
+    "caption_height_in": 1.35,
+    "total_used_height_in": 5.238888888888889,
+    "remaining_vertical_space_in": 0.6666229221347343
+  },
+  "status": "PASS",
+  "source_sha256": {
+    "events_summary.json": "28a29ba3506b516db25c6f43caaeed268ae7b6dac18565428ce45f2fd3e1cac7",
+    "treatment_summary.json": "a0ba2dba7fb3ae342ebebb867ba70359806081e151bf531486031853bc130be9",
+    "qc_frequency_population.csv": "504cb3d7919dff3aecdbc4aad563e53797a06c8432d38dc421ae17f37c746eda",
+    "outcomes_all_models.csv": "879391b9d8ad45b01e281a7e0a9233952cf32da420ed958b821a521a8c4138a3"
+  },
+  "figure_sha256": {
+    "png": "dc813f3e136aedc154d4987fe9c81da6ba02fc3c4a3a51b0a155f04af5c3b822",
+    "pdf": "3ca9d550e79b959a5803779c62f338f601fc0cc03ec24de92ff3bbcbd69cc00e",
+    "svg": "e42ed4350fa918a3cf6728fc57558033d523f92bc0aead762102ce489df71b68"
+  },
+  "caption_sha256": "4659a1e13c71644a7359b28dab9c0e84e3caa1f97498552437f0d65283c88a73",
+  "source_csv_sha256": "31ab2713d2e7b7a81d7e75dfb076e52e5edfaedd8a022ff7b5520842f28f9d42",
+  "runner_sha256": "49645ae6f6edfbe9786b52959c831d43103791501c033f9938a6506b3d6f2b30",
+  "source_rows": 20,
+  "clinical_signoff": false,
+  "primary_policy": "original",
+  "primary_figures_unchanged": true,
+  "primary_figure_files_checked": 4,
+  "contains_individual_case_data": false,
+  "model_selection": "MAP65; 5 min; aki_sequential/icu_sequential; clinical_plus_reference; hidden_twa10",
+  "frequency_source_role": "Independent cross-check of event sensitivity and HDR/ODR/NetBias; not plotted",
+  "recovery_role": "Not plotted; supplementary tables retain recovery outcomes",
+  "visual_review": {
+    "status": "PASS",
+    "reviewed": "All three current panels and vector-PDF subgroup geometry",
+    "scope": "Layout-only correction; no statistical rerun or clinical adjudication"
+  },
+  "layout_revision": {
+    "date": "2026-10-08",
+    "reason": "ICU subgroup heading intersected plot grid",
+    "change": "Two-line heading inside the label column; point and CI coordinates unchanged",
+    "geometry_status": "PASS",
+    "figure_source_values_unchanged": true
+  }
+}

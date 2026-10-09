@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "all_nine_robustness_rules_publication_cells": "EXACT",
+  "duration_categories_including_subject_CI": {
+    "rows": 9,
+    "columns": 4,
+    "maximum_absolute_difference": 0.0
+  },
+  "case_phase_distribution": {
+    "rows": 14,
+    "columns": 6,
+    "maximum_absolute_difference": 0.0
+  },
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

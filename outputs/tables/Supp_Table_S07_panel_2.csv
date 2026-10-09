@@ -1,0 +1,4 @@
+Initial-display convention,Excluded time,HDR,ODR,"Net AUC difference, %"
+Primary: unavailable before first scheduled sample,0,0.597,0.573,-2.4
+Initialise with first finite reference value,0,0.474,0.994,52.0
+Exclude reference time before first display,1.06% time,0.529,0.670,14.1

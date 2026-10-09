@@ -1,0 +1,2366 @@
+[
+  {
+    "old_number": 1,
+    "title": "Supplementary Table S1. Cohort and record-audit flow",
+    "notes": [
+      "NIBP, noninvasive blood pressure; QC, quality control. MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Branch",
+        "Stage",
+        "Cases, n",
+        "Excluded from previous, n",
+        "Principal reason"
+      ],
+      [
+        "primary",
+        "VitalDB source cases",
+        "6388",
+        "",
+        ""
+      ],
+      [
+        "primary",
+        "Adults",
+        "6331",
+        "57",
+        "age <18 yr"
+      ],
+      [
+        "primary",
+        "General anaesthesia",
+        "5989",
+        "342",
+        "not general anaesthesia"
+      ],
+      [
+        "primary",
+        "Eligible surgery groups",
+        "5559",
+        "430",
+        "cardiac, obstetric or transplant surgery"
+      ],
+      [
+        "primary",
+        "Anaesthesia duration ≥60 min",
+        "5449",
+        "110",
+        "anaesthesia duration <60 min"
+      ],
+      [
+        "primary",
+        "Pre-QC arterial candidates",
+        "3315",
+        "2134",
+        "no candidate arterial MAP track"
+      ],
+      [
+        "primary",
+        "Primary arterial waveform cohort",
+        "2435",
+        "880",
+        "valid arterial MAP coverage <80%"
+      ],
+      [
+        "NIBP record audit",
+        "Primary cohort with NIBP track",
+        "1995",
+        "440",
+        "no NIBP MAP track"
+      ],
+      [
+        "NIBP record audit",
+        "Cases with anaesthesia-window NIBP records",
+        "1993",
+        "2",
+        "no records within anaesthesia window"
+      ],
+      [
+        "NIBP record audit",
+        "Cases with paired legacy algorithm records",
+        "1908",
+        "85",
+        "no paired algorithm record; not a measurement-cycle count"
+      ]
+    ]
+  },
+  {
+    "old_number": 2,
+    "title": "Supplementary Table S2. Episode observability by MAP threshold and sampling interval",
+    "notes": [
+      "Episodes lasted at least 60 s. CI, confidence interval; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "MAP threshold, mmHg",
+        "Interval, min",
+        "Episodes, n",
+        "Detection, % (95% CI)",
+        "Complete miss, % (95% CI)",
+        "Delay, min (95% CI)"
+      ],
+      [
+        "<55",
+        "1",
+        "1407",
+        "100.0 (100.0 to 100.0)",
+        "0.0 (0.0 to 0.0)",
+        "0.36 (0.35 to 0.36)"
+      ],
+      [
+        "<55",
+        "2.5",
+        "1407",
+        "75.2 (73.8 to 76.6)",
+        "24.8 (23.4 to 26.2)",
+        "0.72 (0.70 to 0.74)"
+      ],
+      [
+        "<55",
+        "3",
+        "1407",
+        "68.4 (66.8 to 69.9)",
+        "31.6 (30.1 to 33.2)",
+        "0.79 (0.76 to 0.82)"
+      ],
+      [
+        "<55",
+        "5",
+        "1407",
+        "50.1 (48.3 to 52.0)",
+        "49.9 (48.0 to 51.7)",
+        "0.96 (0.91 to 1.01)"
+      ],
+      [
+        "<55",
+        "10",
+        "1407",
+        "31.3 (29.3 to 33.1)",
+        "68.7 (66.9 to 70.7)",
+        "1.08 (0.99 to 1.17)"
+      ],
+      [
+        "<60",
+        "1",
+        "3905",
+        "100.0 (100.0 to 100.0)",
+        "0.0 (0.0 to 0.0)",
+        "0.36 (0.35 to 0.36)"
+      ],
+      [
+        "<60",
+        "2.5",
+        "3905",
+        "79.7 (78.8 to 80.5)",
+        "20.3 (19.5 to 21.2)",
+        "0.74 (0.72 to 0.76)"
+      ],
+      [
+        "<60",
+        "3",
+        "3905",
+        "73.7 (72.7 to 74.6)",
+        "26.3 (25.4 to 27.3)",
+        "0.82 (0.80 to 0.84)"
+      ],
+      [
+        "<60",
+        "5",
+        "3905",
+        "56.5 (55.4 to 57.6)",
+        "43.5 (42.4 to 44.6)",
+        "1.02 (0.99 to 1.06)"
+      ],
+      [
+        "<60",
+        "10",
+        "3905",
+        "37.4 (36.0 to 38.6)",
+        "62.6 (61.4 to 64.0)",
+        "1.14 (1.08 to 1.21)"
+      ],
+      [
+        "<65",
+        "1",
+        "9187",
+        "100.0 (100.0 to 100.0)",
+        "0.0 (0.0 to 0.0)",
+        "0.35 (0.34 to 0.35)"
+      ],
+      [
+        "<65",
+        "2.5",
+        "9187",
+        "84.9 (84.4 to 85.4)",
+        "15.1 (14.6 to 15.6)",
+        "0.74 (0.73 to 0.75)"
+      ],
+      [
+        "<65",
+        "3",
+        "9187",
+        "80.2 (79.7 to 80.8)",
+        "19.8 (19.2 to 20.3)",
+        "0.84 (0.83 to 0.85)"
+      ],
+      [
+        "<65",
+        "5",
+        "9187",
+        "65.8 (65.0 to 66.6)",
+        "34.2 (33.4 to 35.0)",
+        "1.09 (1.07 to 1.12)"
+      ],
+      [
+        "<65",
+        "10",
+        "9187",
+        "47.3 (46.4 to 48.1)",
+        "52.7 (51.9 to 53.6)",
+        "1.30 (1.25 to 1.34)"
+      ]
+    ]
+  },
+  {
+    "old_number": 3,
+    "title": "Supplementary Table S3. Five-minute episode observability at MAP less than 65 mmHg by nadir",
+    "notes": [
+      "Nadir categories are mutually exclusive within the MAP less than 65 mmHg reference episodes. CI, confidence interval; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Reference nadir",
+        "Episodes, n",
+        "Detection, % (95% CI)",
+        "Complete miss, % (95% CI)",
+        "Delay, min (95% CI)",
+        "Stale low display, min (95% CI)"
+      ],
+      [
+        "55-<60 mmHg",
+        "2989",
+        "70.0 (68.9 to 71.0)",
+        "30.0 (29.0 to 31.1)",
+        "1.19 (1.15 to 1.23)",
+        "1.66 (1.60 to 1.71)"
+      ],
+      [
+        "60-<65 mmHg",
+        "3338",
+        "56.6 (55.8 to 57.7)",
+        "43.4 (42.3 to 44.2)",
+        "0.78 (0.75 to 0.82)",
+        "1.57 (1.51 to 1.62)"
+      ],
+      [
+        "<55 mmHg",
+        "2860",
+        "72.0 (70.9 to 73.1)",
+        "28.0 (26.9 to 29.1)",
+        "1.28 (1.23 to 1.32)",
+        "1.61 (1.55 to 1.65)"
+      ]
+    ]
+  },
+  {
+    "old_number": 4,
+    "title": "Supplementary Table S4. Five-minute decision-opportunity metrics by MAP threshold and episode duration",
+    "notes": [
+      "Opportunity probabilities use all phase-episode combinations as the denominator. A completely missed episode contributes its entire reference AUC to the pre-display fraction. AUC, area under the deficit curve; CI, confidence interval; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "MAP threshold, mmHg",
+        "Episode duration, min",
+        "n",
+        "Complete miss, % (95% CI)",
+        "First low display ≥1 min before recovery, % (95% CI)",
+        "First low display ≥2 min before recovery, % (95% CI)",
+        "Reference AUC before first low display, % (95% CI)"
+      ],
+      [
+        "<55",
+        "1 to <3 min",
+        "1113",
+        "59.3 (58.0 to 60.6)",
+        "25.8 (24.4 to 27.4)",
+        "5.7 (4.9 to 6.6)",
+        "70.6 (68.0 to 73.0)"
+      ],
+      [
+        "<55",
+        "3 to <5 min",
+        "185",
+        "22.9 (21.2 to 24.8)",
+        "62.4 (60.2 to 64.3)",
+        "45.0 (42.2 to 47.5)",
+        "51.2 (48.5 to 54.1)"
+      ],
+      [
+        "<55",
+        "≥5 min",
+        "109",
+        "0.0 (0.0 to 0.0)",
+        "97.4 (96.5 to 98.2)",
+        "90.6 (88.4 to 92.6)",
+        "21.7 (18.6 to 25.5)"
+      ],
+      [
+        "<60",
+        "1 to <3 min",
+        "2775",
+        "55.8 (54.9 to 56.7)",
+        "30.0 (29.0 to 31.1)",
+        "8.0 (7.4 to 8.7)",
+        "67.6 (65.8 to 69.3)"
+      ],
+      [
+        "<60",
+        "3 to <5 min",
+        "690",
+        "21.6 (20.8 to 22.5)",
+        "64.3 (63.3 to 65.4)",
+        "47.6 (46.3 to 48.9)",
+        "49.2 (47.5 to 50.8)"
+      ],
+      [
+        "<60",
+        "≥5 min",
+        "440",
+        "0.0 (0.0 to 0.0)",
+        "97.4 (96.9 to 97.8)",
+        "90.7 (89.4 to 91.8)",
+        "19.3 (17.7 to 21.4)"
+      ],
+      [
+        "<65",
+        "1 to <3 min",
+        "5438",
+        "50.9 (50.2 to 51.5)",
+        "36.1 (35.3 to 37.0)",
+        "10.8 (10.2 to 11.4)",
+        "63.1 (61.8 to 64.3)"
+      ],
+      [
+        "<65",
+        "3 to <5 min",
+        "1931",
+        "19.6 (19.1 to 20.2)",
+        "67.7 (66.9 to 68.3)",
+        "52.5 (51.4 to 53.4)",
+        "45.3 (44.3 to 46.3)"
+      ],
+      [
+        "<65",
+        "≥5 min",
+        "1818",
+        "0.0 (0.0 to 0.0)",
+        "97.9 (97.7 to 98.1)",
+        "92.2 (91.7 to 92.8)",
+        "17.0 (16.1 to 18.0)"
+      ]
+    ]
+  },
+  {
+    "old_number": 5,
+    "title": "Supplementary Table S5. Implementation consistency check",
+    "notes": [
+      "The timing implementation was compared with the frequency implementation before decision-opportunity results were accepted. MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "MAP threshold, mmHg",
+        "Reference episodes",
+        "Detection probability",
+        "Complete-miss probability",
+        "Mean delay, min",
+        "Maximum absolute difference",
+        "Match"
+      ],
+      [
+        "<55",
+        "1407",
+        "0.501",
+        "0.499",
+        "0.960",
+        "<1 × 10-12",
+        "Yes"
+      ],
+      [
+        "<60",
+        "3905",
+        "0.565",
+        "0.435",
+        "1.021",
+        "<1 × 10-12",
+        "Yes"
+      ],
+      [
+        "<65",
+        "9187",
+        "0.658",
+        "0.342",
+        "1.091",
+        "<1 × 10-12",
+        "Yes"
+      ]
+    ]
+  },
+  {
+    "old_number": 6,
+    "title": "Supplementary Table S6. Analysis-plan-defined AUC decomposition by MAP threshold and interval",
+    "notes": [
+      "AUC, area under the deficit curve; CI, confidence interval; HDR, hidden-deficit ratio; MAP, mean arterial pressure; ODR, overdisplay-deficit ratio."
+    ],
+    "values": [
+      [
+        "MAP threshold, mmHg",
+        "Interval, min",
+        "HDR (95% CI)",
+        "ODR (95% CI)",
+        "Net AUC difference, % (95% CI)",
+        "Reference low/display normal, min h-1",
+        "Display low/reference normal, min h-1"
+      ],
+      [
+        "<55",
+        "1",
+        "0.493 (0.473 to 0.514)",
+        "0.443 (0.426 to 0.463)",
+        "-5.0 (-5.4 to -4.6)",
+        "0.19 (0.18 to 0.20)",
+        "0.23 (0.22 to 0.24)"
+      ],
+      [
+        "<55",
+        "2.5",
+        "0.683 (0.660 to 0.705)",
+        "0.620 (0.600 to 0.641)",
+        "-6.2 (-6.9 to -5.7)",
+        "0.28 (0.26 to 0.30)",
+        "0.35 (0.33 to 0.37)"
+      ],
+      [
+        "<55",
+        "3",
+        "0.714 (0.692 to 0.737)",
+        "0.650 (0.628 to 0.670)",
+        "-6.5 (-7.1 to -5.8)",
+        "0.30 (0.28 to 0.32)",
+        "0.37 (0.35 to 0.39)"
+      ],
+      [
+        "<55",
+        "5",
+        "0.793 (0.769 to 0.814)",
+        "0.728 (0.707 to 0.747)",
+        "-6.5 (-7.1 to -5.8)",
+        "0.33 (0.31 to 0.36)",
+        "0.43 (0.40 to 0.45)"
+      ],
+      [
+        "<55",
+        "10",
+        "0.869 (0.846 to 0.888)",
+        "0.803 (0.784 to 0.821)",
+        "-6.6 (-7.4 to -5.9)",
+        "0.36 (0.34 to 0.39)",
+        "0.49 (0.46 to 0.52)"
+      ],
+      [
+        "<60",
+        "1",
+        "0.409 (0.393 to 0.424)",
+        "0.377 (0.361 to 0.390)",
+        "-3.3 (-3.6 to -3.0)",
+        "0.38 (0.36 to 0.40)",
+        "0.42 (0.40 to 0.44)"
+      ],
+      [
+        "<60",
+        "2.5",
+        "0.596 (0.575 to 0.616)",
+        "0.554 (0.536 to 0.572)",
+        "-4.1 (-4.5 to -3.7)",
+        "0.61 (0.58 to 0.64)",
+        "0.69 (0.66 to 0.72)"
+      ],
+      [
+        "<60",
+        "3",
+        "0.630 (0.609 to 0.649)",
+        "0.587 (0.568 to 0.605)",
+        "-4.3 (-4.7 to -3.9)",
+        "0.66 (0.63 to 0.70)",
+        "0.75 (0.72 to 0.79)"
+      ],
+      [
+        "<60",
+        "5",
+        "0.718 (0.698 to 0.735)",
+        "0.674 (0.657 to 0.691)",
+        "-4.3 (-4.8 to -3.9)",
+        "0.79 (0.75 to 0.83)",
+        "0.91 (0.87 to 0.95)"
+      ],
+      [
+        "<60",
+        "10",
+        "0.810 (0.791 to 0.827)",
+        "0.764 (0.748 to 0.780)",
+        "-4.6 (-5.2 to -4.1)",
+        "0.92 (0.87 to 0.97)",
+        "1.09 (1.04 to 1.15)"
+      ],
+      [
+        "<65",
+        "1",
+        "0.303 (0.294 to 0.312)",
+        "0.286 (0.277 to 0.295)",
+        "-1.7 (-1.9 to -1.6)",
+        "0.71 (0.69 to 0.74)",
+        "0.76 (0.73 to 0.79)"
+      ],
+      [
+        "<65",
+        "2.5",
+        "0.469 (0.456 to 0.482)",
+        "0.447 (0.434 to 0.459)",
+        "-2.2 (-2.5 to -2.0)",
+        "1.22 (1.17 to 1.27)",
+        "1.31 (1.27 to 1.36)"
+      ],
+      [
+        "<65",
+        "3",
+        "0.503 (0.489 to 0.518)",
+        "0.480 (0.467 to 0.493)",
+        "-2.3 (-2.6 to -2.1)",
+        "1.34 (1.29 to 1.40)",
+        "1.45 (1.40 to 1.50)"
+      ],
+      [
+        "<65",
+        "5",
+        "0.597 (0.582 to 0.612)",
+        "0.573 (0.558 to 0.587)",
+        "-2.4 (-2.7 to -2.2)",
+        "1.69 (1.63 to 1.76)",
+        "1.84 (1.77 to 1.91)"
+      ],
+      [
+        "<65",
+        "10",
+        "0.708 (0.692 to 0.723)",
+        "0.681 (0.665 to 0.694)",
+        "-2.7 (-3.0 to -2.5)",
+        "2.11 (2.03 to 2.20)",
+        "2.35 (2.27 to 2.44)"
+      ]
+    ]
+  },
+  {
+    "old_number": 7,
+    "title": "Supplementary Table S7. Legacy NIBP algorithm-record classes",
+    "notes": [
+      "Classes are mutually exclusive. Record counts reproduce the frozen legacy algorithm, not clinical measurement cycles. MAP, mean arterial pressure; NIBP, noninvasive blood pressure."
+    ],
+    "values": [
+      [
+        "Record class",
+        "Records, n",
+        "Share, %",
+        "Meaning"
+      ],
+      [
+        "Initial observed record",
+        "1993",
+        "2.7",
+        "Fresh measurement not authenticated"
+      ],
+      [
+        "MAP value changed",
+        "18 381",
+        "24.8",
+        "Recorded numerical update"
+      ],
+      [
+        "Same-value timer record",
+        "53 653",
+        "72.5",
+        "Algorithm output after 120 s"
+      ],
+      [
+        "Total",
+        "74 027",
+        "100.0",
+        "Not independent cuff measurements"
+      ]
+    ]
+  },
+  {
+    "old_number": 8,
+    "title": "Supplementary Table S8. Paired legacy-record composition",
+    "notes": [
+      "Pairing used the median arterial MAP within -30 to +30 s and at least 80% valid reference coverage. Counts describe paired algorithm records, not authenticated measurements. MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Paired record class",
+        "Records, n",
+        "Share, %"
+      ],
+      [
+        "Initial",
+        "25",
+        "0.04"
+      ],
+      [
+        "MAP value changed",
+        "9932",
+        "16.88"
+      ],
+      [
+        "Same-value timer",
+        "48 885",
+        "83.08"
+      ],
+      [
+        "Total",
+        "58 842",
+        "100.00"
+      ]
+    ]
+  },
+  {
+    "old_number": 9,
+    "title": "Supplementary Table S9. Raw NIBP-output diagnostics",
+    "notes": [
+      "Cadence and repeat proportions do not identify when a cuff cycle completed. MAP, mean arterial pressure; NIBP, noninvasive blood pressure."
+    ],
+    "values": [
+      [
+        "Diagnostic",
+        "Value",
+        "Interpretation"
+      ],
+      [
+        "Cases with window records",
+        "1993",
+        "Of 1995 track candidates"
+      ],
+      [
+        "Frozen raw rows",
+        "3 756 113",
+        "Before exact duplicate normalisation"
+      ],
+      [
+        "Exact duplicate window rows",
+        "5114",
+        "No source rewrite"
+      ],
+      [
+        "Positive record interval, median",
+        "2.0 s",
+        "Output cadence, not measurement interval"
+      ],
+      [
+        "Adjacent same-MAP proportion",
+        "99.51%",
+        "Retained numerical output"
+      ],
+      [
+        "Source and frozen reconciliation",
+        "1993/1993 cases",
+        "Exact after duplicate normalisation"
+      ]
+    ]
+  },
+  {
+    "old_number": 10,
+    "title": "Supplementary Table S10. Three-channel numerical updates",
+    "notes": [
+      "An observed update differs from an independent measurement-cycle marker. Identical values from repeated true measurements remain indistinguishable. DBP, diastolic blood pressure; MAP, mean arterial pressure; SBP, systolic blood pressure."
+    ],
+    "values": [
+      [
+        "Diagnostic",
+        "Count",
+        "Meaning"
+      ],
+      [
+        "Cases with MAP/SBP/DBP tracks",
+        "1987",
+        "Nearest alignment within 2 s"
+      ],
+      [
+        "Any-channel updates",
+        "18 958",
+        "Excludes initial observations"
+      ],
+      [
+        "SBP or DBP changed without MAP change",
+        "724",
+        "MAP-only filtering misses these updates"
+      ],
+      [
+        "Updates after record gap >10 s",
+        "5677",
+        "Update time uncertain"
+      ],
+      [
+        "Updates with arterial-window support",
+        "10 191",
+        "Not authenticated cuff cycles"
+      ]
+    ]
+  },
+  {
+    "old_number": 11,
+    "title": "Supplementary Table S11. Timer records and nearby numerical updates",
+    "notes": [
+      "No numerical change is not proof of no new cuff cycle. Initial output is not automatically a fresh measurement."
+    ],
+    "values": [
+      [
+        "Diagnostic",
+        "Records, n",
+        "Meaning"
+      ],
+      [
+        "Timer records",
+        "53 653",
+        "Same retained value after 120 s"
+      ],
+      [
+        "Nearby any-channel update within 2 s",
+        "249",
+        "Numerical-update evidence only"
+      ],
+      [
+        "No nearby update evidence",
+        "53 404",
+        "Does not prove no true measurement"
+      ]
+    ]
+  },
+  {
+    "old_number": 12,
+    "title": "Supplementary Table S12. Interpretation of NIBP record fields",
+    "notes": [
+      "The infusion module instead uses completed pre-adjustment bins. It does not require authenticated cuff cycles. MAP, mean arterial pressure; NIBP, noninvasive blood pressure."
+    ],
+    "values": [
+      [
+        "Field or operation",
+        "Interpretation"
+      ],
+      [
+        "Recorded timestamp",
+        "Device-output time, not verified cycle completion"
+      ],
+      [
+        "MAP numerical update",
+        "Value change, not complete enumeration of measurements"
+      ],
+      [
+        "Same-value timer",
+        "Research-algorithm record, not new measurement evidence"
+      ],
+      [
+        "-30 to +30 s arterial median",
+        "Legacy record comparator, not pretreatment pump reference"
+      ],
+      [
+        "Clinical agreement and classification",
+        "Not retained without independent cycle authentication"
+      ]
+    ]
+  },
+  {
+    "old_number": 13,
+    "title": "Supplementary Table S13. AKI ascertainment and analysis eligibility",
+    "notes": [
+      "Eligibility and ascertainment criteria were assessed before model interpretation. The final row reports hidden-burden prevalence; the binary regression contrast was not estimable because no AKI events occurred among 37 cases without hidden burden. Stage 3 used creatinine criteria only; urine output and renal-replacement therapy were unavailable. AKI, acute kidney injury; KDIGO, Kidney Disease: Improving Global Outcomes."
+    ],
+    "values": [
+      [
+        "Measure",
+        "n",
+        "Denominator",
+        "%"
+      ],
+      [
+        "Primary arterial cohort",
+        "2435",
+        "",
+        ""
+      ],
+      [
+        "Unique subjects",
+        "2380",
+        "",
+        ""
+      ],
+      [
+        "Subjects with repeated cases",
+        "50",
+        "2380",
+        "2.1"
+      ],
+      [
+        "Baseline pre-operative creatinine available",
+        "2252",
+        "2435",
+        "92.5"
+      ],
+      [
+        "Postoperative creatinine within 48 h",
+        "2408",
+        "2435",
+        "98.9"
+      ],
+      [
+        "Postoperative creatinine within 7 d or discharge",
+        "2428",
+        "2435",
+        "99.7"
+      ],
+      [
+        "AKI-evaluable cases",
+        "2246",
+        "2435",
+        "92.2"
+      ],
+      [
+        "Creatinine-defined AKI events",
+        "106",
+        "2246",
+        "4.7"
+      ],
+      [
+        "KDIGO creatinine stage 1",
+        "71",
+        "2246",
+        "3.2"
+      ],
+      [
+        "KDIGO creatinine stage 2",
+        "17",
+        "2246",
+        "0.8"
+      ],
+      [
+        "KDIGO creatinine stage 3",
+        "18",
+        "2246",
+        "0.8"
+      ],
+      [
+        "Primary adjusted-model cases",
+        "2242",
+        "2246",
+        "99.8"
+      ],
+      [
+        "Primary adjusted-model events",
+        "104",
+        "2242",
+        "4.6"
+      ],
+      [
+        "Cases with any hidden burden",
+        "2209",
+        "2246",
+        "98.4"
+      ]
+    ]
+  },
+  {
+    "old_number": 14,
+    "title": "Supplementary Table S14. Hidden-burden presence and sequential absolute-burden models for postoperative AKI",
+    "notes": [
+      "*Two-sided Fisher exact test. The binary regression effect was not estimated because the no-hidden-burden group had zero AKI events. Four context-incompatible source-recorded ASA=6 values were treated as missing in primary adjusted models. Absolute hidden burden included zero reference AUC. Modified Poisson models used subject-cluster robust variance. These post hoc estimates are exploratory and noncausal. AKI, acute kidney injury; ASA, American Society of Anesthesiologists; AUC, area under the deficit curve; CI, confidence interval; RR, relative risk."
+    ],
+    "values": [
+      [
+        "Analysis",
+        "Cases",
+        "AKI",
+        "Adjustment",
+        "Exposure contrast",
+        "RR (95% CI)",
+        "P value"
+      ],
+      [
+        "Any hidden burden versus none",
+        "2246",
+        "106",
+        "Descriptive 2 × 2",
+        "Present 2209/106; absent 37/0",
+        "Not estimable",
+        "0.417*"
+      ],
+      [
+        "Absolute hidden burden, unadjusted",
+        "2246",
+        "106",
+        "None",
+        "Per 10 mmHg min h-1",
+        "1.14 (1.03 to 1.26)",
+        "0.011"
+      ],
+      [
+        "Absolute hidden burden, clinical adjusted",
+        "2242",
+        "104",
+        "Clinical covariates",
+        "Per 10 mmHg min h-1",
+        "1.09 (0.99 to 1.20)",
+        "0.071"
+      ],
+      [
+        "Absolute hidden burden, clinical plus reference burden",
+        "2242",
+        "104",
+        "Clinical + total reference burden",
+        "Per 10 mmHg min h-1",
+        "1.04 (0.81 to 1.34)",
+        "0.730"
+      ]
+    ]
+  },
+  {
+    "old_number": 15,
+    "title": "Supplementary Table S15. Secondary compositional and sensitivity models for postoperative AKI",
+    "notes": [
+      "All models adjusted for the clinical covariates and nonlinear total reference hypotension burden specified in the main Methods and used subject-cluster robust variance. HDR65 was a secondary compositional exposure. Estimates were post hoc, exploratory, and not adjusted for multiplicity. AKI, acute kidney injury; CI, confidence interval; HDR, hidden-deficit ratio; RR, relative risk. The 353.6 µmol l-1 creatinine threshold corresponds to 4 mg dl-1. AUC, area under the deficit curve; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Analysis",
+        "Cases",
+        "AKI",
+        "Exposure contrast",
+        "Adjusted RR (95% CI)",
+        "P value"
+      ],
+      [
+        "HDR65 incremental model",
+        "2205",
+        "104",
+        "Per 10-percentage-point increase",
+        "0.87 (0.74 to 1.01)",
+        "0.071"
+      ],
+      [
+        "MAP<60 mmHg threshold",
+        "2162",
+        "99",
+        "Per 10-percentage-point increase",
+        "0.83 (0.68 to 1.01)",
+        "0.063"
+      ],
+      [
+        "MAP<55 mmHg threshold",
+        "2081",
+        "92",
+        "Per 10-percentage-point increase",
+        "0.80 (0.61 to 1.05)",
+        "0.106"
+      ],
+      [
+        "Pre-display AUC fraction",
+        "1765",
+        "88",
+        "Per 10-percentage-point increase",
+        "0.86 (0.75 to 0.98)",
+        "0.023"
+      ],
+      [
+        "AKI within 48 h",
+        "2185",
+        "93",
+        "Per 10-percentage-point increase",
+        "0.85 (0.72 to 1.00)",
+        "0.049"
+      ],
+      [
+        "Latest laboratory baseline within 90 d",
+        "1809",
+        "88",
+        "Per 10-percentage-point increase",
+        "0.94 (0.79 to 1.12)",
+        "0.482"
+      ],
+      [
+        "At least two postoperative creatinine values",
+        "1970",
+        "101",
+        "Per 10-percentage-point increase",
+        "0.85 (0.73 to 0.99)",
+        "0.034"
+      ],
+      [
+        "Exclude baseline creatinine ≥353.6 µmol l-1",
+        "2188",
+        "97",
+        "Per 10-percentage-point increase",
+        "0.86 (0.73 to 1.03)",
+        "0.094"
+      ],
+      [
+        "One case per subject",
+        "2158",
+        "99",
+        "Per 10-percentage-point increase",
+        "0.86 (0.73 to 1.01)",
+        "0.060"
+      ]
+    ]
+  },
+  {
+    "old_number": 16,
+    "title": "Supplementary Table S16. Characteristics by postoperative AKI evaluability",
+    "notes": [
+      "Binary-variable means are proportions. AKI, acute kidney injury; ASA, American Society of Anesthesiologists; AUC, area under the deficit curve; SD, standard deviation; SMD, standardised mean difference. Reference AUC per anaesthesia-hour is expressed in mmHg min h-1."
+    ],
+    "values": [
+      [
+        "Variable",
+        "Evaluable, n",
+        "Evaluable, mean ± SD",
+        "Not evaluable, n",
+        "Not evaluable, mean ± SD",
+        "SMD"
+      ],
+      [
+        "Age, yr",
+        "2246",
+        "61.47 ± 13.03",
+        "189",
+        "58.06 ± 13.83",
+        "0.25"
+      ],
+      [
+        "Body mass index, kg m-2",
+        "2246",
+        "23.16 ± 3.53",
+        "189",
+        "23.06 ± 3.27",
+        "0.03"
+      ],
+      [
+        "ASA Physical Status ≥3",
+        "2242",
+        "0.13 ± 0.34",
+        "139",
+        "0.06 ± 0.25",
+        "0.22"
+      ],
+      [
+        "Emergency surgery",
+        "2246",
+        "0.10 ± 0.30",
+        "189",
+        "0.20 ± 0.40",
+        "-0.29"
+      ],
+      [
+        "Pre-operative hypertension",
+        "2246",
+        "0.35 ± 0.48",
+        "189",
+        "0.33 ± 0.47",
+        "0.05"
+      ],
+      [
+        "Pre-operative diabetes",
+        "2246",
+        "0.13 ± 0.34",
+        "189",
+        "0.10 ± 0.29",
+        "0.12"
+      ],
+      [
+        "Anaesthesia duration, h",
+        "2246",
+        "4.24 ± 1.72",
+        "189",
+        "3.57 ± 1.61",
+        "0.41"
+      ],
+      [
+        "Reference AUC per anaesthesia-hour",
+        "2246",
+        "28.05 ± 34.56",
+        "189",
+        "25.47 ± 35.96",
+        "0.07"
+      ]
+    ]
+  },
+  {
+    "old_number": 17,
+    "title": "Supplementary Table S17. Sequential absolute hidden-burden models for postoperative ICU stay of at least 2 days",
+    "notes": [
+      "Absolute hidden burden was scaled per 10 mmHg min h-1. Primary adjusted models treated four context-incompatible source-recorded ASA=6 values as missing. The final model additionally used a three-degree-of-freedom spline of log(1 + total reference AUC per anaesthesia-hour). Modified Poisson models used subject-cluster robust variance. Analysis-plan-defined stability criteria required convergence, finite positive confidence limits, at least five events per parameter, and a CI width ratio no greater than 10. VitalDB does not distinguish planned from unplanned ICU admission; this is a supplementary resource-use association. ASA, American Society of Anesthesiologists; AUC, area under the deficit curve; CI, confidence interval; ICU, intensive care unit; RR, relative risk. All three models met these numerical stability criteria."
+    ],
+    "values": [
+      [
+        "Model",
+        "Cases",
+        "Subjects",
+        "Events",
+        "Adjustment",
+        "RR (95% CI)",
+        "P value"
+      ],
+      [
+        "Unadjusted",
+        "2435",
+        "2380",
+        "171",
+        "None",
+        "1.24 (1.19 to 1.31)",
+        "<0.001"
+      ],
+      [
+        "Clinical adjusted",
+        "2248",
+        "2203",
+        "153",
+        "Clinical covariates",
+        "1.14 (1.07 to 1.23)",
+        "<0.001"
+      ],
+      [
+        "Clinical plus reference burden",
+        "2248",
+        "2203",
+        "153",
+        "Clinical + total reference burden",
+        "1.18 (1.02 to 1.36)",
+        "0.027"
+      ]
+    ]
+  },
+  {
+    "old_number": 18,
+    "title": "Supplementary Table S18. ASA Physical Status data-quality audit",
+    "notes": [
+      "All four source-recorded values outside 1-5 were ASA=6 and were incompatible with the included non-donor operative context. Because the de-identified dataset provided no audit trail for adjudication, no replacement clinical class was assigned and these values were set to missing in primary adjusted models. ASA, American Society of Anesthesiologists."
+    ],
+    "values": [
+      [
+        "Category",
+        "Cases, n",
+        "Recorded values",
+        "Primary-model handling"
+      ],
+      [
+        "valid ASA Physical Status 1-5",
+        "2381",
+        "1-5",
+        "retained"
+      ],
+      [
+        "source-recorded ASA value outside 1-5",
+        "4",
+        "6",
+        "set to missing"
+      ],
+      [
+        "missing recorded ASA value",
+        "50",
+        "",
+        "missing"
+      ]
+    ]
+  },
+  {
+    "old_number": 19,
+    "title": "Supplementary Table S19. ASA coding sensitivity models for postoperative AKI",
+    "notes": [
+      "These sensitivity models classified the four records as ASA Physical Status of at least 3 based on the recorded value. Primary models treated those values as missing. AKI, acute kidney injury; ASA, American Society of Anesthesiologists; CI, confidence interval; RR, relative risk. HDR, hidden-deficit ratio."
+    ],
+    "values": [
+      [
+        "Model",
+        "Cases",
+        "AKI",
+        "Adjustment",
+        "RR (95% CI)",
+        "P value"
+      ],
+      [
+        "Absolute hidden burden, clinical adjusted",
+        "2246",
+        "106",
+        "Clinical covariates",
+        "1.11 (1.01 to 1.21)",
+        "0.030"
+      ],
+      [
+        "Absolute hidden burden, clinical plus reference burden",
+        "2246",
+        "106",
+        "Clinical + total reference burden",
+        "1.06 (0.85 to 1.33)",
+        "0.589"
+      ],
+      [
+        "HDR65 incremental model",
+        "2209",
+        "106",
+        "Clinical + total reference burden",
+        "0.87 (0.75 to 1.01)",
+        "0.070"
+      ]
+    ]
+  },
+  {
+    "old_number": 20,
+    "title": "Supplementary Table S20. ASA coding sensitivity models for postoperative ICU stay of at least 2 days",
+    "notes": [
+      "These supplementary sensitivity models classified the four records as ASA Physical Status of at least 3 based on the recorded value. ASA, American Society of Anesthesiologists; CI, confidence interval; ICU, intensive care unit; RR, relative risk."
+    ],
+    "values": [
+      [
+        "Model",
+        "Cases",
+        "Events",
+        "Adjustment",
+        "RR (95% CI)",
+        "P value"
+      ],
+      [
+        "Absolute hidden burden, clinical adjusted",
+        "2252",
+        "153",
+        "Clinical covariates",
+        "1.14 (1.07 to 1.23)",
+        "<0.001"
+      ],
+      [
+        "Absolute hidden burden, clinical plus reference burden",
+        "2252",
+        "153",
+        "Clinical + total reference burden",
+        "1.18 (1.02 to 1.36)",
+        "0.027"
+      ]
+    ]
+  },
+  {
+    "old_number": 21,
+    "title": "Supplementary Table S21. Bootstrap clustering-unit sensitivity",
+    "notes": [
+      "Point estimates are identical because the analytic unit remains the surgical case. Subject-cluster resampling retained all operations from a sampled subject; case-cluster resampling treated operations as independent bootstrap units. AUC, area under the deficit curve. CI, confidence interval."
+    ],
+    "values": [
+      [
+        "Domain",
+        "Metric",
+        "Bootstrap cluster",
+        "Clusters, n",
+        "Point estimate",
+        "95% CI"
+      ],
+      [
+        "AUC decomposition",
+        "hidden deficit ratio",
+        "Subject",
+        "2380",
+        "0.597",
+        "0.582 to 0.612"
+      ],
+      [
+        "AUC decomposition",
+        "hidden deficit ratio",
+        "Case",
+        "2435",
+        "0.597",
+        "0.582 to 0.612"
+      ],
+      [
+        "AUC decomposition",
+        "overdisplay deficit ratio",
+        "Subject",
+        "2380",
+        "0.573",
+        "0.558 to 0.587"
+      ],
+      [
+        "AUC decomposition",
+        "overdisplay deficit ratio",
+        "Case",
+        "2435",
+        "0.573",
+        "0.558 to 0.586"
+      ],
+      [
+        "AUC decomposition",
+        "net relative AUC difference",
+        "Subject",
+        "2380",
+        "-0.024",
+        "-0.027 to -0.022"
+      ],
+      [
+        "AUC decomposition",
+        "net relative AUC difference",
+        "Case",
+        "2435",
+        "-0.024",
+        "-0.027 to -0.022"
+      ],
+      [
+        "episode observability",
+        "episode detection probability",
+        "Subject",
+        "2380",
+        "0.658",
+        "0.650 to 0.666"
+      ],
+      [
+        "episode observability",
+        "episode detection probability",
+        "Case",
+        "2435",
+        "0.658",
+        "0.650 to 0.665"
+      ],
+      [
+        "episode observability",
+        "complete-miss probability",
+        "Subject",
+        "2380",
+        "0.342",
+        "0.334 to 0.350"
+      ],
+      [
+        "episode observability",
+        "complete-miss probability",
+        "Case",
+        "2435",
+        "0.342",
+        "0.335 to 0.350"
+      ],
+      [
+        "episode observability",
+        "first low display with at least 1 min remaining",
+        "Subject",
+        "2380",
+        "0.550",
+        "0.540 to 0.559"
+      ],
+      [
+        "episode observability",
+        "first low display with at least 1 min remaining",
+        "Case",
+        "2435",
+        "0.550",
+        "0.541 to 0.559"
+      ],
+      [
+        "episode observability",
+        "first low display with at least 2 min remaining",
+        "Subject",
+        "2380",
+        "0.357",
+        "0.346 to 0.368"
+      ],
+      [
+        "episode observability",
+        "first low display with at least 2 min remaining",
+        "Case",
+        "2435",
+        "0.357",
+        "0.347 to 0.367"
+      ],
+      [
+        "episode observability",
+        "reference AUC before first low display",
+        "Subject",
+        "2380",
+        "0.349",
+        "0.331 to 0.364"
+      ],
+      [
+        "episode observability",
+        "reference AUC before first low display",
+        "Case",
+        "2435",
+        "0.349",
+        "0.333 to 0.363"
+      ]
+    ]
+  },
+  {
+    "old_number": 22,
+    "title": "Supplementary Table S22. Initial-display convention sensitivity",
+    "notes": [
+      "All rows use MAP less than 65 mmHg and a 5 min interval. The primary convention has no displayed value before the first scheduled sample. The AUC exclusion policy removes reference time before the first finite displayed value; the episode exclusion policy removes the first complete 5 min interval and then initialises the display. AUC, area under the deficit curve; HDR, hidden-deficit ratio; ODR, overdisplay-deficit ratio. MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Domain",
+        "Initial-display convention",
+        "Excluded/eligible",
+        "Detected, %",
+        "Complete miss, %",
+        "Pre-display AUC, %",
+        "HDR",
+        "ODR",
+        "Net AUC difference, %"
+      ],
+      [
+        "Deficit area",
+        "Primary: unavailable before first scheduled sample",
+        "0",
+        "",
+        "",
+        "",
+        "0.597",
+        "0.573",
+        "-2.4"
+      ],
+      [
+        "Deficit area",
+        "Initialise with first finite reference value",
+        "0",
+        "",
+        "",
+        "",
+        "0.474",
+        "0.994",
+        "52.0"
+      ],
+      [
+        "Deficit area",
+        "Exclude reference time before first display",
+        "1.06% time",
+        "",
+        "",
+        "",
+        "0.529",
+        "0.670",
+        "14.1"
+      ],
+      [
+        "Episode observability",
+        "Primary: unavailable before first scheduled sample",
+        "9187 episodes",
+        "65.8",
+        "34.2",
+        "34.9",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Episode observability",
+        "Initialise with first finite reference value",
+        "9187 episodes",
+        "68.7",
+        "31.3",
+        "28.0",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Episode observability",
+        "Exclude first 5 min, then initialise",
+        "9099 episodes",
+        "68.6",
+        "31.4",
+        "28.4",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "old_number": 23,
+    "title": "Supplementary Table S23. Case-level distributions under a 5 min display",
+    "notes": [
+      "Mean arterial pressure threshold: 65 mmHg. Each case contributes one average across 30 sampling phases. Area ratios require positive reference deficit area; 42 zero-area cases remain in absolute state-discordance summaries. State discordance excludes display-unavailable time. Case summaries are not pooled exposure ratios. Among 1899 cases with ≥60 s episodes, the miss fraction was 36.7% [24.8 to 50.2%], with 5th to 95th percentiles 3.3 to 70.0%; within-case phase range was 66.7 [50.0 to 100.0] percentage points. Aggregate quantiles are in the workbook; case-level trajectories are not redistributed."
+    ],
+    "values": [
+      [
+        "Measure",
+        "Cases",
+        "Median [interquartile range]",
+        "5th to 95th percentile"
+      ],
+      [
+        "Combined state discordance (min h-1)",
+        "2435",
+        "2.73 [1.04 to 5.21]",
+        "0.11 to 9.75"
+      ],
+      [
+        "Low reference, normal display (min h-1)",
+        "2435",
+        "1.29 [0.44 to 2.51]",
+        "0.00 to 4.77"
+      ],
+      [
+        "Normal reference, low display (min h-1)",
+        "2435",
+        "1.45 [0.58 to 2.68]",
+        "0.08 to 5.03"
+      ],
+      [
+        "Hidden deficit / reference deficit",
+        "2393",
+        "0.78 [0.62 to 0.90]",
+        "0.43 to 0.96"
+      ],
+      [
+        "Overdisplay deficit / reference deficit",
+        "2393",
+        "0.72 [0.58 to 0.85]",
+        "0.41 to 0.96"
+      ],
+      [
+        "Absolute area disagreement / reference area",
+        "2393",
+        "1.49 [1.21 to 1.73]",
+        "0.85 to 1.91"
+      ],
+      [
+        "Net area bias (%)",
+        "2393",
+        "-0.61 [-4.90 to 0.00]",
+        "-22.42 to 0.95"
+      ]
+    ]
+  },
+  {
+    "old_number": 24,
+    "title": "Supplementary Table S24. Event visibility versus new low-value sampling",
+    "notes": [
+      "Denominator: 9187 reference episodes × 30 phases = 275 610 phase-episode pairs, in 1899 cases. Threshold: mean arterial pressure below 65 mmHg; contiguous low duration ≥60 s. The first three rows are mutually exclusive and sum to 100%; fresh sampling takes priority if inherited display and a fresh sample both occur. The onset carry-in row overlaps with fresh sampling and must not be added to the first three rows. Percentile intervals resample 2380 subjects, retaining all operations (1000 replicates, seed 20260706)."
+    ],
+    "values": [
+      [
+        "Classification",
+        "Percentage (95% confidence interval)"
+      ],
+      [
+        "Fresh low sample within current event",
+        "55.9 (55.1 to 56.7)"
+      ],
+      [
+        "Inherited low display only",
+        "9.9 (9.5 to 10.4)"
+      ],
+      [
+        "No low display during current event",
+        "34.2 (33.4 to 35.0)"
+      ],
+      [
+        "Inherited low display present at onset (overlapping)",
+        "22.4 (21.6 to 23.3)"
+      ]
+    ]
+  },
+  {
+    "old_number": 25,
+    "title": "Supplementary Table S25. Compact event-definition robustness",
+    "notes": [
+      "Threshold: mean arterial pressure below 65 mmHg; 5 min display, 30 phases. Gap allowance joins only finite observed normal-pressure bins, never missing values. Minimum duration is cumulative low-pressure time, excluding normal gaps. Each row defines a different event population, so event counts are not paired comparisons or multiple independent cohorts. The first row reproduces original event counts and display visibility exactly. Subject-bootstrap intervals: 1000 replicates, seed 20260706. Longer events are less often missed; these are measurement results, not treatment effects."
+    ],
+    "values": [
+      [
+        "Normal gap (s)",
+        "Low time ≥ (s)",
+        "Episodes",
+        "Fresh sample, % (95% confidence interval)",
+        "Inherited only, % (95% confidence interval)",
+        "No low display, % (95% confidence interval)"
+      ],
+      [
+        "0",
+        "60",
+        "9187",
+        "55.9 (55.1 to 56.7)",
+        "9.9 (9.5 to 10.4)",
+        "34.2 (33.4 to 35.0)"
+      ],
+      [
+        "0",
+        "180",
+        "3749",
+        "87.4 (86.8 to 87.9)",
+        "2.5 (2.3 to 2.8)",
+        "10.1 (9.7 to 10.5)"
+      ],
+      [
+        "0",
+        "300",
+        "1818",
+        "100.0 (100.0 to 100.0)",
+        "0.0 (0.0 to 0.0)",
+        "0.0 (0.0 to 0.0)"
+      ],
+      [
+        "10",
+        "60",
+        "9086",
+        "57.7 (56.8 to 58.5)",
+        "7.4 (7.0 to 7.8)",
+        "34.9 (34.2 to 35.7)"
+      ],
+      [
+        "10",
+        "180",
+        "3938",
+        "87.8 (87.3 to 88.3)",
+        "1.7 (1.5 to 1.9)",
+        "10.5 (10.1 to 10.9)"
+      ],
+      [
+        "10",
+        "300",
+        "1990",
+        "99.6 (99.6 to 99.7)",
+        "0.1 (0.1 to 0.1)",
+        "0.3 (0.3 to 0.4)"
+      ],
+      [
+        "20",
+        "60",
+        "8918",
+        "58.9 (58.1 to 59.7)",
+        "5.7 (5.4 to 6.1)",
+        "35.4 (34.6 to 36.2)"
+      ],
+      [
+        "20",
+        "180",
+        "4028",
+        "87.9 (87.4 to 88.4)",
+        "1.4 (1.3 to 1.6)",
+        "10.7 (10.3 to 11.1)"
+      ],
+      [
+        "20",
+        "300",
+        "2081",
+        "99.2 (99.1 to 99.3)",
+        "0.1 (0.1 to 0.2)",
+        "0.7 (0.6 to 0.8)"
+      ]
+    ]
+  },
+  {
+    "old_number": 26,
+    "title": "Supplementary Table S26. Absolute interval summaries with subject-clustered uncertainty",
+    "notes": [
+      "MAP<65 mmHg; 2435 cases/2380 subjects; 9187 ≥60 s reference events. Counts average every 10 s phase. Low display includes inherited values. Duration/AUC include runs <60 s; TWA uses 532 190.5 valid-reference minutes throughout. Initial unavailable display contributes no displayed burden; missing reference bins are excluded. CIs use 1000 subject resamples: original event draws for percentages, frequency-analysis draws for absolute exposures, and 5 min draws for the reference. They are not between-interval difference CIs. Unrounded estimates, count CIs and 55/60-mmHg summaries are in the workbook. AUC, area under the deficit curve; CI, confidence interval; MAP, mean arterial pressure; TWA, time-weighted average."
+    ],
+    "values": [
+      [
+        "Sampling interval, min",
+        "Events with low display, expected n; % (95% CI)",
+        "Total duration, min (95% CI)",
+        "Deficit AUC, 10³ mmHg min (95% CI)",
+        "Pooled TWA deficit, mmHg (95% CI)"
+      ],
+      [
+        "Continuous reference",
+        "9187.0\n100.0% (100.0 to 100.0)",
+        "39 908\n(37 766 to 42 152)",
+        "262.222\n(248.183 to 277.777)",
+        "0.493\n(0.467 to 0.520)"
+      ],
+      [
+        "1",
+        "9187.0\n100.0% (100.0 to 100.0)",
+        "39 775\n(37 764 to 41 903)",
+        "257.645\n(244.160 to 271.876)",
+        "0.484\n(0.460 to 0.509)"
+      ],
+      [
+        "2.5",
+        "7800.5\n84.9% (84.4 to 85.4)",
+        "39 709\n(37 727 to 42 002)",
+        "256.350\n(242.233 to 271.831)",
+        "0.482\n(0.458 to 0.508)"
+      ],
+      [
+        "3",
+        "7372.1\n80.2% (79.7 to 80.8)",
+        "39 686\n(37 538 to 41 922)",
+        "256.084\n(241.614 to 271.475)",
+        "0.481\n(0.455 to 0.507)"
+      ],
+      [
+        "5",
+        "6042.9\n65.8% (65.0 to 66.6)",
+        "39 639\n(37 520 to 41 883)",
+        "255.815\n(241.754 to 271.304)",
+        "0.481\n(0.455 to 0.508)"
+      ],
+      [
+        "10",
+        "4343.7\n47.3% (46.4 to 48.1)",
+        "39 504\n(37 344 to 41 786)",
+        "255.033\n(240.791 to 270.307)",
+        "0.479\n(0.453 to 0.506)"
+      ]
+    ]
+  },
+  {
+    "old_number": 27,
+    "title": "Supplementary Table S27. Recorded infusion-adjustment flow",
+    "notes": [
+      "Target drugs were norepinephrine and phenylephrine. Counts distinguish cases, subjects, record changes and anchored adjustment events. Normal-reference changes were retained in the flow but not the low-reference display-state denominator."
+    ],
+    "values": [
+      [
+        "Stage",
+        "Count"
+      ],
+      [
+        "Fixed primary cohort cases",
+        "2435"
+      ],
+      [
+        "Fixed primary cohort subjects",
+        "2380"
+      ],
+      [
+        "Cases with either target pump track",
+        "133"
+      ],
+      [
+        "Raw recorded increases or starts",
+        "834"
+      ],
+      [
+        "Changes passing 5 s stability",
+        "776"
+      ],
+      [
+        "Anchored 60 s adjustment blocks",
+        "648"
+      ],
+      [
+        "Excluded before 5 min",
+        "3"
+      ],
+      [
+        "Excluded for preceding reference quality",
+        "5"
+      ],
+      [
+        "Quality-eligible blocks",
+        "640"
+      ],
+      [
+        "Quality-eligible cases",
+        "124"
+      ],
+      [
+        "Quality-eligible subjects",
+        "120"
+      ],
+      [
+        "Low-reference blocks at adjustment",
+        "236"
+      ],
+      [
+        "Low-reference cases",
+        "85"
+      ],
+      [
+        "Low-reference subjects",
+        "83"
+      ],
+      [
+        "Normal-reference blocks",
+        "404"
+      ],
+      [
+        "Low-reference blocks with full 5 min support",
+        "234"
+      ],
+      [
+        "Blocks with confirmed reference recovery",
+        "184"
+      ]
+    ]
+  },
+  {
+    "old_number": 28,
+    "title": "Supplementary Table S28. Display information at low-reference adjustments",
+    "notes": [
+      "Low reference denotes MAP below 65 mmHg. Display states use 236 low-reference events in 85 cases from 83 subjects and sum to 100% before rounding. They describe the adjustment instant, not detection at any time during the whole episode reported in Table 3. Recovery persistence is averaged over all 184 events with confirmed recovery (80 cases, 78 subjects), with equal weight per event after averaging all sampling phases. Normal or unavailable display at recovery confirmation contributes 0 min. Persistence is restricted to the remainder of the 5 min post-adjustment window and terminates at normal display, missing reference or recurrent hypotension. CIs use subject-cluster resampling. A normal emulated display was not what the treating team necessarily saw. CI, confidence interval; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Interval, min",
+        "Normal display, % (95% CI)",
+        "New low value, % (95% CI)",
+        "Inherited low only, % (95% CI)",
+        "Unavailable, % (95% CI)",
+        "Recovery persistence, min (95% CI)"
+      ],
+      [
+        "1",
+        "15.3 (12.3 to 18.4)",
+        "82.2 (78.7 to 85.9)",
+        "2.5 (1.4 to 3.8)",
+        "0.0 (0.0 to 0.0)",
+        "0.23 (0.22 to 0.24)"
+      ],
+      [
+        "2.5",
+        "29.9 (25.2 to 34.2)",
+        "62.1 (57.1 to 67.4)",
+        "8.0 (5.9 to 10.4)",
+        "0.0 (0.0 to 0.0)",
+        "0.65 (0.59 to 0.70)"
+      ],
+      [
+        "5",
+        "41.9 (37.1 to 47.1)",
+        "44.3 (38.9 to 49.9)",
+        "13.6 (10.8 to 16.3)",
+        "0.2 (0.0 to 0.5)",
+        "0.95 (0.85 to 1.05)"
+      ]
+    ]
+  },
+  {
+    "old_number": 29,
+    "title": "Supplementary Table S29. Fixed infusion-adjustment sensitivity analyses",
+    "notes": [
+      "MAP threshold 65 mmHg, 5 min display. Each rule changes one feature of the primary analysis. One event per subject is selected by case identifier then relative time; chronological surgery order is unavailable. Equal subject weighting first averages events within each subject. These are descriptive sensitivity estimates, not treatment-effect comparisons. CI, confidence interval; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Rule",
+        "Subjects",
+        "Events",
+        "Normal display, % (95% CI)"
+      ],
+      [
+        "Merge 30 s",
+        "83",
+        "261",
+        "42.7 (37.3 to 48.2)"
+      ],
+      [
+        "Merge 120 s",
+        "82",
+        "213",
+        "42.4 (37.1 to 47.9)"
+      ],
+      [
+        "No stability requirement",
+        "92",
+        "252",
+        "43.1 (38.1 to 48.0)"
+      ],
+      [
+        "At least 30 s preceding low MAP",
+        "79",
+        "205",
+        "36.6 (31.7 to 41.4)"
+      ],
+      [
+        "One low event per subject",
+        "83",
+        "83",
+        "43.7 (36.9 to 50.2)"
+      ],
+      [
+        "Exclude first 10 min",
+        "83",
+        "228",
+        "42.4 (37.6 to 47.6)"
+      ],
+      [
+        "Equal subject weighting",
+        "83",
+        "236",
+        "43.1 (37.5 to 48.5)"
+      ]
+    ]
+  },
+  {
+    "old_number": 30,
+    "title": "Supplementary Table S30. Cohort retention under startup signal-quality rules",
+    "notes": [
+      "Startup means the first 600 s after the first finite arterial-reference MAP. A flagged bin has numeric MAP <40 mmHg, waveform coverage >=80%, and a 5th-to-95th percentile waveform span <=5 mmHg. Sustained segments require >=60 s continuously flagged; all flagged bins has no duration requirement. These are rule-based technical sensitivities, without completed clinical adjudication.",
+      "Masked time is counted before coverage exclusions. For the first two masking rules, whole-case reference coverage must still be >=80%. The 10 min window sensitivity retains the original cohort. Cases without a source waveform are retained. AUC, area under the deficit curve; MAP, mean arterial pressure."
+    ],
+    "values": [
+      [
+        "Rule",
+        "Retained cases",
+        "Retained subjects",
+        "Cases with masked values",
+        "Coverage exclusions",
+        "Masked time (min)",
+        "Retained reference AUC (mmHg min)"
+      ],
+      [
+        "Original",
+        "2435",
+        "2380",
+        "0",
+        "0",
+        "0.0",
+        "262221.8"
+      ],
+      [
+        "Sustained segments",
+        "2433",
+        "2378",
+        "28",
+        "2",
+        "95.0",
+        "258072.3"
+      ],
+      [
+        "All flagged bins",
+        "2429",
+        "2374",
+        "355",
+        "6",
+        "224.8",
+        "252480.3"
+      ],
+      [
+        "Exclude startup 10 min",
+        "2435",
+        "2380",
+        "2435",
+        "0",
+        "21799.5",
+        "197519.7"
+      ]
+    ]
+  },
+  {
+    "old_number": 31,
+    "title": "Supplementary Table S31. Bidirectional deficit and event visibility after startup quality checks",
+    "notes": [
+      "MAP <65 mmHg, 5 min display, all 30 phases. Qualifying events require >=60 s of continuous finite low reference pressure. Values in parentheses are 95% subject-cluster percentile confidence intervals (1000 replicates). The last three rows are mutually exclusive and sum to 100% before rounding.",
+      "Rules are defined in Table S30. Original global sampling phases and anaesthesia durations are retained. Masked values cannot initialise or update the held display. Missing reference bins break episodes."
+    ],
+    "values": [
+      [
+        "Measure",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "Cases with qualifying episodes",
+        "1899",
+        "1894",
+        "1867",
+        "1767"
+      ],
+      [
+        "Reference episodes",
+        "9187",
+        "9158",
+        "9071",
+        "8140"
+      ],
+      [
+        "Hidden-deficit ratio",
+        "0.597 (0.582 to 0.612)",
+        "0.603 (0.587 to 0.618)",
+        "0.602 (0.586 to 0.617)",
+        "0.564 (0.547 to 0.580)"
+      ],
+      [
+        "Overdisplay-deficit ratio",
+        "0.573 (0.558 to 0.587)",
+        "0.578 (0.562 to 0.592)",
+        "0.578 (0.562 to 0.591)",
+        "0.553 (0.536 to 0.568)"
+      ],
+      [
+        "Net AUC difference (%)",
+        "-2.44 (-2.70 to -2.20)",
+        "-2.49 (-2.77 to -2.24)",
+        "-2.41 (-2.68 to -2.17)",
+        "-1.14 (-1.33 to -0.96)"
+      ],
+      [
+        "Episodes with no low display (%)",
+        "34.2 (33.4 to 35.0)",
+        "34.3 (33.5 to 35.0)",
+        "34.1 (33.4 to 34.8)",
+        "33.8 (33.0 to 34.6)"
+      ],
+      [
+        "Episodes with new low samples (%)",
+        "55.9 (55.1 to 56.7)",
+        "55.8 (55.1 to 56.6)",
+        "56.0 (55.2 to 56.8)",
+        "56.5 (55.6 to 57.4)"
+      ],
+      [
+        "Inherited low display only (%)",
+        "9.9 (9.5 to 10.4)",
+        "9.9 (9.4 to 10.4)",
+        "9.9 (9.5 to 10.3)",
+        "9.7 (9.3 to 10.2)"
+      ]
+    ]
+  },
+  {
+    "old_number": 32,
+    "title": "Supplementary Table S32. Display information at infusion adjustments under startup quality rules",
+    "notes": [
+      "Values in parentheses are 95% subject-cluster bootstrap confidence intervals (2000 replicates). Infusion event definitions, local pre-adjustment support and recovery rules are unchanged. The denominator for display states is the low-reference adjustment count in each column.",
+      "Persistence averages all confirmed recovery events after phase averaging. Normal or unavailable display at recovery contributes zero; lack of recovery is not assigned zero. The duration is restricted to the remainder of the 5 min post-adjustment window. Rules are defined in Table S30."
+    ],
+    "values": [
+      [
+        "Measure",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "Quality-eligible adjustment blocks",
+        "640",
+        "640",
+        "640",
+        "624"
+      ],
+      [
+        "Low-reference adjustments",
+        "236",
+        "236",
+        "236",
+        "222"
+      ],
+      [
+        "Low-reference subjects",
+        "83",
+        "83",
+        "83",
+        "82"
+      ],
+      [
+        "Confirmed recoveries",
+        "184",
+        "184",
+        "184",
+        "175"
+      ],
+      [
+        "Normal display at 1 min (%)",
+        "15.3 (12.3 to 18.4)",
+        "15.3 (12.3 to 18.4)",
+        "15.3 (12.3 to 18.4)",
+        "15.3 (11.9 to 18.8)"
+      ],
+      [
+        "Normal display at 2.5 min (%)",
+        "29.9 (25.2 to 34.2)",
+        "29.9 (25.2 to 34.2)",
+        "29.9 (25.2 to 34.2)",
+        "30.0 (25.2 to 35.1)"
+      ],
+      [
+        "Normal display at 5 min (%)",
+        "41.9 (37.1 to 47.1)",
+        "41.9 (37.1 to 47.1)",
+        "41.9 (37.1 to 47.1)",
+        "42.3 (37.2 to 47.5)"
+      ],
+      [
+        "Recovery persistence at 5 min (min)",
+        "0.95 (0.85 to 1.05)",
+        "0.95 (0.85 to 1.05)",
+        "0.95 (0.85 to 1.05)",
+        "0.96 (0.85 to 1.06)"
+      ]
+    ]
+  },
+  {
+    "old_number": 33,
+    "title": "Supplementary Table S33. Sequential postoperative associations under startup quality rules",
+    "notes": [
+      "Relative risks (95% subject-cluster robust confidence intervals) per 10 mmHg min per original anaesthesia-hour greater absolute hidden deficit. Each cell gives the actual model case count and outcome event count. Clinical adjustment and nonlinear total-reference-burden adjustment use the original covariates and spline specification.",
+      "AKI is creatinine-defined through 7 postoperative days or discharge. ICU stay >=2 days is a resource-use endpoint; admission intent is unavailable. Models are exploratory associations. Sensitivities for ASA coding, baseline definition and other original specifications are retained in the unrounded workbook output."
+    ],
+    "values": [
+      [
+        "Outcome and adjustment",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "AKI\nUnadjusted",
+        "1.140 (1.031 to 1.260)\nN=2246; events=106",
+        "1.145 (1.038 to 1.264)\nN=2244; events=106",
+        "1.157 (1.049 to 1.276)\nN=2240; events=106",
+        "1.244 (1.147 to 1.349)\nN=2246; events=106"
+      ],
+      [
+        "AKI\nClinical adjustment",
+        "1.093 (0.992 to 1.204)\nN=2242; events=104",
+        "1.097 (0.998 to 1.207)\nN=2240; events=104",
+        "1.104 (1.004 to 1.213)\nN=2236; events=104",
+        "1.144 (1.040 to 1.259)\nN=2242; events=104"
+      ],
+      [
+        "AKI\nClinical and total-reference-burden adjustment",
+        "1.045 (0.815 to 1.339)\nN=2242; events=104",
+        "1.038 (0.806 to 1.336)\nN=2240; events=104",
+        "1.044 (0.813 to 1.339)\nN=2236; events=104",
+        "1.181 (1.003 to 1.391)\nN=2242; events=104"
+      ],
+      [
+        "ICU >=2 days\nUnadjusted",
+        "1.245 (1.187 to 1.306)\nN=2435; events=171",
+        "1.245 (1.187 to 1.306)\nN=2433; events=171",
+        "1.258 (1.201 to 1.318)\nN=2429; events=171",
+        "1.317 (1.254 to 1.383)\nN=2435; events=171"
+      ],
+      [
+        "ICU >=2 days\nClinical adjustment",
+        "1.144 (1.066 to 1.229)\nN=2248; events=153",
+        "1.143 (1.064 to 1.228)\nN=2246; events=153",
+        "1.149 (1.068 to 1.236)\nN=2242; events=153",
+        "1.170 (1.077 to 1.270)\nN=2248; events=153"
+      ],
+      [
+        "ICU >=2 days\nClinical and total-reference-burden adjustment",
+        "1.178 (1.019 to 1.362)\nN=2248; events=153",
+        "1.165 (1.009 to 1.346)\nN=2246; events=153",
+        "1.174 (1.012 to 1.363)\nN=2242; events=153",
+        "1.223 (1.024 to 1.462)\nN=2248; events=153"
+      ]
+    ]
+  },
+  {
+    "old_number": 34,
+    "title": "Supplementary Table S34. Absolute interval summaries under startup quality rules",
+    "notes": [
+      "MAP <65 mmHg. Event counts require >=60 s; low duration and deficit AUC include all finite low-pressure bins, including shorter runs. TWA divides pooled AUC by retained valid-reference time within each rule, held constant across intervals. Reference time therefore differs between rules, not between intervals within a rule.",
+      "Expected event counts average all sampling phases. The workbook contains unrounded values and subject-bootstrap intervals for all five intervals and all three thresholds; this table selects 1, 2.5 and 5 min. AUC, area under the deficit curve; TWA, time-weighted average."
+    ],
+    "values": [
+      [
+        "Rule",
+        "Interval (min)",
+        "Visible events (expected n)",
+        "Visible events (%)",
+        "Low-display time (min)",
+        "Displayed AUC (mmHg min)",
+        "TWA (mmHg)"
+      ],
+      [
+        "Original",
+        "1.0",
+        "9187.0",
+        "100.0",
+        "39775.4",
+        "257644.6",
+        "0.484"
+      ],
+      [
+        "Original",
+        "2.5",
+        "7800.5",
+        "84.9",
+        "39708.5",
+        "256349.8",
+        "0.482"
+      ],
+      [
+        "Original",
+        "5.0",
+        "6042.9",
+        "65.8",
+        "39638.5",
+        "255815.1",
+        "0.481"
+      ],
+      [
+        "Sustained segments",
+        "1.0",
+        "9158.0",
+        "100.0",
+        "39629.1",
+        "253431.3",
+        "0.477"
+      ],
+      [
+        "Sustained segments",
+        "2.5",
+        "7773.9",
+        "84.9",
+        "39559.6",
+        "252051.3",
+        "0.474"
+      ],
+      [
+        "Sustained segments",
+        "5.0",
+        "6019.6",
+        "65.7",
+        "39492.9",
+        "251646.5",
+        "0.473"
+      ],
+      [
+        "All flagged bins",
+        "1.0",
+        "9071.0",
+        "100.0",
+        "39451.2",
+        "247660.3",
+        "0.466"
+      ],
+      [
+        "All flagged bins",
+        "2.5",
+        "7710.4",
+        "85.0",
+        "39385.4",
+        "246430.1",
+        "0.464"
+      ],
+      [
+        "All flagged bins",
+        "5.0",
+        "5979.2",
+        "65.9",
+        "39328.5",
+        "246394.5",
+        "0.464"
+      ],
+      [
+        "Exclude startup 10 min",
+        "1.0",
+        "8140.0",
+        "100.0",
+        "35436.6",
+        "196161.8",
+        "0.384"
+      ],
+      [
+        "Exclude startup 10 min",
+        "2.5",
+        "6934.7",
+        "85.2",
+        "35392.8",
+        "195708.5",
+        "0.383"
+      ],
+      [
+        "Exclude startup 10 min",
+        "5.0",
+        "5389.7",
+        "66.2",
+        "35335.2",
+        "195274.9",
+        "0.383"
+      ]
+    ]
+  },
+  {
+    "old_number": 35,
+    "title": "Supplementary Table S35. Event-definition robustness under startup quality rules",
+    "notes": [
+      "Complete-miss percentage (95% subject-cluster bootstrap confidence interval) and reference event count n. MAP <65 mmHg, 5 min display. Gap allowance joins only finite normal-pressure bins; missing reference is never bridged. Minimum duration uses cumulative low time and excludes bridged normal bins.",
+      "Each row defines a different event population. All policies retain original global sampling phases; the rules are defined in Table S30."
+    ],
+    "values": [
+      [
+        "Gap allowance / minimum low time (s)",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "0 / 60",
+        "34.2 (33.4 to 35.0)\nn=9187",
+        "34.3 (33.5 to 35.0)\nn=9158",
+        "34.1 (33.4 to 34.8)\nn=9071",
+        "33.8 (33.0 to 34.6)\nn=8140"
+      ],
+      [
+        "0 / 180",
+        "10.1 (9.7 to 10.5)\nn=3749",
+        "10.1 (9.7 to 10.6)\nn=3732",
+        "10.1 (9.6 to 10.5)\nn=3720",
+        "10.0 (9.6 to 10.5)\nn=3395"
+      ],
+      [
+        "0 / 300",
+        "0.0 (0.0 to 0.0)\nn=1818",
+        "0.0 (0.0 to 0.0)\nn=1809",
+        "0.0 (0.0 to 0.0)\nn=1805",
+        "0.0 (0.0 to 0.0)\nn=1668"
+      ],
+      [
+        "10 / 60",
+        "34.9 (34.2 to 35.7)\nn=9086",
+        "35.0 (34.3 to 35.6)\nn=9060",
+        "34.8 (34.1 to 35.5)\nn=8975",
+        "34.5 (33.7 to 35.2)\nn=8038"
+      ],
+      [
+        "10 / 180",
+        "10.5 (10.1 to 10.9)\nn=3938",
+        "10.5 (10.0 to 11.0)\nn=3923",
+        "10.5 (10.0 to 10.9)\nn=3910",
+        "10.4 (10.0 to 10.9)\nn=3565"
+      ],
+      [
+        "10 / 300",
+        "0.3 (0.3 to 0.4)\nn=1990",
+        "0.3 (0.3 to 0.4)\nn=1982",
+        "0.3 (0.3 to 0.4)\nn=1977",
+        "0.3 (0.2 to 0.4)\nn=1828"
+      ],
+      [
+        "20 / 60",
+        "35.4 (34.6 to 36.2)\nn=8918",
+        "35.5 (34.8 to 36.1)\nn=8893",
+        "35.3 (34.6 to 36.0)\nn=8809",
+        "35.0 (34.2 to 35.8)\nn=7883"
+      ],
+      [
+        "20 / 180",
+        "10.7 (10.3 to 11.1)\nn=4028",
+        "10.7 (10.2 to 11.1)\nn=4012",
+        "10.7 (10.2 to 11.1)\nn=3999",
+        "10.6 (10.2 to 11.1)\nn=3640"
+      ],
+      [
+        "20 / 300",
+        "0.7 (0.6 to 0.8)\nn=2081",
+        "0.7 (0.6 to 0.8)\nn=2073",
+        "0.7 (0.6 to 0.8)\nn=2068",
+        "0.7 (0.6 to 0.8)\nn=1913"
+      ]
+    ]
+  }
+]

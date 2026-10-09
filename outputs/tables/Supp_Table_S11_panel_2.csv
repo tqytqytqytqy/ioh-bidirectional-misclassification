@@ -1,0 +1,10 @@
+Analysis,Cases,AKI,Exposure contrast,Adjusted RR (95% CI),P value
+HDR65 incremental model,2205,104,Per 10-percentage-point increase,0.87 (0.74 to 1.01),0.071
+MAP<60 mmHg threshold,2162,99,Per 10-percentage-point increase,0.83 (0.68 to 1.01),0.063
+MAP<55 mmHg threshold,2081,92,Per 10-percentage-point increase,0.80 (0.61 to 1.05),0.106
+Pre-display AUC fraction,1765,88,Per 10-percentage-point increase,0.86 (0.75 to 0.98),0.023
+AKI within 48 h,2185,93,Per 10-percentage-point increase,0.85 (0.72 to 1.00),0.049
+Latest laboratory baseline within 90 d,1809,88,Per 10-percentage-point increase,0.94 (0.79 to 1.12),0.482
+At least two postoperative creatinine values,1970,101,Per 10-percentage-point increase,0.85 (0.73 to 0.99),0.034
+Exclude baseline creatinine ≥353.6 µmol l-1,2188,97,Per 10-percentage-point increase,0.86 (0.73 to 1.03),0.094
+One case per subject,2158,99,Per 10-percentage-point increase,0.86 (0.73 to 1.01),0.060

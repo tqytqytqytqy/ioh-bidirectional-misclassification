@@ -1,0 +1,126 @@
+{
+  "font_family": "Arial",
+  "page_inches": [
+    12.0,
+    5.0
+  ],
+  "figure_text_clipping": [],
+  "caption_external_for_DOCX_embedding": true,
+  "caption_words": 198,
+  "at_9_1_inch_embed": {
+    "height_inches": 3.7916666666666665,
+    "minimum_text_points": 9.1
+  },
+  "axes_count": 3,
+  "data_points": 20,
+  "png_dimensions": [
+    3600,
+    1500
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "panel_pixel_checks": {
+    "A": {
+      "nonwhite_fraction": 0.07097398212057736,
+      "nonblank": true
+    },
+    "B": {
+      "nonwhite_fraction": 0.07060769433284113,
+      "nonblank": true
+    },
+    "C": {
+      "nonwhite_fraction": 0.08254903546025089,
+      "nonblank": true
+    }
+  },
+  "svg_text_elements": 71,
+  "svg_embedded_images": 0,
+  "pdf_vector_images": 0,
+  "pdf_pages": 1,
+  "pdf_key_text_verified": true,
+  "proof_file": "S2_A4_landscape_3cm_proof.pdf",
+  "landscape_A4_3cm_margins": {
+    "usable_width_in": 9.330708661417326,
+    "usable_height_in": 5.905511811023623,
+    "embedded_figure_width_in": 9.1,
+    "embedded_figure_height_in": 3.7916666666666665,
+    "caption_font_pt": 9,
+    "caption_height_in": 1.35,
+    "total_used_height_in": 5.238888888888889,
+    "remaining_vertical_space_in": 0.6666229221347343
+  },
+  "status": "PASS",
+  "source_sha256": {
+    "events_summary.json": "28a29ba3506b516db25c6f43caaeed268ae7b6dac18565428ce45f2fd3e1cac7",
+    "treatment_summary.json": "a0ba2dba7fb3ae342ebebb867ba70359806081e151bf531486031853bc130be9",
+    "qc_frequency_population.csv": "504cb3d7919dff3aecdbc4aad563e53797a06c8432d38dc421ae17f37c746eda",
+    "outcomes_all_models.csv": "879391b9d8ad45b01e281a7e0a9233952cf32da420ed958b821a521a8c4138a3"
+  },
+  "figure_sha256": {
+    "png": "3ff792d194d43e2ad6c7aad31536b7db090989ef8d5fcb92a81d9b8b5a8aaec7",
+    "pdf": "f94eafa88be6aeb1d47feb191c5ced281418f09ebee2f004c7b7fb3c97ad54c8",
+    "svg": "dfb82d62a23cb8fd17aa996fbedb1317bbaff35887a66c510595d3c0efbef2ab"
+  },
+  "source_rows": 20,
+  "clinical_signoff": false,
+  "primary_policy": "original",
+  "primary_figures_unchanged": true,
+  "primary_figure_files_checked": 4,
+  "contains_individual_case_data": false,
+  "model_selection": "MAP65; 5 min; aki_sequential/icu_sequential; clinical_plus_reference; hidden_twa10",
+  "frequency_source_role": "Independent cross-check of event sensitivity and HDR/ODR/NetBias; not plotted",
+  "recovery_role": "Not plotted; supplementary tables retain recovery outcomes",
+  "visual_review": {
+    "type": "AI-assisted rendered visual QA, not clinical adjudication",
+    "all_three_panels_reviewed": true,
+    "png_and_vector_pdf_reviewed": true,
+    "landscape_A4_full_caption_proof_reviewed": true,
+    "no_blank_panels_or_clipped_text": true,
+    "no_incoherent_text_data_overlap": true
+  },
+  "functional_negative_tests": [
+    {
+      "check": "duplicate_model",
+      "rejected": true
+    },
+    {
+      "check": "wrong_interval",
+      "rejected": true
+    },
+    {
+      "check": "changed_borderline_aki",
+      "rejected": true
+    }
+  ],
+  "source_csv_sha256": "31ab2713d2e7b7a81d7e75dfb076e52e5edfaedd8a022ff7b5520842f28f9d42",
+  "caption_sha256": "3104745d3745b34a54bfdc6e510fb4c53ee7db3eb1716346dfcba0c71a36bb06",
+  "runner_sha256": "014aab34721c0816475f3aa78ec1e159082ee714c553b57a1b1e730f748debd6",
+  "ready_for_DOCX_embedding": true,
+  "caption_repeated_title": false,
+  "caption_shortening_preserves_graphic": true,
+  "caption_proof_visual_review": "PASS",
+  "caption_proof_note": "Shortened 198-word caption and all three panels individually legible in regenerated 1800-pixel landscape proof; no clipping. Figure PNG/PDF/SVG unchanged.",
+  "proof_pdf_sha256": "2e49980b5f8e34b4304a21f48b058e2dc8801d3cd4d83d704f254a251227e6cb",
+  "proof_png_sha256": "3105e753a2fcf13aaa0fa2c0e1b66dccc1e0600a1d5f750c9385fe294d3ffe4a",
+  "ready_for_archive_freeze": true,
+  "final_hash_validation_utc": "2026-10-07T07:42:50.991770+00:00",
+  "final_render_review": {
+    "status": "PASS",
+    "pages": 47,
+    "figure_caption_page": 47,
+    "complete_caption_matches_source": true,
+    "pdf_sha256": "ecded98d5b2b9bf1e22643187415fa92a6af268ee089a60ed1a4ca63ea851b84",
+    "page_47_png_sha256": "2da6cb1b85a7015dbf99066728aefe953ecad00fc3720868e8459d2ad0ebdc72",
+    "docx_sha256": "9e1bc5b156e2bcaf8ecdd9527788d4582a1453c99733bde574bb591c270c884c",
+    "document_xml_sha256": "10efc06adb147c9258376ff578c7cedd5af0ddc26bd0e23b99f46a448170e6f3",
+    "visual_review_report_sha256": "599ed8c79ce0d0601b79c7e27db7c396dcdaadb66070daef49ffc96d6ce3f2f1",
+    "independently_reinspected_after_freeze_block": true
+  },
+  "hash_repair": {
+    "reason": "Caption-only revision left stale caption and runner hashes in existing QA record",
+    "statistics_and_graphics_unchanged": true,
+    "proof_contains_complete_current_caption": true
+  }
+}

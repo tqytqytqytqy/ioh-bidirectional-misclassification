@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.0",
+  "primary_policy": "original",
+  "clinical_adjudication_status": "pending_not_clinically_adjudicated",
+  "qc_role": "prespecified_technical_sensitivity_only",
+  "variance_estimator": "subject-cluster robust sandwich",
+  "definitions": {
+    "aki": "creatinine-only KDIGO through 7 days or discharge; frozen VitalDB preop_cr baseline",
+    "icu": "postoperative ICU stay >=2 days; planned versus unplanned admission unavailable",
+    "hidden_burden_scale": "per 10 mm Hg*min per original anaesthesia-hour",
+    "hdr_scale": "per 10 percentage points among reference AUC >0 cases",
+    "ci_low_ci_high": "95% confidence interval limits on the relative-risk scale",
+    "events": "observed outcome events among the actual complete cases used by that model",
+    "outcome_risk": "observed events divided by evaluable cases, not adjusted or causal risk",
+    "n_subjects": "unique subjects defining sandwich variance clusters",
+    "startup10": "whole first finite reference +600-second window removed; not artifact correction"
+  },
+  "policies": {
+    "original": {
+      "cohort_n_cases": 2435,
+      "cohort_n_subjects": 2380,
+      "outcomes": {
+        "aki": {
+          "evaluable_n": 2246,
+          "events": 106,
+          "risk": 0.0471950134
+        },
+        "icu": {
+          "evaluable_n": 2435,
+          "events": 171,
+          "risk": 0.0702258727
+        }
+      },
+      "r_verification": "PASS",
+      "models": {
+        "aki_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2246,
+          "n_subjects": 2198,
+          "events": 106,
+          "relative_risk": 1.1395383235,
+          "ci_low": 1.0308051575,
+          "ci_high": 1.2597410688,
+          "p_value": 0.0106816999
+        },
+        "aki_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2242,
+          "n_subjects": 2197,
+          "events": 104,
+          "relative_risk": 1.0928886315,
+          "ci_low": 0.9922820157,
+          "ci_high": 1.2036956651,
+          "p_value": 0.0714325989
+        },
+        "aki_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2242,
+          "n_subjects": 2197,
+          "events": 104,
+          "relative_risk": 1.0447074022,
+          "ci_low": 0.8149135531,
+          "ci_high": 1.339299797,
+          "p_value": 0.7300303133
+        },
+        "aki_hdr_incremental": {
+          "analysis": "HDR65 incremental model",
+          "n_cases": 2205,
+          "n_subjects": 2161,
+          "events": 104,
+          "relative_risk": 0.8669424562,
+          "ci_low": 0.7422772963,
+          "ci_high": 1.0125450773,
+          "p_value": 0.0714553446
+        },
+        "icu_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2435,
+          "n_subjects": 2380,
+          "events": 171,
+          "relative_risk": 1.2449384952,
+          "ci_low": 1.1868949232,
+          "ci_high": 1.3058206136,
+          "p_value": 2.394151994e-19
+        },
+        "icu_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2248,
+          "n_subjects": 2203,
+          "events": 153,
+          "relative_risk": 1.1444171434,
+          "ci_low": 1.0656017578,
+          "ci_high": 1.2290619722,
+          "p_value": 0.0002111917
+        },
+        "icu_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2248,
+          "n_subjects": 2203,
+          "events": 153,
+          "relative_risk": 1.1783008297,
+          "ci_low": 1.0190145493,
+          "ci_high": 1.362485792,
+          "p_value": 0.0268181636
+        }
+      }
+    },
+    "qc60": {
+      "cohort_n_cases": 2433,
+      "cohort_n_subjects": 2378,
+      "outcomes": {
+        "aki": {
+          "evaluable_n": 2244,
+          "events": 106,
+          "risk": 0.0472370766
+        },
+        "icu": {
+          "evaluable_n": 2433,
+          "events": 171,
+          "risk": 0.0702836005
+        }
+      },
+      "r_verification": "PASS",
+      "models": {
+        "aki_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2244,
+          "n_subjects": 2196,
+          "events": 106,
+          "relative_risk": 1.1452033507,
+          "ci_low": 1.0375007772,
+          "ci_high": 1.2640864886,
+          "p_value": 0.0071340023
+        },
+        "aki_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2240,
+          "n_subjects": 2195,
+          "events": 104,
+          "relative_risk": 1.0972841107,
+          "ci_low": 0.9976120701,
+          "ci_high": 1.2069144466,
+          "p_value": 0.0560357154
+        },
+        "aki_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2240,
+          "n_subjects": 2195,
+          "events": 104,
+          "relative_risk": 1.0378995534,
+          "ci_low": 0.8061431219,
+          "ci_high": 1.3362831657,
+          "p_value": 0.7729434559
+        },
+        "aki_hdr_incremental": {
+          "analysis": "HDR65 incremental model",
+          "n_cases": 2203,
+          "n_subjects": 2159,
+          "events": 104,
+          "relative_risk": 0.8652452804,
+          "ci_low": 0.741106281,
+          "ci_high": 1.0101781816,
+          "p_value": 0.0669806509
+        },
+        "icu_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2433,
+          "n_subjects": 2378,
+          "events": 171,
+          "relative_risk": 1.2449071834,
+          "ci_low": 1.1870051089,
+          "ci_high": 1.3056337194,
+          "p_value": 1.972779678e-19
+        },
+        "icu_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2246,
+          "n_subjects": 2201,
+          "events": 153,
+          "relative_risk": 1.1434571116,
+          "ci_low": 1.0644966417,
+          "ci_high": 1.2282745805,
+          "p_value": 0.0002406802
+        },
+        "icu_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2246,
+          "n_subjects": 2201,
+          "events": 153,
+          "relative_risk": 1.165380376,
+          "ci_low": 1.0088339343,
+          "ci_high": 1.3462190104,
+          "p_value": 0.0375747227
+        }
+      }
+    },
+    "qc_all": {
+      "cohort_n_cases": 2429,
+      "cohort_n_subjects": 2374,
+      "outcomes": {
+        "aki": {
+          "evaluable_n": 2240,
+          "events": 106,
+          "risk": 0.0473214286
+        },
+        "icu": {
+          "evaluable_n": 2429,
+          "events": 171,
+          "risk": 0.0703993413
+        }
+      },
+      "r_verification": "PASS",
+      "models": {
+        "aki_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2240,
+          "n_subjects": 2192,
+          "events": 106,
+          "relative_risk": 1.1569073993,
+          "ci_low": 1.0489185251,
+          "ci_high": 1.2760140073,
+          "p_value": 0.0035542682
+        },
+        "aki_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2236,
+          "n_subjects": 2191,
+          "events": 104,
+          "relative_risk": 1.1036356878,
+          "ci_low": 1.00396788,
+          "ci_high": 1.2131979077,
+          "p_value": 0.0411548691
+        },
+        "aki_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2236,
+          "n_subjects": 2191,
+          "events": 104,
+          "relative_risk": 1.0437932753,
+          "ci_low": 0.8134006857,
+          "ci_high": 1.3394436724,
+          "p_value": 0.7362332589
+        },
+        "aki_hdr_incremental": {
+          "analysis": "HDR65 incremental model",
+          "n_cases": 2197,
+          "n_subjects": 2153,
+          "events": 104,
+          "relative_risk": 0.8656902604,
+          "ci_low": 0.7408658617,
+          "ci_high": 1.0115456329,
+          "p_value": 0.0694522822
+        },
+        "icu_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2429,
+          "n_subjects": 2374,
+          "events": 171,
+          "relative_risk": 1.2582910194,
+          "ci_low": 1.2011897458,
+          "ci_high": 1.3181067314,
+          "p_value": 3.129316787e-22
+        },
+        "icu_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2242,
+          "n_subjects": 2197,
+          "events": 153,
+          "relative_risk": 1.1492923057,
+          "ci_low": 1.0684088734,
+          "ci_high": 1.2362989833,
+          "p_value": 0.0001861165
+        },
+        "icu_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2242,
+          "n_subjects": 2197,
+          "events": 153,
+          "relative_risk": 1.1744123528,
+          "ci_low": 1.0120151718,
+          "ci_high": 1.362869266,
+          "p_value": 0.0342380853
+        }
+      }
+    },
+    "startup10": {
+      "cohort_n_cases": 2435,
+      "cohort_n_subjects": 2380,
+      "outcomes": {
+        "aki": {
+          "evaluable_n": 2246,
+          "events": 106,
+          "risk": 0.0471950134
+        },
+        "icu": {
+          "evaluable_n": 2435,
+          "events": 171,
+          "risk": 0.0702258727
+        }
+      },
+      "r_verification": "PASS",
+      "models": {
+        "aki_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2246,
+          "n_subjects": 2198,
+          "events": 106,
+          "relative_risk": 1.2438660045,
+          "ci_low": 1.1467963806,
+          "ci_high": 1.3491520058,
+          "p_value": 1.409e-07
+        },
+        "aki_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2242,
+          "n_subjects": 2197,
+          "events": 104,
+          "relative_risk": 1.1444242843,
+          "ci_low": 1.0398694719,
+          "ci_high": 1.2594916746,
+          "p_value": 0.0057844729
+        },
+        "aki_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2242,
+          "n_subjects": 2197,
+          "events": 104,
+          "relative_risk": 1.1811690537,
+          "ci_low": 1.002742854,
+          "ci_high": 1.3913440797,
+          "p_value": 0.0462892874
+        },
+        "aki_hdr_incremental": {
+          "analysis": "HDR65 incremental model",
+          "n_cases": 2073,
+          "n_subjects": 2031,
+          "events": 99,
+          "relative_risk": 0.9681124446,
+          "ci_low": 0.8222988331,
+          "ci_high": 1.139782361,
+          "p_value": 0.6972101462
+        },
+        "icu_none": {
+          "analysis": "Absolute hidden burden, unadjusted",
+          "n_cases": 2435,
+          "n_subjects": 2380,
+          "events": 171,
+          "relative_risk": 1.317188123,
+          "ci_low": 1.2543125837,
+          "ci_high": 1.383215455,
+          "p_value": 2.45879925e-28
+        },
+        "icu_clinical": {
+          "analysis": "Absolute hidden burden, clinical adjusted",
+          "n_cases": 2248,
+          "n_subjects": 2203,
+          "events": 153,
+          "relative_risk": 1.1699773002,
+          "ci_low": 1.0774584697,
+          "ci_high": 1.2704405055,
+          "p_value": 0.0001877442
+        },
+        "icu_clinical_plus_reference": {
+          "analysis": "Absolute hidden burden, clinical plus reference burden",
+          "n_cases": 2248,
+          "n_subjects": 2203,
+          "events": 153,
+          "relative_risk": 1.2234297896,
+          "ci_low": 1.0238363181,
+          "ci_high": 1.4619333421,
+          "p_value": 0.0264731649
+        }
+      }
+    }
+  },
+  "duration_and_reference_checks": {
+    "original": {
+      "n_cases": 2435,
+      "original_duration_denominators_preserved": true,
+      "original_duration_covariate_preserved": true,
+      "policy_specific_reference_used_for_total_burden_adjustment": true,
+      "changed_reference_burden_cases": 0,
+      "exposure_duration_definition": "original frozen 10-second grid bins * 10 / 3600",
+      "duration_covariate_definition": "original frozen manifest duration_min / 60",
+      "total_reference_adjustment": "bs(log(1 + policy-specific true_auc / original anesthesia_hours), df=3, degree=2)",
+      "valid_reference_time_not_used_as_duration_denominator": true
+    },
+    "qc60": {
+      "n_cases": 2433,
+      "original_duration_denominators_preserved": true,
+      "original_duration_covariate_preserved": true,
+      "policy_specific_reference_used_for_total_burden_adjustment": true,
+      "changed_reference_burden_cases": 26,
+      "exposure_duration_definition": "original frozen 10-second grid bins * 10 / 3600",
+      "duration_covariate_definition": "original frozen manifest duration_min / 60",
+      "total_reference_adjustment": "bs(log(1 + policy-specific true_auc / original anesthesia_hours), df=3, degree=2)",
+      "valid_reference_time_not_used_as_duration_denominator": true
+    },
+    "qc_all": {
+      "n_cases": 2429,
+      "original_duration_denominators_preserved": true,
+      "original_duration_covariate_preserved": true,
+      "policy_specific_reference_used_for_total_burden_adjustment": true,
+      "changed_reference_burden_cases": 349,
+      "exposure_duration_definition": "original frozen 10-second grid bins * 10 / 3600",
+      "duration_covariate_definition": "original frozen manifest duration_min / 60",
+      "total_reference_adjustment": "bs(log(1 + policy-specific true_auc / original anesthesia_hours), df=3, degree=2)",
+      "valid_reference_time_not_used_as_duration_denominator": true
+    },
+    "startup10": {
+      "n_cases": 2435,
+      "original_duration_denominators_preserved": true,
+      "original_duration_covariate_preserved": true,
+      "policy_specific_reference_used_for_total_burden_adjustment": true,
+      "changed_reference_burden_cases": 2172,
+      "exposure_duration_definition": "original frozen 10-second grid bins * 10 / 3600",
+      "duration_covariate_definition": "original frozen manifest duration_min / 60",
+      "total_reference_adjustment": "bs(log(1 + policy-specific true_auc / original anesthesia_hours), df=3, degree=2)",
+      "valid_reference_time_not_used_as_duration_denominator": true
+    }
+  }
+}

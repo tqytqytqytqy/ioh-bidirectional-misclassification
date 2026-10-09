@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "policies": {
+    "original": {
+      "case_phase_event_counts_vs_frequency": {
+        "rows": 942345,
+        "columns": 3,
+        "maximum_absolute_difference": 0.0
+      },
+      "cases": 2435,
+      "subjects": 2380,
+      "reference_events_MAP65": 9187,
+      "exclusive_event_categories": true,
+      "input_and_feature_hashes_unchanged": true
+    },
+    "qc60": {
+      "case_phase_event_counts_vs_frequency": {
+        "rows": 941571,
+        "columns": 3,
+        "maximum_absolute_difference": 0.0
+      },
+      "cases": 2433,
+      "subjects": 2378,
+      "reference_events_MAP65": 9158,
+      "exclusive_event_categories": true,
+      "input_and_feature_hashes_unchanged": true
+    },
+    "qc_all": {
+      "case_phase_event_counts_vs_frequency": {
+        "rows": 940023,
+        "columns": 3,
+        "maximum_absolute_difference": 0.0
+      },
+      "cases": 2429,
+      "subjects": 2374,
+      "reference_events_MAP65": 9071,
+      "exclusive_event_categories": true,
+      "input_and_feature_hashes_unchanged": true
+    },
+    "startup10": {
+      "case_phase_event_counts_vs_frequency": {
+        "rows": 942345,
+        "columns": 3,
+        "maximum_absolute_difference": 0.0
+      },
+      "cases": 2435,
+      "subjects": 2380,
+      "reference_events_MAP65": 8140,
+      "exclusive_event_categories": true,
+      "input_and_feature_hashes_unchanged": true
+    }
+  },
+  "frozen_sources_unchanged": true,
+  "aggregate_json_and_code_have_no_absolute_home_paths": true,
+  "clinical_adjudication": false,
+  "public_QA_copy": "Aggregate verdict only; private paths and identifiers omitted"
+}

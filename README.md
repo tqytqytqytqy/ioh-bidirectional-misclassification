@@ -1,110 +1,64 @@
 # Temporal observability of intraoperative hypotension
 
-Version **v1.4.0** contains the reproducibility materials for a retrospective
-waveform study of intermittent blood pressure display. The package includes
-baseline cohort and outcome code, supplementary event and infusion analyses,
-configuration templates, synthetic tests, figure source data, four editable
-vector figures, a 40-sheet workbook and non-identifiable aggregate outputs.
+## Reproducibility package v1.5.0
 
-## Study scope
+This release contains the code and aggregate results for a retrospective waveform
+study of an emulated intermittent blood pressure display. It preserves the original
+analyses and the completed rule-based startup signal-quality sensitivities.
 
-The primary cohort contains 2435 operations from 2380 subjects. A fixed arterial
-mean arterial pressure (MAP) reference is evaluated on a 10 s grid, and periodic
-displays are emulated across all compatible sampling phases. At MAP below
-65 mmHg, 9187 reference episodes lasting at least 60 s occurred in 1899 cases.
-With a 5 min display, the phase-averaged complete-miss proportion was 34.2%.
-Any low display represented 65.8% of events, while a newly acquired low value
-from the current episode represented 55.9%; 9.9% had inherited low display only.
+At a 5 min interval, 34.2% of qualifying reference episodes had no low display;
+55.9% acquired a new low sample within the episode and 9.9% had inherited low
+display only. Similar cumulative exposure therefore did not imply similar
+within-episode information. Display-state analyses at recorded infusion
+adjustments provide a clinical timing context, not a treatment-effect estimate.
 
-The infusion module describes display information at recorded norepinephrine
-or phenylephrine starts or increases. At 236 low-reference adjustment blocks
-from 83 subjects, the emulated display was normal in 41.9% of 5 min phases,
-compared with 15.3% at 1 min. These are phase-averaged event estimates, not
-patient-level miss rates or observations of what the treating clinician saw.
-After 184 confirmed reference recoveries, restricted low-display persistence
-averaged 0.95 min within the specified observation window.
+No independent physician clinical adjudication was performed. Original analyses
+remain primary and startup-QC analyses remain sensitivities. No source-data
+analysis or model fitting is rerun during release assembly.
 
-Cumulative exposure and event information describe different quantities.
-Initial-display conventions materially affected net deficit area: -2.4% under
-the primary convention, 52.0% with baseline initialisation and 14.1% after
-excluding pre-display time. Corresponding episode-miss estimates were more
-stable at 31.3 to 34.2%. The results should not be used to claim uniform AUC
-equivalence across display conventions.
+## Contents
 
-The corrected NIBP audit treats retained numerical output as records, not
-authenticated independent cuff cycles. Legacy cuff-agreement and diagnostic
-estimates have been removed from the current publication outputs. Pairing in
-the record audit uses the arterial MAP median within a **-30 to +30 s window**
-with at least 80% valid support. This is not device validation.
+- Four main tables and 16 supplementary tables, represented by 26 supplementary panels.
+- A 72-sheet consolidated workbook, retaining current presentation and clearly named historical and unrounded aggregate results.
+- Four editable main figures and two supplementary figures.
+- Python, R and JavaScript analysis and presentation code, synthetic tests and configuration templates.
+- File-integrity manifests, aggregate quality checks and reproduction documentation.
 
-Postoperative AKI and ICU analyses remain exploratory. The total-burden-adjusted
-AKI relative risk was 1.04 (95% CI, 0.81 to 1.34), which did not establish an
-incremental association. ICU stay reflects resource use and lacks admission
-intent. Fixed recorded trajectories do not estimate a causal monitoring effect,
-treatment delay, drug effect or outcome benefit. Clinical adjudication of
-arterial startup signal quality was not certified by the supplementary module.
+`outputs/tables` contains current tables. `outputs/legacy_tables` and
+`presentation_inputs` preserve historical aggregate results and the numbering
+map; they are not additional current manuscript tables. See `docs/table_numbering.md`.
 
-## Data boundary
+## Data Access
 
-**Raw VitalDB, MoVeR and INSPIRE datasets are not redistributed.**
-No case-level trajectories, subject identifiers, paired measurements,
-laboratory records, model frames, pump tracks or private configurations are
-included. Obtain source data independently under the providers' terms.
-Current temporal analyses use VitalDB. MoVeR failed the direct-waveform gate;
-no direct waveform claim is made. INSPIRE is resource and transportability
-context only. Submission documents and private author-review materials are
-not included in this repository.
+Raw VitalDB, MoVeR and INSPIRE datasets are not redistributed. Source recordings,
+case-level trajectories, paired measurements, laboratory rows, model frames,
+private review images, private configuration and submission documents are excluded.
+Obtain source data independently under their original dataset terms.
+The MIT licence covers the supplied software; source-data terms remain separate.
 
-## Files
+Use `config/inputs.example.sh`, `config/reproduction.example.yaml` and the documented environment variables for
+private source locations. Do not commit private inputs or local configuration.
+See `docs/reproducibility.md` and `docs/data_access.md` for reproduction boundaries.
 
-- `src/ioh/`, `scripts/`, `tests/`: baseline analytical implementation and tests.
-- `extensions/events/`: new/inherited classification, case/phase distributions,
-  interval summaries and event-definition robustness.
-- `extensions/audit/scripts/`: cuff-record and pump-track feasibility audits.
-- `extensions/infusion/`: fixed supplementary protocol, runner and tests.
-- `extensions/build_*.mjs`: aggregate-based workbook and artwork exporters.
-- `outputs/tables/`: current four main tables and 29 supplementary tables as CSV.
-- `outputs/aggregate/`: aggregate inputs and unrounded results for all main
-  figure panels, interval summaries and infusion analyses.
-- `outputs/figures/`: four editable vector PPTX figures and the supplementary
-  Python/Matplotlib forest figure.
-- `outputs/final_workbook.xlsx`: all 33 publication tables, five detailed
-  aggregate sheets and two documentation/summary sheets.
-- `outputs/manifests/`: output provenance and SHA-256 inventories.
+## Version And Citation
 
-## Verification and reproduction
+Canonical release: [v1.5.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0).
+The preceding public snapshot is [v1.4.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.4.0)
+and [Zenodo 23153577](https://doi.org/10.5281/zenodo.23153577).
+Use the version-specific DOI linked from the release notes and Zenodo record,
+not the concept DOI, when citing this exact snapshot.
 
-Use the recorded analytical dependencies in `requirements.txt`. Synthetic
-tests and integrity checks do not require clinical data:
+Final workbook SHA-256: 3733746c860584c799f597e714c609efeee037daa6d5c5b0682d647ae3d52171
 
-```sh
-PYTHONPATH=src python -m pytest -q
-python -m unittest discover -s extensions/events -p 'test_*.py'
-python -m unittest discover -s extensions/audit/scripts -p 'test_*.py'
-python -m unittest discover -s extensions/infusion -p 'test_*.py'
-shasum -a 256 -c checksums.sha256
-python scripts/41_build_public_release_manifests.py verify
-```
+Outputs manifest SHA-256: a37967894feae2680c66868e776e3a18d277c534be7840e1b93c478fc1c55bdc
 
-See [reproducibility instructions](docs/reproducibility.md) for the private
-source-data workflow, and [analysis definitions](docs/analysis_conventions.md)
-for denominators and timing. Releasing this version did not refit source-data
-analyses. The source outputs were frozen before package assembly.
+These two hashes identify the scientific output snapshot. `checksums.sha256`
+and `outputs/manifests/release_manifest.json` cover the frozen release files.
 
-## Frozen release and citation
+## Authors And Acknowledgements
 
-- Release: [v1.4.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.4.0)
-- Workbook: `outputs/final_workbook.xlsx`
-- Workbook SHA-256: `900a621f7c9b9ce40d87d6aa03f68f8ab97a9254539f92be08310e309432c2e6`
-- Outputs manifest: `outputs/manifests/outputs_manifest.json`
-- Outputs manifest SHA-256: `4294bb7e5bb7223b78614cbcc2cc212cecbbed197efc00455f7bbf906e50a55b`
-- Zenodo version DOI: [10.5281/zenodo.23153577](https://doi.org/10.5281/zenodo.23153577)
-- Zenodo concept DOI: [10.5281/zenodo.21253616](https://doi.org/10.5281/zenodo.21253616)
+Qingyu Teng; Qi Li; Ziyan Gu; Yuping Yang; Junde Han; Qian Chen; Jing Zhao;
+Yingya Zhao; Hui Zhang. Creator metadata follows the author order confirmed
+for this release. Existing version records retain their historical creators.
 
-Use the version DOI displayed by Zenodo for this exact v1.4.0 release.
-`CITATION.cff` and `.zenodo.json` contain the current creator order. Code is
-licensed under MIT; source-dataset access remains governed by each provider.
-
-The output manifest excludes itself and release metadata. The release manifest
-excludes itself and `checksums.sha256`; the checksum list includes both
-manifests and excludes itself. This prevents circular hashes.
+We thank Tao Xu for his guidance and comments on this study.

@@ -1,0 +1,475 @@
+[
+  {
+    "name": "Supp_Table_S30",
+    "title": "Supplementary Table S30. Cohort retention under startup signal-quality rules",
+    "values": [
+      [
+        "Rule",
+        "Retained cases",
+        "Retained subjects",
+        "Cases with masked values",
+        "Coverage exclusions",
+        "Masked time (min)",
+        "Retained reference AUC (mmHg min)"
+      ],
+      [
+        "Original",
+        2435,
+        2380,
+        0,
+        0,
+        0.0,
+        262221.8
+      ],
+      [
+        "Sustained segments",
+        2433,
+        2378,
+        28,
+        2,
+        95.0,
+        258072.3
+      ],
+      [
+        "All flagged bins",
+        2429,
+        2374,
+        355,
+        6,
+        224.8,
+        252480.3
+      ],
+      [
+        "Exclude startup 10 min",
+        2435,
+        2380,
+        2435,
+        0,
+        21799.5,
+        197519.7
+      ]
+    ],
+    "notes": [
+      "Startup means the first 600 s after the first finite arterial-reference MAP. A flagged bin has numeric MAP <40 mmHg, waveform coverage >=80%, and a 5th-to-95th percentile waveform span <=5 mmHg. Sustained segments require >=60 s continuously flagged; all flagged bins has no duration requirement. These are rule-based technical sensitivities, without completed clinical adjudication.",
+      "Masked time is counted before coverage exclusions. For the first two masking rules, whole-case reference coverage must still be >=80%. The 10 min window sensitivity retains the original cohort. Cases without a source waveform are retained. AUC, area under the deficit curve; MAP, mean arterial pressure."
+    ],
+    "source": "cohort_qc_summary.csv"
+  },
+  {
+    "name": "Supp_Table_S31",
+    "title": "Supplementary Table S31. Bidirectional deficit and event visibility after startup quality checks",
+    "values": [
+      [
+        "Measure",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "Cases with qualifying episodes",
+        1899,
+        1894,
+        1867,
+        1767
+      ],
+      [
+        "Reference episodes",
+        9187,
+        9158,
+        9071,
+        8140
+      ],
+      [
+        "Hidden-deficit ratio",
+        "0.597 (0.582 to 0.612)",
+        "0.603 (0.587 to 0.618)",
+        "0.602 (0.586 to 0.617)",
+        "0.564 (0.547 to 0.580)"
+      ],
+      [
+        "Overdisplay-deficit ratio",
+        "0.573 (0.558 to 0.587)",
+        "0.578 (0.562 to 0.592)",
+        "0.578 (0.562 to 0.591)",
+        "0.553 (0.536 to 0.568)"
+      ],
+      [
+        "Net AUC difference (%)",
+        "-2.44 (-2.70 to -2.20)",
+        "-2.49 (-2.77 to -2.24)",
+        "-2.41 (-2.68 to -2.17)",
+        "-1.14 (-1.33 to -0.96)"
+      ],
+      [
+        "Episodes with no low display (%)",
+        "34.2 (33.4 to 35.0)",
+        "34.3 (33.5 to 35.0)",
+        "34.1 (33.4 to 34.8)",
+        "33.8 (33.0 to 34.6)"
+      ],
+      [
+        "Episodes with new low samples (%)",
+        "55.9 (55.1 to 56.7)",
+        "55.8 (55.1 to 56.6)",
+        "56.0 (55.2 to 56.8)",
+        "56.5 (55.6 to 57.4)"
+      ],
+      [
+        "Inherited low display only (%)",
+        "9.9 (9.5 to 10.4)",
+        "9.9 (9.4 to 10.4)",
+        "9.9 (9.5 to 10.3)",
+        "9.7 (9.3 to 10.2)"
+      ]
+    ],
+    "notes": [
+      "MAP <65 mmHg, 5 min display, all 30 phases. Qualifying events require >=60 s of continuous finite low reference pressure. Values in parentheses are 95% subject-cluster percentile confidence intervals (1000 replicates). The last three rows are mutually exclusive and sum to 100% before rounding.",
+      "Rules are defined in Table S30. Original global sampling phases and anaesthesia durations are retained. Masked values cannot initialise or update the held display. Missing reference bins break episodes."
+    ],
+    "source": "qc_frequency_population.csv; events_rates_comparative.csv"
+  },
+  {
+    "name": "Supp_Table_S32",
+    "title": "Supplementary Table S32. Display information at infusion adjustments under startup quality rules",
+    "values": [
+      [
+        "Measure",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "Quality-eligible adjustment blocks",
+        640,
+        640,
+        640,
+        624
+      ],
+      [
+        "Low-reference adjustments",
+        236,
+        236,
+        236,
+        222
+      ],
+      [
+        "Low-reference subjects",
+        83,
+        83,
+        83,
+        82
+      ],
+      [
+        "Confirmed recoveries",
+        184,
+        184,
+        184,
+        175
+      ],
+      [
+        "Normal display at 1 min (%)",
+        "15.3 (12.3 to 18.4)",
+        "15.3 (12.3 to 18.4)",
+        "15.3 (12.3 to 18.4)",
+        "15.3 (11.9 to 18.8)"
+      ],
+      [
+        "Normal display at 2.5 min (%)",
+        "29.9 (25.2 to 34.2)",
+        "29.9 (25.2 to 34.2)",
+        "29.9 (25.2 to 34.2)",
+        "30.0 (25.2 to 35.1)"
+      ],
+      [
+        "Normal display at 5 min (%)",
+        "41.9 (37.1 to 47.1)",
+        "41.9 (37.1 to 47.1)",
+        "41.9 (37.1 to 47.1)",
+        "42.3 (37.2 to 47.5)"
+      ],
+      [
+        "Recovery persistence at 5 min (min)",
+        "0.95 (0.85 to 1.05)",
+        "0.95 (0.85 to 1.05)",
+        "0.95 (0.85 to 1.05)",
+        "0.96 (0.85 to 1.06)"
+      ]
+    ],
+    "notes": [
+      "Values in parentheses are 95% subject-cluster bootstrap confidence intervals (2000 replicates). Infusion event definitions, local pre-adjustment support and recovery rules are unchanged. The denominator for display states is the low-reference adjustment count in each column.",
+      "Persistence averages all confirmed recovery events after phase averaging. Normal or unavailable display at recovery contributes zero; lack of recovery is not assigned zero. The duration is restricted to the remainder of the 5 min post-adjustment window. Rules are defined in Table S30."
+    ],
+    "source": "treatment_summary.json; treatment_display_*.csv; treatment_recovery_*.csv"
+  },
+  {
+    "name": "Supp_Table_S33",
+    "title": "Supplementary Table S33. Sequential postoperative associations under startup quality rules",
+    "values": [
+      [
+        "Outcome and adjustment",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "AKI\nUnadjusted",
+        "1.140 (1.031 to 1.260)\nN=2246; events=106",
+        "1.145 (1.038 to 1.264)\nN=2244; events=106",
+        "1.157 (1.049 to 1.276)\nN=2240; events=106",
+        "1.244 (1.147 to 1.349)\nN=2246; events=106"
+      ],
+      [
+        "AKI\nClinical adjustment",
+        "1.093 (0.992 to 1.204)\nN=2242; events=104",
+        "1.097 (0.998 to 1.207)\nN=2240; events=104",
+        "1.104 (1.004 to 1.213)\nN=2236; events=104",
+        "1.144 (1.040 to 1.259)\nN=2242; events=104"
+      ],
+      [
+        "AKI\nClinical and total-reference-burden adjustment",
+        "1.045 (0.815 to 1.339)\nN=2242; events=104",
+        "1.038 (0.806 to 1.336)\nN=2240; events=104",
+        "1.044 (0.813 to 1.339)\nN=2236; events=104",
+        "1.181 (1.003 to 1.391)\nN=2242; events=104"
+      ],
+      [
+        "ICU >=2 days\nUnadjusted",
+        "1.245 (1.187 to 1.306)\nN=2435; events=171",
+        "1.245 (1.187 to 1.306)\nN=2433; events=171",
+        "1.258 (1.201 to 1.318)\nN=2429; events=171",
+        "1.317 (1.254 to 1.383)\nN=2435; events=171"
+      ],
+      [
+        "ICU >=2 days\nClinical adjustment",
+        "1.144 (1.066 to 1.229)\nN=2248; events=153",
+        "1.143 (1.064 to 1.228)\nN=2246; events=153",
+        "1.149 (1.068 to 1.236)\nN=2242; events=153",
+        "1.170 (1.077 to 1.270)\nN=2248; events=153"
+      ],
+      [
+        "ICU >=2 days\nClinical and total-reference-burden adjustment",
+        "1.178 (1.019 to 1.362)\nN=2248; events=153",
+        "1.165 (1.009 to 1.346)\nN=2246; events=153",
+        "1.174 (1.012 to 1.363)\nN=2242; events=153",
+        "1.223 (1.024 to 1.462)\nN=2248; events=153"
+      ]
+    ],
+    "notes": [
+      "Relative risks (95% subject-cluster robust confidence intervals) per 10 mmHg min per original anaesthesia-hour greater absolute hidden deficit. Each cell gives the actual model case count and outcome event count. Clinical adjustment and nonlinear total-reference-burden adjustment use the original covariates and spline specification.",
+      "AKI is creatinine-defined through 7 postoperative days or discharge. ICU stay >=2 days is a resource-use endpoint; admission intent is unavailable. Models are exploratory associations. Sensitivities for ASA coding, baseline definition and other original specifications are retained in the unrounded workbook output."
+    ],
+    "source": "outcomes_all_models.csv"
+  },
+  {
+    "name": "Supp_Table_S34",
+    "title": "Supplementary Table S34. Absolute interval summaries under startup quality rules",
+    "values": [
+      [
+        "Rule",
+        "Interval (min)",
+        "Visible events (expected n)",
+        "Visible events (%)",
+        "Low-display time (min)",
+        "Displayed AUC (mmHg min)",
+        "TWA (mmHg)"
+      ],
+      [
+        "Original",
+        1.0,
+        9187.0,
+        100.0,
+        39775.4,
+        257644.6,
+        0.484
+      ],
+      [
+        "Original",
+        2.5,
+        7800.5,
+        84.9,
+        39708.5,
+        256349.8,
+        0.482
+      ],
+      [
+        "Original",
+        5.0,
+        6042.9,
+        65.8,
+        39638.5,
+        255815.1,
+        0.481
+      ],
+      [
+        "Sustained segments",
+        1.0,
+        9158.0,
+        100.0,
+        39629.1,
+        253431.3,
+        0.477
+      ],
+      [
+        "Sustained segments",
+        2.5,
+        7773.9,
+        84.9,
+        39559.6,
+        252051.3,
+        0.474
+      ],
+      [
+        "Sustained segments",
+        5.0,
+        6019.6,
+        65.7,
+        39492.9,
+        251646.5,
+        0.473
+      ],
+      [
+        "All flagged bins",
+        1.0,
+        9071.0,
+        100.0,
+        39451.2,
+        247660.3,
+        0.466
+      ],
+      [
+        "All flagged bins",
+        2.5,
+        7710.4,
+        85.0,
+        39385.4,
+        246430.1,
+        0.464
+      ],
+      [
+        "All flagged bins",
+        5.0,
+        5979.2,
+        65.9,
+        39328.5,
+        246394.5,
+        0.464
+      ],
+      [
+        "Exclude startup 10 min",
+        1.0,
+        8140.0,
+        100.0,
+        35436.6,
+        196161.8,
+        0.384
+      ],
+      [
+        "Exclude startup 10 min",
+        2.5,
+        6934.7,
+        85.2,
+        35392.8,
+        195708.5,
+        0.383
+      ],
+      [
+        "Exclude startup 10 min",
+        5.0,
+        5389.7,
+        66.2,
+        35335.2,
+        195274.9,
+        0.383
+      ]
+    ],
+    "notes": [
+      "MAP <65 mmHg. Event counts require >=60 s; low duration and deficit AUC include all finite low-pressure bins, including shorter runs. TWA divides pooled AUC by retained valid-reference time within each rule, held constant across intervals. Reference time therefore differs between rules, not between intervals within a rule.",
+      "Expected event counts average all sampling phases. The workbook contains unrounded values and subject-bootstrap intervals for all five intervals and all three thresholds; this table selects 1, 2.5 and 5 min. AUC, area under the deficit curve; TWA, time-weighted average."
+    ],
+    "source": "events_interval_absolute_summary_comparative.csv"
+  },
+  {
+    "name": "Supp_Table_S35",
+    "title": "Supplementary Table S35. Event-definition robustness under startup quality rules",
+    "values": [
+      [
+        "Gap allowance / minimum low time (s)",
+        "Original",
+        "Sustained segments",
+        "All flagged bins",
+        "Exclude startup 10 min"
+      ],
+      [
+        "0 / 60",
+        "34.2 (33.4 to 35.0)\nn=9187",
+        "34.3 (33.5 to 35.0)\nn=9158",
+        "34.1 (33.4 to 34.8)\nn=9071",
+        "33.8 (33.0 to 34.6)\nn=8140"
+      ],
+      [
+        "0 / 180",
+        "10.1 (9.7 to 10.5)\nn=3749",
+        "10.1 (9.7 to 10.6)\nn=3732",
+        "10.1 (9.6 to 10.5)\nn=3720",
+        "10.0 (9.6 to 10.5)\nn=3395"
+      ],
+      [
+        "0 / 300",
+        "0.0 (0.0 to 0.0)\nn=1818",
+        "0.0 (0.0 to 0.0)\nn=1809",
+        "0.0 (0.0 to 0.0)\nn=1805",
+        "0.0 (0.0 to 0.0)\nn=1668"
+      ],
+      [
+        "10 / 60",
+        "34.9 (34.2 to 35.7)\nn=9086",
+        "35.0 (34.3 to 35.6)\nn=9060",
+        "34.8 (34.1 to 35.5)\nn=8975",
+        "34.5 (33.7 to 35.2)\nn=8038"
+      ],
+      [
+        "10 / 180",
+        "10.5 (10.1 to 10.9)\nn=3938",
+        "10.5 (10.0 to 11.0)\nn=3923",
+        "10.5 (10.0 to 10.9)\nn=3910",
+        "10.4 (10.0 to 10.9)\nn=3565"
+      ],
+      [
+        "10 / 300",
+        "0.3 (0.3 to 0.4)\nn=1990",
+        "0.3 (0.3 to 0.4)\nn=1982",
+        "0.3 (0.3 to 0.4)\nn=1977",
+        "0.3 (0.2 to 0.4)\nn=1828"
+      ],
+      [
+        "20 / 60",
+        "35.4 (34.6 to 36.2)\nn=8918",
+        "35.5 (34.8 to 36.1)\nn=8893",
+        "35.3 (34.6 to 36.0)\nn=8809",
+        "35.0 (34.2 to 35.8)\nn=7883"
+      ],
+      [
+        "20 / 180",
+        "10.7 (10.3 to 11.1)\nn=4028",
+        "10.7 (10.2 to 11.1)\nn=4012",
+        "10.7 (10.2 to 11.1)\nn=3999",
+        "10.6 (10.2 to 11.1)\nn=3640"
+      ],
+      [
+        "20 / 300",
+        "0.7 (0.6 to 0.8)\nn=2081",
+        "0.7 (0.6 to 0.8)\nn=2073",
+        "0.7 (0.6 to 0.8)\nn=2068",
+        "0.7 (0.6 to 0.8)\nn=1913"
+      ]
+    ],
+    "notes": [
+      "Complete-miss percentage (95% subject-cluster bootstrap confidence interval) and reference event count n. MAP <65 mmHg, 5 min display. Gap allowance joins only finite normal-pressure bins; missing reference is never bridged. Minimum duration uses cumulative low time and excludes bridged normal bins.",
+      "Each row defines a different event population. All policies retain original global sampling phases; the rules are defined in Table S30."
+    ],
+    "source": "events_robustness_comparative.csv"
+  }
+]
