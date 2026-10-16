@@ -1,5 +1,5 @@
 {
-  "version": "v2.0.0",
+  "version": "v2.0.1",
   "state": "FROZEN_RELEASE_SNAPSHOT",
   "public_status": "VERIFY_GITHUB_AND_ZENODO_RECORDS",
   "current_main_tables": 3,
@@ -9,5 +9,6 @@
   "release_assembly_refit": false,
   "current_results": "current/",
   "scientific_code": "source_layout/",
-  "historical_code_and_outputs": "Legacy root code, extensions and outputs are retained for provenance; their table numbering is superseded."
+  "historical_code_and_outputs": "Legacy root code, extensions and outputs are retained for provenance; their table numbering is superseded.",
+  "patch": "S15 integer display correction and editable-figure update"
 }

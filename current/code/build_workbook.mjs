@@ -2,8 +2,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {Workbook,SpreadsheetFile} from '@oai/artifact-tool';
+import {verifyS15} from './count_integrity.mjs';
 const R=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const plan=JSON.parse(await fs.readFile(path.join(R,'presentation/workbook_plan.json'),'utf8'));
+verifyS15(plan,
+  JSON.parse(await fs.readFile(path.join(R,'provenance/workbook_layout.json'),'utf8')),
+  JSON.parse(await fs.readFile(path.join(R,'provenance/s15_count_correction.json'),'utf8')));
 const wb=Workbook.create();
 const layout=[];
 const out=process.argv[2] ?? path.join(R,'workbook/10_SDC2_Consolidated_Workbook.xlsx');

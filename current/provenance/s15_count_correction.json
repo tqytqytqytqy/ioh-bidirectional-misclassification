@@ -1,0 +1,319 @@
+{
+  "version": "v2.0.1",
+  "status": "PASS",
+  "cause": "Phase-averaging floating-point residue was truncated by int() in the historical presentation step.",
+  "changes": [
+    {
+      "sheet": "S15_Cross_Event_Strata",
+      "cell": "D10",
+      "old_value": "1573",
+      "new_value": "1574",
+      "old_type": "str",
+      "new_type": "str",
+      "detail_cell_unchanged": "Q84",
+      "detail_raw_value_unchanged": "1573.9999999999998",
+      "source_csv_row_including_header": 258,
+      "source_key": {
+        "source": "MIMIC",
+        "resolution": "10s",
+        "scenario": "primary",
+        "feature": "duration",
+        "level": "60_to_lt180",
+        "estimand": "pooled",
+        "metric": "fresh_probability"
+      },
+      "record_level_verification": {
+        "records": 50,
+        "sum_checked_record_integer_counts": 1574,
+        "max_absolute_integer_residual": 2.2737367544323206e-13,
+        "patients_with_events": 41,
+        "patient_sum_matches_record_sum": true
+      },
+      "sdc1_match": {
+        "table": "S15",
+        "source_reference": "MIMIC 10 s",
+        "feature": "duration",
+        "stratum": "60 to <180 s",
+        "column": "Events",
+        "old_text": "1573",
+        "new_text": "1574"
+      },
+      "verified_integer_count": 1574
+    },
+    {
+      "sheet": "S15_Cross_Event_Strata",
+      "cell": "D12",
+      "old_value": "352",
+      "new_value": "353",
+      "old_type": "str",
+      "new_type": "str",
+      "detail_cell_unchanged": "Q76",
+      "detail_raw_value_unchanged": "352.99999999999994",
+      "source_csv_row_including_header": 250,
+      "source_key": {
+        "source": "MIMIC",
+        "resolution": "10s",
+        "scenario": "primary",
+        "feature": "duration",
+        "level": "300_to_lt600",
+        "estimand": "pooled",
+        "metric": "fresh_probability"
+      },
+      "record_level_verification": {
+        "records": 50,
+        "sum_checked_record_integer_counts": 353,
+        "max_absolute_integer_residual": 4.263256414560601e-14,
+        "patients_with_events": 36,
+        "patient_sum_matches_record_sum": true
+      },
+      "sdc1_match": {
+        "table": "S15",
+        "source_reference": "MIMIC 10 s",
+        "feature": "duration",
+        "stratum": "300 to <600 s",
+        "column": "Events",
+        "old_text": "352",
+        "new_text": "353"
+      },
+      "verified_integer_count": 353
+    },
+    {
+      "sheet": "S15_Cross_Event_Strata",
+      "cell": "D49",
+      "old_value": "342",
+      "new_value": "343",
+      "old_type": "str",
+      "new_type": "str",
+      "detail_cell_unchanged": "Q116",
+      "detail_raw_value_unchanged": "342.99999999999994",
+      "source_csv_row_including_header": 290,
+      "source_key": {
+        "source": "MIMIC",
+        "resolution": "10s",
+        "scenario": "primary",
+        "feature": "preceding_normal",
+        "level": "60_to_lt300",
+        "estimand": "pooled",
+        "metric": "fresh_probability"
+      },
+      "record_level_verification": {
+        "records": 50,
+        "sum_checked_record_integer_counts": 343,
+        "max_absolute_integer_residual": 2.842170943040401e-14,
+        "patients_with_events": 37,
+        "patient_sum_matches_record_sum": true
+      },
+      "sdc1_match": {
+        "table": "S15",
+        "source_reference": "MIMIC 10 s",
+        "feature": "preceding_normal",
+        "stratum": "60 to <300 s",
+        "column": "Events",
+        "old_text": "342",
+        "new_text": "343"
+      },
+      "verified_integer_count": 343
+    },
+    {
+      "sheet": "S15_Cross_Event_Strata",
+      "cell": "D51",
+      "old_value": "280",
+      "new_value": "281",
+      "old_type": "str",
+      "new_type": "str",
+      "detail_cell_unchanged": "Q140",
+      "detail_raw_value_unchanged": "280.99999999999994",
+      "source_csv_row_including_header": 314,
+      "source_key": {
+        "source": "MIMIC",
+        "resolution": "10s",
+        "scenario": "primary",
+        "feature": "preceding_normal",
+        "level": "unknown",
+        "estimand": "pooled",
+        "metric": "fresh_probability"
+      },
+      "record_level_verification": {
+        "records": 50,
+        "sum_checked_record_integer_counts": 281,
+        "max_absolute_integer_residual": 2.1316282072803006e-14,
+        "patients_with_events": 37,
+        "patient_sum_matches_record_sum": true
+      },
+      "sdc1_match": {
+        "table": "S15",
+        "source_reference": "MIMIC 10 s",
+        "feature": "preceding_normal",
+        "stratum": "Unknown",
+        "column": "Events",
+        "old_text": "280",
+        "new_text": "281"
+      },
+      "verified_integer_count": 281
+    }
+  ],
+  "cross_dimension_checks": [
+    {
+      "source_reference": "VitalDB 10 s",
+      "feature": "duration",
+      "range": "D6:D9",
+      "before": 7378,
+      "after": 7378,
+      "independent_frozen_total": 7378,
+      "pass": true
+    },
+    {
+      "source_reference": "MIMIC 10 s",
+      "feature": "duration",
+      "range": "D10:D13",
+      "before": 2798,
+      "after": 2800,
+      "independent_frozen_total": 2800,
+      "pass": true
+    },
+    {
+      "source_reference": "VitalDB 1 min",
+      "feature": "duration",
+      "range": "D14:D17",
+      "before": 3951,
+      "after": 3951,
+      "independent_frozen_total": 3951,
+      "pass": true
+    },
+    {
+      "source_reference": "MIMIC 1 min",
+      "feature": "duration",
+      "range": "D18:D21",
+      "before": 1173,
+      "after": 1173,
+      "independent_frozen_total": 1173,
+      "pass": true
+    },
+    {
+      "source_reference": "SICdb 1 min",
+      "feature": "duration",
+      "range": "D22:D25",
+      "before": 1276123,
+      "after": 1276123,
+      "independent_frozen_total": 1276123,
+      "pass": true
+    },
+    {
+      "source_reference": "VitalDB 10 s",
+      "feature": "nadir",
+      "range": "D30:D31",
+      "before": 7378,
+      "after": 7378,
+      "independent_frozen_total": 7378,
+      "pass": true
+    },
+    {
+      "source_reference": "MIMIC 10 s",
+      "feature": "nadir",
+      "range": "D32:D33",
+      "before": 2800,
+      "after": 2800,
+      "independent_frozen_total": 2800,
+      "pass": true
+    },
+    {
+      "source_reference": "VitalDB 1 min",
+      "feature": "nadir",
+      "range": "D34:D35",
+      "before": 3951,
+      "after": 3951,
+      "independent_frozen_total": 3951,
+      "pass": true
+    },
+    {
+      "source_reference": "MIMIC 1 min",
+      "feature": "nadir",
+      "range": "D36:D37",
+      "before": 1173,
+      "after": 1173,
+      "independent_frozen_total": 1173,
+      "pass": true
+    },
+    {
+      "source_reference": "SICdb 1 min",
+      "feature": "nadir",
+      "range": "D38:D39",
+      "before": 1276123,
+      "after": 1276123,
+      "independent_frozen_total": 1276123,
+      "pass": true
+    },
+    {
+      "source_reference": "VitalDB 10 s",
+      "feature": "preceding_normal",
+      "range": "D44:D47",
+      "before": 7378,
+      "after": 7378,
+      "independent_frozen_total": 7378,
+      "pass": true
+    },
+    {
+      "source_reference": "MIMIC 10 s",
+      "feature": "preceding_normal",
+      "range": "D48:D51",
+      "before": 2798,
+      "after": 2800,
+      "independent_frozen_total": 2800,
+      "pass": true
+    },
+    {
+      "source_reference": "VitalDB 1 min",
+      "feature": "preceding_normal",
+      "range": "D52:D55",
+      "before": 3951,
+      "after": 3951,
+      "independent_frozen_total": 3951,
+      "pass": true
+    },
+    {
+      "source_reference": "MIMIC 1 min",
+      "feature": "preceding_normal",
+      "range": "D56:D59",
+      "before": 1173,
+      "after": 1173,
+      "independent_frozen_total": 1173,
+      "pass": true
+    },
+    {
+      "source_reference": "SICdb 1 min",
+      "feature": "preceding_normal",
+      "range": "D60:D63",
+      "before": 1276123,
+      "after": 1276123,
+      "independent_frozen_total": 1276123,
+      "pass": true
+    }
+  ],
+  "scope": "Four displayed counts only; detailed aggregate floats, estimates, confidence intervals and source-data analysis unchanged.",
+  "frozen_sources": [
+    {
+      "path": "跨库分辨率与异质性分析_20261015/aggregate/event_strata.csv",
+      "sha256": "8aeb506536681cc8e043ac7e985ca36ae36758ebbb25de1ee721be861f0f7d87"
+    },
+    {
+      "path": "跨库分辨率与异质性分析_20261015/aggregate/summary.csv",
+      "sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054"
+    },
+    {
+      "path": "跨库分辨率与异质性分析_20261015/交付文件/aggregate/event_strata.csv",
+      "sha256": "8aeb506536681cc8e043ac7e985ca36ae36758ebbb25de1ee721be861f0f7d87"
+    },
+    {
+      "path": "跨库分辨率与异质性分析_20261015/交付文件/aggregate/summary.csv",
+      "sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054"
+    },
+    {
+      "path": "跨库分辨率与异质性分析_20261015/restricted/MIMIC_strata.csv.gz",
+      "sha256": "6f0756d5ade46540646aa56e738e34de09d458e88f2a3b297a8ffc8eb7d3cb93"
+    },
+    {
+      "path": "跨库分辨率与异质性分析_20261015/restricted/MIMIC_components.csv.gz",
+      "sha256": "84a00746608637ce4a68c06cec9fd8a9c6c337360ed0f8278c28cd7ce6ebf01c"
+    }
+  ]
+}

@@ -31,7 +31,7 @@ for j,n in enumerate([1,3,5]):
     g=base.query('normal_sec==20 and metric=="persistent_low" and interval_min==@n').sort_values('horizon_sec')
     b.errorbar(g.horizon_sec+(j-1)*2,100*g.estimate,yerr=[100*(g.estimate-g.lo),100*(g.hi-g.estimate)],marker='o',color=C[j],capsize=3,label=f'{n} min')
     rows.extend(dict(figure=3,panel='B',**r) for r in g.to_dict('records'))
-b.set(xticks=[60,120],xlim=(45,135),ylim=(0,60),xlabel='Time since recovery confirmation (s)',ylabel='Persistent low display (%)',title='B  After distinct recovery');b.legend(frameon=False,fontsize=8)
+b.set(xticks=[60,120],xlim=(45,135),ylim=(-2,60),xlabel='Time since recovery confirmation (s)',ylabel='Persistent low display (%)',title='B  After distinct recovery');b.legend(frameon=False,fontsize=8)
 left=np.zeros(3)
 for m,label,col in [('persistent_low','Persistent low',C[1]),('display_cleared','Display cleared',C[0]),('reference_recurred','Recurrence first',C[3]),('unknown','Unknown','#B9BFC3')]:
     g=base.query('normal_sec==20 and horizon_sec==120 and metric==@m').sort_values('interval_min');vals=100*g.estimate.to_numpy()

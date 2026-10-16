@@ -68,7 +68,7 @@
           ],
           [
             "Release status",
-            "Frozen snapshot for reproducibility release v2.0.0, 16 October 2026. Consult the GitHub release record for publication status and its version-specific Zenodo DOI. Earlier v1.5.0 covers the preceding VitalDB analyses."
+            "Reproducibility release v2.0.1, 16 October 2026. Four S15 integer counts corrected; estimates and confidence intervals unchanged. The version-specific Zenodo DOI is recorded at https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.1."
           ],
           [
             "Sources",
@@ -123065,7 +123065,7 @@
             "MIMIC 10 s",
             "60 to <180 s",
             "41",
-            "1573",
+            "1574",
             "31.8 (31.1 to 32.8)",
             "34.7 (28.0 to 38.6)",
             "33.5 (30.2 to 39.7)",
@@ -123087,7 +123087,7 @@
             "MIMIC 10 s",
             "300 to <600 s",
             "36",
-            "352",
+            "353",
             "100.0 (100.0 to 100.0)",
             "0.0 (0.0 to 0.0)",
             "0.0 (0.0 to 0.0)",
@@ -123446,7 +123446,7 @@
             "MIMIC 10 s",
             "60 to <300 s",
             "37",
-            "342",
+            "343",
             "53.7 (48.1 to 58.0)",
             "10.7 (8.5 to 12.2)",
             "35.6 (31.6 to 41.6)",
@@ -123468,7 +123468,7 @@
             "MIMIC 10 s",
             "Unknown",
             "37",
-            "280",
+            "281",
             "70.1 (60.9 to 75.2)",
             "12.3 (7.3 to 15.0)",
             "17.7 (11.2 to 29.7)",

@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "suites": [
+    {
+      "suite": "跨库分辨率与异质性分析_20261015/code",
+      "exit_code": 0,
+      "tests": 30
+    },
+    {
+      "suite": "可靠动脉起点质控重分析_20261015/code",
+      "exit_code": 0,
+      "tests": 17
+    },
+    {
+      "suite": "EJA_临床时间信息修订版_20261016/code",
+      "exit_code": 0,
+      "tests": 10
+    },
+    {
+      "suite": "EJA_审稿意见逐项修订版_20261016/code",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "suite": "MIMIC技术重复分析_20261015/qc",
+      "exit_code": 0,
+      "tests": 9
+    },
+    {
+      "suite": "MIMIC技术重复分析_20261015/analysis/tests",
+      "exit_code": 0,
+      "tests": 17
+    },
+    {
+      "suite": "SICdb分钟级对齐分析_20261015/code",
+      "exit_code": 0,
+      "tests": 44
+    },
+    {
+      "suite": "外部验证可行性审计_20261015/mimic",
+      "exit_code": 0,
+      "tests": 13
+    },
+    {
+      "suite": "跨库分辨率与异质性分析_20261015/code/independent_verify.py",
+      "exit_code": 0,
+      "tests": 22
+    },
+    {
+      "suite": "可靠动脉起点质控重分析_20261015/code/audit_raw.py",
+      "exit_code": 0,
+      "tests": 12
+    },
+    {
+      "suite": "可靠动脉起点质控重分析_20261015/code/audit_documented_encoding.py",
+      "exit_code": 0,
+      "tests": 9
+    }
+  ],
+  "tests": 189,
+  "scope": "Synthetic tests only; no source cohort execution or clinical adjudication."
+}

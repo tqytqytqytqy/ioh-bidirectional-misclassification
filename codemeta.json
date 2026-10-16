@@ -3,9 +3,9 @@
   "@type": "SoftwareSourceCode",
   "name": "Temporal information loss with intermittent blood pressure display: a retrospective intraoperative study with cross-database technical replication: reproducibility package",
   "description": "Analysis source code, frozen analysis rules, aggregate results, scientific figures and a 25-worksheet results workbook for intermittent blood pressure display in VitalDB, with technical replication using MIMIC-IV Waveform v0.1.0 and SICdb v1.0.8. This version adds source-resolution bridging, patient-equal summaries, event-feature strata, objective onset sensitivities, distinct-recovery analyses and common-valid-time comparisons. It preserves differing directions across scenarios. It contains no raw datasets, patient-level derivatives or manuscript files. Full statistical recomputation requires independently authorised source data and local caches. Release validation is distinguished from the earlier source-data analyses; a new clean-room raw-to-results run is not claimed.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "codeRepository": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
-  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.0",
+  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.1",
   "datePublished": "2026-10-16",
   "license": "https://spdx.org/licenses/MIT",
   "programmingLanguage": [

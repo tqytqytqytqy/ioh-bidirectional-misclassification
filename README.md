@@ -1,6 +1,6 @@
 # Temporal information loss with intermittent blood pressure display
 
-## Reproducibility package v2.0.0
+## Reproducibility package v2.0.1
 
 This package accompanies a retrospective intraoperative study using VitalDB,
 with cross-database technical replication in MIMIC-IV Waveform v0.1.0 and
@@ -12,6 +12,15 @@ remain displayed after confirmed recovery. Aggregate exposure, event information
 and measurement freshness describe different aspects of intermittent monitoring.
 Comparisons across recording resolutions and patient-weighting schemes show
 where conclusions depend on the measurement and analysis conventions.
+
+## Patch v2.0.1
+
+Four S15 displayed event counts are corrected (1573 to 1574; 352 to 353;
+342 to 343; 280 to 281). Near-integer floating-point residues had been
+truncated during presentation. Frozen aggregates, effect estimates and CIs
+are unchanged. All four figures now have native editable PowerPoint objects.
+Figure 3B has extra lower-axis clearance for the zero estimate.
+The preceding v2.0.0 / DOI 10.5281/zenodo.23414088 remains available.
 
 ## Current results
 
@@ -71,7 +80,7 @@ licences and data-use restrictions remain separate.
 ## Versions and citation
 
 Use the version-specific Zenodo DOI shown in the
-[v2.0.0 release record](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.0).
+[v2.0.1 release record](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.1).
 The preceding [v1.5.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0)
 and [DOI 10.5281/zenodo.23255075](https://doi.org/10.5281/zenodo.23255075)
 remain unchanged. They cover earlier VitalDB analyses, not this extension.

@@ -1,0 +1,42 @@
+{
+  "version": "v2.0.1",
+  "workbook_changes_vs_reviewed_revision": [
+    [
+      "00_Readme",
+      "B20"
+    ]
+  ],
+  "original_reviewed_workbook_sha256": "f21530a23fe856c8582d2b679f5260937d96443d9f3715edd56f9362465c702d",
+  "release_workbook_sha256": "fc041b4e6c7becc30d46bbabe68cd6ee8f41fe0a201123220c38b77da60e0152",
+  "figure_package_note_changes": [
+    {
+      "file": "Figure_2_Episode_information_editable.pptx",
+      "changed_parts": [
+        "ppt/notesSlides/notesSlide1.xml"
+      ],
+      "slide_content_unchanged": true
+    },
+    {
+      "file": "Figure_3_Infusion_recovery_editable.pptx",
+      "changed_parts": [
+        "ppt/notesSlides/notesSlide1.xml"
+      ],
+      "slide_content_unchanged": true
+    },
+    {
+      "file": "Figure_4_Resolution_weighting_editable.pptx",
+      "changed_parts": [
+        "ppt/notesSlides/notesSlide1.xml"
+      ],
+      "slide_content_unchanged": true
+    },
+    {
+      "file": "Figure_1_flow_editable.pptx",
+      "changed_parts": [],
+      "slide_content_unchanged": true
+    }
+  ],
+  "source_data_refit": false,
+  "clinical_adjudication": false,
+  "scientific_estimates_and_confidence_intervals_unchanged": true
+}

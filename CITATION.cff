@@ -3,11 +3,11 @@
   "message": "Please cite the version-specific Zenodo software record for this release.",
   "type": "software",
   "title": "Temporal information loss with intermittent blood pressure display: a retrospective intraoperative study with cross-database technical replication: reproducibility package",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "date-released": "2026-10-16",
   "license": "MIT",
   "repository-code": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
-  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.0",
+  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.1",
   "authors": [
     {
       "family-names": "Teng",

@@ -111,7 +111,9 @@
     "source": "EJA_审稿意见逐项修订版_20261016/code/build_figures.py",
     "target": "source_layout/EJA_审稿意见逐项修订版_20261016/code/build_figures.py",
     "source_sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8",
-    "sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8"
+    "sha256": "f00ad9ade13f34fd2dd508cef1823cbc0da7505763940af58d5b0838c15aaba9",
+    "previous_public_sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8",
+    "change": "v2.0.1: presentation/count or figure-layout correction; scientific estimates unchanged."
   },
   {
     "source": "可靠动脉起点质控重分析_20261015/code/qc_onset.py",
@@ -512,7 +514,9 @@
     "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_3_Infusion_recovery.png",
     "target": "current/figures/Figure_3_Infusion_recovery.png",
     "source_sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d",
-    "sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d"
+    "sha256": "9ba0ca4ea0ef80cc0f3dec730ca874b6afff3a1a63dfdd045532863a3ddcc2df",
+    "previous_public_sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d",
+    "change": "v2.0.1: presentation/count or figure-layout correction; scientific estimates unchanged."
   },
   {
     "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_4_Resolution_weighting.png",
@@ -524,7 +528,9 @@
     "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_3_Infusion_recovery.svg",
     "target": "current/figures/Figure_3_Infusion_recovery.svg",
     "source_sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe",
-    "sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe"
+    "sha256": "a3579ec1333c24245d2aa89607112fa83fd1f35f0d68ab9ce8b625fd2f15df95",
+    "previous_public_sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe",
+    "change": "v2.0.1: presentation/count or figure-layout correction; scientific estimates unchanged."
   },
   {
     "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_1_flow_editable.pptx",
@@ -549,8 +555,9 @@
     "source": "EJA_SDC2精简投稿版_20261016/qa/workbook_plan.json",
     "target": "current/presentation/workbook_plan.json",
     "source_sha256": "f4ad973e2e6fdef919b5e6354b7fe3ab8e605e10e7a386e5e0283e0169e7330b",
-    "sha256": "3fc3436f998482425e7b93aa0c2680737ada80630b6d8e7a68511b125ae5305c",
-    "change": "Release-status explanation only; result cells and analysis parameters unchanged."
+    "sha256": "2e04a540997faf44e195111c7364c1ade91c3369f213f16e98e5e2d194339d87",
+    "change": "v2.0.1: presentation/count or figure-layout correction; scientific estimates unchanged.",
+    "previous_public_sha256": "3fc3436f998482425e7b93aa0c2680737ada80630b6d8e7a68511b125ae5305c"
   },
   {
     "source": "EJA_审稿意见逐项修订版_20261016/04_本地可复现包/environment_versions.json",

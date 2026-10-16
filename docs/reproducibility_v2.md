@@ -7,14 +7,15 @@ Use Python 3.12 with `current/requirements.txt`. From the repository root:
 ```sh
 python -B current/code/test_extension.py
 python -B code/run_synthetic_tests.py
+node current/code/count_integrity.mjs
 python -B source_layout/EJA_审稿意见逐项修订版_20261016/code/build_figures.py
 node current/code/build_workbook.mjs
 python -B current/code/verify_snapshot.py
 ```
 
 The first two commands use synthetic inputs. The figure command rebuilds Figures
-3 and 4 from aggregate CSVs. Figure 1 has an editable PowerPoint source; Figure 2
-has an editable SVG and an illustrative schematic, not a patient trace. Final
+3 and 4 from aggregate CSVs. All four figures have native editable PowerPoint
+objects. Figure 2 also has an editable SVG and an illustrative schematic, not a patient trace. Final
 figures are supplied in `current/figures/`.
 
 The workbook builder uses `@oai/artifact-tool` and included aggregate JSON. It
@@ -23,6 +24,11 @@ without that package. Rebuilt XLSX metadata may vary; logical cells, not ZIP byt
 should be compared. The snapshot verifier checks workbook values against JSON,
 privacy boundaries and scientific identities. Historical numerical QA records
 describe their original execution, not a new execution during release.
+
+Version 2.0.1 also validates four corrected S15 display counts against the
+unchanged detailed aggregate values and checks 15 source/feature partitions.
+The integer conversion rejects non-integer counts; it rounds only negligible
+floating-point residue instead of truncating it. No effect estimates were refitted.
 
 ## Scientific calculation chain
 

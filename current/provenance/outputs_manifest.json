@@ -1,11 +1,16 @@
 {
-  "version": "v2.0.0",
+  "version": "v2.0.1",
   "scope": "Current extension; self excluded. Complete package covered by root checksums.sha256.",
   "files": [
     {
       "path": "current/code/build_workbook.mjs",
-      "bytes": 6273,
-      "sha256": "8893af00ae1db9f35c8ee7da795676a0b741d4d6cdf20992979951fb7bc78b07"
+      "bytes": 6520,
+      "sha256": "783117de46bcf9c3abe8a05f9ed18208aae3a3522ca9c623c572feb07427981b"
+    },
+    {
+      "path": "current/code/count_integrity.mjs",
+      "bytes": 2206,
+      "sha256": "360f4983743cc348ea49f1583214565c92ec44b1bc32f27ade8c466af0f6bc10"
     },
     {
       "path": "current/code/test_extension.py",
@@ -38,14 +43,24 @@
       "sha256": "587d885d88985b0d93255e93e0f4d916209d192aebbae7d32ae9bc7ee926d646"
     },
     {
+      "path": "current/figures/Figure_2_Episode_information_editable.pptx",
+      "bytes": 25495,
+      "sha256": "fd018ee381b0f358f2a86c35cbd079b73eb22d2b1b807931bef18532f1859506"
+    },
+    {
       "path": "current/figures/Figure_3_Infusion_recovery.png",
-      "bytes": 533577,
-      "sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d"
+      "bytes": 429294,
+      "sha256": "9ba0ca4ea0ef80cc0f3dec730ca874b6afff3a1a63dfdd045532863a3ddcc2df"
     },
     {
       "path": "current/figures/Figure_3_Infusion_recovery.svg",
-      "bytes": 40767,
-      "sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe"
+      "bytes": 36413,
+      "sha256": "a3579ec1333c24245d2aa89607112fa83fd1f35f0d68ab9ce8b625fd2f15df95"
+    },
+    {
+      "path": "current/figures/Figure_3_Infusion_recovery_editable.pptx",
+      "bytes": 33801,
+      "sha256": "afd93a38b8e35c814738b1b430951c2309705a2fba33e309e10ad26777d5c634"
     },
     {
       "path": "current/figures/Figure_4_Resolution_weighting.png",
@@ -58,9 +73,14 @@
       "sha256": "38dd75107e884dcb70d51e4f058aaa9611b98f2d29ed89d7c53ac0b8336625fb"
     },
     {
+      "path": "current/figures/Figure_4_Resolution_weighting_editable.pptx",
+      "bytes": 32254,
+      "sha256": "e0cd74d1a94e13bee22122aaa166ac5b368f7986b1f5bc4b7d8d0ceba9450946"
+    },
+    {
       "path": "current/presentation/workbook_plan.json",
-      "bytes": 3450356,
-      "sha256": "3fc3436f998482425e7b93aa0c2680737ada80630b6d8e7a68511b125ae5305c"
+      "bytes": 3450405,
+      "sha256": "2e04a540997faf44e195111c7364c1ade91c3369f213f16e98e5e2d194339d87"
     },
     {
       "path": "current/provenance/additional_dependency_hashes.json",
@@ -103,9 +123,19 @@
       "sha256": "9edd5c9e828d8e129ff7b2262066b39239063fd001b24abcbb06e04ec9fe6e75"
     },
     {
+      "path": "current/provenance/patch_verification.json",
+      "bytes": 1176,
+      "sha256": "51241aa6b4d46b6aca1ec2c616e8754476c4ad8f7d9e15bea525aba01058ec0d"
+    },
+    {
       "path": "current/provenance/release_assembly_verification.json",
       "bytes": 639,
       "sha256": "f778c401b9207ccf1558f46e5101154dfd7ac88a2c4d143c076381e9b25398b0"
+    },
+    {
+      "path": "current/provenance/s15_count_correction.json",
+      "bytes": 9213,
+      "sha256": "76428f36d9b234fd01972f88f17a06ec1f5a4d5eea4ed79461029ecd1810d101"
     },
     {
       "path": "current/provenance/snapshot_check.json",
@@ -114,8 +144,18 @@
     },
     {
       "path": "current/provenance/source_file_map.json",
-      "bytes": 36098,
-      "sha256": "888d3d96545f0f0f58532803a96d5eefa7740a138539599b12dc48e919276ed3"
+      "bytes": 36812,
+      "sha256": "e77ee3349209674a45fdcdb9100bccb5c3730b68ec581796ef2ec3f93d60494b"
+    },
+    {
+      "path": "current/provenance/v2.0.1_extension_tests.json",
+      "bytes": 1488,
+      "sha256": "dda4cdbfb42083c15c28a5cccf78c2007e247c4c371bb3fc6f6e663c2349b2ca"
+    },
+    {
+      "path": "current/provenance/v2.0.1_legacy_tests.json",
+      "bytes": 1021,
+      "sha256": "1e4003643a16f33bbc123ef8272d02943ffd005bc0e11f22b2225babcad0a042"
     },
     {
       "path": "current/provenance/workbook_layout.json",
@@ -134,8 +174,8 @@
     },
     {
       "path": "current/workbook/10_SDC2_Consolidated_Workbook.xlsx",
-      "bytes": 723466,
-      "sha256": "2fac0691c4141f90860fb08863fbc90f74ccda3bffcbe20ba5279b2362549426"
+      "bytes": 745010,
+      "sha256": "fc041b4e6c7becc30d46bbabe68cd6ee8f41fe0a201123220c38b77da60e0152"
     },
     {
       "path": "source_layout/EJA_临床时间信息修订版_20261016/03_方案与结果来源/aggregate/summary.csv",
@@ -259,8 +299,8 @@
     },
     {
       "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/build_figures.py",
-      "bytes": 6758,
-      "sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8"
+      "bytes": 6759,
+      "sha256": "f00ad9ade13f34fd2dd508cef1823cbc0da7505763940af58d5b0838c15aaba9"
     },
     {
       "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/independent_verify.py",
