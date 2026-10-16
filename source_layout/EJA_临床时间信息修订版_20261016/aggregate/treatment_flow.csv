@@ -1,0 +1,4 @@
+scenario,eligible,low,recovered,low_patients,recovery_patients
+core60,547,207,167,75,71
+original_all,640,236,184,83,78
+original_matched_core60,548,207,167,75,71

@@ -1,12 +1,13 @@
 {
-  "version": "v1.5.0",
-  "analysis_version": "v1.5.0-algorithmic-qc",
+  "version": "v2.0.0",
   "state": "FROZEN_RELEASE_SNAPSHOT",
-  "availability": "VERIFY_EXTERNAL_RELEASE_RECORD",
+  "public_status": "VERIFY_GITHUB_AND_ZENODO_RECORDS",
+  "current_main_tables": 3,
+  "current_supplementary_tables": 21,
+  "current_workbook_sheets": 25,
   "clinical_adjudication": "NOT_PERFORMED",
-  "quality_control_basis": "RULE_BASED_SIGNAL_QUALITY_SENSITIVITIES",
   "release_assembly_refit": false,
-  "current_supplementary_tables": 16,
-  "supplementary_figures": 2,
-  "workbook_sheets": 72
+  "current_results": "current/",
+  "scientific_code": "source_layout/",
+  "historical_code_and_outputs": "Legacy root code, extensions and outputs are retained for provenance; their table numbering is superseded."
 }

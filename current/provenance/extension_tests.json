@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "suites": [
+    {
+      "suite": "\u8de8\u5e93\u5206\u8fa8\u7387\u4e0e\u5f02\u8d28\u6027\u5206\u6790_20261015/code",
+      "exit_code": 0,
+      "tests": 30
+    },
+    {
+      "suite": "\u53ef\u9760\u52a8\u8109\u8d77\u70b9\u8d28\u63a7\u91cd\u5206\u6790_20261015/code",
+      "exit_code": 0,
+      "tests": 17
+    },
+    {
+      "suite": "EJA_\u4e34\u5e8a\u65f6\u95f4\u4fe1\u606f\u4fee\u8ba2\u7248_20261016/code",
+      "exit_code": 0,
+      "tests": 10
+    },
+    {
+      "suite": "EJA_\u5ba1\u7a3f\u610f\u89c1\u9010\u9879\u4fee\u8ba2\u7248_20261016/code",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "suite": "MIMIC\u6280\u672f\u91cd\u590d\u5206\u6790_20261015/qc",
+      "exit_code": 0,
+      "tests": 9
+    },
+    {
+      "suite": "MIMIC\u6280\u672f\u91cd\u590d\u5206\u6790_20261015/analysis/tests",
+      "exit_code": 0,
+      "tests": 17
+    },
+    {
+      "suite": "SICdb\u5206\u949f\u7ea7\u5bf9\u9f50\u5206\u6790_20261015/code",
+      "exit_code": 0,
+      "tests": 44
+    },
+    {
+      "suite": "\u5916\u90e8\u9a8c\u8bc1\u53ef\u884c\u6027\u5ba1\u8ba1_20261015/mimic",
+      "exit_code": 0,
+      "tests": 13
+    },
+    {
+      "suite": "\u8de8\u5e93\u5206\u8fa8\u7387\u4e0e\u5f02\u8d28\u6027\u5206\u6790_20261015/code/independent_verify.py",
+      "exit_code": 0,
+      "tests": 22
+    },
+    {
+      "suite": "\u53ef\u9760\u52a8\u8109\u8d77\u70b9\u8d28\u63a7\u91cd\u5206\u6790_20261015/code/audit_raw.py",
+      "exit_code": 0,
+      "tests": 12
+    },
+    {
+      "suite": "\u53ef\u9760\u52a8\u8109\u8d77\u70b9\u8d28\u63a7\u91cd\u5206\u6790_20261015/code/audit_documented_encoding.py",
+      "exit_code": 0,
+      "tests": 9
+    }
+  ],
+  "tests": 189,
+  "scope": "Synthetic tests only; no source cohort execution or clinical adjudication."
+}

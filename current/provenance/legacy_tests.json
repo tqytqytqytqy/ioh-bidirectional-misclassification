@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "tests": 187,
+  "suites": [
+    67,
+    13,
+    11,
+    13,
+    74,
+    9
+  ],
+  "scope": "Synthetic inputs only; run during v2.0.0 assembly. No source-data statistical refit."
+}

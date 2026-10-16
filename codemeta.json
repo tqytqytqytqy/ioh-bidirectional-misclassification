@@ -1,12 +1,12 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "name": "Temporal observability of intraoperative hypotension with an emulated 5-minute blood pressure display: reproducibility package",
-  "description": "Analysis code, configuration templates, reproducibility manifests, figure source data, editable scientific figures, the final workbook and non-identifiable aggregate results for a retrospective waveform study of intermittent blood pressure display. Version 1.5.0 retains the original analyses and adds the completed rule-based startup signal-quality sensitivities, consolidated supplementary-table presentation and current artwork. Independent physician clinical adjudication was not performed. The emulation describes displayed information on fixed recorded arterial trajectories and does not estimate monitoring-related treatment delay or patient-outcome benefit. This release assembly does not rerun source-data analyses. Raw VitalDB, MoVeR and INSPIRE datasets and case-level derivatives are not redistributed.",
-  "version": "1.5.0",
+  "name": "Temporal information loss with intermittent blood pressure display: a retrospective intraoperative study with cross-database technical replication: reproducibility package",
+  "description": "Analysis source code, frozen analysis rules, aggregate results, scientific figures and a 25-worksheet results workbook for intermittent blood pressure display in VitalDB, with technical replication using MIMIC-IV Waveform v0.1.0 and SICdb v1.0.8. This version adds source-resolution bridging, patient-equal summaries, event-feature strata, objective onset sensitivities, distinct-recovery analyses and common-valid-time comparisons. It preserves differing directions across scenarios. It contains no raw datasets, patient-level derivatives or manuscript files. Full statistical recomputation requires independently authorised source data and local caches. Release validation is distinguished from the earlier source-data analyses; a new clean-room raw-to-results run is not claimed.",
+  "version": "2.0.0",
   "codeRepository": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
-  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0",
-  "datePublished": "2026-10-09",
+  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.0",
+  "datePublished": "2026-10-16",
   "license": "https://spdx.org/licenses/MIT",
   "programmingLanguage": [
     "Python",
@@ -17,10 +17,11 @@
     "anaesthesia",
     "intraoperative hypotension",
     "blood pressure monitoring",
-    "temporal observability",
     "measurement freshness",
-    "vasopressor infusion",
     "VitalDB",
+    "MIMIC-IV Waveform",
+    "SICdb",
+    "resolution bridging",
     "reproducibility"
   ],
   "author": [

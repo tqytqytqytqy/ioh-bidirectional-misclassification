@@ -1,0 +1,19 @@
+{
+  "contract_sha256": "7f44211c428cd6c54835c4395fc29fb9ae0bfe4c7756aacfb2dfd582ce48c09b",
+  "copy_method": "Byte-for-byte local copies; no original output tables imported or invoked",
+  "source_paths_relative_to_project": true,
+  "vendored": [
+    {
+      "source": "analysis_v10_subject_phase_release/src/ioh/estimands/decomposition.py",
+      "copy": "original_decomposition.py",
+      "sha256": "ff90d26680e816ceac40033b285c3b42937c4ded38fcd96340a0f01e406714cd",
+      "used_functions": ["decompose_deficit"]
+    },
+    {
+      "source": "EJA_投稿文件包_20261006_最终文字修订/03_可复现材料/extensions/events/event_extension.py",
+      "copy": "original_events.py",
+      "sha256": "e42f4af35d62025532ed6ebff105db9c65a066d0115d8436af70a7c4c2e905ec",
+      "used_functions": ["held_display", "reference_events", "classify_events"]
+    }
+  ]
+}

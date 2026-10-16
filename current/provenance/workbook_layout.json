@@ -1,0 +1,1034 @@
+[
+  {
+    "name": "00_Readme",
+    "rows": 51,
+    "cols": 2,
+    "sections": [
+      {
+        "label": "Scope and interpretation",
+        "headerRow": 5,
+        "range": "A5:B21",
+        "rows": 17,
+        "cols": 2,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Contents",
+        "headerRow": 25,
+        "range": "A25:B49",
+        "rows": 25,
+        "cols": 2,
+        "labelRow": 24,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "Table_1",
+    "rows": 24,
+    "cols": 4,
+    "sections": [
+      {
+        "label": "Current main table 1",
+        "headerRow": 5,
+        "range": "A5:D20",
+        "rows": 16,
+        "cols": 4,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "Table_2",
+    "rows": 15,
+    "cols": 9,
+    "sections": [
+      {
+        "label": "Current main table 2",
+        "headerRow": 5,
+        "range": "A5:I8",
+        "rows": 4,
+        "cols": 9,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "Table_3",
+    "rows": 22,
+    "cols": 5,
+    "sections": [
+      {
+        "label": "Current main table 3, panel A",
+        "headerRow": 5,
+        "range": "A5:E8",
+        "rows": 4,
+        "cols": 5,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Current main table 3, panel B",
+        "headerRow": 12,
+        "range": "A12:D15",
+        "rows": 4,
+        "cols": 4,
+        "labelRow": 11,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S01_Cohort",
+    "rows": 64,
+    "cols": 5,
+    "sections": [
+      {
+        "label": "Current Table S1",
+        "headerRow": 5,
+        "range": "A5:E34",
+        "rows": 30,
+        "cols": 5,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Cuff-record classification audit",
+        "headerRow": 38,
+        "range": "A38:D42",
+        "rows": 5,
+        "cols": 4,
+        "labelRow": 37,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Cuff-record source-output audit",
+        "headerRow": 47,
+        "range": "A47:C57",
+        "rows": 11,
+        "cols": 3,
+        "labelRow": 46,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S02_Episodes",
+    "rows": 33,
+    "cols": 6,
+    "sections": [
+      {
+        "label": "A. Visibility by threshold and interval",
+        "headerRow": 5,
+        "range": "A5:F20",
+        "rows": 16,
+        "cols": 6,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. New and inherited low display",
+        "headerRow": 24,
+        "range": "A24:B28",
+        "rows": 5,
+        "cols": 2,
+        "labelRow": 23,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S03_Exposure",
+    "rows": 233,
+    "cols": 7,
+    "sections": [
+      {
+        "label": "Current Table S3",
+        "headerRow": 5,
+        "range": "A5:F11",
+        "rows": 7,
+        "cols": 6,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Absolute exposure and event counts: thresholds 55, 60 and 65 mmHg",
+        "headerRow": 15,
+        "range": "A15:G197",
+        "rows": 183,
+        "cols": 7,
+        "labelRow": 14,
+        "repeatedNoteRows": [
+          181,
+          182
+        ]
+      },
+      {
+        "label": "Directional deficit by threshold and interval",
+        "headerRow": 201,
+        "range": "A201:G218",
+        "rows": 18,
+        "cols": 7,
+        "labelRow": 200,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Original burden versus completed-bin timing grid",
+        "headerRow": 222,
+        "range": "A222:B229",
+        "rows": 8,
+        "cols": 2,
+        "labelRow": 221,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S04_Case_Variation",
+    "rows": 16,
+    "cols": 4,
+    "sections": [
+      {
+        "label": "Current Table S4",
+        "headerRow": 5,
+        "range": "A5:D12",
+        "rows": 8,
+        "cols": 4,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S05_New_Readings",
+    "rows": 323,
+    "cols": 14,
+    "sections": [
+      {
+        "label": "A. By 60 s",
+        "headerRow": 5,
+        "range": "A5:D10",
+        "rows": 6,
+        "cols": 4,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. By 120 s",
+        "headerRow": 14,
+        "range": "A14:D19",
+        "rows": 6,
+        "cols": 4,
+        "labelRow": 13,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading states: original cohort, equal-event weights",
+        "headerRow": 23,
+        "range": "A23:N131",
+        "rows": 109,
+        "cols": 14,
+        "labelRow": 22,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading states: original cohort, equal-patient weights",
+        "headerRow": 135,
+        "range": "A135:N243",
+        "rows": 109,
+        "cols": 14,
+        "labelRow": 134,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading interval contrasts",
+        "headerRow": 247,
+        "range": "A247:N319",
+        "rows": 73,
+        "cols": 14,
+        "labelRow": 246,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S06_Recovery_States",
+    "rows": 61,
+    "cols": 13,
+    "sections": [
+      {
+        "label": "A. By 60 s",
+        "headerRow": 5,
+        "range": "A5:D9",
+        "rows": 5,
+        "cols": 4,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. By 120 s",
+        "headerRow": 13,
+        "range": "A13:D17",
+        "rows": 5,
+        "cols": 4,
+        "labelRow": 12,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Distinct-recovery primary states and unknown bounds",
+        "headerRow": 21,
+        "range": "A21:M57",
+        "rows": 37,
+        "cols": 13,
+        "labelRow": 20,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S07_Recovery_Sensitivity",
+    "rows": 597,
+    "cols": 13,
+    "sections": [
+      {
+        "label": "Current Table S7",
+        "headerRow": 5,
+        "range": "A5:G14",
+        "rows": 10,
+        "cols": 7,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Recovery definition and weighting: full original cohort",
+        "headerRow": 18,
+        "range": "A18:M414",
+        "rows": 397,
+        "cols": 13,
+        "labelRow": 17,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Recovery interval contrasts: full original cohort",
+        "headerRow": 418,
+        "range": "A418:M562",
+        "rows": 145,
+        "cols": 13,
+        "labelRow": 417,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Recovery eligibility and deduplication",
+        "headerRow": 566,
+        "range": "A566:I569",
+        "rows": 4,
+        "cols": 9,
+        "labelRow": 565,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Separate estimand: adjustment-pair restricted mean",
+        "headerRow": 573,
+        "range": "A573:L576",
+        "rows": 4,
+        "cols": 12,
+        "labelRow": 572,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Restricted-mean stopping reasons",
+        "headerRow": 581,
+        "range": "A581:C593",
+        "rows": 13,
+        "cols": 3,
+        "labelRow": 580,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S08_Onset_QC",
+    "rows": 1790,
+    "cols": 14,
+    "sections": [
+      {
+        "label": "Current Table S8",
+        "headerRow": 5,
+        "range": "A5:E8",
+        "rows": 4,
+        "cols": 5,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading states: matched reference and objective-onset sensitivity, equal-event weights",
+        "headerRow": 12,
+        "range": "A12:N228",
+        "rows": 217,
+        "cols": 14,
+        "labelRow": 11,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading states: matched reference and objective-onset sensitivity, equal-patient weights",
+        "headerRow": 232,
+        "range": "A232:N448",
+        "rows": 217,
+        "cols": 14,
+        "labelRow": 231,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Onset-matched recovery sensitivity: states",
+        "headerRow": 452,
+        "range": "A452:M1316",
+        "rows": 865,
+        "cols": 13,
+        "labelRow": 451,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Onset-matched recovery sensitivity: states Contrast",
+        "headerRow": 1320,
+        "range": "A1320:M1608",
+        "rows": 289,
+        "cols": 13,
+        "labelRow": 1319,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Onset-matched recovery sensitivity: states N",
+        "headerRow": 1612,
+        "range": "A1612:I1618",
+        "rows": 7,
+        "cols": 9,
+        "labelRow": 1611,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Completed-bin cohort denominators",
+        "headerRow": 1622,
+        "range": "A1622:H1625",
+        "rows": 4,
+        "cols": 8,
+        "labelRow": 1621,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Matched event-start changes",
+        "headerRow": 1629,
+        "range": "A1629:B1638",
+        "rows": 10,
+        "cols": 2,
+        "labelRow": 1628,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading interval contrasts",
+        "headerRow": 1642,
+        "range": "A1642:N1786",
+        "rows": 145,
+        "cols": 14,
+        "labelRow": 1641,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S09_Event_Features",
+    "rows": 2186,
+    "cols": 14,
+    "sections": [
+      {
+        "label": "Current Table S9",
+        "headerRow": 5,
+        "range": "A5:E10",
+        "rows": 6,
+        "cols": 5,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Timing by prespecified event features: equal-event weights",
+        "headerRow": 14,
+        "range": "A14:N824",
+        "rows": 811,
+        "cols": 14,
+        "labelRow": 13,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Timing by prespecified event features: equal-patient weights",
+        "headerRow": 828,
+        "range": "A828:N1638",
+        "rows": 811,
+        "cols": 14,
+        "labelRow": 827,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fresh-reading interval contrasts",
+        "headerRow": 1642,
+        "range": "A1642:N2182",
+        "rows": 541,
+        "cols": 14,
+        "labelRow": 1641,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S10_Startup_QC",
+    "rows": 238,
+    "cols": 17,
+    "sections": [
+      {
+        "label": "A. Episode definitions",
+        "headerRow": 5,
+        "range": "A5:G14",
+        "rows": 10,
+        "cols": 7,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. Startup quality rules",
+        "headerRow": 18,
+        "range": "A18:E32",
+        "rows": 15,
+        "cols": 5,
+        "labelRow": 17,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Absolute interval summaries under startup quality rules",
+        "headerRow": 36,
+        "range": "A36:G52",
+        "rows": 17,
+        "cols": 7,
+        "labelRow": 35,
+        "repeatedNoteRows": [
+          14,
+          15
+        ]
+      },
+      {
+        "label": "Startup quality populations and removed time",
+        "headerRow": 56,
+        "range": "A56:I61",
+        "rows": 6,
+        "cols": 9,
+        "labelRow": 55,
+        "repeatedNoteRows": [
+          5
+        ]
+      },
+      {
+        "label": "Startup episode-state estimates",
+        "headerRow": 65,
+        "range": "A65:O126",
+        "rows": 62,
+        "cols": 15,
+        "labelRow": 64,
+        "repeatedNoteRows": [
+          61
+        ]
+      },
+      {
+        "label": "Episode definition and startup robustness",
+        "headerRow": 130,
+        "range": "A130:Q167",
+        "rows": 38,
+        "cols": 17,
+        "labelRow": 129,
+        "repeatedNoteRows": [
+          37
+        ]
+      },
+      {
+        "label": "Startup directional AUC ratios",
+        "headerRow": 171,
+        "range": "A171:O232",
+        "rows": 62,
+        "cols": 15,
+        "labelRow": 170,
+        "repeatedNoteRows": [
+          61
+        ]
+      }
+    ]
+  },
+  {
+    "name": "S11_Infusion_Sensitivity",
+    "rows": 535,
+    "cols": 13,
+    "sections": [
+      {
+        "label": "Current Table S11",
+        "headerRow": 5,
+        "range": "A5:D12",
+        "rows": 8,
+        "cols": 4,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Infusion-adjustment display-state sensitivities",
+        "headerRow": 16,
+        "range": "A16:I101",
+        "rows": 86,
+        "cols": 9,
+        "labelRow": 15,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Startup sensitivity of infusion states and pair-restricted persistence",
+        "headerRow": 105,
+        "range": "A105:M530",
+        "rows": 426,
+        "cols": 13,
+        "labelRow": 104,
+        "repeatedNoteRows": [
+          425
+        ]
+      }
+    ]
+  },
+  {
+    "name": "S12_Cross_Cohorts",
+    "rows": 64,
+    "cols": 9,
+    "sections": [
+      {
+        "label": "Current Table S12",
+        "headerRow": 5,
+        "range": "A5:H10",
+        "rows": 6,
+        "cols": 8,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "All 42 frozen cohort and evaluable-time configurations",
+        "headerRow": 14,
+        "range": "A14:I56",
+        "rows": 43,
+        "cols": 9,
+        "labelRow": 13,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S13_Resolution_Bridge",
+    "rows": 571,
+    "cols": 13,
+    "sections": [
+      {
+        "label": "Current Table S13",
+        "headerRow": 5,
+        "range": "A5:G9",
+        "rows": 5,
+        "cols": 7,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Original paired-support estimates and original confidence intervals",
+        "headerRow": 13,
+        "range": "A13:M221",
+        "rows": 209,
+        "cols": 13,
+        "labelRow": 12,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Common-valid support: estimates",
+        "headerRow": 225,
+        "range": "A225:J433",
+        "rows": 209,
+        "cols": 10,
+        "labelRow": 224,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Common-valid support: minute-minus-10 s contrasts",
+        "headerRow": 437,
+        "range": "A437:I541",
+        "rows": 105,
+        "cols": 9,
+        "labelRow": 436,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Original and common-support denominators",
+        "headerRow": 545,
+        "range": "A545:I561",
+        "rows": 17,
+        "cols": 9,
+        "labelRow": 544,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Valid-time support removed",
+        "headerRow": 565,
+        "range": "A565:I567",
+        "rows": 3,
+        "cols": 9,
+        "labelRow": 564,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S14_Patient_Weighting",
+    "rows": 888,
+    "cols": 20,
+    "sections": [
+      {
+        "label": "A. AUC ratios",
+        "headerRow": 5,
+        "range": "A5:J20",
+        "rows": 16,
+        "cols": 10,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. Episode miss proportion",
+        "headerRow": 24,
+        "range": "A24:J29",
+        "rows": 6,
+        "cols": 10,
+        "labelRow": 23,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Primary intervals and thresholds: pooled and patient-equal estimates",
+        "headerRow": 33,
+        "range": "A33:T813",
+        "rows": 781,
+        "cols": 20,
+        "labelRow": 32,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Defined patient-specific distributions: all 13 metrics",
+        "headerRow": 817,
+        "range": "A817:N882",
+        "rows": 66,
+        "cols": 14,
+        "labelRow": 816,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S15_Cross_Event_Strata",
+    "rows": 480,
+    "cols": 17,
+    "sections": [
+      {
+        "label": "A. Duration",
+        "headerRow": 5,
+        "range": "A5:I25",
+        "rows": 21,
+        "cols": 9,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. Nadir",
+        "headerRow": 29,
+        "range": "A29:I39",
+        "rows": 11,
+        "cols": 9,
+        "labelRow": 28,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "C. Preceding normal interval",
+        "headerRow": 43,
+        "range": "A43:I63",
+        "rows": 21,
+        "cols": 9,
+        "labelRow": 42,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Primary prespecified event strata: pooled and patient-equal estimates",
+        "headerRow": 67,
+        "range": "A67:Q467",
+        "rows": 401,
+        "cols": 17,
+        "labelRow": 66,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S16_Duration_Standardisation",
+    "rows": 47,
+    "cols": 8,
+    "sections": [
+      {
+        "label": "A. Original and standardised fractions",
+        "headerRow": 5,
+        "range": "A5:F14",
+        "rows": 10,
+        "cols": 6,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. Duration-band support",
+        "headerRow": 18,
+        "range": "A18:E27",
+        "rows": 10,
+        "cols": 5,
+        "labelRow": 17,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Fixed-duration-standardised estimates",
+        "headerRow": 31,
+        "range": "A31:H40",
+        "rows": 10,
+        "cols": 8,
+        "labelRow": 30,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S17_Display_Sensitivity",
+    "rows": 936,
+    "cols": 20,
+    "sections": [
+      {
+        "label": "A. VitalDB 10 s",
+        "headerRow": 5,
+        "range": "A5:J13",
+        "rows": 9,
+        "cols": 10,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. MIMIC 10 s",
+        "headerRow": 17,
+        "range": "A17:J23",
+        "rows": 7,
+        "cols": 10,
+        "labelRow": 16,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "C. VitalDB 1 min",
+        "headerRow": 27,
+        "range": "A27:J36",
+        "rows": 10,
+        "cols": 10,
+        "labelRow": 26,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "D. MIMIC 1 min",
+        "headerRow": 40,
+        "range": "A40:J47",
+        "rows": 8,
+        "cols": 10,
+        "labelRow": 39,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "E. SICdb 1 min",
+        "headerRow": 51,
+        "range": "A51:J58",
+        "rows": 8,
+        "cols": 10,
+        "labelRow": 50,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Initialisation, display-carry and reference sensitivities",
+        "headerRow": 62,
+        "range": "A62:T894",
+        "rows": 833,
+        "cols": 20,
+        "labelRow": 61,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Original VitalDB cohort: cluster and initial-display sensitivities",
+        "headerRow": 898,
+        "range": "A898:E921",
+        "rows": 24,
+        "cols": 5,
+        "labelRow": 897,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S18_Surgical_Context",
+    "rows": 166,
+    "cols": 20,
+    "sections": [
+      {
+        "label": "A. Source-specific estimates",
+        "headerRow": 5,
+        "range": "A5:I10",
+        "rows": 6,
+        "cols": 9,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. Feasibility definitions",
+        "headerRow": 14,
+        "range": "A14:C23",
+        "rows": 10,
+        "cols": 3,
+        "labelRow": 13,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Source-defined surgical context: pooled and patient-equal estimates",
+        "headerRow": 27,
+        "range": "A27:T157",
+        "rows": 131,
+        "cols": 20,
+        "labelRow": 26,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S19_AKI",
+    "rows": 86,
+    "cols": 15,
+    "sections": [
+      {
+        "label": "A. Ascertainment",
+        "headerRow": 5,
+        "range": "A5:D19",
+        "rows": 15,
+        "cols": 4,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "B. Sequential models",
+        "headerRow": 23,
+        "range": "A23:G27",
+        "rows": 5,
+        "cols": 7,
+        "labelRow": 22,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "C. Secondary and sensitivity models",
+        "headerRow": 31,
+        "range": "A31:F40",
+        "rows": 10,
+        "cols": 6,
+        "labelRow": 30,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Evaluable versus nonevaluable cohort characteristics",
+        "headerRow": 44,
+        "range": "A44:F53",
+        "rows": 10,
+        "cols": 6,
+        "labelRow": 43,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "ASA coding audit",
+        "headerRow": 57,
+        "range": "A57:D61",
+        "rows": 5,
+        "cols": 4,
+        "labelRow": 56,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Original AKI models and ASA sensitivities",
+        "headerRow": 65,
+        "range": "A65:O80",
+        "rows": 16,
+        "cols": 15,
+        "labelRow": 64,
+        "repeatedNoteRows": []
+      }
+    ]
+  },
+  {
+    "name": "S20_Outcome_QC",
+    "rows": 90,
+    "cols": 15,
+    "sections": [
+      {
+        "label": "Current Table S20",
+        "headerRow": 5,
+        "range": "A5:E11",
+        "rows": 7,
+        "cols": 5,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "All retained startup outcome-model sensitivities",
+        "headerRow": 15,
+        "range": "A15:O76",
+        "rows": 62,
+        "cols": 15,
+        "labelRow": 14,
+        "repeatedNoteRows": [
+          61
+        ]
+      },
+      {
+        "label": "Outcome denominators under startup policies",
+        "headerRow": 80,
+        "range": "A80:I85",
+        "rows": 6,
+        "cols": 9,
+        "labelRow": 79,
+        "repeatedNoteRows": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "name": "S21_ICU",
+    "rows": 21,
+    "cols": 15,
+    "sections": [
+      {
+        "label": "Current Table S21",
+        "headerRow": 5,
+        "range": "A5:G8",
+        "rows": 4,
+        "cols": 7,
+        "labelRow": 4,
+        "repeatedNoteRows": []
+      },
+      {
+        "label": "Original ICU models and ASA sensitivities",
+        "headerRow": 12,
+        "range": "A12:O17",
+        "rows": 6,
+        "cols": 15,
+        "labelRow": 11,
+        "repeatedNoteRows": []
+      }
+    ]
+  }
+]

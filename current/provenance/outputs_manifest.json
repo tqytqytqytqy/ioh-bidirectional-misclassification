@@ -1,0 +1,681 @@
+{
+  "version": "v2.0.0",
+  "scope": "Current extension; self excluded. Complete package covered by root checksums.sha256.",
+  "files": [
+    {
+      "path": "current/code/build_workbook.mjs",
+      "bytes": 6273,
+      "sha256": "8893af00ae1db9f35c8ee7da795676a0b741d4d6cdf20992979951fb7bc78b07"
+    },
+    {
+      "path": "current/code/test_extension.py",
+      "bytes": 2537,
+      "sha256": "fbd3f3cd512bf2bd5288a2c60904a68d2e15d745c7ceeed8893f87c5e7b6bbda"
+    },
+    {
+      "path": "current/code/verify_snapshot.py",
+      "bytes": 5875,
+      "sha256": "b4829eeeb5313d34d33744592ea53786cf561485590fb5746d5442368b7493ba"
+    },
+    {
+      "path": "current/figures/Figure_1_flow_600dpi.png",
+      "bytes": 584354,
+      "sha256": "af9e7a37a37c90049fd2cdec43425daf82d22121429b8933375593e4f66c9879"
+    },
+    {
+      "path": "current/figures/Figure_1_flow_editable.pptx",
+      "bytes": 23181,
+      "sha256": "4447495d218e4bbed1c5777e9f4b8ccfbfb11db31937a920839f64896e20fbac"
+    },
+    {
+      "path": "current/figures/Figure_2_Episode_information.png",
+      "bytes": 329072,
+      "sha256": "aaaa7e881fff1006d300c0647d099f934771eff1eb93e6e516600a3557ca9998"
+    },
+    {
+      "path": "current/figures/Figure_2_Episode_information.svg",
+      "bytes": 18267,
+      "sha256": "587d885d88985b0d93255e93e0f4d916209d192aebbae7d32ae9bc7ee926d646"
+    },
+    {
+      "path": "current/figures/Figure_3_Infusion_recovery.png",
+      "bytes": 533577,
+      "sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d"
+    },
+    {
+      "path": "current/figures/Figure_3_Infusion_recovery.svg",
+      "bytes": 40767,
+      "sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe"
+    },
+    {
+      "path": "current/figures/Figure_4_Resolution_weighting.png",
+      "bytes": 291819,
+      "sha256": "2aff0762e7b5c6f9f1506d3835677b6a7a938e9e348c6970fc8fb1184dc573e3"
+    },
+    {
+      "path": "current/figures/Figure_4_Resolution_weighting.svg",
+      "bytes": 36101,
+      "sha256": "38dd75107e884dcb70d51e4f058aaa9611b98f2d29ed89d7c53ac0b8336625fb"
+    },
+    {
+      "path": "current/presentation/workbook_plan.json",
+      "bytes": 3450356,
+      "sha256": "3fc3436f998482425e7b93aa0c2680737ada80630b6d8e7a68511b125ae5305c"
+    },
+    {
+      "path": "current/provenance/additional_dependency_hashes.json",
+      "bytes": 250,
+      "sha256": "42093e63ae3aa81c62a16c1c72b296316594d9a227d5caa75c863e65f00ac865"
+    },
+    {
+      "path": "current/provenance/cross_database_verification_summary.json",
+      "bytes": 888,
+      "sha256": "0d5ab91616b38a1248f5ea4637c4e5fb5314bf5ef03af90b8aa37e63594066fb"
+    },
+    {
+      "path": "current/provenance/environment_versions.json",
+      "bytes": 205,
+      "sha256": "4fd87e8628d26f837021f281af52691ce2715b3011f8d19f8f5a8dd8a436fec4"
+    },
+    {
+      "path": "current/provenance/extension_tests.json",
+      "bytes": 1791,
+      "sha256": "9e27b62597ffe454979685a383fb486b9623fa7c6eb24f8d4e28df0df2c2a728"
+    },
+    {
+      "path": "current/provenance/frozen_inputs_project_relative.json",
+      "bytes": 3926,
+      "sha256": "62a2a8d05e53bb3b128f27bbca286111ceef5d69c620ba475a3f33eb50a5f0bd"
+    },
+    {
+      "path": "current/provenance/historical_sheet_disposition.csv",
+      "bytes": 12837,
+      "sha256": "174eb9a88a068fbad6c1322b5678d19e7bc301cb0c2ff45642f2db2e426bba15"
+    },
+    {
+      "path": "current/provenance/independent_verification.json",
+      "bytes": 436,
+      "sha256": "45dfafc77c6a4dc8accf588dcde34f70c92973b04ca1f946f3ce2590a2c3073e"
+    },
+    {
+      "path": "current/provenance/legacy_tests.json",
+      "bytes": 203,
+      "sha256": "9edd5c9e828d8e129ff7b2262066b39239063fd001b24abcbb06e04ec9fe6e75"
+    },
+    {
+      "path": "current/provenance/release_assembly_verification.json",
+      "bytes": 639,
+      "sha256": "f778c401b9207ccf1558f46e5101154dfd7ac88a2c4d143c076381e9b25398b0"
+    },
+    {
+      "path": "current/provenance/snapshot_check.json",
+      "bytes": 421,
+      "sha256": "d5cff66e287970bdf8eade3b98db62d28af348de881ecf3ebde06e2288c6cb23"
+    },
+    {
+      "path": "current/provenance/source_file_map.json",
+      "bytes": 36098,
+      "sha256": "888d3d96545f0f0f58532803a96d5eefa7740a138539599b12dc48e919276ed3"
+    },
+    {
+      "path": "current/provenance/workbook_layout.json",
+      "bytes": 23180,
+      "sha256": "b882fb8b7ffe522c8c4dee0b7ac21839761b93a4206aaeeac1e03b7012cab7ab"
+    },
+    {
+      "path": "current/provenance/workbook_selection_manifest.json",
+      "bytes": 120333,
+      "sha256": "4a69e54248fdbbcd913ce8eb4657f6e4a69be7bfb1ef39c9e37daf54a1076f3f"
+    },
+    {
+      "path": "current/requirements.txt",
+      "bytes": 285,
+      "sha256": "44c2485522106978901e3adbd6b3c61c4b6df9fde46eebf783169e27f328ba3b"
+    },
+    {
+      "path": "current/workbook/10_SDC2_Consolidated_Workbook.xlsx",
+      "bytes": 723466,
+      "sha256": "2fac0691c4141f90860fb08863fbc90f74ccda3bffcbe20ba5279b2362549426"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/03_方案与结果来源/aggregate/summary.csv",
+      "bytes": 406863,
+      "sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/cohort_flow.csv",
+      "bytes": 330,
+      "sha256": "f7b600adb0bed282a0096198914049697985f435e677903f95cc926e34713494"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/figure_sources.csv",
+      "bytes": 6322,
+      "sha256": "2a05f4396df47dcd35ce1e71e30aae244539a10483b45b7037df54d3839610da"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/onset_event_audit.csv",
+      "bytes": 283,
+      "sha256": "108d46e7f1d1d9554ed47a70717ce1d9a77ffd4710b6fc119ddcf80cddbe28d6"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/primary_timing.csv",
+      "bytes": 12211,
+      "sha256": "6e263dd66b8c08cb382c38b41c81c605452a8fb488b22e1d1100eac476d67172"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/timing_paired_differences.csv",
+      "bytes": 124138,
+      "sha256": "823248851c960727be962ee13def9f33e7a97d77d5426e9a8274b9c8fc23a85e"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/timing_summary.csv",
+      "bytes": 329734,
+      "sha256": "b10794f82b532019d9c390d63cd65bd2e02490377f54e21d903296936fa87bfd"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/treatment_flow.csv",
+      "bytes": 161,
+      "sha256": "062138a4c225608b469f04430d1e77f40634a2ed17d6c3eb5b862a66b15fecf1"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/analysis_contract.json",
+      "bytes": 4477,
+      "sha256": "cfd9b894ccfc353bfa1906c982c551761aec65eb6392c0c43e56dc4a3a4c4b12"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/code/independent_verify.py",
+      "bytes": 3957,
+      "sha256": "d28ced415180ab08f594b9019051310ac568f824ec9a79540b17e538e023ea7e"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/code/run_timing.py",
+      "bytes": 6211,
+      "sha256": "ffb58bd69e041340f171c5283c595347a9b70f529d43ed5261dbefe9ebcb3908"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/code/summarize_timing.py",
+      "bytes": 4206,
+      "sha256": "5e5c8dcab020da7ffde39f249181269905980b0491e56614080e17f25aef99e9"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/code/test_timing.py",
+      "bytes": 2779,
+      "sha256": "151a90c7bf93184447556be6316209ee57c63a7782eb6116159198e97c09422a"
+    },
+    {
+      "path": "source_layout/EJA_临床时间信息修订版_20261016/code/timing.py",
+      "bytes": 2933,
+      "sha256": "6e559d666d760163315ea08edeb6486b688ee29c04811f7e8dd5b89e3127b251"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/WORK_LOG.md",
+      "bytes": 3799,
+      "sha256": "c9bfdd35967ac8fe42839de65cfd6d9c727acf5ff2f001d13d59d257efdf3c5c"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/boundary_audit.json",
+      "bytes": 248,
+      "sha256": "27e62220ca00336f3298ce41bc1c0effdf5f6cce9159d6f3c03b9a0e8cadc3f6"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_contrasts.csv",
+      "bytes": 23642,
+      "sha256": "85afa100b3283fef89811d259374378171244c2d4e6afa8328824985417e0dda"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_denominators.csv",
+      "bytes": 1278,
+      "sha256": "c3caea26e26565f374f7e7f7c836b109d466165adb1c32c50a0b8165120f4d49"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_summary.csv",
+      "bytes": 46269,
+      "sha256": "0ea2aa061ebffae278e6db56c87099685cef6a4053ef12362cbc3c67863367f2"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_support_audit.csv",
+      "bytes": 319,
+      "sha256": "e77248a65631ce174cc41692b7c9f795b3c809ad1bc67f415b228807201bceea"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/figure_sources.csv",
+      "bytes": 6608,
+      "sha256": "49d862b81151e421833017d800a0b19f85f2b469dd907346c04bdd3a51b34230"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/recovery_contrasts.csv",
+      "bytes": 61325,
+      "sha256": "a92595b37bf02b3dbb06a75f3d3f8566e2d2bf7b6ab983b9c438f7606021c7c6"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/recovery_denominators.csv",
+      "bytes": 460,
+      "sha256": "1df7a7f3c83461d4dcbb717002b6bd0e5d5baba5f21e7ca234e8527815b0e4e5"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/recovery_summary.csv",
+      "bytes": 162676,
+      "sha256": "8f76839e41e1d19d87b9265bb165c20a219934316c79de24b170630a7256a64e"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/build_figures.py",
+      "bytes": 6758,
+      "sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/independent_verify.py",
+      "bytes": 4571,
+      "sha256": "349f4ef706170fd6a7932e918290922e5ab00428de8269a8cece6e5e6361bb45"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/review_core.py",
+      "bytes": 1214,
+      "sha256": "0f982c92119948507e60e7e843b1a3332ec8d76213c4b90aa519c3fbbc93facb"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/run_review.py",
+      "bytes": 12626,
+      "sha256": "72752c59f178a99e165f5c5814f59376ed814abf964009151b6fb4643424a4eb"
+    },
+    {
+      "path": "source_layout/EJA_审稿意见逐项修订版_20261016/code/test_review_core.py",
+      "bytes": 1660,
+      "sha256": "a97943fad3642b9f55f9d0ec2ff460b05b804fedfcc159aa35ce16b56ae3eca8"
+    },
+    {
+      "path": "source_layout/EJA_投稿文件包_20261006_最终文字修订/03_可复现材料/extensions/events/event_extension.py",
+      "bytes": 2133,
+      "sha256": "e42f4af35d62025532ed6ebff105db9c65a066d0115d8436af70a7c4c2e905ec"
+    },
+    {
+      "path": "source_layout/EJA_投稿文件包_20261006_最终文字修订/03_可复现材料/extensions/events/run_extension.py",
+      "bytes": 16047,
+      "sha256": "dce4fc7167dbbb4af0e60fac1350609aac5469b7be0e41c4fd79178c55f85573"
+    },
+    {
+      "path": "source_layout/EJA_投稿文件包_20261006_最终文字修订/03_可复现材料/extensions/events/simple_interval_summary.py",
+      "bytes": 12567,
+      "sha256": "da28cdd534bdd21d00d34c0cce7423484b4a79b40d755ff3dff7c003bb1b6c30"
+    },
+    {
+      "path": "source_layout/EJA_投稿文件包_20261006_最终文字修订/03_可复现材料/extensions/events/test_event_extension.py",
+      "bytes": 1964,
+      "sha256": "3dc947d0bb9a04b92c399922bb414b3b46a3b6c5e49ebed04cbbf4dfd57d5180"
+    },
+    {
+      "path": "source_layout/EJA_投稿文件包_20261006_最终文字修订/03_可复现材料/extensions/events/test_simple_interval_summary.py",
+      "bytes": 1514,
+      "sha256": "7254015b5a8f9cd3a5bce6ea87205434a413d408a02adf38ec8be11fc6b7621c"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis/code/mimic_analysis.py",
+      "bytes": 34331,
+      "sha256": "e8c35af5808b920156a597e4a3df7cf4a789b01bf5490f67bd784ca95538810e"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis/code/original_decomposition.py",
+      "bytes": 7073,
+      "sha256": "ff90d26680e816ceac40033b285c3b42937c4ded38fcd96340a0f01e406714cd"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis/code/original_events.py",
+      "bytes": 2133,
+      "sha256": "e42f4af35d62025532ed6ebff105db9c65a066d0115d8436af70a7c4c2e905ec"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis/code/provenance.json",
+      "bytes": 861,
+      "sha256": "78b0ab00979d7237e26aeb8487ed7e132b970272a429ec40c05e6a250f182de3"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis/code/summarize_phase_ranges.py",
+      "bytes": 4535,
+      "sha256": "5d268616babf28fe873957735c7f6b837a20a252ccff6eb338ed31fdf5eb67ee"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis/tests/test_mimic_analysis.py",
+      "bytes": 17520,
+      "sha256": "af786e90e2865fd1f01932ac27a4977bb11687da94c51a9a98ea04ae38425890"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/analysis_contract.json",
+      "bytes": 3854,
+      "sha256": "7f44211c428cd6c54835c4395fc29fb9ae0bfe4c7756aacfb2dfd582ce48c09b"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/qc/finalize_qc.py",
+      "bytes": 871,
+      "sha256": "65c2fb84893e6f3fdf41f7fc7f4006d9e90da7b43eb1248fc175b23d84cd726c"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/qc/full_qc_core.py",
+      "bytes": 3769,
+      "sha256": "eb5d6df05501a84f5990d0115e04bff0e2b4c70475c7bc6f918d16ec1420ef82"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/qc/independent_replication_check.py",
+      "bytes": 6967,
+      "sha256": "b5cf550325a20d50d0cc4a3c00b50b832229569b1054f667858a88cb6b3f4d7d"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/qc/run_full_qc.py",
+      "bytes": 9956,
+      "sha256": "8fdc057ade87def992fbd13aeaf8d317b5c90c1830fc153b09355262b7a8c591"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/qc/summarize_qc.py",
+      "bytes": 3673,
+      "sha256": "15d6e85d4a0ce8bd0fb4b117065246bf8e989b1fc7cff9fa6e030a6202d5213e"
+    },
+    {
+      "path": "source_layout/MIMIC技术重复分析_20261015/qc/test_full_qc.py",
+      "bytes": 2816,
+      "sha256": "e722bf96646fd9c8cbd232a95b88ad2793fc38380496f1561b6e756b435aa2bd"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/analysis_contract.json",
+      "bytes": 1647,
+      "sha256": "471e3eb9c6c04ac795f6895e493e1cb7b461369ddd0a986fe8a61dbfc786f794"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/code/extract_sicdb.py",
+      "bytes": 29722,
+      "sha256": "dddf812c9c7125c35dc427487e0d8aab65dac002cbde62d3f5cc8cfe597ca6cd"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/code/independent_check.py",
+      "bytes": 24206,
+      "sha256": "ea14d6dcffbe5af9cdb16ba9fd0a6ff30c2a70018b6695ea64ca5e3a21e446ac"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/code/minute_analysis.py",
+      "bytes": 19931,
+      "sha256": "011c9f1b6b2a1e222d495d97687a0d19f52a153f009436bb9d674b7f1716688e"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/code/test_extract_sicdb.py",
+      "bytes": 13678,
+      "sha256": "8c59920c9f4c1052c23a1d80916cf91622db10d224d15fb38107181d5fdfd5b1"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/code/test_independent_check.py",
+      "bytes": 9644,
+      "sha256": "1a92fab8dba77f7df75f5a9fa32039daf820d1a112c927acb569755c9f99c3c8"
+    },
+    {
+      "path": "source_layout/SICdb分钟级对齐分析_20261015/code/test_minute_analysis.py",
+      "bytes": 3192,
+      "sha256": "64c1b9a5c1b17b277bd75771cc5a553557974888c32c262149d868b5c3e001b0"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/__init__.py",
+      "bytes": 46,
+      "sha256": "6f4fe78e3a0e0cefcb057336732655050a52f669c2d6c35f9c9dc207b32440bc"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/aki_outcomes.py",
+      "bytes": 17341,
+      "sha256": "14c186f06a2c60dc5e02c30cc919e05025fa65ec2df33acefcfd24fe012ccd3b"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/estimands/__init__.py",
+      "bytes": 72,
+      "sha256": "e7060000555eb4e07e6819cd0c2cfdc5f371a093946eb715fa0d1ea27c68103f"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/estimands/decomposition.py",
+      "bytes": 7073,
+      "sha256": "ff90d26680e816ceac40033b285c3b42937c4ded38fcd96340a0f01e406714cd"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/estimands/episodes.py",
+      "bytes": 2316,
+      "sha256": "d08db810a6836eee9e465c663b624be4cd39ae529e49af5068dcc3090b6d74ce"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/icu_analysis.py",
+      "bytes": 7513,
+      "sha256": "ed9bdae484fbefffd9033409b52d8b94151f1f1772a88bbeae34b7b5272f3fe5"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/icu_outcomes.py",
+      "bytes": 4319,
+      "sha256": "9a9eec68e29f4cabfbb4a9b1188cd9be0b30ab7bd95d76bf63008039faf2760a"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/io/__init__.py",
+      "bytes": 50,
+      "sha256": "8b1871e5b93a3f297dff574a859e394c3268a5d233fbafcb0a76f6c88ebe7221"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/io/inspire_loader.py",
+      "bytes": 543,
+      "sha256": "c825dbb9c6a0ba19ca6230518dfca8cb0e69f5dac51050d424dcce6ae5751a5f"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/pipeline.py",
+      "bytes": 153682,
+      "sha256": "b8a3e07deefbafee7e2ab365fd5e29961fa65a8d89f151684f9efd338f148d26"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/qc/__init__.py",
+      "bytes": 32,
+      "sha256": "e028b45d405913899eee89bddd0301b021cb653e8bf74bb7457b95b86b17b76e"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/qc/nibp_qc.py",
+      "bytes": 2903,
+      "sha256": "483958db174235663691f3d218e51d0cebdee8cb03eb49691e6cfbea4ddef118"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/reporting/__init__.py",
+      "bytes": 49,
+      "sha256": "dafa59f405d1c2aa0f1e4567329e2b5d6ea0b263ab4a7c5888fdb9ea90eed4ac"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/reporting/language.py",
+      "bytes": 792,
+      "sha256": "52c18d45f42a4ae50ed483f47090ecad96b05af71a5df95f473406230a8294ba"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/reporting/manifest.py",
+      "bytes": 3213,
+      "sha256": "1b307815a65d5490cf97c12bfd78e1f33b6bb531986aa3ba0096844c8c202122"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/revision_v6.py",
+      "bytes": 44477,
+      "sha256": "a981b49ce68a120288d65384e0033733f7398b2f1cc2d550139cfa16885e4af6"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/revision_v7.py",
+      "bytes": 32520,
+      "sha256": "a64146466607d58a4ec10f2ea4cc7faad4cb3cf11dbf868fbd464ae2a9db5064"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/stats/__init__.py",
+      "bytes": 28,
+      "sha256": "19d4d26f43bfa6380721b4ee65f365bed7d0d5830dcc29a46b70184563a895f0"
+    },
+    {
+      "path": "source_layout/analysis_v10_subject_phase_release/src/ioh/stats/bootstrap.py",
+      "bytes": 2223,
+      "sha256": "d7b67ba1294069a1e97fe2e2dc898863e6aba27ec49e57ef90c8a331984cebcd"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/analysis_contract.json",
+      "bytes": 4707,
+      "sha256": "9ae3d85beaf07aabde42f832ddddc3734f9defc0314bb3354e6df432a6bfda56"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/boundary_check_contract.json",
+      "bytes": 1083,
+      "sha256": "c41411b3915d232e841c0b56a6cf3b2ec64fe97b40fa363ba26c5f8dbecd340b"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/audit_documented_encoding.py",
+      "bytes": 29711,
+      "sha256": "918035f54e106e7260b3df838bcdc10ac92d8ad49046fdaf21d753500f1a245a"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/audit_raw.py",
+      "bytes": 49179,
+      "sha256": "bd8d902592b6f793758ab694e4d240cc745a0c42e6b6f79a846fc3d72ebc3889"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/boundary_sensitivity.py",
+      "bytes": 3470,
+      "sha256": "6accd77c45f2496bc87146722ca1f910ad1da5042464a77189397f01de15c322"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/independent_verify.py",
+      "bytes": 33827,
+      "sha256": "5757a2845c8f8fccdde01cb7ffffcd4a88a8a0361e06673eb17ffe00f9f3d82b"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/qc_onset.py",
+      "bytes": 10347,
+      "sha256": "9c0c35152d01a2fc282b053e74044ead528eb87509e128c78fb92c696d3c31c7"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/rerun.py",
+      "bytes": 13502,
+      "sha256": "ee339bd19b4b582901d51d73442ba55e2b817518e8ea58a5d020e9c04482f8cd"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/test_boundary.py",
+      "bytes": 411,
+      "sha256": "9409387bd54d2c6486f3f4e24dfd18ec152697e928c3d4d644c192e48490acb4"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/test_qc.py",
+      "bytes": 2579,
+      "sha256": "dcaaec6ea16b28b76af659b1de2330c47f8ec4b7b2ae72e1d3e715c0ccb4b90e"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/code/test_rerun.py",
+      "bytes": 2072,
+      "sha256": "393b2d0da73049aaada13747d5468adf4950b37a674448ca9653c9043780d8e8"
+    },
+    {
+      "path": "source_layout/可靠动脉起点质控重分析_20261015/source_encoding_addendum.json",
+      "bytes": 1487,
+      "sha256": "8bf0819f9df8b652c0335d0fa387d609409ba32000e61b3c5871add425dfa64c"
+    },
+    {
+      "path": "source_layout/外部验证可行性审计_20261015/mimic/audit_core.py",
+      "bytes": 6900,
+      "sha256": "3df014e1c032d21dd92f82d0d50a797007cf95453b093af1035a39d14dad0f66"
+    },
+    {
+      "path": "source_layout/外部验证可行性审计_20261015/mimic/audit_mimic.py",
+      "bytes": 37631,
+      "sha256": "c3c452a94b1006625768c31e61a3a53f6e553a93daee01201c65d4610a1b4634"
+    },
+    {
+      "path": "source_layout/外部验证可行性审计_20261015/mimic/test_audit.py",
+      "bytes": 4459,
+      "sha256": "4e96965f99f77294a49abb9b3d37fa920f4c30fa24da77e81feacb5b284615f9"
+    },
+    {
+      "path": "source_layout/治疗相关事件补充修订_20261004/analysis/aggregate/display_state_results.csv",
+      "bytes": 8013,
+      "sha256": "0ddd3de0f34db608f606878239809a35af598026367ca61f5290491cf6618f93"
+    },
+    {
+      "path": "source_layout/治疗相关事件补充修订_20261004/code/treatment_core.py",
+      "bytes": 4650,
+      "sha256": "34b7f56614432e56d0e0572337fa025864e2676c723b5531a7ba1d5f8437ef48"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/cohort_flow.csv",
+      "bytes": 2981,
+      "sha256": "720e36ca528dde0d0c5ffe9c4621b3f99dfb1f769246d6559e991a29d55723e1"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/duration_standardized.csv",
+      "bytes": 2288,
+      "sha256": "ae958a30c3e42524c81784fd1456c3e4ddf9d729afc278da643ba6338ff66e0e"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/event_strata.csv",
+      "bytes": 274838,
+      "sha256": "8aeb506536681cc8e043ac7e985ca36ae36758ebbb25de1ee721be861f0f7d87"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/paired_resolution.csv",
+      "bytes": 31712,
+      "sha256": "a27871344ac69c7bffdc06e1247fbf2ebdc80f7ac26f1a0bae8219ac583e9f9a"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/patient_distributions.csv",
+      "bytes": 8772,
+      "sha256": "457bafad526d718bdf4afb6cc9a12597de174cc831797337264fc11861d60aa9"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/standardization_gate.json",
+      "bytes": 331,
+      "sha256": "d78f6b75b5792533f8f2fbf896b1b433b010db3ec41c221c999bcd75687b6672"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/summary.csv",
+      "bytes": 406863,
+      "sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/analysis_contract.json",
+      "bytes": 8111,
+      "sha256": "3157dfa67db7f7fbcfcbd859b8e46d978583d8851b12348ea2c71fb68dcae61b"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/audit_subgroups.py",
+      "bytes": 34691,
+      "sha256": "c748031e208b35b9d0e9d0759d29ad745ca5ecb07cf91c5fc3ed3be17b81fc48"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/engine.py",
+      "bytes": 7405,
+      "sha256": "f1c5fcef77196815af38cbcdf2f8ecc2665e5f569294698017afb504bf10ef0f"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/independent_verify.py",
+      "bytes": 74587,
+      "sha256": "2fe13dd2ee3b05f3b3cac3e92bb61b5f55446b32d22e38b1169eee80c1b45d1d"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/io_sources.py",
+      "bytes": 5953,
+      "sha256": "6169949a0a318f4996010452adbc8f897f47d0ee86209a2f77b75854301fa9c5"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/run_analysis.py",
+      "bytes": 9014,
+      "sha256": "c0341fe813ed59911a50a0981955ed995803b07e215101323e068f4dca0a380b"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/summarize.py",
+      "bytes": 9539,
+      "sha256": "83e50f04d2db067d8719f9827dc3f20417bef69a77c4297db5817fcaf51e3b2c"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/test_audit_subgroups.py",
+      "bytes": 14424,
+      "sha256": "3f56d3812c04ec404d38f6d1bcecc882bc585a5b5d3c884e1080b9800d95180a"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/test_engine.py",
+      "bytes": 3648,
+      "sha256": "9f1dc294a743dc0df69fe62fdbaa5b5a386b0497865aaa006a41ed0f59587525"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/code/test_summary.py",
+      "bytes": 1912,
+      "sha256": "d0d235b68ea976e74e30d91f113c907da67d1362b7bd92a0a283206bb9b8df33"
+    },
+    {
+      "path": "source_layout/跨库分辨率与异质性分析_20261015/source_interpretation_addendum.json",
+      "bytes": 1992,
+      "sha256": "692c1a501e636735054b92f0378cd878a283fe3acdd9298ce8acc38da5950f30"
+    }
+  ]
+}

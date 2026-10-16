@@ -1,0 +1,10 @@
+measure,value
+Matched cases,2232
+Matched patients,2184
+Original low events,8304
+Core60 low events,8109
+Retained event starts,7957
+Removed original event starts,347
+New event starts,152
+Retained starts with changed duration,0
+Retained starts with changed inherited-state fraction,139

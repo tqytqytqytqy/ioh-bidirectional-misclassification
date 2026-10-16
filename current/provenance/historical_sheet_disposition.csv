@@ -1,0 +1,126 @@
+Original worksheet,Disposition,Submission destinations
+Review_Readme,Historical/duplicate presentation or superseded output; complete original archived,
+Current_Table_1,Historical/duplicate presentation or superseded output; complete original archived,
+Current_Table_2,Historical/duplicate presentation or superseded output; complete original archived,
+Current_Table_3_A,Historical/duplicate presentation or superseded output; complete original archived,
+Current_Table_3_B,Historical/duplicate presentation or superseded output; complete original archived,
+Current_S15,Historical/duplicate presentation or superseded output; complete original archived,
+Current_S27_60,Historical/duplicate presentation or superseded output; complete original archived,
+Current_S27_120,Historical/duplicate presentation or superseded output; complete original archived,
+Current_S28,Historical/duplicate presentation or superseded output; complete original archived,
+Current_S30,Historical/duplicate presentation or superseded output; complete original archived,
+Current_S31,Historical/duplicate presentation or superseded output; complete original archived,
+Review_Recovery,Selected current rows/columns retained; complete original archived,S06_Recovery_States; S07_Recovery_Sensitivity; S08_Onset_QC
+Review_Recovery_Contrast,Selected current rows/columns retained; complete original archived,S07_Recovery_Sensitivity; S08_Onset_QC
+Review_Recovery_N,Selected current rows/columns retained; complete original archived,S07_Recovery_Sensitivity; S08_Onset_QC
+Review_Bridge,Selected current rows/columns retained; complete original archived,S13_Resolution_Bridge
+Review_Bridge_Contrast,Selected current rows/columns retained; complete original archived,S13_Resolution_Bridge
+Review_Bridge_N,Selected current rows/columns retained; complete original archived,S13_Resolution_Bridge
+Review_Support,Selected current rows/columns retained; complete original archived,S13_Resolution_Bridge
+Review_Figures,Historical/duplicate presentation or superseded output; complete original archived,
+Review_Boundary,Selected current rows/columns retained; complete original archived,S03_Exposure
+Main_Table_1,Historical/duplicate presentation or superseded output; complete original archived,
+Main_Table_2,Historical/duplicate presentation or superseded output; complete original archived,
+Main_Table_3,Historical/duplicate presentation or superseded output; complete original archived,
+Main_Table_4,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S01,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S02,Selected current rows/columns retained; complete original archived,S01_Cohort
+Supp_Table_S03,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S04,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S05,Selected current rows/columns retained; complete original archived,S03_Exposure
+Supp_Table_S06,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S07,Selected current rows/columns retained; complete original archived,S17_Display_Sensitivity
+Supp_Table_S08,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S09,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S10,Selected current rows/columns retained; complete original archived,S19_AKI
+Supp_Table_S11,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S12,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S13,Selected current rows/columns retained; complete original archived,S19_AKI
+Supp_Table_S14,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S15,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S16,Historical/duplicate presentation or superseded output; complete original archived,
+TableIndex,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S01,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S02,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S03,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S04,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S05,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S06,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S07,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S08,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S09,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S10,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S11,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S12,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S13,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S14,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S15,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S16,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S17,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S18,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S19,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S20,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S21,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S22,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S23,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S24,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S25,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S26,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S27,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S28,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S29,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S30,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S31,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S32,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S33,Historical/duplicate presentation or superseded output; complete original archived,
+Legacy_S34,Selected current rows/columns retained; complete original archived,S10_Startup_QC
+Legacy_S35,Historical/duplicate presentation or superseded output; complete original archived,
+QC_Scope,Historical/duplicate presentation or superseded output; complete original archived,
+Infusion_Unrounded,Selected current rows/columns retained; complete original archived,S11_Infusion_Sensitivity
+Recovery_Unrounded,Selected current rows/columns retained; complete original archived,S07_Recovery_Sensitivity
+Drug_Kind_Strata,Historical/duplicate presentation or superseded output; complete original archived,
+Recovery_Truncation,Selected current rows/columns retained; complete original archived,S07_Recovery_Sensitivity
+Interval_Unrounded,Selected current rows/columns retained; complete original archived,S03_Exposure
+QC_Cohort_Unrounded,Selected current rows/columns retained; complete original archived,S10_Startup_QC
+QC_Event_Rates,Selected current rows/columns retained; complete original archived,S10_Startup_QC
+QC_AUC_Decomposition,Selected current rows/columns retained; complete original archived,S10_Startup_QC
+QC_Interval_Absolute,Historical/duplicate presentation or superseded output; complete original archived,
+QC_Event_Duration,Historical/duplicate presentation or superseded output; complete original archived,
+QC_Event_Robustness,Selected current rows/columns retained; complete original archived,S10_Startup_QC
+QC_Outcome_Denominators,Selected current rows/columns retained; complete original archived,S20_Outcome_QC
+QC_Outcome_Models,Selected current rows/columns retained; complete original archived,S19_AKI; S20_Outcome_QC; S21_ICU
+QC_Treatment_Comparison,Historical/duplicate presentation or superseded output; complete original archived,
+QC_Treatment_Unrounded,Selected current rows/columns retained; complete original archived,S11_Infusion_Sensitivity
+主要比较,Historical/duplicate presentation or superseded output; complete original archived,
+同窗分辨率桥接,Historical/duplicate presentation or superseded output; complete original archived,
+患者等权,Historical/duplicate presentation or superseded output; complete original archived,
+事件特征分层,Historical/duplicate presentation or superseded output; complete original archived,
+外科背景亚组,Historical/duplicate presentation or superseded output; complete original archived,
+队列与时长,Selected current rows/columns retained; complete original archived,S12_Cross_Cohorts
+采样间隔,Historical/duplicate presentation or superseded output; complete original archived,
+敏感性分析,Historical/duplicate presentation or superseded output; complete original archived,
+患者分布,Selected current rows/columns retained; complete original archived,S14_Patient_Weighting
+时长标准化,Selected current rows/columns retained; complete original archived,S16_Duration_Standardisation
+全部估计,Selected current rows/columns retained; complete original archived,S14_Patient_Weighting; S17_Display_Sensitivity; S18_Surgical_Context
+全部事件分层,Selected current rows/columns retained; complete original archived,S15_Cross_Event_Strata
+方法与来源,Historical/duplicate presentation or superseded output; complete original archived,
+Cross_Main_Table2,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S17,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S18,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S19,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S20,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S21,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S22,Historical/duplicate presentation or superseded output; complete original archived,
+Supp_Table_S23,Historical/duplicate presentation or superseded output; complete original archived,
+Cross_Table_Index,Historical/duplicate presentation or superseded output; complete original archived,
+Cross_Paired_All,Selected current rows/columns retained; complete original archived,S13_Resolution_Bridge
+Timing_Readme,Historical/duplicate presentation or superseded output; complete original archived,
+Timing_Cohort_flow,Selected current rows/columns retained; complete original archived,S08_Onset_QC
+Timing_Fresh_60_120,Selected current rows/columns retained; complete original archived,S05_New_Readings; S08_Onset_QC
+Timing_Recovery_60_120,Historical/duplicate presentation or superseded output; complete original archived,
+Timing_Severity_context,Selected current rows/columns retained; complete original archived,S09_Event_Features
+Timing_Patient_equal,Selected current rows/columns retained; complete original archived,S05_New_Readings; S08_Onset_QC; S09_Event_Features
+Timing_Onset_QC,Selected current rows/columns retained; complete original archived,S08_Onset_QC
+Timing_Unknown_bounds,Historical/duplicate presentation or superseded output; complete original archived,
+Timing_Interval_contrasts,Selected current rows/columns retained; complete original archived,S05_New_Readings; S08_Onset_QC; S09_Event_Features
+Timing_Verification,Historical/duplicate presentation or superseded output; complete original archived,

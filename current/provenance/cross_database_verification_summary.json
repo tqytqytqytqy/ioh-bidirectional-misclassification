@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0-independent-cache-numerical-verification",
+  "contract_sha256": "3157dfa67db7f7fbcfcbd859b8e46d978583d8851b12348ea2c71fb68dcae61b",
+  "independence": {
+    "imports_parent_analysis_modules": false,
+    "native_waveforms_reread": false,
+    "uses_frozen_upstream_QC_numerical_references": true,
+    "manuscript_or_public_archive_modified": false,
+    "claim_boundary": "Selected cached-reference records rederived independently; all present output rows checked for additive identities and partitions. This is not a new native-waveform audit, global validated-source claim, clinical validation, or clinical subgroup validation."
+  },
+  "tolerances": {
+    "components_atol": 1e-07,
+    "components_rtol": 1e-10,
+    "metrics_CI_atol": 1e-09,
+    "metrics_CI_rtol": 1e-09,
+    "phase_counts_atol": 1e-09
+  },
+  "failed_comparisons": 0,
+  "status": "PASS_SCOPED"
+}

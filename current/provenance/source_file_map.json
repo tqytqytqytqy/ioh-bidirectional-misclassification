@@ -1,0 +1,603 @@
+[
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/io_sources.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/io_sources.py",
+    "source_sha256": "6169949a0a318f4996010452adbc8f897f47d0ee86209a2f77b75854301fa9c5",
+    "sha256": "6169949a0a318f4996010452adbc8f897f47d0ee86209a2f77b75854301fa9c5"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/engine.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/engine.py",
+    "source_sha256": "f1c5fcef77196815af38cbcdf2f8ecc2665e5f569294698017afb504bf10ef0f",
+    "sha256": "f1c5fcef77196815af38cbcdf2f8ecc2665e5f569294698017afb504bf10ef0f"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/run_analysis.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/run_analysis.py",
+    "source_sha256": "c0341fe813ed59911a50a0981955ed995803b07e215101323e068f4dca0a380b",
+    "sha256": "c0341fe813ed59911a50a0981955ed995803b07e215101323e068f4dca0a380b"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/summarize.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/summarize.py",
+    "source_sha256": "83e50f04d2db067d8719f9827dc3f20417bef69a77c4297db5817fcaf51e3b2c",
+    "sha256": "83e50f04d2db067d8719f9827dc3f20417bef69a77c4297db5817fcaf51e3b2c"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/audit_subgroups.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/audit_subgroups.py",
+    "source_sha256": "c748031e208b35b9d0e9d0759d29ad745ca5ecb07cf91c5fc3ed3be17b81fc48",
+    "sha256": "c748031e208b35b9d0e9d0759d29ad745ca5ecb07cf91c5fc3ed3be17b81fc48"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/independent_verify.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/independent_verify.py",
+    "source_sha256": "2fe13dd2ee3b05f3b3cac3e92bb61b5f55446b32d22e38b1169eee80c1b45d1d",
+    "sha256": "2fe13dd2ee3b05f3b3cac3e92bb61b5f55446b32d22e38b1169eee80c1b45d1d"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/test_engine.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/test_engine.py",
+    "source_sha256": "9f1dc294a743dc0df69fe62fdbaa5b5a386b0497865aaa006a41ed0f59587525",
+    "sha256": "9f1dc294a743dc0df69fe62fdbaa5b5a386b0497865aaa006a41ed0f59587525"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/test_summary.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/test_summary.py",
+    "source_sha256": "d0d235b68ea976e74e30d91f113c907da67d1362b7bd92a0a283206bb9b8df33",
+    "sha256": "d0d235b68ea976e74e30d91f113c907da67d1362b7bd92a0a283206bb9b8df33"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/code/test_audit_subgroups.py",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/code/test_audit_subgroups.py",
+    "source_sha256": "3f56d3812c04ec404d38f6d1bcecc882bc585a5b5d3c884e1080b9800d95180a",
+    "sha256": "3f56d3812c04ec404d38f6d1bcecc882bc585a5b5d3c884e1080b9800d95180a"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/code/timing.py",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/code/timing.py",
+    "source_sha256": "6e559d666d760163315ea08edeb6486b688ee29c04811f7e8dd5b89e3127b251",
+    "sha256": "6e559d666d760163315ea08edeb6486b688ee29c04811f7e8dd5b89e3127b251"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/code/run_timing.py",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/code/run_timing.py",
+    "source_sha256": "ffb58bd69e041340f171c5283c595347a9b70f529d43ed5261dbefe9ebcb3908",
+    "sha256": "ffb58bd69e041340f171c5283c595347a9b70f529d43ed5261dbefe9ebcb3908"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/code/summarize_timing.py",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/code/summarize_timing.py",
+    "source_sha256": "5e5c8dcab020da7ffde39f249181269905980b0491e56614080e17f25aef99e9",
+    "sha256": "5e5c8dcab020da7ffde39f249181269905980b0491e56614080e17f25aef99e9"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/code/independent_verify.py",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/code/independent_verify.py",
+    "source_sha256": "d28ced415180ab08f594b9019051310ac568f824ec9a79540b17e538e023ea7e",
+    "sha256": "d28ced415180ab08f594b9019051310ac568f824ec9a79540b17e538e023ea7e"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/code/test_timing.py",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/code/test_timing.py",
+    "source_sha256": "151a90c7bf93184447556be6316209ee57c63a7782eb6116159198e97c09422a",
+    "sha256": "151a90c7bf93184447556be6316209ee57c63a7782eb6116159198e97c09422a"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/code/review_core.py",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/code/review_core.py",
+    "source_sha256": "0f982c92119948507e60e7e843b1a3332ec8d76213c4b90aa519c3fbbc93facb",
+    "sha256": "0f982c92119948507e60e7e843b1a3332ec8d76213c4b90aa519c3fbbc93facb"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/code/run_review.py",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/code/run_review.py",
+    "source_sha256": "72752c59f178a99e165f5c5814f59376ed814abf964009151b6fb4643424a4eb",
+    "sha256": "72752c59f178a99e165f5c5814f59376ed814abf964009151b6fb4643424a4eb"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/code/independent_verify.py",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/code/independent_verify.py",
+    "source_sha256": "349f4ef706170fd6a7932e918290922e5ab00428de8269a8cece6e5e6361bb45",
+    "sha256": "349f4ef706170fd6a7932e918290922e5ab00428de8269a8cece6e5e6361bb45"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/code/test_review_core.py",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/code/test_review_core.py",
+    "source_sha256": "a97943fad3642b9f55f9d0ec2ff460b05b804fedfcc159aa35ce16b56ae3eca8",
+    "sha256": "a97943fad3642b9f55f9d0ec2ff460b05b804fedfcc159aa35ce16b56ae3eca8"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/code/build_figures.py",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/code/build_figures.py",
+    "source_sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8",
+    "sha256": "586de77a7fae50eeeeeeec22ee1be2416fa9511559b42fa4aba6d3479a8bbcf8"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/qc_onset.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/qc_onset.py",
+    "source_sha256": "e62799f2b125fbdb1aec02d6109095e6a2855fbe8d0ee2ea9e98de1c4b40cbe8",
+    "sha256": "9c0c35152d01a2fc282b053e74044ead528eb87509e128c78fb92c696d3c31c7",
+    "change": "Only raw-input path defaults replaced by environment variables; numerical definitions unchanged"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/audit_raw.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/audit_raw.py",
+    "source_sha256": "cc111e7629dece93e15c8575234460692009a01c7fc7ad984dba327e984eba07",
+    "sha256": "bd8d902592b6f793758ab694e4d240cc745a0c42e6b6f79a846fc3d72ebc3889",
+    "change": "Only raw-input path defaults replaced by environment variables; numerical definitions unchanged"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/rerun.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/rerun.py",
+    "source_sha256": "ee339bd19b4b582901d51d73442ba55e2b817518e8ea58a5d020e9c04482f8cd",
+    "sha256": "ee339bd19b4b582901d51d73442ba55e2b817518e8ea58a5d020e9c04482f8cd"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/boundary_sensitivity.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/boundary_sensitivity.py",
+    "source_sha256": "6accd77c45f2496bc87146722ca1f910ad1da5042464a77189397f01de15c322",
+    "sha256": "6accd77c45f2496bc87146722ca1f910ad1da5042464a77189397f01de15c322"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/independent_verify.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/independent_verify.py",
+    "source_sha256": "5757a2845c8f8fccdde01cb7ffffcd4a88a8a0361e06673eb17ffe00f9f3d82b",
+    "sha256": "5757a2845c8f8fccdde01cb7ffffcd4a88a8a0361e06673eb17ffe00f9f3d82b"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/test_qc.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/test_qc.py",
+    "source_sha256": "dcaaec6ea16b28b76af659b1de2330c47f8ec4b7b2ae72e1d3e715c0ccb4b90e",
+    "sha256": "dcaaec6ea16b28b76af659b1de2330c47f8ec4b7b2ae72e1d3e715c0ccb4b90e"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/test_boundary.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/test_boundary.py",
+    "source_sha256": "9409387bd54d2c6486f3f4e24dfd18ec152697e928c3d4d644c192e48490acb4",
+    "sha256": "9409387bd54d2c6486f3f4e24dfd18ec152697e928c3d4d644c192e48490acb4"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/test_rerun.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/test_rerun.py",
+    "source_sha256": "393b2d0da73049aaada13747d5468adf4950b37a674448ca9653c9043780d8e8",
+    "sha256": "393b2d0da73049aaada13747d5468adf4950b37a674448ca9653c9043780d8e8"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/code/extract_sicdb.py",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/code/extract_sicdb.py",
+    "source_sha256": "bc93c9cf28618bdecbe1e09fa619dbbd707b80fda018695ebea5e0c6298eea85",
+    "sha256": "dddf812c9c7125c35dc427487e0d8aab65dac002cbde62d3f5cc8cfe597ca6cd",
+    "change": "Only raw-input path defaults replaced by environment variables; numerical definitions unchanged"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/code/minute_analysis.py",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/code/minute_analysis.py",
+    "source_sha256": "011c9f1b6b2a1e222d495d97687a0d19f52a153f009436bb9d674b7f1716688e",
+    "sha256": "011c9f1b6b2a1e222d495d97687a0d19f52a153f009436bb9d674b7f1716688e"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/code/independent_check.py",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/code/independent_check.py",
+    "source_sha256": "ea14d6dcffbe5af9cdb16ba9fd0a6ff30c2a70018b6695ea64ca5e3a21e446ac",
+    "sha256": "ea14d6dcffbe5af9cdb16ba9fd0a6ff30c2a70018b6695ea64ca5e3a21e446ac"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/code/test_extract_sicdb.py",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/code/test_extract_sicdb.py",
+    "source_sha256": "8c59920c9f4c1052c23a1d80916cf91622db10d224d15fb38107181d5fdfd5b1",
+    "sha256": "8c59920c9f4c1052c23a1d80916cf91622db10d224d15fb38107181d5fdfd5b1"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/code/test_minute_analysis.py",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/code/test_minute_analysis.py",
+    "source_sha256": "64c1b9a5c1b17b277bd75771cc5a553557974888c32c262149d868b5c3e001b0",
+    "sha256": "64c1b9a5c1b17b277bd75771cc5a553557974888c32c262149d868b5c3e001b0"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/code/test_independent_check.py",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/code/test_independent_check.py",
+    "source_sha256": "1a92fab8dba77f7df75f5a9fa32039daf820d1a112c927acb569755c9f99c3c8",
+    "sha256": "1a92fab8dba77f7df75f5a9fa32039daf820d1a112c927acb569755c9f99c3c8"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/qc/full_qc_core.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/qc/full_qc_core.py",
+    "source_sha256": "eb5d6df05501a84f5990d0115e04bff0e2b4c70475c7bc6f918d16ec1420ef82",
+    "sha256": "eb5d6df05501a84f5990d0115e04bff0e2b4c70475c7bc6f918d16ec1420ef82"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/qc/run_full_qc.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/qc/run_full_qc.py",
+    "source_sha256": "dd3215b9be3b3a2c9e555059f95782d08e5fa49691f471f833a725b1168d9213",
+    "sha256": "8fdc057ade87def992fbd13aeaf8d317b5c90c1830fc153b09355262b7a8c591",
+    "change": "Only raw-input path defaults replaced by environment variables; numerical definitions unchanged"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/qc/finalize_qc.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/qc/finalize_qc.py",
+    "source_sha256": "65c2fb84893e6f3fdf41f7fc7f4006d9e90da7b43eb1248fc175b23d84cd726c",
+    "sha256": "65c2fb84893e6f3fdf41f7fc7f4006d9e90da7b43eb1248fc175b23d84cd726c"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/qc/summarize_qc.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/qc/summarize_qc.py",
+    "source_sha256": "15d6e85d4a0ce8bd0fb4b117065246bf8e989b1fc7cff9fa6e030a6202d5213e",
+    "sha256": "15d6e85d4a0ce8bd0fb4b117065246bf8e989b1fc7cff9fa6e030a6202d5213e"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/qc/test_full_qc.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/qc/test_full_qc.py",
+    "source_sha256": "e722bf96646fd9c8cbd232a95b88ad2793fc38380496f1561b6e756b435aa2bd",
+    "sha256": "e722bf96646fd9c8cbd232a95b88ad2793fc38380496f1561b6e756b435aa2bd"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/qc/independent_replication_check.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/qc/independent_replication_check.py",
+    "source_sha256": "b5cf550325a20d50d0cc4a3c00b50b832229569b1054f667858a88cb6b3f4d7d",
+    "sha256": "b5cf550325a20d50d0cc4a3c00b50b832229569b1054f667858a88cb6b3f4d7d"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis/code/mimic_analysis.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis/code/mimic_analysis.py",
+    "source_sha256": "e8c35af5808b920156a597e4a3df7cf4a789b01bf5490f67bd784ca95538810e",
+    "sha256": "e8c35af5808b920156a597e4a3df7cf4a789b01bf5490f67bd784ca95538810e"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis/code/original_events.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis/code/original_events.py",
+    "source_sha256": "e42f4af35d62025532ed6ebff105db9c65a066d0115d8436af70a7c4c2e905ec",
+    "sha256": "e42f4af35d62025532ed6ebff105db9c65a066d0115d8436af70a7c4c2e905ec"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis/code/original_decomposition.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis/code/original_decomposition.py",
+    "source_sha256": "ff90d26680e816ceac40033b285c3b42937c4ded38fcd96340a0f01e406714cd",
+    "sha256": "ff90d26680e816ceac40033b285c3b42937c4ded38fcd96340a0f01e406714cd"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis/code/summarize_phase_ranges.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis/code/summarize_phase_ranges.py",
+    "source_sha256": "5d268616babf28fe873957735c7f6b837a20a252ccff6eb338ed31fdf5eb67ee",
+    "sha256": "5d268616babf28fe873957735c7f6b837a20a252ccff6eb338ed31fdf5eb67ee"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis/tests/test_mimic_analysis.py",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis/tests/test_mimic_analysis.py",
+    "source_sha256": "af786e90e2865fd1f01932ac27a4977bb11687da94c51a9a98ea04ae38425890",
+    "sha256": "af786e90e2865fd1f01932ac27a4977bb11687da94c51a9a98ea04ae38425890"
+  },
+  {
+    "source": "外部验证可行性审计_20261015/mimic/audit_core.py",
+    "target": "source_layout/外部验证可行性审计_20261015/mimic/audit_core.py",
+    "source_sha256": "3df014e1c032d21dd92f82d0d50a797007cf95453b093af1035a39d14dad0f66",
+    "sha256": "3df014e1c032d21dd92f82d0d50a797007cf95453b093af1035a39d14dad0f66"
+  },
+  {
+    "source": "外部验证可行性审计_20261015/mimic/audit_mimic.py",
+    "target": "source_layout/外部验证可行性审计_20261015/mimic/audit_mimic.py",
+    "source_sha256": "252a1ac7b084bb557d1073e04c693793afa152263925b397d698767665dc0bbe",
+    "sha256": "c3c452a94b1006625768c31e61a3a53f6e553a93daee01201c65d4610a1b4634",
+    "change": "Raw input paths made configurable; output content/analysis parameters unchanged"
+  },
+  {
+    "source": "外部验证可行性审计_20261015/mimic/test_audit.py",
+    "target": "source_layout/外部验证可行性审计_20261015/mimic/test_audit.py",
+    "source_sha256": "4e96965f99f77294a49abb9b3d37fa920f4c30fa24da77e81feacb5b284615f9",
+    "sha256": "4e96965f99f77294a49abb9b3d37fa920f4c30fa24da77e81feacb5b284615f9"
+  },
+  {
+    "source": "治疗相关事件补充修订_20261004/code/treatment_core.py",
+    "target": "source_layout/治疗相关事件补充修订_20261004/code/treatment_core.py",
+    "source_sha256": "34b7f56614432e56d0e0572337fa025864e2676c723b5531a7ba1d5f8437ef48",
+    "sha256": "34b7f56614432e56d0e0572337fa025864e2676c723b5531a7ba1d5f8437ef48"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/analysis_contract.json",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/analysis_contract.json",
+    "source_sha256": "3157dfa67db7f7fbcfcbd859b8e46d978583d8851b12348ea2c71fb68dcae61b",
+    "sha256": "3157dfa67db7f7fbcfcbd859b8e46d978583d8851b12348ea2c71fb68dcae61b"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/source_interpretation_addendum.json",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/source_interpretation_addendum.json",
+    "source_sha256": "692c1a501e636735054b92f0378cd878a283fe3acdd9298ce8acc38da5950f30",
+    "sha256": "692c1a501e636735054b92f0378cd878a283fe3acdd9298ce8acc38da5950f30"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/analysis_contract.json",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/analysis_contract.json",
+    "source_sha256": "cfd9b894ccfc353bfa1906c982c551761aec65eb6392c0c43e56dc4a3a4c4b12",
+    "sha256": "cfd9b894ccfc353bfa1906c982c551761aec65eb6392c0c43e56dc4a3a4c4b12"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/analysis_contract.json",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/analysis_contract.json",
+    "source_sha256": "9ae3d85beaf07aabde42f832ddddc3734f9defc0314bb3354e6df432a6bfda56",
+    "sha256": "9ae3d85beaf07aabde42f832ddddc3734f9defc0314bb3354e6df432a6bfda56"
+  },
+  {
+    "source": "SICdb分钟级对齐分析_20261015/analysis_contract.json",
+    "target": "source_layout/SICdb分钟级对齐分析_20261015/analysis_contract.json",
+    "source_sha256": "471e3eb9c6c04ac795f6895e493e1cb7b461369ddd0a986fe8a61dbfc786f794",
+    "sha256": "471e3eb9c6c04ac795f6895e493e1cb7b461369ddd0a986fe8a61dbfc786f794"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis_contract.json",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis_contract.json",
+    "source_sha256": "7f44211c428cd6c54835c4395fc29fb9ae0bfe4c7756aacfb2dfd582ce48c09b",
+    "sha256": "7f44211c428cd6c54835c4395fc29fb9ae0bfe4c7756aacfb2dfd582ce48c09b"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/WORK_LOG.md",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/WORK_LOG.md",
+    "source_sha256": "c9bfdd35967ac8fe42839de65cfd6d9c727acf5ff2f001d13d59d257efdf3c5c",
+    "sha256": "c9bfdd35967ac8fe42839de65cfd6d9c727acf5ff2f001d13d59d257efdf3c5c"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/summary.csv",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/summary.csv",
+    "source_sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054",
+    "sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/cohort_flow.csv",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/cohort_flow.csv",
+    "source_sha256": "720e36ca528dde0d0c5ffe9c4621b3f99dfb1f769246d6559e991a29d55723e1",
+    "sha256": "720e36ca528dde0d0c5ffe9c4621b3f99dfb1f769246d6559e991a29d55723e1"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/paired_resolution.csv",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/paired_resolution.csv",
+    "source_sha256": "a27871344ac69c7bffdc06e1247fbf2ebdc80f7ac26f1a0bae8219ac583e9f9a",
+    "sha256": "a27871344ac69c7bffdc06e1247fbf2ebdc80f7ac26f1a0bae8219ac583e9f9a"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/patient_distributions.csv",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/patient_distributions.csv",
+    "source_sha256": "457bafad526d718bdf4afb6cc9a12597de174cc831797337264fc11861d60aa9",
+    "sha256": "457bafad526d718bdf4afb6cc9a12597de174cc831797337264fc11861d60aa9"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/event_strata.csv",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/event_strata.csv",
+    "source_sha256": "8aeb506536681cc8e043ac7e985ca36ae36758ebbb25de1ee721be861f0f7d87",
+    "sha256": "8aeb506536681cc8e043ac7e985ca36ae36758ebbb25de1ee721be861f0f7d87"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/standardization_gate.json",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/standardization_gate.json",
+    "source_sha256": "d78f6b75b5792533f8f2fbf896b1b433b010db3ec41c221c999bcd75687b6672",
+    "sha256": "d78f6b75b5792533f8f2fbf896b1b433b010db3ec41c221c999bcd75687b6672"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/duration_standardized.csv",
+    "target": "source_layout/跨库分辨率与异质性分析_20261015/aggregate/duration_standardized.csv",
+    "source_sha256": "ae958a30c3e42524c81784fd1456c3e4ddf9d729afc278da643ba6338ff66e0e",
+    "sha256": "ae958a30c3e42524c81784fd1456c3e4ddf9d729afc278da643ba6338ff66e0e"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/figure_sources.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/figure_sources.csv",
+    "source_sha256": "2a05f4396df47dcd35ce1e71e30aae244539a10483b45b7037df54d3839610da",
+    "sha256": "2a05f4396df47dcd35ce1e71e30aae244539a10483b45b7037df54d3839610da"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/cohort_flow.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/cohort_flow.csv",
+    "source_sha256": "f7b600adb0bed282a0096198914049697985f435e677903f95cc926e34713494",
+    "sha256": "f7b600adb0bed282a0096198914049697985f435e677903f95cc926e34713494"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/timing_summary.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/timing_summary.csv",
+    "source_sha256": "b10794f82b532019d9c390d63cd65bd2e02490377f54e21d903296936fa87bfd",
+    "sha256": "b10794f82b532019d9c390d63cd65bd2e02490377f54e21d903296936fa87bfd"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/onset_event_audit.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/onset_event_audit.csv",
+    "source_sha256": "108d46e7f1d1d9554ed47a70717ce1d9a77ffd4710b6fc119ddcf80cddbe28d6",
+    "sha256": "108d46e7f1d1d9554ed47a70717ce1d9a77ffd4710b6fc119ddcf80cddbe28d6"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/treatment_flow.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/treatment_flow.csv",
+    "source_sha256": "062138a4c225608b469f04430d1e77f40634a2ed17d6c3eb5b862a66b15fecf1",
+    "sha256": "062138a4c225608b469f04430d1e77f40634a2ed17d6c3eb5b862a66b15fecf1"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/timing_paired_differences.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/timing_paired_differences.csv",
+    "source_sha256": "823248851c960727be962ee13def9f33e7a97d77d5426e9a8274b9c8fc23a85e",
+    "sha256": "823248851c960727be962ee13def9f33e7a97d77d5426e9a8274b9c8fc23a85e"
+  },
+  {
+    "source": "EJA_临床时间信息修订版_20261016/aggregate/primary_timing.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/aggregate/primary_timing.csv",
+    "source_sha256": "6e263dd66b8c08cb382c38b41c81c605452a8fb488b22e1d1100eac476d67172",
+    "sha256": "6e263dd66b8c08cb382c38b41c81c605452a8fb488b22e1d1100eac476d67172"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/figure_sources.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/figure_sources.csv",
+    "source_sha256": "49d862b81151e421833017d800a0b19f85f2b469dd907346c04bdd3a51b34230",
+    "sha256": "49d862b81151e421833017d800a0b19f85f2b469dd907346c04bdd3a51b34230"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/recovery_denominators.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/recovery_denominators.csv",
+    "source_sha256": "1df7a7f3c83461d4dcbb717002b6bd0e5d5baba5f21e7ca234e8527815b0e4e5",
+    "sha256": "1df7a7f3c83461d4dcbb717002b6bd0e5d5baba5f21e7ca234e8527815b0e4e5"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/bridge_contrasts.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_contrasts.csv",
+    "source_sha256": "85afa100b3283fef89811d259374378171244c2d4e6afa8328824985417e0dda",
+    "sha256": "85afa100b3283fef89811d259374378171244c2d4e6afa8328824985417e0dda"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/recovery_contrasts.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/recovery_contrasts.csv",
+    "source_sha256": "a92595b37bf02b3dbb06a75f3d3f8566e2d2bf7b6ab983b9c438f7606021c7c6",
+    "sha256": "a92595b37bf02b3dbb06a75f3d3f8566e2d2bf7b6ab983b9c438f7606021c7c6"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/bridge_support_audit.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_support_audit.csv",
+    "source_sha256": "e77248a65631ce174cc41692b7c9f795b3c809ad1bc67f415b228807201bceea",
+    "sha256": "e77248a65631ce174cc41692b7c9f795b3c809ad1bc67f415b228807201bceea"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/bridge_denominators.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_denominators.csv",
+    "source_sha256": "c3caea26e26565f374f7e7f7c836b109d466165adb1c32c50a0b8165120f4d49",
+    "sha256": "c3caea26e26565f374f7e7f7c836b109d466165adb1c32c50a0b8165120f4d49"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/recovery_summary.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/recovery_summary.csv",
+    "source_sha256": "8f76839e41e1d19d87b9265bb165c20a219934316c79de24b170630a7256a64e",
+    "sha256": "8f76839e41e1d19d87b9265bb165c20a219934316c79de24b170630a7256a64e"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/bridge_summary.csv",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/bridge_summary.csv",
+    "source_sha256": "0ea2aa061ebffae278e6db56c87099685cef6a4053ef12362cbc3c67863367f2",
+    "sha256": "0ea2aa061ebffae278e6db56c87099685cef6a4053ef12362cbc3c67863367f2"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/aggregate/boundary_audit.json",
+    "target": "source_layout/EJA_审稿意见逐项修订版_20261016/aggregate/boundary_audit.json",
+    "source_sha256": "27e62220ca00336f3298ce41bc1c0effdf5f6cce9159d6f3c03b9a0e8cadc3f6",
+    "sha256": "27e62220ca00336f3298ce41bc1c0effdf5f6cce9159d6f3c03b9a0e8cadc3f6"
+  },
+  {
+    "source": "治疗相关事件补充修订_20261004/analysis/aggregate/display_state_results.csv",
+    "target": "source_layout/治疗相关事件补充修订_20261004/analysis/aggregate/display_state_results.csv",
+    "source_sha256": "0ddd3de0f34db608f606878239809a35af598026367ca61f5290491cf6618f93",
+    "sha256": "0ddd3de0f34db608f606878239809a35af598026367ca61f5290491cf6618f93"
+  },
+  {
+    "source": "跨库分辨率与异质性分析_20261015/aggregate/summary.csv",
+    "target": "source_layout/EJA_临床时间信息修订版_20261016/03_方案与结果来源/aggregate/summary.csv",
+    "source_sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054",
+    "sha256": "6c2e01ee817e8891d5e8cd4a817d8ce51d3ab46a2453c87431230390a2a0c054"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_2_Episode_information.svg",
+    "target": "current/figures/Figure_2_Episode_information.svg",
+    "source_sha256": "587d885d88985b0d93255e93e0f4d916209d192aebbae7d32ae9bc7ee926d646",
+    "sha256": "587d885d88985b0d93255e93e0f4d916209d192aebbae7d32ae9bc7ee926d646"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_2_Episode_information.png",
+    "target": "current/figures/Figure_2_Episode_information.png",
+    "source_sha256": "aaaa7e881fff1006d300c0647d099f934771eff1eb93e6e516600a3557ca9998",
+    "sha256": "aaaa7e881fff1006d300c0647d099f934771eff1eb93e6e516600a3557ca9998"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_1_flow_600dpi.png",
+    "target": "current/figures/Figure_1_flow_600dpi.png",
+    "source_sha256": "af9e7a37a37c90049fd2cdec43425daf82d22121429b8933375593e4f66c9879",
+    "sha256": "af9e7a37a37c90049fd2cdec43425daf82d22121429b8933375593e4f66c9879"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_4_Resolution_weighting.svg",
+    "target": "current/figures/Figure_4_Resolution_weighting.svg",
+    "source_sha256": "38dd75107e884dcb70d51e4f058aaa9611b98f2d29ed89d7c53ac0b8336625fb",
+    "sha256": "38dd75107e884dcb70d51e4f058aaa9611b98f2d29ed89d7c53ac0b8336625fb"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_3_Infusion_recovery.png",
+    "target": "current/figures/Figure_3_Infusion_recovery.png",
+    "source_sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d",
+    "sha256": "85c5a1335fa138dd787c7329576a2c429875c9569e976c38b1e77a5d2bbaa06d"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_4_Resolution_weighting.png",
+    "target": "current/figures/Figure_4_Resolution_weighting.png",
+    "source_sha256": "2aff0762e7b5c6f9f1506d3835677b6a7a938e9e348c6970fc8fb1184dc573e3",
+    "sha256": "2aff0762e7b5c6f9f1506d3835677b6a7a938e9e348c6970fc8fb1184dc573e3"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_3_Infusion_recovery.svg",
+    "target": "current/figures/Figure_3_Infusion_recovery.svg",
+    "source_sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe",
+    "sha256": "7cf24fd410e72dbe292723516c3de9911145ec30a067a98038e616b8940d0bbe"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/02_图件/Figure_1_flow_editable.pptx",
+    "target": "current/figures/Figure_1_flow_editable.pptx",
+    "source_sha256": "198ce770fbe18fc44ee4ff1577ac8f804c52d6bfe9a5c42565a6d4d0627cd5f6",
+    "sha256": "4447495d218e4bbed1c5777e9f4b8ccfbfb11db31937a920839f64896e20fbac",
+    "change": "Notes only: absolute paths made project-relative; supplementary-table references updated to current numbering. Slide and image content unchanged."
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/03_历史归档/selection_manifest.json",
+    "target": "current/provenance/workbook_selection_manifest.json",
+    "source_sha256": "4a69e54248fdbbcd913ce8eb4657f6e4a69be7bfb1ef39c9e37daf54a1076f3f",
+    "sha256": "4a69e54248fdbbcd913ce8eb4657f6e4a69be7bfb1ef39c9e37daf54a1076f3f"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/03_历史归档/sheet_disposition.csv",
+    "target": "current/provenance/historical_sheet_disposition.csv",
+    "source_sha256": "174eb9a88a068fbad6c1322b5678d19e7bc301cb0c2ff45642f2db2e426bba15",
+    "sha256": "174eb9a88a068fbad6c1322b5678d19e7bc301cb0c2ff45642f2db2e426bba15"
+  },
+  {
+    "source": "EJA_SDC2精简投稿版_20261016/qa/workbook_plan.json",
+    "target": "current/presentation/workbook_plan.json",
+    "source_sha256": "f4ad973e2e6fdef919b5e6354b7fe3ab8e605e10e7a386e5e0283e0169e7330b",
+    "sha256": "3fc3436f998482425e7b93aa0c2680737ada80630b6d8e7a68511b125ae5305c",
+    "change": "Release-status explanation only; result cells and analysis parameters unchanged."
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/04_本地可复现包/environment_versions.json",
+    "target": "current/provenance/environment_versions.json",
+    "source_sha256": "4fd87e8628d26f837021f281af52691ce2715b3011f8d19f8f5a8dd8a436fec4",
+    "sha256": "4fd87e8628d26f837021f281af52691ce2715b3011f8d19f8f5a8dd8a436fec4"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/04_本地可复现包/frozen_inputs_project_relative.json",
+    "target": "current/provenance/frozen_inputs_project_relative.json",
+    "source_sha256": "62a2a8d05e53bb3b128f27bbca286111ceef5d69c620ba475a3f33eb50a5f0bd",
+    "sha256": "62a2a8d05e53bb3b128f27bbca286111ceef5d69c620ba475a3f33eb50a5f0bd"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/04_本地可复现包/additional_dependency_hashes.json",
+    "target": "current/provenance/additional_dependency_hashes.json",
+    "source_sha256": "42093e63ae3aa81c62a16c1c72b296316594d9a227d5caa75c863e65f00ac865",
+    "sha256": "42093e63ae3aa81c62a16c1c72b296316594d9a227d5caa75c863e65f00ac865"
+  },
+  {
+    "source": "EJA_审稿意见逐项修订版_20261016/04_本地可复现包/independent_verification.json",
+    "target": "current/provenance/independent_verification.json",
+    "source_sha256": "45dfafc77c6a4dc8accf588dcde34f70c92973b04ca1f946f3ce2590a2c3073e",
+    "sha256": "45dfafc77c6a4dc8accf588dcde34f70c92973b04ca1f946f3ce2590a2c3073e"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/code/audit_documented_encoding.py",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/code/audit_documented_encoding.py",
+    "source_sha256": "918035f54e106e7260b3df838bcdc10ac92d8ad49046fdaf21d753500f1a245a",
+    "sha256": "918035f54e106e7260b3df838bcdc10ac92d8ad49046fdaf21d753500f1a245a"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/boundary_check_contract.json",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/boundary_check_contract.json",
+    "source_sha256": "c41411b3915d232e841c0b56a6cf3b2ec64fe97b40fa363ba26c5f8dbecd340b",
+    "sha256": "c41411b3915d232e841c0b56a6cf3b2ec64fe97b40fa363ba26c5f8dbecd340b"
+  },
+  {
+    "source": "可靠动脉起点质控重分析_20261015/source_encoding_addendum.json",
+    "target": "source_layout/可靠动脉起点质控重分析_20261015/source_encoding_addendum.json",
+    "source_sha256": "8bf0819f9df8b652c0335d0fa387d609409ba32000e61b3c5871add425dfa64c",
+    "sha256": "8bf0819f9df8b652c0335d0fa387d609409ba32000e61b3c5871add425dfa64c"
+  },
+  {
+    "source": "MIMIC技术重复分析_20261015/analysis/code/provenance.json",
+    "target": "source_layout/MIMIC技术重复分析_20261015/analysis/code/provenance.json",
+    "source_sha256": "78b0ab00979d7237e26aeb8487ed7e132b970272a429ec40c05e6a250f182de3",
+    "sha256": "78b0ab00979d7237e26aeb8487ed7e132b970272a429ec40c05e6a250f182de3"
+  }
+]

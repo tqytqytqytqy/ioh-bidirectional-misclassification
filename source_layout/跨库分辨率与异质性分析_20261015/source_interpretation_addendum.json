@@ -1,0 +1,11 @@
+{
+  "purpose": "Source-semantic rulings after independent metadata audit, not changes to numerical thresholds or result-based cohort selection",
+  "frozen_contract_sha256": "3157dfa67db7f7fbcfcbd859b8e46d978583d8851b12348ea2c71fb68dcae61b",
+  "SICdb_age": "The frozen encoded AgeOnAdmission>=25 cutoff is retained. Official release documentation does not establish that each encoded age is a true five-year-bin lower bound. Therefore the planned wording 'lower bound>=25' is NOT claimed fulfilled; SICdb is labelled source-encoded age cutoff, not exact age matching. No post-result cutoff adjustment.",
+  "MIMIC_age": "Age is reconstructed from deidentified year-level metadata, with top coding; it is not exact birthday-based age. Confirmed eligible waveform records have verified year-level age>=25.",
+  "ICUOffset": "First ICU/intermediate-care transfer. The after-assignment scenario requires complete origin-zero hours with>=48 valid minutes at/after that time, and excludes prior values from its display. It is not proof of uninterrupted ICU occupancy or surgery end.",
+  "surgical_groups": "SICdb source-defined Elective Surgery and Urgent Surgery are grouped as surgical admission; No Surgery is separately described. MIMIC stable CSURG/SURG/NSURG/VSURG treating services define surgical-service context. These are source-specific descriptors, not equivalent surgical phenotypes or proof of postoperative timing.",
+  "postoperative": "NO-GO for a generally applicable postoperative subgroup with verified surgery-end linkage. No diagnosis keyword or billed date is promoted to surgery time.",
+  "paired_patient_equal": "Minute-minus-native patient-equal differences use the intersection of patients with the metric defined at both resolutions; the pooled contrast uses the same full patient set. Do not fill zero-event ratios with zero.",
+  "scope": "These rulings are documented before computing the new subgroup effects. All original sources and the manuscript remain unchanged."
+}

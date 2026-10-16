@@ -1,0 +1,43 @@
+figure,panel,interval_min,estimate,lo,hi,source,scenario,normal_sec,horizon_sec,unit,weight,metric,patients,cases,units,resolution,threshold,event_min_sec,estimand,status,n_patients,n_defined,n_patients_with_events,n_records,events,reference_auc,valid_hours,selected_hours
+3,A,1.0,0.1532485875706215,0.12284129219838899,0.18367443568336428,Original infusion adjustment states,,,,,,,,,,,,,,,,,,,,,,
+3,A,2.5,0.29915254237288147,0.25212077081494555,0.3423989728594991,Original infusion adjustment states,,,,,,,,,,,,,,,,,,,,,,
+3,A,5.0,0.4193502824858756,0.3705469515858709,0.4706234292377908,Original infusion adjustment states,,,,,,,,,,,,,,,,,,,,,,
+3,B,1.0,0.0,0.0,0.0,,original_all,20.0,60.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,B,1.0,0.0,0.0,0.0,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,B,3.0,0.3414634146341466,0.299934032855894,0.3826544860368392,,original_all,20.0,60.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,B,3.0,0.1189024390243901,0.1030828516377648,0.136190732206861,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,B,5.0,0.391260162601626,0.342855841790268,0.4391484026309606,,original_all,20.0,60.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,B,5.0,0.2563008130081302,0.2216651234567902,0.2927671650055369,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,1.0,0.0,0.0,0.0,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,3.0,0.1189024390243901,0.1030828516377648,0.136190732206861,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,5.0,0.2563008130081302,0.2216651234567902,0.2927671650055369,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,1.0,0.8526422764227642,0.8120805369127517,0.8906571985519354,,original_all,20.0,120.0,distinct_recovery,unit_equal,display_cleared,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,3.0,0.6141598915989158,0.5678234052378122,0.6575765204032894,,original_all,20.0,120.0,distinct_recovery,unit_equal,display_cleared,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,5.0,0.4788617886178862,0.4452226248871318,0.5132921940928272,,original_all,20.0,120.0,distinct_recovery,unit_equal,display_cleared,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,1.0,0.1351626016260162,0.0985807482934416,0.1734113848187481,,original_all,20.0,120.0,distinct_recovery,unit_equal,reference_recurred,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,3.0,0.2422086720867209,0.1887623321726582,0.296301976823449,,original_all,20.0,120.0,distinct_recovery,unit_equal,reference_recurred,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,5.0,0.2394308943089431,0.1875268817204301,0.2908128238341969,,original_all,20.0,120.0,distinct_recovery,unit_equal,reference_recurred,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,1.0,0.0121951219512195,0.0020195971692977,0.0264906933574152,,original_all,20.0,120.0,distinct_recovery,unit_equal,unknown,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,3.0,0.0247289972899729,0.0069903762940749,0.0467274288135215,,original_all,20.0,120.0,distinct_recovery,unit_equal,unknown,78.0,80.0,164.0,,,,,,,,,,,,,
+3,C,5.0,0.0254065040650406,0.0074280423280423,0.0474638588273299,,original_all,20.0,120.0,distinct_recovery,unit_equal,unknown,78.0,80.0,164.0,,,,,,,,,,,,,
+3,D,5.0,0.2563008130081302,0.2216651234567902,0.2927671650055369,,original_all,20.0,120.0,distinct_recovery,unit_equal,persistent_low,78.0,80.0,164.0,,,,,,,,,,,,,
+3,D,5.0,0.276068376068376,0.2385526630330847,0.3139973871612274,,original_all,30.0,120.0,distinct_recovery,unit_equal,persistent_low,76.0,77.0,156.0,,,,,,,,,,,,,
+3,D,5.0,0.2509803921568627,0.2190781318201658,0.2827986355832654,,original_all,60.0,120.0,distinct_recovery,unit_equal,persistent_low,73.0,74.0,136.0,,,,,,,,,,,,,
+4,A,,-0.1512172722249012,-0.1561171441085727,-0.1467744541108013,VitalDB,original_paired,,,,,hidden_ratio,,,,,,,,,,,,,,,,
+4,A,,-0.1443612208713352,-0.1487925097544402,-0.1401269727892614,VitalDB,original_paired,,,,,overdisplay_ratio,,,,,,,,,,,,,,,,
+4,A,,0.0411422052834942,0.036027065730847,0.0461099634131477,VitalDB,original_paired,,,,,miss_probability,,,,,,,,,,,,,,,,
+4,A,,-0.0557010801208961,-0.0794593669945164,-0.0441241029548494,MIMIC,original_paired,,,,,hidden_ratio,,,,,,,,,,,,,,,,
+4,A,,-0.0551426867398124,-0.0782087336277252,-0.0436487313605918,MIMIC,original_paired,,,,,overdisplay_ratio,,,,,,,,,,,,,,,,
+4,A,,0.0367741975859781,0.0259014411704582,0.0446115061142391,MIMIC,original_paired,,,,,miss_probability,,,,,,,,,,,,,,,,
+4,B,,-0.1345589791141194,-0.1385755221431299,-0.1306904620114476,VitalDB,common_complete_minute,,,,,hidden_ratio,,,,,,,,,,,,,,,,
+4,B,,-0.1336607426540247,-0.1377698185056546,-0.1296138804854183,VitalDB,common_complete_minute,,,,,overdisplay_ratio,,,,,,,,,,,,,,,,
+4,B,,0.0409184626402092,0.0362503809782671,0.0455507188019314,VitalDB,common_complete_minute,,,,,miss_probability,,,,,,,,,,,,,,,,
+4,B,,-0.053924460170473,-0.0773016747977971,-0.040881724567202,MIMIC,common_complete_minute,,,,,hidden_ratio,,,,,,,,,,,,,,,,
+4,B,,-0.0535534986481866,-0.076727756637182,-0.0402530153365513,MIMIC,common_complete_minute,,,,,overdisplay_ratio,,,,,,,,,,,,,,,,
+4,B,,0.0358598795840175,0.0252949731024082,0.043464398443151,MIMIC,common_complete_minute,,,,,miss_probability,,,,,,,,,,,,,,,,
+4,C,5.0,0.4342564881263665,0.4185258389496205,0.4498958606849715,VitalDB,primary,,,,,hidden_ratio,,,,1min,65.0,180.0,pooled,CI,2336.0,1783.0,1329.0,2387.0,3951.0,158713.0,7254.7,7505.0
+4,C,5.0,0.5729122526318783,0.5647552648127387,0.5810642178001163,VitalDB,primary,,,,,hidden_ratio,,,,1min,65.0,180.0,patient_equal,CI,2336.0,1783.0,1329.0,2387.0,3951.0,158713.0,7254.7,7505.0
+4,C,5.0,0.1144021414486952,0.0933381915240828,0.19026700684942,MIMIC,primary,,,,,hidden_ratio,,,,1min,65.0,180.0,pooled,CI,50.0,42.0,41.0,50.0,1173.0,211352.25,1918.1166666666663,1941.0
+4,C,5.0,0.2894691968099484,0.2405023213340683,0.3454529666397667,MIMIC,primary,,,,,hidden_ratio,,,,1min,65.0,180.0,patient_equal,CI,50.0,42.0,41.0,50.0,1173.0,211352.25,1918.1166666666663,1941.0
+4,C,5.0,0.2008608675047271,0.1927630853812136,0.2065540049469059,SICdb,primary,,,,,hidden_ratio,,,,1min,65.0,180.0,pooled,CI,18753.0,18170.0,16762.0,23466.0,1276123.0,125664816.89479063,1716556.1,1730964.0
+4,C,5.0,0.3533309324362392,0.3506027251503736,0.3561739672635829,SICdb,primary,,,,,hidden_ratio,,,,1min,65.0,180.0,patient_equal,CI,18753.0,18170.0,16762.0,23466.0,1276123.0,125664816.89479063,1716556.1,1730964.0

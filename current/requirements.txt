@@ -1,0 +1,12 @@
+# Numerical versions recorded for the cross-database/timing extension.
+numpy==2.3.5
+pandas==2.2.3
+pyarrow==26.0.0
+matplotlib==3.10.8
+scipy
+wfdb
+pytest
+PyYAML
+openpyxl==3.1.5
+# Earlier VitalDB models use the separate root requirements.txt.
+# Workbook authoring uses @oai/artifact-tool.

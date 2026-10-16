@@ -1,0 +1,10 @@
+scenario,normal_sec,adjustment_pairs,distinct_recoveries,patients,cases,shared_recovery_times,excess_pairs,max_multiplicity
+core60,20,167,148,71,73,18,19,3
+core60,30,156,140,69,70,15,16,3
+core60,60,134,122,66,67,12,12,2
+matched_original,20,167,148,71,73,18,19,3
+matched_original,30,156,140,69,70,15,16,3
+matched_original,60,134,122,66,67,12,12,2
+original_all,20,184,164,78,80,19,20,3
+original_all,30,173,156,76,77,16,17,3
+original_all,60,148,136,73,74,12,12,2

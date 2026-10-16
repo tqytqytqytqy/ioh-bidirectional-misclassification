@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "independent_recovery_state_comparisons": 505,
+  "independent_bootstrap_bounds": 36,
+  "unique_keys": true,
+  "common_finite_support_equal": true,
+  "bridge_auc_and_episode_identities": true,
+  "legacy_bridge_point_estimates_reproduced": 104,
+  "original_files_unchanged": true,
+  "raw_waveforms_reread": false,
+  "scope": "Frozen numerical trajectories and source hashes; no independent clinical adjudication"
+}

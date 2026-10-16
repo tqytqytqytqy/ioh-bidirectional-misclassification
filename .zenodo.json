@@ -1,7 +1,7 @@
 {
-  "title": "Temporal observability of intraoperative hypotension with an emulated 5-minute blood pressure display: reproducibility package",
+  "title": "Temporal information loss with intermittent blood pressure display: a retrospective intraoperative study with cross-database technical replication: reproducibility package",
   "upload_type": "software",
-  "description": "Analysis code, configuration templates, reproducibility manifests, figure source data, editable scientific figures, the final workbook and non-identifiable aggregate results for a retrospective waveform study of intermittent blood pressure display. Version 1.5.0 retains the original analyses and adds the completed rule-based startup signal-quality sensitivities, consolidated supplementary-table presentation and current artwork. Independent physician clinical adjudication was not performed. The emulation describes displayed information on fixed recorded arterial trajectories and does not estimate monitoring-related treatment delay or patient-outcome benefit. This release assembly does not rerun source-data analyses. Raw VitalDB, MoVeR and INSPIRE datasets and case-level derivatives are not redistributed.",
+  "description": "Analysis source code, frozen analysis rules, aggregate results, scientific figures and a 25-worksheet results workbook for intermittent blood pressure display in VitalDB, with technical replication using MIMIC-IV Waveform v0.1.0 and SICdb v1.0.8. This version adds source-resolution bridging, patient-equal summaries, event-feature strata, objective onset sensitivities, distinct-recovery analyses and common-valid-time comparisons. It preserves differing directions across scenarios. It contains no raw datasets, patient-level derivatives or manuscript files. Full statistical recomputation requires independently authorised source data and local caches. Release validation is distinguished from the earlier source-data analyses; a new clean-room raw-to-results run is not claimed.",
   "creators": [
     {
       "name": "Teng, Qingyu",
@@ -45,17 +45,18 @@
       "affiliation": "Department of Anesthesiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China"
     }
   ],
-  "version": "v1.5.0",
-  "publication_date": "2026-10-09",
+  "version": "v2.0.0",
+  "publication_date": "2026-10-16",
   "license": "MIT",
   "keywords": [
     "anaesthesia",
     "intraoperative hypotension",
     "blood pressure monitoring",
-    "temporal observability",
     "measurement freshness",
-    "vasopressor infusion",
     "VitalDB",
+    "MIMIC-IV Waveform",
+    "SICdb",
+    "resolution bridging",
     "reproducibility"
   ],
   "related_identifiers": [
@@ -65,10 +66,10 @@
       "scheme": "url"
     },
     {
-      "identifier": "10.5281/zenodo.23153577",
+      "identifier": "10.5281/zenodo.23255075",
       "relation": "isDerivedFrom",
       "scheme": "doi"
     }
   ],
-  "notes": "Outputs manifest SHA-256: a37967894feae2680c66868e776e3a18d277c534be7840e1b93c478fc1c55bdc. Final workbook SHA-256: 3733746c860584c799f597e714c609efeee037daa6d5c5b0682d647ae3d52171. Raw datasets and case-level derivatives are not redistributed. Independent physician clinical adjudication was not performed."
+  "notes": "Source datasets are not redistributed. The software licence does not replace original data-access conditions. The current workbook and file checksums are listed in current/provenance/outputs_manifest.json and checksums.sha256."
 }

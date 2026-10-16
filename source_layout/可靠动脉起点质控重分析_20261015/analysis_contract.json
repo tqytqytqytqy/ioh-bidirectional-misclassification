@@ -1,0 +1,38 @@
+{
+  "purpose": "Objective retrospective startup-signal qualification and observability sensitivity; no manuscript, outcome model or public-release modification",
+  "base_manuscript_sha256": "88119204d3bb5c5155f2b5eeac18b7f44974cc89d3794c4b1b210eeeac783de7",
+  "base_map_panel_sha256": "37301285eac3fa243fdb6c9df12307b6d73cd5f37e429cf17811d55291a85667",
+  "base_metadata_sha256": "f3324b00d250632d98ce619bcb93d93eeb4956afb676ecca92703cd761ce80b1",
+  "grid_sec": 10,
+  "search_interval": "First 600 s after the first finite reference bin, using the frozen full-waveform startup feature cache; no claim of full-record waveform QC",
+  "primary_bin_gate": {
+    "finite_numeric_MAP_mmHg": [20, 180],
+    "waveform_coverage_at_least": 0.9,
+    "waveform_mean_mmHg": [20, 180],
+    "waveform_p05_at_least_mmHg": 0,
+    "waveform_p95_at_most_mmHg": 250,
+    "waveform_p95_minus_p05_mmHg": [8, 160],
+    "peak_count_per10s": [4, 40],
+    "peak_algorithm": "Existing frozen SciPy find_peaks, minimum distance 0.3 s, prominence 5 mmHg; pragmatic composite technical screen, NOT validated clinical SQI",
+    "absolute_waveform_mean_minus_numeric_MAP_at_most_mmHg": 10,
+    "if_both_numeric_SBP_DBP_available": {
+      "SBP_mmHg": [30, 250], "DBP_mmHg": [5, 150], "pulse_pressure_mmHg": [5, 160],
+      "MAP_within_DBP_SBP_tolerance_mmHg": 5
+    }
+  },
+  "primary_onset": "Beginning of first 6 consecutive qualifying 10-s bins, retrospectively confirmed by the following 60 s. This is not a real-time onset detector.",
+  "no_normal_pressure_requirement": "No MAP>=40 or MAP>=65 criterion; low but technically supported pressure can qualify; no selection on AUC, episode counts or statistical significance",
+  "reference_after_onset": "Mask only pre-onset original MAP bins in primary analysis; do not change original retained MAP values or compress time. Existing original-cohort eligibility retained; report remaining coverage/duration rather than adding a minimum normal-pressure period.",
+  "display": "All original absolute phases on anaesthesia-origin 10-s grid; discard pre-onset display samples. Primary remains unavailable until first valid scheduled post-onset sample. Secondary seeds first finite post-onset reference only for nonzero phases, exactly matching original native initialization convention.",
+  "core_comparisons": ["original_all", "original_waveform_available", "original_matched_primary_onset", "primary_core60_onset", "core30_onset", "core120_onset", "relaxed60_onset", "core60_confirmation_end", "core60_mask_later_failed_startup_bins"],
+  "relaxed_gate": "Coverage>=0.8; wave mean 20-180; p05>=-5; p95<=300; span 5-180; 3-40 peaks per10s; waveform/numeric agreement<=15; same optional paired-pressure rule",
+  "confirmation_end_sensitivity": "Start evaluation 60 s after primary onset; this excludes the qualification segment and changes the analysis window",
+  "later_failed_bins_sensitivity": "Additionally mask failed core bins after onset within the measured first600s only; do not imply full-record artifact removal",
+  "native_frequency": {"primary_threshold":65,"primary_interval_min":5,"intervals_at65_min":[1,2.5,3,5,10],"other_thresholds_at5min":[60,55]},
+  "native_events": "At least 6 consecutive valid MAP bins below threshold; missing breaks episodes; mutually exclusive fresh low sample, inherited low only, never low. Minimum120s and240s are secondary at5min MAP65, not external-validation claims.",
+  "minute_bridge": "For age>=25, rebuild minute medians from post-onset MAP requiring>=5/6 valid bins; retain all original qualified-hour masks for matched comparisons. Keep 3-min events and original integer-minute phases. This is a separate technical estimand, not the main60s event endpoint.",
+  "inference": {"cluster":"subjectid","bootstrap_replicates":1000,"seed":20260706,"phase_aggregation":"mean raw components per case first, sum per subject, then patient bootstrap","between_source_test":false,"paired_comparison":"same primary-qualified subjects and original/trimmed component vectors"},
+  "robustness_reporting": "Report all rules without choosing by desired net-AUC result; compare sign and magnitude of H/O, episode information, CI and absolute units. No preset clinical equivalence margin or causal-benefit test.",
+  "source_validation": "Independently stratified raw-waveform/cache verification on32 records when raw tracks accessible; all records checked for numeric-panel/cache alignment. Missing source waveform is not classified as QC pass.",
+  "restrictions": ["No physician adjudication or signatures", "No raw or case-level data in delivery", "Do not rerun AKI or infusion-adjustment models in this task", "Do not update manuscript, GitHub or Zenodo"]
+}

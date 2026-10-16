@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": {
+    "workbook": {
+      "sheets": 25,
+      "logical_cells": 128797,
+      "numeric_cells": 78698
+    },
+    "source_map_files": 99,
+    "recovery_partitions": 216,
+    "cross_database_area_identities": 170,
+    "aggregate_csv_header_checks": 23,
+    "scope": "Released aggregate values, source provenance and package structure only; no raw-data rerun or clinical adjudication."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "version": "1.0-local-frozen-before-new-effects",
+  "purpose": "Cross-context technical replication, resolution bridging, event-feature stratification, patient-equal estimands and source-verified surgical subgroup feasibility; no manuscript or public release changes",
+  "design_status": "Existing database summaries have already been seen. This additional protocol is frozen before computing the new bridge, strata and equal-patient effects, not claimed prospectively registered or untouched external validation.",
+  "sources": {
+    "VitalDB": "Frozen original 10-s MAP and metadata; primary shared-window comparison retains original reference, with objective core60 onset as a separately labelled sensitivity",
+    "MIMIC": "Frozen fully waveform-screened monitor-numeric 10-s MAP; confirmed adults, records fully inside linked ICU stay and arterial numeric family; no waveform-mean imputation",
+    "SICdb": "Hash-verified extracted native-minute arterial MAP/SBP/DBP shards; no interpolation or synthetic 10-s data"
+  },
+  "age": "Common comparison uses confirmed age or SICdb 5-year age-bin lower bound >=25. If exact age is not retained for MIMIC, use verified clinical metadata; otherwise report age-harmonization unavailability and keep confirmed-adult MIMIC as labelled non-age-matched secondary comparison. Do not infer age from diagnoses.",
+  "pressure_range_mmHg": [20,180],
+  "reference_versions": "Source-specific upstream QC remains frozen. A shared 20-180 numeric filter is not claimed to equalize upstream measurement quality. VitalDB core60 masks prequalified-onset values only and preserves the original grid.",
+  "selection": {
+    "native10s": "Original-record-origin complete nonoverlapping hours with >=288/360 finite reference bins; all qualifying hours, no hypotension-based selection",
+    "minute": "For VitalDB/MIMIC, full minutes of six 10-s bins require >=5 finite bins; median primary, first-bin alternative. SICdb retains native minutes. Complete origin-zero hours require >=48/60 finite minutes.",
+    "paired_bridge": "VitalDB/MIMIC only: intersection of qualifying native and minute hours. Both resolutions use exactly the same record-hour positions; missing remains missing, no concatenation. Apply >=180-s event endpoint to both; >=60-s native endpoint separately quantifies short-event information absent from coarse data.",
+    "first_hour": "Sensitivity restricts each record to its first qualifying complete hour. Patient-equal summaries still combine all repeat records within patient; this is not claimed to be the first chronological operation per patient.",
+    "carry": "Build display on full frozen QC reference before applying evaluation mask, retaining original absolute phase and valid prewindow history. Unavailable before first valid scheduled sample; missing scheduled values do not update display. Do not reset at hour boundaries."
+  },
+  "configurations": {
+    "main": "MAP<65, intervals1/3/5/10min, all grid-compatible phases",
+    "secondary": "MAP<60 and<55 at5min only",
+    "native_event_min_sec": 60,
+    "common_minute_event_min_sec": 180,
+    "paired_event_min_sec": 180,
+    "long_event_sensitivity_sec": 300,
+    "phase_aggregation": "Mean raw additive components within record before summing records within patient or taking ratios"
+  },
+  "event_features_at65_5min": {
+    "duration_sec": [60,180,300,600],
+    "duration_labels": ["60_to_lt180","180_to_lt300","300_to_lt600","ge600"],
+    "nadir_mmHg": "<55 versus55_to_lt65",
+    "preceding_observed_normal_gap": "<60s,60_to_lt300s,>=300s; unknown if normal segment touches evaluation boundary, missing reference or record start without an observed preceding low bin. Do not convert unknown to long gap.",
+    "grouping": "Each feature separately, no data-selected interactions. Missing reference breaks all low episodes; no gap bridging. Fresh sample, inherited-only low display and never-low are mutually exclusive.",
+    "analytic_check": "Under periodic instantaneous sampling on a complete low run, all-phase fresh probability equals min(1,event_bins/interval_bins). Verify, report as a mathematical baseline, not a new empirical clinical discovery."
+  },
+  "estimands": {
+    "pooled": "Sum phase-averaged raw components over patients then take ratios; area ratios are burden-weighted and event ratios event-weighted",
+    "patient_equal": "Sum record components within each patient, derive patient-specific metrics, then arithmetic mean and quantiles. AUC ratios require patient referenceAUC>0, event ratios require>=1 event; state minutes/hour require selected time>0. Report all denominator counts and do not fill undefined with0.",
+    "absolute_units": "AUC mmHg min; TWA mmHg per valid reference minute; state discrepancy minutes per selected observed hour, not labelled anaesthesia-hour outside VitalDB",
+    "paired_difference": "Compute paired patient-cluster bootstrap of minute-minus-native in same record-hour positions. Episode counts differ across resolutions; this is not a one-to-one episode matching or clinical equivalence test.",
+    "standardization_gate": "Optional duration-standardized minute event fractions only if every shared duration band has>=20 patients and>=50 events in all3sources; fixed VitalDB event-duration weights, conditional CI, no causal or database-effect test. If gate fails, report no standardization, do not collapse bands after viewing effects."
+  },
+  "sensitivities": [
+    "First-reference initialization for ALL phases at first finite reference time, separate from legacy nonzero-phase manuscript rule",
+    "Held-value age limited to one sampling interval; missing display remains distinct from normal",
+    "Boundary-complete low episodes have observed normal reference immediately before and after the run",
+    "First qualifying hour per record",
+    "Minute first-bin instead of median for VitalDB/MIMIC, evaluated in fixed median-selected hours",
+    "VitalDB objective core60 onset on the fixed primary-selected hours, with loss of valid coverage explicitly reported",
+    "SICdb same-family pressure coherence and exclusion of>=10min identical runs in fixed primary hours"
+  ],
+  "subgroup_gate": {
+    "SICdb_ICU": "Verify original ICUOffset field semantics; minute bins fully at/after first ICU assignment can be separately evaluated, pre-ICU not automatically surgery",
+    "surgical_postoperative": "Use explicit source categories/verified admission or surgery records only. General surgical service is not proof of postoperative status. No diagnosis-name keyword inference or imported phenotype from another project.",
+    "minimum_reporting": "Subgroup or stratum with<10 patients: suppress effect estimates and label insufficient. 10-19 patients or<50 events: descriptive point estimates only. >=20 patients and>=50 events: patient-bootstrap CI, still no claim of validated clinical subgroup.",
+    "failure": "If data unavailable, timing not linkable or semantics ambiguous, complete the feasibility audit with NO-GO and no invented subgroup estimates. Do not delay the other analyses."
+  },
+  "inference": {"cluster":"patient_within_source","bootstrap":1000,"seed":20260706,"ci":"percentile95","phase_or_event_independence_assumed":false,"between_database_p_values":false,"causal_benefit_models":false},
+  "verification": "Test boundaries before implementation; independently rederive core components, event partitions, equal-patient summaries and paired bridge on deterministic samples, verify all aggregate identities and protected hashes. Use tolerances fixed at component atol1e-7 rtol1e-10, metrics/CI atol1e-9 rtol1e-9; counts exact except averaged phase counts atol1e-9.",
+  "delivery": "Independent local report, all aggregate tables in ONE workbook on different sheets, scientific figures and local SHA256manifest. IDs and trajectories remain restricted. No raw datasets redistributed.",
+  "prohibitions": ["No manuscript or EndNote edits","No upload or GitHub/Zenodo release","No AKI or treatment-effect model","No physician adjudication/signature claims","No desired-result-based threshold revision"]
+}

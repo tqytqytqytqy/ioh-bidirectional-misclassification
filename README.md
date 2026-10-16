@@ -1,64 +1,93 @@
-# Temporal observability of intraoperative hypotension
+# Temporal information loss with intermittent blood pressure display
 
-## Reproducibility package v1.5.0
+## Reproducibility package v2.0.0
 
-This release contains the code and aggregate results for a retrospective waveform
-study of an emulated intermittent blood pressure display. It preserves the original
-analyses and the completed rule-based startup signal-quality sensitivities.
+This package accompanies a retrospective intraoperative study using VitalDB,
+with cross-database technical replication in MIMIC-IV Waveform v0.1.0 and
+SICdb v1.0.8. Clinical linkage used MIMIC-IV v3.1.
 
-At a 5 min interval, 34.2% of qualifying reference episodes had no low display;
-55.9% acquired a new low sample within the episode and 9.9% had inherited low
-display only. Similar cumulative exposure therefore did not imply similar
-within-episode information. Display-state analyses at recorded infusion
-adjustments provide a clinical timing context, not a treatment-effect estimate.
+The analysis distinguishes a new low measurement during hypotension from a low
+value retained from an earlier event. It also examines how long low values
+remain displayed after confirmed recovery. Aggregate exposure, event information
+and measurement freshness describe different aspects of intermittent monitoring.
+Comparisons across recording resolutions and patient-weighting schemes show
+where conclusions depend on the measurement and analysis conventions.
 
-No independent physician clinical adjudication was performed. Original analyses
-remain primary and startup-QC analyses remain sensitivities. No source-data
-analysis or model fitting is rerun during release assembly.
+## Current results
 
-## Contents
+- `current/workbook/10_SDC2_Consolidated_Workbook.xlsx`: 25 worksheets aligned
+  to the three main tables and Tables S1 to S21. Detailed values retain their
+  source precision. Initialisation discrepancies, reporting-gate failures and
+  outcome sensitivities are retained, not only matching results.
+- `current/figures/`: the four current main figures and editable sources.
+- `current/presentation/workbook_plan.json`: aggregate values, notes and block
+  structure used to build the workbook.
+- `source_layout/`: calculation code, frozen rules and aggregate intermediate
+  results in their project-relative layout. Numerical caches are absent.
+- `current/provenance/`: result-selection mapping, versions, source-file hashes
+  and scoped verification records. The current outputs manifest is here.
+  `checksums.sha256` covers the release.
 
-- Four main tables and 16 supplementary tables, represented by 26 supplementary panels.
-- A 72-sheet consolidated workbook, retaining current presentation and clearly named historical and unrounded aggregate results.
-- Four editable main figures and two supplementary figures.
-- Python, R and JavaScript analysis and presentation code, synthetic tests and configuration templates.
-- File-integrity manifests, aggregate quality checks and reproduction documentation.
+Primary recovery results use 164 distinct recovery confirmation times in 78
+patients. The 184 adjustment-recovery pairs are a separately labelled weighting
+sensitivity. Common-valid-time resolution comparisons apply to VitalDB and
+MIMIC, not to SICdb's native-minute records. These are technical comparisons of
+fixed arterial trajectories, not estimates of monitoring-induced treatment delay
+or patient benefit. Signal quality checks are algorithmic; independent physician
+adjudication was not performed.
 
-`outputs/tables` contains current tables. `outputs/legacy_tables` and
-`presentation_inputs` preserve historical aggregate results and the numbering
-map; they are not additional current manuscript tables. See `docs/table_numbering.md`.
+## Reproduction
 
-## Data Access
+See [the v2 reproduction guide](docs/reproducibility_v2.md) for synthetic tests,
+aggregate-only rebuilding and the restricted-input sequence. The package contains
+the analysis implementations; it is not a self-contained raw-data-to-manuscript
+workflow. Full numerical recomputation requires separately authorised source
+data, intermediate caches and historical audit dependencies. This release does
+not claim a new clean-room reanalysis of every native waveform.
 
-Raw VitalDB, MoVeR and INSPIRE datasets are not redistributed. Source recordings,
-case-level trajectories, paired measurements, laboratory rows, model frames,
-private review images, private configuration and submission documents are excluded.
-Obtain source data independently under their original dataset terms.
-The MIT licence covers the supplied software; source-data terms remain separate.
+The root `src`, `scripts`, `extensions`, `code`, `outputs` and `presentation_inputs`
+retain the preceding VitalDB pipeline and historical aggregates. Their old table
+numbers and 72-sheet workbook are not current submission outputs. Use `current/`
+for the current presentation. The complete 125-sheet intermediate workbook stays
+in the local historical archive; its disposition is documented publicly.
 
-Use `config/inputs.example.sh`, `config/reproduction.example.yaml` and the documented environment variables for
-private source locations. Do not commit private inputs or local configuration.
-See `docs/reproducibility.md` and `docs/data_access.md` for reproduction boundaries.
+## Data access and privacy
 
-## Version And Citation
+No raw recordings, patient/operation-level records, linkage keys, fitted patient
+tables, private configuration, manuscripts or internal case-review materials are
+included. Obtain datasets independently under their original terms:
 
-Canonical release: [v1.5.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0).
-The preceding public snapshot is [v1.4.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.4.0)
-and [Zenodo 23153577](https://doi.org/10.5281/zenodo.23153577).
-Use the version-specific DOI linked from the release notes and Zenodo record,
-not the concept DOI, when citing this exact snapshot.
+- [VitalDB](https://vitaldb.net/dataset/)
+- [MIMIC-IV Waveform v0.1.0](https://physionet.org/content/mimic4wdb/0.1.0/)
+- [MIMIC-IV v3.1](https://physionet.org/content/mimiciv/3.1/)
+- [SICdb v1.0.8](https://physionet.org/content/sicdb/1.0.8/)
 
-Final workbook SHA-256: 3733746c860584c799f597e714c609efeee037daa6d5c5b0682d647ae3d52171
+Clinical MIMIC-IV requires credentialing and a data use agreement. SICdb also
+requires contributor approval of the research project. This software archive
+neither grants dataset access nor constitutes an ethics approval or a provider
+determination of project scope. The MIT licence covers software; source-dataset
+licences and data-use restrictions remain separate.
 
-Outputs manifest SHA-256: a37967894feae2680c66868e776e3a18d277c534be7840e1b93c478fc1c55bdc
+## Versions and citation
 
-These two hashes identify the scientific output snapshot. `checksums.sha256`
-and `outputs/manifests/release_manifest.json` cover the frozen release files.
+Use the version-specific Zenodo DOI shown in the
+[v2.0.0 release record](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.0).
+The preceding [v1.5.0](https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0)
+and [DOI 10.5281/zenodo.23255075](https://doi.org/10.5281/zenodo.23255075)
+remain unchanged. They cover earlier VitalDB analyses, not this extension.
 
-## Authors And Acknowledgements
+Frozen plans retain their original dates and local-only wording as provenance.
+They were frozen before the specified additional computations, after some earlier
+results had been inspected; they are not prospective registrations. Public-release
+authorisation was given separately on 16 October 2026.
+
+## Authors and acknowledgements
 
 Qingyu Teng; Qi Li; Ziyan Gu; Yuping Yang; Junde Han; Qian Chen; Jing Zhao;
-Yingya Zhao; Hui Zhang. Creator metadata follows the author order confirmed
-for this release. Existing version records retain their historical creators.
+Yingya Zhao; Hui Zhang. Qingyu Teng, Qi Li and Ziyan Gu contributed equally.
+Jing Zhao, Yingya Zhao and Hui Zhang are corresponding authors, with Hui Zhang
+the primary correspondent. We thank Tao Xu for his guidance and comments.
 
-We thank Tao Xu for his guidance and comments on this study.
+The authors used OpenAI Codex/ChatGPT for language assistance, code review and
+reproducibility checks. Scientific interpretation and final approval remain the
+responsibility of the human authors.

@@ -1,0 +1,37 @@
+figure,panel,metric,value,source,interval_min,lo,hi,module,population,scenario,horizon_sec,weight,estimate,patients,cases,events,status,event_min_sec,estimand,native10s,minute,minute_minus_native,n_patients,n_defined_common,resolution,threshold,n_defined,n_patients_with_events,n_records,reference_auc,valid_hours,selected_hours
+2,B,New low reading,55.9,"Original whole-episode VitalDB analysis, manuscript/TableS25; published rounded labels",,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,B,Inherited low only,9.9,"Original whole-episode VitalDB analysis, manuscript/TableS25; published rounded labels",,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,B,No low display,34.2,"Original whole-episode VitalDB analysis, manuscript/TableS25; published rounded labels",,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3,A,,15.324858757062149,Original infusion display_state_results.csv,1.0,12.2841292198389,18.367443568336427,,,,,,,,,,,,,,,,,,,,,,,,,
+3,A,,29.915254237288146,Original infusion display_state_results.csv,2.5,25.212077081494556,34.23989728594991,,,,,,,,,,,,,,,,,,,,,,,,,
+3,A,,41.93502824858756,Original infusion display_state_results.csv,5.0,37.054695158587094,47.062342923779084,,,,,,,,,,,,,,,,,,,,,,,,,
+3,B,persistent_low,,,1.0,0.0,0.0,recovery,all_recoveries,original_all,60.0,event_equal,0.0,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,B,persistent_low,,,1.0,0.0,0.0,recovery,all_recoveries,original_all,120.0,event_equal,0.0,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,B,persistent_low,,,3.0,0.3069649739412254,0.3940897617013822,recovery,all_recoveries,original_all,60.0,event_equal,0.3520531400966185,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,B,persistent_low,,,3.0,0.1043744091157883,0.137444316815704,recovery,all_recoveries,original_all,120.0,event_equal,0.121074879227053,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,B,persistent_low,,,5.0,0.355811578507372,0.4609810702584638,recovery,all_recoveries,original_all,60.0,event_equal,0.4090579710144928,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,B,persistent_low,,,5.0,0.2278492795855593,0.3026126065120478,recovery,all_recoveries,original_all,120.0,event_equal,0.2655797101449275,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,persistent_low,,,1.0,0.0,0.0,recovery,all_recoveries,original_all,120.0,event_equal,0.0,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,persistent_low,,,3.0,0.1043744091157883,0.137444316815704,recovery,all_recoveries,original_all,120.0,event_equal,0.121074879227053,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,persistent_low,,,5.0,0.2278492795855593,0.3026126065120478,recovery,all_recoveries,original_all,120.0,event_equal,0.2655797101449275,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,display_cleared,,,1.0,0.8175672343941578,0.9023034360479334,recovery,all_recoveries,original_all,120.0,event_equal,0.8614130434782609,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,display_cleared,,,3.0,0.5678048780487802,0.6627229201468409,recovery,all_recoveries,original_all,120.0,event_equal,0.617451690821256,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,display_cleared,,,5.0,0.435532854322071,0.5034846792477996,recovery,all_recoveries,original_all,120.0,event_equal,0.4704710144927537,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,reference_recurred,,,1.0,0.0891224948210242,0.1617429380547821,recovery,all_recoveries,original_all,120.0,event_equal,0.1240942028985507,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,reference_recurred,,,3.0,0.1837574850299401,0.288463124696749,recovery,all_recoveries,original_all,120.0,event_equal,0.2346014492753623,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,reference_recurred,,,5.0,0.1880196252147766,0.2905280966044954,recovery,all_recoveries,original_all,120.0,event_equal,0.2369565217391304,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,unknown,,,1.0,0.0017452006980802,0.0329869300314465,recovery,all_recoveries,original_all,120.0,event_equal,0.0144927536231884,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,unknown,,,3.0,0.0073588950396179,0.0537870996992215,recovery,all_recoveries,original_all,120.0,event_equal,0.0268719806763285,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+3,C,unknown,,,5.0,0.0079261537196296,0.051995018115942,recovery,all_recoveries,original_all,120.0,event_equal,0.0269927536231884,78.0,80.0,184.0,CI,,,,,,,,,,,,,,,
+4,A,hidden_ratio,,VitalDB,5.0,-0.1561171441085727,-0.1467744541108013,,,,,,,,,,CI,180.0,pooled,0.5853959209400513,0.43417864871515,-0.1512172722249012,2336.0,2336.0,,,,,,,,
+4,A,overdisplay_ratio,,VitalDB,5.0,-0.1487925097544402,-0.1401269727892614,,,,,,,,,,CI,180.0,pooled,0.57482443561446,0.4304632147431247,-0.1443612208713352,2336.0,2336.0,,,,,,,,
+4,A,miss_probability,,VitalDB,5.0,0.036027065730847,0.0461099634131477,,,,,,,,,,CI,180.0,pooled,0.1015846066779851,0.1427268119614794,0.0411422052834942,2336.0,2336.0,,,,,,,,
+4,A,hidden_ratio,,MIMIC,5.0,-0.0794593669945164,-0.0441241029548494,,,,,,,,,,CI,180.0,pooled,0.1701032215695913,0.1144021414486952,-0.0557010801208961,50.0,50.0,,,,,,,,
+4,A,overdisplay_ratio,,MIMIC,5.0,-0.0782087336277252,-0.0436487313605918,,,,,,,,,,CI,180.0,pooled,0.1678405643351538,0.1126978775953414,-0.0551426867398124,50.0,50.0,,,,,,,,
+4,A,miss_probability,,MIMIC,5.0,0.0259014411704582,0.0446115061142391,,,,,,,,,,CI,180.0,pooled,0.0384176182707993,0.0751918158567775,0.0367741975859781,50.0,50.0,,,,,,,,
+4,B,hidden_ratio,,VitalDB,5.0,0.4185258389496205,0.4498958606849715,,,primary,,,0.4342564881263665,,,3951.0,CI,180.0,pooled,,,,2336.0,,1min,65.0,1783.0,1329.0,2387.0,158713.0,7254.7,7505.0
+4,B,hidden_ratio,,VitalDB,5.0,0.5647552648127387,0.5810642178001163,,,primary,,,0.5729122526318783,,,3951.0,CI,180.0,patient_equal,,,,2336.0,,1min,65.0,1783.0,1329.0,2387.0,158713.0,7254.7,7505.0
+4,B,hidden_ratio,,MIMIC,5.0,0.0933381915240828,0.19026700684942,,,primary,,,0.1144021414486952,,,1173.0,CI,180.0,pooled,,,,50.0,,1min,65.0,42.0,41.0,50.0,211352.25,1918.1166666666663,1941.0
+4,B,hidden_ratio,,MIMIC,5.0,0.2405023213340683,0.3454529666397667,,,primary,,,0.2894691968099484,,,1173.0,CI,180.0,patient_equal,,,,50.0,,1min,65.0,42.0,41.0,50.0,211352.25,1918.1166666666663,1941.0
+4,B,hidden_ratio,,SICdb,5.0,0.1927630853812136,0.2065540049469059,,,primary,,,0.2008608675047271,,,1276123.0,CI,180.0,pooled,,,,18753.0,,1min,65.0,18170.0,16762.0,23466.0,125664816.89479063,1716556.1,1730964.0
+4,B,hidden_ratio,,SICdb,5.0,0.3506027251503736,0.3561739672635829,,,primary,,,0.3533309324362392,,,1276123.0,CI,180.0,patient_equal,,,,18753.0,,1min,65.0,18170.0,16762.0,23466.0,125664816.89479063,1716556.1,1730964.0

@@ -1,0 +1,12 @@
+{
+  "pass_gate": true,
+  "minimum_patients": 20,
+  "minimum_events": 50,
+  "bands": [
+    "180_to_lt300",
+    "300_to_lt600",
+    "ge600"
+  ],
+  "action": "conditional_duration_standardization",
+  "notes": "No post-result band collapsing. Fixed VitalDB duration weights if gate passes; no pooled database effect or causal test."
+}

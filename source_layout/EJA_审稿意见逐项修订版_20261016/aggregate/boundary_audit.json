@@ -1,0 +1,9 @@
+{
+  "original_valid_min": 532190.5,
+  "completed_bin_valid_min": 532145.5,
+  "difference_valid_min": 45.0,
+  "original_low_min": 39908.0,
+  "completed_bin_low_min": 39906.0,
+  "difference_low_min": 2.0,
+  "legacy_recovery_algorithm_matches": 650
+}

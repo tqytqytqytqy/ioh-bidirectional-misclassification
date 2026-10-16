@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "source_version": "EJA_SDC2精简投稿版_20261016",
+  "workbook_cell_changes": [
+    [
+      "00_Readme",
+      "B20"
+    ]
+  ],
+  "numeric_cells_preserved_exactly": 78698,
+  "preview_images_pixel_identical_to_source": 47,
+  "figure_png_svg_byte_identical": 7,
+  "editable_figure_change": "Notes only: project-relative paths and current supplementary-table numbers",
+  "synthetic_test_counts": {
+    "legacy": 187,
+    "extension": 189
+  },
+  "source_data_refit": false,
+  "privacy_scope": "New public source, aggregates, workbook and figure package inspected; raw data and patient-level derivatives excluded."
+}

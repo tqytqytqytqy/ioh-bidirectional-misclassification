@@ -2,12 +2,12 @@
   "cff-version": "1.2.0",
   "message": "Please cite the version-specific Zenodo software record for this release.",
   "type": "software",
-  "title": "Temporal observability of intraoperative hypotension with an emulated 5-minute blood pressure display: reproducibility package",
-  "version": "1.5.0",
-  "date-released": "2026-10-09",
+  "title": "Temporal information loss with intermittent blood pressure display: a retrospective intraoperative study with cross-database technical replication: reproducibility package",
+  "version": "2.0.0",
+  "date-released": "2026-10-16",
   "license": "MIT",
   "repository-code": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification",
-  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v1.5.0",
+  "url": "https://github.com/tqytqytqytqy/ioh-bidirectional-misclassification/releases/tag/v2.0.0",
   "authors": [
     {
       "family-names": "Teng",

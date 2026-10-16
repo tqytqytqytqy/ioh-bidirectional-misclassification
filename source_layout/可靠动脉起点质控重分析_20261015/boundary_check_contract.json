@@ -1,0 +1,11 @@
+{
+  "kind": "Additional boundary sensitivity recorded before viewing rerun effect estimates; does not amend the frozen primary contract",
+  "rationale": "Trimming reference onset may left-truncate an existing observed low-pressure run. Confirm that event-information findings do not rely on events with unobserved boundaries.",
+  "scenarios": ["original_matched_primary_onset", "primary_core60_onset"],
+  "setting": "Native10s, MAP<65, 5min display, all30 phases, unavailable before valid scheduled post-onset sample",
+  "reference_events": "Same >=60s contiguous valid low bins; include only runs preceded AND followed by a finite observed MAP>=65 inside the retained analysis window. Missing or cut boundaries fail this event-only sensitivity.",
+  "frequency_metrics": "Unchanged reference and display AUC; only event denominator and classes are filtered",
+  "inference": "Subject-cluster bootstrap1000, seed20260706",
+  "interpretation": "Descriptive boundary-complete sensitivity, not a new clinical primary endpoint or causal effect",
+  "no_source_or_manuscript_change": true
+}

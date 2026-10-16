@@ -1,0 +1,43 @@
+{
+  "frozen_utc": "2026-10-16T01:11:11.308082+00:00",
+  "seed": 20261016,
+  "recovery_bootstrap": 2000,
+  "bridge_bootstrap": 1000,
+  "input_sha256": {
+    "analysis_v10_subject_phase_release/outputs/intermediate/artmap_10s.parquet": "37301285eac3fa243fdb6c9df12307b6d73cd5f37e429cf17811d55291a85667",
+    "analysis_v10_subject_phase_release/outputs/intermediate/vitaldb_manifest.parquet": "f3324b00d250632d98ce619bcb93d93eeb4956afb676ecca92703cd761ce80b1",
+    "可靠动脉起点质控重分析_20261015/restricted/onsets.csv": "006292cced217a59a89f5f0c493a3f2e65dd92e6bd1695539e1e709c15674f67",
+    "独立质控重分析_20261007/data_restricted/treatment_original_primary_events.csv": "222aa3ad6f00611adf6a879a589928a8b31a30e5ec76a9028a3f8ab463becdcb",
+    "MIMIC技术重复分析_20261015/private/qc_inputs.npz": "6c39bca206ac31e383b9ac88c29d75a650671e05890c6d51a08909b10d77cc07",
+    "MIMIC技术重复分析_20261015/private/records.json": "36d713bc30a3f9c987e8874086ef8f3d0c72d43603e66f60863827cd17bb0562",
+    "EJA_审稿意见逐项修订版_20261016/WORK_LOG.md": "c9bfdd35967ac8fe42839de65cfd6d9c727acf5ff2f001d13d59d257efdf3c5c"
+  },
+  "baseline_deliverable_sha256": {
+    "01_修订稿件/04_Table_2_EJA.docx": "7fb64273219279997472075885d0e5e98f83d50c7d987cf02ea1e09e5eef4316",
+    "01_修订稿件/05_Table_3_EJA.docx": "9f13c2e219d719342dc64fdc6346e696ee97832c06a391f0ef46be8fdcb457ad",
+    "01_修订稿件/03_Table_1_EJA.docx": "beafe66e60786549febf887eaa86ec61358aee05c2111c913d03bd968fa16853",
+    "01_修订稿件/01_Main_Manuscript_EJA.docx": "19b6712ceb5b36f7f2324842197536d34815c27404ec3a54c09688bc9db8702d",
+    "01_修订稿件/10_SDC2_Consolidated_Workbook.xlsx": "f17bb532097485793b25aefa543148a2bf7536d97af26cc10bc7931973437558",
+    "01_修订稿件/07_Supplemental_Digital_Content_1_EJA.docx": "9b6c9a6b895c3ea8b17d0d9f4f803dcc709d3ceecdcde9eaefddcfe2194ebb8c",
+    "01_修订稿件/.~_Main_Manuscript_EJA.docx": "ad43b0c8a761efcca3e4fec5d397464779f5135e465502b89002b24f7e44a3e5",
+    "01_修订稿件/08_Cover_Letter_EJA.docx": "f43d8fa1b450c2a103e7cfde3416f1170941c39b257acc73ccb58d17734fc9fc",
+    "01_修订稿件/09_STROBE_RECORD_Checklist_EJA.docx": "a2789153561af794f57aa1f7a336065c9503d464e892a610a9808d5307b77561",
+    "code/independent_verify.py": "d28ced415180ab08f594b9019051310ac568f824ec9a79540b17e538e023ea7e",
+    "code/test_timing.py": "151a90c7bf93184447556be6316209ee57c63a7782eb6116159198e97c09422a",
+    "code/merge_workbook.py": "f59490075b0dd63a965c655365a94203e86b4be6bce0e0618a3082ab2d60b542",
+    "code/revision_content.py": "4cf70b713028b041a688f037bced8237447e66275b87ba698000a7d4aa7d6b62",
+    "code/run_timing.py": "ffb58bd69e041340f171c5283c595347a9b70f529d43ed5261dbefe9ebcb3908",
+    "code/summarize_timing.py": "5e5c8dcab020da7ffde39f249181269905980b0491e56614080e17f25aef99e9",
+    "code/prepare_workbook.py": "c33dd4557178f8207183dab3001cd75ecc9b0515b8204499e9a577fe3fa4c65c",
+    "code/render_documents.py": "72678400e89e00700dfed53cceae18065e90af9b9d0d58d342958e355b7b4900",
+    "code/freeze_local.py": "5fb47ce44062455af0ff3868ddc8ae64c5607ff9dbbb52cfb90978ecdd608351",
+    "code/README.md": "73357c70ecba5592e7ba89dc9f2eb1f885919158552cde1142efccfe7795665a",
+    "code/build_revision.py": "b18b1532c6634701b45150592b058081ee80c9ae1002fca44442f58c6c7ba038",
+    "code/timing.py": "6e559d666d760163315ea08edeb6486b688ee29c04811f7e8dd5b89e3127b251",
+    "code/final_verify.py": "b8c8e5352136c063aee126347d276470e4a73dcb40eb5860c2ad43d7753693af",
+    "code/append_workbook.mjs": "6aa4b3724401af629f9582a00952321ac552fa31df162a744a480bdbc2a50c3d",
+    "code/verify_workbook.mjs": "a5791c4ea170548f8d25920e70c2aea9f3b057eefbe908d6d3727e3117f7916c",
+    "code/build_figures.py": "020cf0c6c9393be6a8431d1bb504b1e33817961fd9d0aaa2d60bb22fc82f0738"
+  },
+  "scope": "Source paths are project-relative. No source data or patient-level derivatives are included."
+}

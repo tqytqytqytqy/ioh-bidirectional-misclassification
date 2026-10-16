@@ -1,0 +1,11 @@
+{
+  "kind": "Source-format clarification, not a change to primary QC thresholds or effect estimators",
+  "official_format_url": "https://vitaldb.net/dataset/?query=api",
+  "official_sdk_url": "https://raw.githubusercontent.com/vitaldb/vitalutils/master/python/vitaldb-pypi/vitaldb/dataset.py",
+  "retrieved_date": "2026-10-15",
+  "nominal_rule_used_by_frozen_cache": "Waveform CSV is a constant-interval array with missing value rows retained. First Time=0 and second Time=sampling interval; t[i]=i*interval. This is supported by the API's documented encoding, not imputation of missing measurement values.",
+  "sdk_note": "The current legacy CSV loader can resample values to a length determined from the endpoint; nominal-grid feature reproduction and any SDK-resampling sensitivity must be labelled separately.",
+  "version_boundary": "Current official load_case uses packed .vital v1.0.1 and comments that old per-track CSV can have a per-case constant time shift. This run preserves and hashes the supplied legacy CSV-based inputs, does not migrate dataset versions and does not claim independent validation of absolute clinical event times against packed .vital.",
+  "required_reporting": "Preserve the literal-time diagnostic, the authoritative encoding explanation and the independent nominal-grid feature check. Do not claim that a missing per-row Time is missing waveform data. Do not claim full-record timestamp verification.",
+  "manuscript_and_frozen_data_changed": false
+}
